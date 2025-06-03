@@ -484,8 +484,21 @@ document.write(`
                 <article class="bd-article">
                   
   <blockquote>
-<div><p>Jun 03, 2025 | 7 min read</p>
+<div><p>Jun 03, 2025 | 8 min read</p>
 </div></blockquote>
+<a href="https://www.talentq.es/es_es/cursos/">
+    <button class="rounded" style="float: right;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="var(--fill, white)"
+        d="M18.1 15.3c-.1.1-.3.2-.4.3l-2.4.4l1.7 3.6c.2.4 0 .8-.4
+            1l-2.8 1.3c-.1.1-.2.1-.3.1c-.3 0-.6-.2-.7-.4L11.2
+            18l-1.9 1.5c-.1.1-.3.2-.5.2c-.4 0-.8-.3-.8-.8V7.5c0-.5.3-.8.8-.8c.2 0
+            .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
+            1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
+    </svg>
+    Volver a TalentQ
+    </button>
+</a>
 <p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
 <span class="math notranslate nohighlight">\( \newcommand{\ket}[1]{|#1\rangle} \)</span>
 <span class="math notranslate nohighlight">\( \newcommand{\branew}[1]{\langle #1|} \)</span>
@@ -520,13 +533,13 @@ document.write(`
 <h2><span class="section-number">3.4.2. </span>Puertas de un qubit<a class="headerlink" href="#puertas-de-un-qubit" title="Permalink to this heading">#</a></h2>
 <p>Las puertas cuánticas de un solo qubit se generan mediante pulsos de microondas enviados a través de cables coaxiales sobre los qubits (Fig.  <a class="reference internal" href="#fig-scq-pulsos-1"><span class="std std-numref">3.5</span></a>). Su frecuencia se ajusta al nivel de energía <span class="math notranslate nohighlight">\(\hbar \omega_{01}\)</span> mencionado anteriormente. Esta frecuencia se calibra para que sea diferente en qubits adyacentes para evitar efectos de <i>crosstalk</i>. La <b>amplitud</b> del pulso de microondas controla el <b>ángulo de rotación</b> y su <b>fase</b> ajusta el <b>eje</b> de la operación de rotación de la puerta.</p>
 <figure class="align-center" id="fig-scq-pulsos-1">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_pulsos_1.png"><img alt="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_pulsos_1.png" src="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_pulsos_1.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_pulsos_1.png"><img alt="../../../_images/Fig_scq_pulsos_1.png" src="../../../_images/Fig_scq_pulsos_1.png" style="width: 1000px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.5 </span><span class="caption-text">a) Esquema de una configuración típica de control de un qubits. Una fuente de microondas suministra una señal de alta frecuencia (<span class="math notranslate nohighlight">\(\omega_{LO}\)</span>), mientras que un generador de onda arbitrarios (AWG de sus siglas en inglés) suministra una envolvente del pulso (<span class="math notranslate nohighlight">\(s(t)\)</span>), a veces con un componente de baja frecuencia, <span class="math notranslate nohighlight">\(\omega_{AWG}\)</span>. El mezclador <span class="math notranslate nohighlight">\(IQ\)</span> combina las dos señales para generar una forma de onda <span class="math notranslate nohighlight">\(V_d(t)\)</span> con una frecuencia <span class="math notranslate nohighlight">\(\omega_d = \omega_{LO} \pm \omega_{AWG}\)</span>, normalmente resonante con el qubit. b) Ejemplo de cómo una secuencia de puerta se traduce en una forma de onda generada por el AWG. Los colores indican los componentes <span class="math notranslate nohighlight">\(I\)</span> y <span class="math notranslate nohighlight">\(Q\)</span>. c) La acción de un pulso <span class="math notranslate nohighlight">\(X_{\pi/2}\)</span> sobre un estado <span class="math notranslate nohighlight">\(\ket{0}\)</span> para producir el estado <span class="math notranslate nohighlight">\(\ket{-i} = \frac{1}{\sqrt{2}} (\ket{0} - i\ket{1})\)</span>. Figura tomada de <span id="id1">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id74" title="Olivier Ezratty. Perspective on superconducting qubit quantum computing. The European Physical Journal A, 59(5):94, 2023. doi:https://doi.org/10.1140/epja/s10050-023-01006-7.">6</a>]</span></span><a class="headerlink" href="#fig-scq-pulsos-1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-scq-modulacion">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_modulacion.jpg"><img alt="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_modulacion.jpg" src="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_modulacion.jpg" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_modulacion.jpg"><img alt="../../../_images/Fig_scq_modulacion.jpg" src="../../../_images/Fig_scq_modulacion.jpg" style="width: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.6 </span><span class="caption-text">Ejemplos de ondas moduladas, tanto en amplitud (lo que se usa en control de qubits y en la radio AM), como en frecuencia (lo que usa en las radios FM). Como vemos tenemos dos ondas, la <b>portadora</b> y la <b>moduladora</b>. La gracia aquí es que la información que se quiere transmitir está en la onda moduladora. Esta puede ser, por ejemplo, la onda del sonido que tiene que emitir la rádio del coche. La onda portadora se usa para transmitir la información de la moduladora.</span><a class="headerlink" href="#fig-scq-modulacion" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -537,13 +550,13 @@ document.write(`
 V_d(t) = V_0 v(t) = V_0 s(t) \sin(\omega_d t + \phi) \, ,
 \end{equation} \]</div>
 <p>es decir, como un pulso senoidal de frecuencia <span class="math notranslate nohighlight">\(\omega_d\)</span> con un desfase <span class="math notranslate nohighlight">\(\phi\)</span> modulado por una función adimensional <span class="math notranslate nohighlight">\(s(t)\)</span> denominada <b>envoltura</b>. (Puede verse más sobre modulación de señales en la Fig.  <a class="reference internal" href="#fig-scq-modulacion"><span class="std std-numref">3.6</span></a>). La frecuencia <span class="math notranslate nohighlight">\(\omega_d\)</span> será la frecuencia de resonancia del qubit. Puede verse este pulso en la Fig.  <a class="reference internal" href="#fig-scq-pulsos-1"><span class="std std-numref">3.5</span></a>a. Usando la identidad trigonométrica del seno de la suma, podemos reescribir el pulso como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-764a1419-2f61-4ec1-80ac-b1f18e922a42">
-<span class="eqno">(3.7)<a class="headerlink" href="#equation-764a1419-2f61-4ec1-80ac-b1f18e922a42" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ca339291-b0c1-4daf-aca1-c1ace6b1fcf9">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-ca339291-b0c1-4daf-aca1-c1ace6b1fcf9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 V_d(t) = V_0 s(t) \Lc \cos(\phi) \sin(\omega_d t) + \sin(\phi) \cos (\omega_d t) \Rc
 \end{equation}\]</div>
 <p>Adoptando las definiciones:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-840361b7-0f54-457e-8ba3-ade30595f19c">
-<span class="eqno">(3.8)<a class="headerlink" href="#equation-840361b7-0f54-457e-8ba3-ade30595f19c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f83c0766-8418-4fdf-87c8-9f4d7e865d5a">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-f83c0766-8418-4fdf-87c8-9f4d7e865d5a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 I &amp; = \cos (\phi) \quad (\text{componente &quot;en-fase&quot;}) \\
 Q &amp; = \sin (\phi) \quad (\text{componente &quot;fuera-de-fase/quadratura&quot;})
@@ -585,20 +598,20 @@ Q &amp; = \sin (\phi) \quad (\text{componente &quot;fuera-de-fase/quadratura&quo
 </div>
 <p>Aun así, la conectividad de la topología de los qubits es, en el mejor de los casos, de cuatro vecinos más cercanos, como en el Sycamore de Google. IBM utiliza una conectividad de “heavy hex lattice” desde 2021 (ver Fig.  <a class="reference internal" href="#fig-scq-hhl"><span class="std std-numref">3.7</span></a>). Esta, utilizando celdas unitarias hexagonales de 12 qubits con conectividad 1 a 2 y 1 a 3, genera mejores fidelidades de puerta de qubit y permite la implementación de códigos de corrección de errores. Podemos ver varios chips con esta conectividad en la Fig.  <a class="reference internal" href="#fig-scq-topologias-ibm"><span class="std std-numref">3.8</span></a></p>
 <figure class="align-center" id="fig-scq-hhl">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_hhl.png"><img alt="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_hhl.png" src="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_hhl.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_hhl.png"><img alt="../../../_images/Fig_scq_hhl.png" src="../../../_images/Fig_scq_hhl.png" style="width: 500px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.7 </span><span class="caption-text">Topología “heavy hex lattice”</span><a class="headerlink" href="#fig-scq-hhl" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="fig-scq-topologias-ibm">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_topologías_IBM.png"><img alt="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_topologías_IBM.png" src="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_topologías_IBM.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_topologías_IBM.png"><img alt="../../../_images/Fig_scq_topolog%C3%ADas_IBM.png" src="../../../_images/Fig_scq_topolog%C3%ADas_IBM.png" style="width: 1000px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.8 </span><span class="caption-text">Topología de red de diferentes chips de IBM donde se puede apreciar el uso de la conectividad “heavy hex lattice”.</span><a class="headerlink" href="#fig-scq-topologias-ibm" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Un nuevo enfoque consiste en utilizar chipsets de conectividad de múltiples capas que se conectan al chipset de qubits con conectores verticales TSV (through-silicon vias). Los diseños más recientes de IBM y los laboratorios Lincoln del MIT tienen entre tres y siete capas metálicas.</p>
 <figure class="align-center" id="fig-scq-mlw">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_MLW.png"><img alt="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_MLW.png" src="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_MLW.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_MLW.png"><img alt="../../../_images/Fig_scq_MLW.png" src="../../../_images/Fig_scq_MLW.png" style="width: 1000px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.9 </span><span class="caption-text">Arquitecturas con una, dos y varias capas de chips de IBM.</span><a class="headerlink" href="#fig-scq-mlw" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -608,14 +621,25 @@ Q &amp; = \sin (\phi) \quad (\text{componente &quot;fuera-de-fase/quadratura&quo
 <p>IBM utilizó por primera vez este tipo de arquitectura multicapa en el procesador <b>Eagle</b> de 127 qubits (ver Fig  <a class="reference internal" href="#fig-scq-eagle-127"><span class="std std-numref">3.10</span></a>).  Para el procesador Eagle, como antes, se usó una oblea de qubits unida a una oblea intercalada. Sin embargo, en este procesador se añadió un <b>cableado multicapa</b> (<b>MLW</b>, de sus siglas en inglés) dentro del intercalador. Las señales de control y lectura se dirigen en esta capa adicional, que está bien aislada del propio dispositivo cuántico y permite enviar señales a gran profundidad en chips de gran tamaño.  El nivel MLW consta de tres capas metálicas, un dieléctrico planarizado entre cada nivel y unas conexiones cortas llamadas vías que conectan los niveles metálicos. Juntos, estos niveles permiten crear líneas de transmisión totalmente aisladas entre sí y del dispositivo cuántico. También se añadieron vías a través del sustrato a los chips de qubits e intercalador.</p>
 </div>
 <figure class="align-center" id="fig-scq-eagle-127">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_eagle_127.jpeg"><img alt="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_eagle_127.jpeg" src="docs/Part_01/Chapter_003_02/Figuras/Fig_scq_eagle_127.jpeg" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_eagle_127.jpeg"><img alt="../../../_images/Fig_scq_eagle_127.jpeg" src="../../../_images/Fig_scq_eagle_127.jpeg" style="width: 1000px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.10 </span><span class="caption-text">Procesador Eagle de 127 qubits de IBM</span><a class="headerlink" href="#fig-scq-eagle-127" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<hr class="docutils" />
+<p>Autor:</p>
+<p>David Castaño (<a class="reference external" href="https://www.scbi.uma.es/site/">UMA-SCBI</a>)</p>
+<a class="reference internal image-reference" href="../../../_images/Logo_UMA3.jpeg"><img alt="../../../_images/Logo_UMA3.jpeg" src="../../../_images/Logo_UMA3.jpeg" style="width: 170px;" /></a>
+<hr class="docutils" />
 <figure class="align-center">
 <a class="reference internal image-reference" href="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png"><img alt="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" src="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" style="width: 2000px;" /></a>
 </figure>
+<center>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img aling="left" alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</center>
+<p>License: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+<p>This work has been financially supported by the Ministry for Digital Transformation and of Civil Service of the Spanish Government through the QUANTUM ENIA project call - Quantum Spain project, and by the European Union through the Recovery, Transformation and Resilience Plan - NextGenerationEU within the framework of the Digital Spain 2026 Agenda.</p>
 <center>
 <img align="left" src="https://quantumspain-project.es/wp-content/uploads/2024/02/Banner-QS_GOB_v2.png" width="1000px" />
 </center></section>

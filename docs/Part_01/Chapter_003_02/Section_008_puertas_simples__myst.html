@@ -1,0 +1,998 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.8. Puertas simples &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfile.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_003_02/Section_008_puertas_simples__myst';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.9. Puertas de dos qubits" href="Section_009_puertas_de_dos_qubits__myst.html" />
+    <link rel="prev" title="3.7. Acoplamientos: Hamiltonianos de interacción" href="Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_001_modelos_de_computacion_cuantica_myst.html">1.1. Modelos de Computación Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_002_estructura_del_hardware_de_un_ordenador_cuantico_myst.html">1.2. Estructura del Hardware de un Ordenador Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.html">1.3. Tipos de Tecnologías de qubits.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_004_pulso_de_microondas_myst.html">1.4. Pulso de microondas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_005_conceptos_erroneos_sobre_el_hardware_de_computacion_cuantica_myst.html">1.5. Conceptos Erróneos sobre el Hardware de Computación Cuántica.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_006_algunos_roadmaps_publicos_myst.html">1.6. Algunos Roadmaps públicos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_002_01_computacion_cuantica_con_iones_atrapados_trapped_ions__myst.html">2. Computación Cuántica con Iones Atrapados (Trapped Ions)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_001_produccion_de_iones_myst.html">2.1. Producción de iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_002_trampas_de_iones_myst.html">2.2. Trampas de iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_003_enfriamiento_de_iones_por_laser__myst.html">2.3. Enfriamiento de iones por láser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_004_manipulando_iones_individuales_puertas_simples__myst.html">2.4. Manipulando iones individuales: puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_005_manipulacion_de_multiples_iones_myst.html">2.5. Manipulación de múltiples iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_006_lectura_del_estado_de_los_iones_myst.html">2.6. Lectura del estado de los iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_007_puertas_multiqubit_con_iones__myst.html">2.7. Puertas multiqubit con iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_008_conclusiones_pros_y_contras_myst.html">2.8. Conclusiones: pros y contras</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.html">3. Computación Cuántica con qubits Superconductores</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Section_001_conceptos_basicos_sobre_superconductividad__myst.html">3.1. Conceptos básicos sobre Superconductividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html">3.2. Conceptos básicos sobre Mecánida Clásica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html">3.3. Conceptos básicos sobre cuantización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html">3.4. El <i>Transmon Qubit</i>: Del oscilador armónico al Transmón</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.html">3.5. El <i>Split Transmon Qubit</i> (qubit ajustable mendiante flujo)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_006_el_iflux_qubiti_y_el_ifluxoniumi_hacia_una_mayor_anarmonicidad__myst.html">3.6. El <i>Flux Qubit</i> y el <i>Fluxonium</i>: Hacia una mayor anarmonicidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.html">3.7. Acoplamientos: Hamiltonianos de interacción</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.8. Puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_009_puertas_de_dos_qubits__myst.html">3.9. Puertas de dos qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_010_lectura_de_los_qubits_myst.html">3.10. Lectura de los qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_011_conectividad__myst.html">3.11. Conectividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_012_retos_con_qubits_superconductores_myst.html">3.12. Retos con qubits superconductores</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_004_01_tecnicas_de_control_y_computacion_en_rmn_myst.html">4. Técnicas de control y computación en RMN.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_001_introduccion_myst.html">4.1. Introducción.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_002_el_espin_nuclear__myst.html">4.2. El espín nuclear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_003_qubits_de_rmn_myst.html">4.3. qubits de RMN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales__myst.html">4.4. Técnicas de pulsos elementales.</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_005_01_decoherencia_y_desfase_myst.html">5. Decoherencia y desfase</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.html">5.1. La coherencia en Mecánica Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_002_la_coherencia_en_computacion_cuantica_t_1_y_t_2_myst.html">5.2. La coherencia en Computación Cuántica: <span class="math notranslate nohighlight">\(T_1\)</span> y <span class="math notranslate nohighlight">\(T_2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_003_decoherencia_y_las_ecuaciones_de_bloch_myst.html">5.3. Decoherencia y las ecuaciones de Bloch.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_004_resumen_myst.html">5.4. Resumen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter_Bibliografia_myst.html">Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_003_02/Section_008_puertas_simples__myst.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_008_puertas_simples__myst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/docs/Part_01/Chapter_003_02/Section_008_puertas_simples__myst.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Puertas simples</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acoplamiento-capacitivo-para-las-puertas-x-e-y">3.8.1. Acoplamiento capacitivo para las puertas <span class="math notranslate nohighlight">\(X\)</span> e <span class="math notranslate nohighlight">\(Y\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-del-circuito-de-la-fig-s">3.8.1.1. Modelado del circuito de la Fig.  <code class="xref std std-numref docutils literal notranslate"><span class="pre">%s</span></code>.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagen-de-rotacion-o-de-interaccion">3.8.1.2. Imagen de rotación (o de interacción)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#componentes-in-phase-y-out-of-phase">3.8.1.3. Componentes “in-phase” y “out-of-phase”.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-pulso-in-phase">3.8.1.4. Ejemplo de pulso “in-phase”.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puerta-z-virtual">3.8.2. Puerta <span class="math notranslate nohighlight">\(Z\)</span> virtual</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-sistema-drag">3.8.3. El sistema DRAG</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <blockquote>
+<div><p>Jun 03, 2025 | 12 min read</p>
+</div></blockquote>
+<a href="https://www.talentq.es/es_es/cursos/">
+    <button class="rounded" style="float: right;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="var(--fill, white)"
+        d="M18.1 15.3c-.1.1-.3.2-.4.3l-2.4.4l1.7 3.6c.2.4 0 .8-.4
+            1l-2.8 1.3c-.1.1-.2.1-.3.1c-.3 0-.6-.2-.7-.4L11.2
+            18l-1.9 1.5c-.1.1-.3.2-.5.2c-.4 0-.8-.3-.8-.8V7.5c0-.5.3-.8.8-.8c.2 0
+            .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
+            1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
+    </svg>
+    Volver a TalentQ
+    </button>
+</a>
+<p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ket}[1]{|#1\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\branew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketnew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\braket}[2]{\langle #1|#2\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketbra}[2]{| #1\rangle \langle #2 |} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\i}{{\color{blue} i}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Hil}{{\cal H}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\cg}[1]{{\rm C}#1} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lp}{\left(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rp}{\right)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lc}{\left[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rc}{\right]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lch}{\left\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rch}{\right\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lp}{\Bigl(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rp}{\Bigr)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lc}{\Bigl[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rc}{\Bigr]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lch}{\Bigl\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rch}{\Bigr\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rqa}{\quad \Rightarrow \quad} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\bm}{\boldsymbol}\)</span></p>
+<section class="tex2jax_ignore mathjax_ignore" id="puertas-simples">
+<span id="sec-scq-puertas-1-qubits"></span><h1><span class="section-number">3.8. </span>Puertas simples<a class="headerlink" href="#puertas-simples" title="Permalink to this heading">#</a></h1>
+<p>En esta sección, revisaremos los pasos necesarios para demostrar que el acoplamiento capacitivo de microondas a un circuito superconductor puede utilizarse para accionar puertas de un solo qubit. Para ello, consideraremos el acoplamiento de un qubit superconductor a una fuente de microondas (a veces denominado “qubit drive”) como se muestra en la Fig.  <a class="reference internal" href="#fig-scq-qubit-acoplado-a-fuente"><span class="std std-numref">3.15</span></a>. Un análisis completo del circuito de la Fig.  <a class="reference internal" href="#fig-scq-qubit-acoplado-a-fuente"><span class="std std-numref">3.15</span></a> está fuera del alcance de esta revisión, por lo que aquí nos conformamos con resaltar los pasos que elucidan la física del acoplamiento de la fuente con el qubit.</p>
+<figure class="align-center" id="fig-scq-qubit-acoplado-a-fuente">
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_qubit_acoplado_a_fuente.png"><img alt="../../../_images/Fig_scq_qubit_acoplado_a_fuente.png" src="../../../_images/Fig_scq_qubit_acoplado_a_fuente.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.15 </span><span class="caption-text">Diagrama del circuito de acoplamiento capacitivo de una línea de accionamiento de microondas (microwave drive line) [caracterizada por un voltaje <span class="math notranslate nohighlight">\(V_d(t)\)</span> dependiente del tiempo] a un qubit superconductor transmónico genérico. Figura tomada de <span id="id1">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id90" title="P. Krantz, M. Kjaergaard, F. Yan, T. P. Orlando, S. Gustavsson, and W. D. Oliver. A quantum engineer's guide to superconducting qubits. Applied Physics Reviews, 6(2):021318, 06 2019. URL: https://doi.org/10.1063/1.5089550, arXiv:https://pubs.aip.org/aip/apr/article-pdf/doi/10.1063/1.5089550/16667201/021318\_1\_online.pdf, doi:10.1063/1.5089550.">16</a>]</span></span><a class="headerlink" href="#fig-scq-qubit-acoplado-a-fuente" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="acoplamiento-capacitivo-para-las-puertas-x-e-y">
+<h2><span class="section-number">3.8.1. </span>Acoplamiento capacitivo para las puertas <span class="math notranslate nohighlight">\(X\)</span> e <span class="math notranslate nohighlight">\(Y\)</span><a class="headerlink" href="#acoplamiento-capacitivo-para-las-puertas-x-e-y" title="Permalink to this heading">#</a></h2>
+<section id="modelado-del-circuito-de-la-fig-s">
+<h3><span class="section-number">3.8.1.1. </span>Modelado del circuito de la Fig.  <a class="reference internal" href="#fig-scq-qubit-acoplado-a-fuente"><span class="std std-numref">3.15</span></a>.<a class="headerlink" href="#modelado-del-circuito-de-la-fig-s" title="Permalink to this heading">#</a></h3>
+<p>Comenzamos modelando el qubit como un oscilador armónico, para el que el Hamiltoniano del circuito (clásico) puede calcularse mediante técnicas de cuantización de circuitos, partiendo de las leyes de Kirchoffs (no lo veremos en detalle), y viene dado por</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e550d11b-cfb1-4ffa-a04b-6d1d543ad8fb">
+<span class="eqno">(3.114)<a class="headerlink" href="#equation-e550d11b-cfb1-4ffa-a04b-6d1d543ad8fb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+H = \frac{\tilde{Q}(t)^2}{2 C_\varSigma} + \frac{\Phi^2}{2L} + \frac{C_d}{C_\varSigma} V_d(t) \tilde{Q}
+\end{equation}\]</div>
+<p>con</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ab0c0cc3-f05e-4f4d-adcd-278f28e68c19">
+<span class="eqno">(3.115)<a class="headerlink" href="#equation-ab0c0cc3-f05e-4f4d-adcd-278f28e68c19" title="Permalink to this equation">#</a></span>\[\begin{equation}
+C_{\varSigma} = C + C_d
+\qquad , \qquad
+\tilde{Q} = C_\varSigma \dot{\Phi} - C_d V_d(t)
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(C_\varSigma\)</span>  capacitancia total a tierra y <span class="math notranslate nohighlight">\(\tilde{Q}\)</span> es una variable de carga renormalizada para el circuito. Ahora podemos promover las variables de flujo y carga a operadores cuánticos y suponer un acoplamiento débil a la linea de control (“drive line”), de modo que</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fe0977b6-e953-42ff-9ac4-969b8a5d3efa">
+<span class="eqno">(3.116)<a class="headerlink" href="#equation-fe0977b6-e953-42ff-9ac4-969b8a5d3efa" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\tilde{Q} \approx \hat{Q}\,,
+\end{equation}\]</div>
+<p>y llegamos a</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cf46d9ad-3203-422c-828c-e23c245d7f20">
+<span class="eqno">(3.117)<a class="headerlink" href="#equation-cf46d9ad-3203-422c-828c-e23c245d7f20" title="Permalink to this equation">#</a></span>\[\begin{equation}
+H = H_{LC} + \frac{C_d}{C_\varSigma} V_d(t) \hat{Q}
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(H_{LC}\)</span> es la forma de ls Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-sqc-lc-cuantico-h-1">(3.79)</a> y hemos mantenido sólo los términos que se acoplan a las variables dinámicas. Siguiendo un poco lo mismo que hicimos en la Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-scq-lc-cuantico-segunda-cuant-variables">(3.87)</a>, podemos reescribir el operador de carga de la forma:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5fdc265a-b23b-49db-877a-494e4f5f46ed">
+<span class="eqno">(3.118)<a class="headerlink" href="#equation-5fdc265a-b23b-49db-877a-494e4f5f46ed" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\hat{Q} = -i Q_{zpf} (a - a^\dagger)
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(Q_{zpf} = \sqrt{\hbar/2Z}\)</span> es la fluctuación de carga de punto cero y <span class="math notranslate nohighlight">\(Z=\sqrt{L/C}\)</span> es la impedancia del circuito a tierra. Así, el oscilador LC acoplado capacitivamente a una “drive line” puede escribirse como</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-drive-no-tls">
+<span class="eqno">(3.119)<a class="headerlink" href="#equation-ec-scq-drive-no-tls" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+H = \hbar \omega \lp a^\dagger a + \frac{1}{2} \rp - \frac{C_d}{C_\varSigma} V_d(t) i Q_{zpf} (a-a^\dagger)\, ,
+\end{equation} \]</div>
+<p>donde vemos que el primer término es de la forma de la Ec.  <a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html#equation-ec-sqc-qho-second-quant">(3.59)</a>. Finalmente, truncando a la transición más baja del oscilador, podemos hacer la sustitución <span class="math notranslate nohighlight">\(a \rightarrow \sigma^{-}\)</span> y <span class="math notranslate nohighlight">\(a^\dagger \rightarrow \sigma^{+}\)</span> (ver las Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-scq-tls-operadores-escalera">(3.98)</a>) en todo y llegar a</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-drive-h">
+<span class="eqno">(3.120)<a class="headerlink" href="#equation-ec-scq-drive-h" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+H = - \underbrace{\frac{\hbar \omega_q}{2} \sigma_z}_{H_{\mathrm{TLS}}} + \underbrace{\Omega V_d (t) \sigma_y}_{H_d}\,
+\end{equation} \]</div>
+<p>donde <span class="math notranslate nohighlight">\(\Omega = (C_d/C_{\varSigma}) Q_{zpf}\)</span>, <span class="math notranslate nohighlight">\(\omega_q = (E_1 - E_0)/\hbar\)</span> y donde <span class="math notranslate nohighlight">\(H_{TLS}\)</span> es el hamiltoniano de un sistema de dos niveles (ver Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-sqc-transmon-tls-h">(3.97)</a>). Nuevamente, al truncar y quedarnos con los dos niveles de menos energía estamos quedandonos con un TLS.</p>
+</section>
+<section id="imagen-de-rotacion-o-de-interaccion">
+<h3><span class="section-number">3.8.1.2. </span>Imagen de rotación (o de interacción)<a class="headerlink" href="#imagen-de-rotacion-o-de-interaccion" title="Permalink to this heading">#</a></h3>
+<p>Para entender mejor la acción de la fuente sobre el circuito, vamos a movernos a la denominada <b>imagen de rotación</b> (“rotating frame” o “interacting frame”). En este caso no es nada más que un cambio de variables en el nos movemos a sistema de referencia que rota con el qubit a frecuencia <span class="math notranslate nohighlight">\(\omega_q\)</span>. El operador de cambio de variable que nos lleva a este sistema de referencia es</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-rotating-frame-u">
+<span class="eqno">(3.121)<a class="headerlink" href="#equation-ec-scq-rotating-frame-u" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+U_{\mathrm{rf}} = e^{i H_0 t/\hbar} = U_{H_0}^\dagger \,.
+\end{equation} \]</div>
+<p>Vemos que este operador es el hemítico conjugado del operador de evolución temporal para el Hamiltoniano <span class="math notranslate nohighlight">\(H_0\)</span>. Los estados en este sistema de referencia toman la forma</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1d7c102c-e00e-4f00-8d83-8e87de476dc6">
+<span class="eqno">(3.122)<a class="headerlink" href="#equation-1d7c102c-e00e-4f00-8d83-8e87de476dc6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\ket{\psi_{\mathrm{rf}}(t)} = U_{\mathrm{rf}} \ket{\psi_0} \, .
+\end{equation}\]</div>
+<p>La evolución temporal en esta nueva imagen se obtiene de nuevo a partir de la ecuación de Schrödinger.</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-rotating-frame-h-transform">
+<span class="eqno">(3.123)<a class="headerlink" href="#equation-ec-scq-rotating-frame-h-transform" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{split}
+i \frac{\partial }{\partial t} \ket{\psi_{\mathrm{rf}}(t)} = i  \frac{\partial }{\partial t} \lp   U_{\mathrm{rf}} \ket{\psi_0} \rp
+&amp; = i \lp \frac{\partial }{\partial t} U_{\mathrm{rf}} \rp \underbrace{\ket{\psi_0}}_{U_{\mathrm{rf}}^\dagger \ket{\psi_{\mathrm{rf}}}} + i U_{\mathrm{rf}} \underbrace{\lp \frac{\partial }{\partial t} \ket {\psi_0}  \rp}_{H\ket{\psi_0}} \\
+&amp; = \underbrace{\lp i \dot{U}_{\mathrm{rf}} U_{\mathrm{rf}}^\dagger + U_{\mathrm{rf}} H U_{\mathrm{rf}}^\dagger \rp}_{\tilde{H}} \ket{\psi_{\mathrm{rf}}}
+\end{split}
+\end{equation} \end{split}\]</div>
+<p>Podemos pensar en el término <span class="math notranslate nohighlight">\(\tilde{H}\)</span> en paréntesis en la Ec.  <a class="reference internal" href="#equation-ec-scq-rotating-frame-h-transform">(3.123)</a> como la expresión de <span class="math notranslate nohighlight">\(H\)</span> en la imagen de rotación.</p>
+<p>Si nos ponemos en el caso simple en que <span class="math notranslate nohighlight">\(H = H_{TLS}\)</span>, podemos ver de forma simple que  <span class="math notranslate nohighlight">\(\tilde{H}_{TLS} = 0\)</span> como se esperaba, pues la transformación de la Ec.  <a class="reference internal" href="#equation-ec-scq-rotating-frame-h-transform">(3.123)</a> está pensada para eliminar la dependencia temporal en este caso.</p>
+<p>Volviendo a la Ec.  <a class="reference internal" href="#equation-ec-scq-drive-h">(3.120)</a>, vemos que el Hamiltoniano en la imagen de rotación nos queda:</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-rf-hd-1">
+<span class="eqno">(3.124)<a class="headerlink" href="#equation-ec-scq-rf-hd-1" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\tilde{H} = \tilde{H}_d = U_{\mathrm{rf}} H_d U_{\mathrm{rf}}^\dagger
+\end{equation} \]</div>
+<p>Haciendo cálculos llegamos a</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-rf-hd">
+<span class="eqno">(3.125)<a class="headerlink" href="#equation-ec-scq-rf-hd" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\tilde{H}_d = \Omega V_d(t) \lc \cos (\omega_q t)\sigma_y - \sin(\omega_q t) \sigma_x \rc \,.
+\end{equation} \]</div>
+<div class="tip admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>a) Verifica que <span class="math notranslate nohighlight">\(\tilde{H}_{TLS} = 0\)</span>. b) Obtén la expresión de la Ec.  <a class="reference internal" href="#equation-ec-scq-rf-hd">(3.125)</a>. Para ello usa la Ec.  <a class="reference internal" href="#equation-ec-scq-rf-hd-1">(3.124)</a>, ten en cuanta la expresión de la exponencial de las metrices de Pauli y las expresiones del seno y el coseno del ángulo doble.</p>
+</div>
+</section>
+<section id="componentes-in-phase-y-out-of-phase">
+<h3><span class="section-number">3.8.1.3. </span>Componentes “in-phase” y “out-of-phase”.<a class="headerlink" href="#componentes-in-phase-y-out-of-phase" title="Permalink to this heading">#</a></h3>
+<p>En general, podemos suponer que la parte de la tensión que depende del tiempo <span class="math notranslate nohighlight">\((V_d(t) = V_0 v(t))\)</span> tiene una forma genérica</p>
+<div class="amsmath math notranslate nohighlight" id="equation-25026cb9-8439-4342-afc8-56ef25999e93">
+<span class="eqno">(3.126)<a class="headerlink" href="#equation-25026cb9-8439-4342-afc8-56ef25999e93" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{aligned}
+v(t) &amp; = s(t) \sin (\omega_d t + \phi ) \\
+&amp; = s(t) (\cos (\phi) \sin (w_d t) + \sin (\phi) \cos (\omega_d t))\, ,
+\end{aligned}
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(s(t)\)</span> es una función adimensional denominada <b>envolvente</b>, de modo que la amplitud del impulso está fijada por <span class="math notranslate nohighlight">\(V_0 s(t)\)</span>. (Puede verse más sobre modulación de señales en la Fig.  <a class="reference internal" href="#fig-scq-modulacion"><span class="std std-numref">3.16</span></a>). Adoptando las definiciones</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4b48ee94-b5f9-46b4-8b97-b3e17e6e7766">
+<span class="eqno">(3.127)<a class="headerlink" href="#equation-4b48ee94-b5f9-46b4-8b97-b3e17e6e7766" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{aligned}
+I = &amp; \cos (\phi) \qquad \text{(la componente &quot;in-phase&quot;)} \, ,  \\
+Q = &amp; \sin (\phi) \qquad \text{(la componente &quot;out-of-phase&quot; o cuadratura)} \, ,
+\end{aligned}
+\end{equation}\]</div>
+<p>el Hamiltoniano de control en el marco de rotación toma la forma</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-hd-qi-1">
+<span class="eqno">(3.128)<a class="headerlink" href="#equation-ec-scq-hd-qi-1" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{aligned}
+\tilde{H}_d  = &amp; \Omega V_0 s(t) \lc I \sin (\omega_d t) + Q \cos (\omega_d t) \rc \\
+&amp; \times \lc \cos (\omega_q t)\sigma_y - \sin(\omega_qt) \sigma_x \rc
+\end{aligned}
+\end{equation} \end{split}\]</div>
+<figure class="align-center" id="fig-scq-modulacion">
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_modulacion.jpg"><img alt="../../../_images/Fig_scq_modulacion.jpg" src="../../../_images/Fig_scq_modulacion.jpg" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.16 </span><span class="caption-text">Ejemplos de ondas moduladas, tanto en amplitud (lo que se usa en control de qubits y en la radio AM), como en frecuencia (lo que usa en las radios FM). Como vemos tenemos dos ondas, la <b>portadora</b> y la <b>moduladora</b>. La gracia aquí es que la información que se quiere transmitir está en la onda moduladora. Esta puede ser, por ejemplo, la onda del sonido que tiene que emitir la rádio del coche. La onda portadora se usa para transmitir la información de la moduladora.</span><a class="headerlink" href="#fig-scq-modulacion" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="note admonition">
+<p class="admonition-title">Nota (errata en <span class="xref myst">[89]</span></p>
+<p>Haciendo cálculos, llego a la conclusión de que en el paper <span id="id2">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id90" title="P. Krantz, M. Kjaergaard, F. Yan, T. P. Orlando, S. Gustavsson, and W. D. Oliver. A quantum engineer's guide to superconducting qubits. Applied Physics Reviews, 6(2):021318, 06 2019. URL: https://doi.org/10.1063/1.5089550, arXiv:https://pubs.aip.org/aip/apr/article-pdf/doi/10.1063/1.5089550/16667201/021318\_1\_online.pdf, doi:10.1063/1.5089550.">16</a>]</span> hay algunas inconsistencias con los signos. Se invita al lector a repasar la veracidad de los mismos.</p>
+</div>
+<p>Vamos a reescribir la Ec.  <a class="reference internal" href="#equation-ec-scq-hd-qi-1">(3.128)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-hd-qi-2">
+<span class="eqno">(3.129)<a class="headerlink" href="#equation-ec-scq-hd-qi-2" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{aligned}
+\tilde{H}_d  =  \Omega V_0 s(t) &amp; [ (- I \sin (\omega_d t)\sin(\omega_qt)  - Q \cos (\omega_d t)\sin(\omega_qt))   \sigma_x\\
+&amp; +  (I \sin (\omega_d t)\cos (\omega_q t) + Q \cos (\omega_d t)\cos (\omega_q t) ) \sigma_y ]
+\end{aligned}
+\end{equation} \end{split}\]</div>
+<div class="note admonition">
+<p class="admonition-title">Nota (relaciones trigonométricas del ángulo suma y resta)</p>
+<p>Tenemos las dos relaciones:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-48176b90-0f04-47eb-8ef4-ed900dc257d9">
+<span class="eqno">(3.130)<a class="headerlink" href="#equation-48176b90-0f04-47eb-8ef4-ed900dc257d9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{aligned}
+\sin(x\pm y) &amp;= \sin(x)\cos(y) \pm \cos(x)\sin(y) \\
+\cos(x \pm y) &amp;= \cos(x) \cos(y) \mp \sin(x) \sin(y)
+\end{aligned}
+\end{equation}\]</div>
+<p>de las cuales podemos deducir:</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-relaciones-trig">
+<span class="eqno">(3.131)<a class="headerlink" href="#equation-ec-scq-relaciones-trig" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{aligned}
+2 \sin(x)\cos(y) &amp;= \sin(x + y) + \sin(x - y) \\
+2 \cos(x)\sin(y) &amp;= \sin(x + y) - \sin(x - y) \\
+2 \cos(x)\cos(y) &amp;= \cos(x + y) + \cos(x - y) \\
+2 \sin(x)\sin(y) &amp;= \cos(x - y) - \cos(x + y)
+\end{aligned}
+\end{equation} \end{split}\]</div>
+</div>
+<p>Usando las relaciones de la Ec.  <a class="reference internal" href="#equation-ec-scq-relaciones-trig">(3.131)</a>, podemos reescribir la Ec.  <a class="reference internal" href="#equation-ec-scq-hd-qi-2">(3.129)</a></p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-hd-qi-3">
+<span class="eqno">(3.132)<a class="headerlink" href="#equation-ec-scq-hd-qi-3" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{aligned}
+\tilde{H}_d  = \frac{1}{2} \Omega V_0 s(t) &amp; [ (- I \cos((\omega_d - \omega_q)t)  + Q \sin((\omega_d - \omega_q)t))  \sigma_x \\
+&amp;  +  (I \sin((\omega_d - \omega_q)t) + Q \cos((\omega_d - \omega_q)t)) \sigma_y ]
+\end{aligned}
+\end{equation} \end{split}\]</div>
+<p>donde se han despreciado los términos de rotación rápida que promediarán a cero (es decir, términos con <span class="math notranslate nohighlight">\(\omega_d + \omega_q\)</span>), conocida como aproximación de onda rotatoria (RWA). Tomando <span class="math notranslate nohighlight">\(\delta \omega = \omega_q - \omega_d\)</span> llegamos a</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-hd-qi-4">
+<span class="eqno">(3.133)<a class="headerlink" href="#equation-ec-scq-hd-qi-4" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{aligned}
+\tilde{H}_d  = \frac{1}{2} \Omega V_0 s(t) &amp;   [(-I \cos(\delta \omega t)  - Q \sin(\delta \omega  t)) \sigma_x \\
+&amp;  + (- I \sin(\delta \omega t) + Q \cos(\delta \omega t)) \sigma_y ]
+\end{aligned}
+\end{equation} \end{split}\]</div>
+<p>Como ejemplo concreto, supongamos que aplicamos un pulso a la frecuencia del qubit, de forma que <span class="math notranslate nohighlight">\(\delta \omega = 0\)</span>, entonces</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b59cda91-c85e-4dd3-8b60-4e3fd2ea60ac">
+<span class="eqno">(3.134)<a class="headerlink" href="#equation-b59cda91-c85e-4dd3-8b60-4e3fd2ea60ac" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\tilde{H}_d = - \frac{\Omega}{2} V_0 s(t) (I \sigma_x - Q \sigma_y)
+\end{equation}\]</div>
+<p>mostrando que un pulso “en fase” (<span class="math notranslate nohighlight">\( \phi = 0\)</span>, es decir, el componente <span class="math notranslate nohighlight">\(I\)</span>) corresponde a rotaciones alrededor del eje <span class="math notranslate nohighlight">\(x\)</span>, mientras que un pulso fuera de fase (<span class="math notranslate nohighlight">\(\phi = \pi/2\)</span>, es decir, el componente <span class="math notranslate nohighlight">\(Q\)</span>), corresponde a rotaciones alrededor del eje <span class="math notranslate nohighlight">\(y\)</span>.</p>
+</section>
+<section id="ejemplo-de-pulso-in-phase">
+<h3><span class="section-number">3.8.1.4. </span>Ejemplo de pulso “in-phase”.<a class="headerlink" href="#ejemplo-de-pulso-in-phase" title="Permalink to this heading">#</a></h3>
+<p>Como ejemplo concreto de pulso en fase, si se escribe el operador unitario se obtiene</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-rabi">
+<span class="eqno">(3.135)<a class="headerlink" href="#equation-ec-scq-rabi" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+U_{\mathrm{rf,d}}^{\phi = 0} = \exp \lp \lc  \frac{i}{2} \Omega V_0 \int_0^t s(t') dt' \rc \sigma_x \rp
+\end{equation} \]</div>
+<p>que depende únicamente de los parámetros macroscópicos de diseño del circuito, así como de la envolvente del pulso <span class="math notranslate nohighlight">\(s(t)\)</span> y de la amplitud <span class="math notranslate nohighlight">\(V_0\)</span>, que pueden controlarse utilizando <b>generadores de forma de onda arbitraria (AWG)</b>. La ecuación  se conoce como “Rabi driving”. Definimos</p>
+<div class="amsmath math notranslate nohighlight" id="equation-60caac27-9d66-4a2c-a12f-46ba26141f95">
+<span class="eqno">(3.136)<a class="headerlink" href="#equation-60caac27-9d66-4a2c-a12f-46ba26141f95" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\Theta(t) =  - \Omega V_0 \int_0^t s(t') dt'\,,
+\end{equation}\]</div>
+<p>que es el ángulo de rotación de un estado dados los acoplamientos capacitivos, la impedancia del circuito, la magnitud <span class="math notranslate nohighlight">\(V_0\)</span> y la forma de onda envolvente, <span class="math notranslate nohighlight">\(s(t)\)</span>. Esto significa que para implementar un pulso <span class="math notranslate nohighlight">\(\pi\)</span> en el eje <span class="math notranslate nohighlight">\(x\)</span>, habría que resolver la ecuación <span class="math notranslate nohighlight">\(\Theta (t) = \pi\)</span> y emitir la senal “in-phase” correspondiente. En este lenguaje, una secuencia de pulsos [ver Fig.  <a class="reference internal" href="#fig-scq-pulsos-1-2"><span class="std std-numref">3.17</span></a>(a)] <span class="math notranslate nohighlight">\(\Theta_k\)</span>, <span class="math notranslate nohighlight">\(\Theta_{k-1}\)</span>, <span class="math notranslate nohighlight">\(\dots \Theta_0\)</span>  se convierte en una secuencia de puertas operando sobre un qubit como</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-pulse-secuence-one-qubit">
+<span class="eqno">(3.137)<a class="headerlink" href="#equation-ec-scq-pulse-secuence-one-qubit" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+U_k U_{k-1} \cdots U_0 = \mathcal{T} \prod_{n=0}^k e^{- \frac{i}{2} \Theta_n(t) (I_n \sigma_x - Q_n \sigma_y)} \, ,
+\end{equation} \]</div>
+<p>donde <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> es un operador que garantiza que los impulsos se generan en la secuencia ordenada en el tiempo correspondiente a <span class="math notranslate nohighlight">\(U_k U_{k-1} \cdots U_0 \)</span>.</p>
+<p>En la Fig.  <a class="reference internal" href="#fig-scq-pulsos-1-2"><span class="std std-numref">3.17</span></a> se esboza la configuración típica de modulación en fase y cuadratura (IQ) utilizada para generar los pulsos. La Figura   <a class="reference internal" href="#fig-scq-pulsos-1-2"><span class="std std-numref">3.17</span></a>(a) muestra como un pulso a frecuencia <span class="math notranslate nohighlight">\(\omega_d\)</span> es generado usando un generador de microondas de bajo ruido de fase [típicamente denotado “<b>oscilador local (LO)</b>”], mientras que el pulso es formado combinando la señal LO en un <b>mezclador IQ</b> con pulsos generados en un <b>AWG</b>. Para permitir la multiplexación de frecuencias, la señal AWG se generará normalmente con un componente de baja frecuencia, <span class="math notranslate nohighlight">\(\omega_{\mathrm{AWG}}\)</span>, de forma que la señal del LO se desplazará tal que <span class="math notranslate nohighlight">\(\omega_{LO} + \omega_{AWS} = \omega_d\)</span>. Mezclando en más de una frecuencia <span class="math notranslate nohighlight">\(\omega_{\mathrm{AWG1}}\)</span>, <span class="math notranslate nohighlight">\(\omega_{\mathrm{AWG2}}\)</span>, … es posible abordar múltiples qubits (o resonadores de lectura) simultáneamente, mediante la superposición de controles individuales.</p>
+<p>En la Fig.  <a class="reference internal" href="#fig-scq-pulsos-1-2"><span class="std std-numref">3.17</span></a>(b) mostramos esquemáticamente la comparación entre las puertas <span class="math notranslate nohighlight">\(XY\)</span> en un circuito cuántico y las formas de onda correspondientes generadas en el AWG (omitiendo para mayor claridad el componente de frecuencia <span class="math notranslate nohighlight">\(\omega_{AWG}\)</span>).</p>
+<figure class="align-center" id="fig-scq-pulsos-1-2">
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_pulsos_1.png"><img alt="../../../_images/Fig_scq_pulsos_1.png" src="../../../_images/Fig_scq_pulsos_1.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.17 </span><span class="caption-text">a) Esquema de una configuración típica de control de un qubits. Una fuente de microondas suministra una señal de alta frecuencia (<span class="math notranslate nohighlight">\(\omega_{LO}\)</span>), mientras que un generador de onda arbitrarios (AWG de sus siglas en inglés) suministra una envolvente del pulso (<span class="math notranslate nohighlight">\(s(t)\)</span>), a veces con un componente de baja frecuencia, <span class="math notranslate nohighlight">\(\omega_{AWG}\)</span>. El mezclador <span class="math notranslate nohighlight">\(IQ\)</span> combina las dos señales para generar una forma de onda <span class="math notranslate nohighlight">\(V_d(t)\)</span> con una frecuencia <span class="math notranslate nohighlight">\(\omega_d = \omega_{LO} \pm \omega_{AWG}\)</span>, normalmente resonante con el qubit. b) Ejemplo de cómo una secuencia de puerta se traduce en una forma de onda generada por el AWG. Los colores indican los componentes <span class="math notranslate nohighlight">\(I\)</span> y <span class="math notranslate nohighlight">\(Q\)</span>. c) La acción de un pulso <span class="math notranslate nohighlight">\(X_{\pi/2}\)</span> sobre un estado <span class="math notranslate nohighlight">\(\ket{0}\)</span> para producir el estado <span class="math notranslate nohighlight">\(\ket{-i} = \frac{1}{\sqrt{2}} (\ket{0} - i\ket{1})\)</span>. Figura tomada de <span id="id3">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id74" title="Olivier Ezratty. Perspective on superconducting qubit quantum computing. The European Physical Journal A, 59(5):94, 2023. doi:https://doi.org/10.1140/epja/s10050-023-01006-7.">6</a>]</span></span><a class="headerlink" href="#fig-scq-pulsos-1-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="note admonition">
+<p class="admonition-title">Nota (resumen)</p>
+<p>Si nos fiamos podemos ver que la conclusión es la siguiente: la <b>amplitud</b> del pulso de microondas controla el <b>ángulo de rotación</b> y su <b>fase</b> el <b>eje</b> de rotación. Esto se traduce en que la fase <span class="math notranslate nohighlight">\(\phi\)</span> que ajustamos con las ondas <span class="math notranslate nohighlight">\(IQ\)</span> controla el eje, mientras que la envolvente <span class="math notranslate nohighlight">\(s(t)\)</span> que aplicamos al pulso controla la rotación.</p>
+</div>
+</section>
+</section>
+<section id="puerta-z-virtual">
+<h2><span class="section-number">3.8.2. </span>Puerta <span class="math notranslate nohighlight">\(Z\)</span> virtual<a class="headerlink" href="#puerta-z-virtual" title="Permalink to this heading">#</a></h2>
+<p>Como vimos en la Sección  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>, la distinción entre las rotaciones <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span> no es más que una elección de fase en las señales de microondas, y el ángulo a rotar viene dado por <span class="math notranslate nohighlight">\(\Theta (t)\)</span>, ambas generadas mediante un AWG. Dado que la elección de la fase <span class="math notranslate nohighlight">\(\phi\)</span> tiene un punto de partida arbitrario, podríamos considerar <span class="math notranslate nohighlight">\(\phi \rightarrow \phi + \pi/2\)</span>. Esto daría lugar a <span class="math notranslate nohighlight">\(I \rightarrow Q\)</span> y <span class="math notranslate nohighlight">\(Q \rightarrow -I\)</span>. Por lo tanto, al cambiar la fase, las rotaciones alrededor de <span class="math notranslate nohighlight">\(x\)</span> se convierten en rotaciones alrededor de <span class="math notranslate nohighlight">\(y\)</span> (y viceversa, con un cambio de signo). Esto recuerda al resultado de aplicar una rotación <span class="math notranslate nohighlight">\(Z_{\pi}\)</span>, donde</p>
+<div class="amsmath math notranslate nohighlight" id="equation-95a5a02f-4683-4bb9-81e2-d16139ae1ec3">
+<span class="eqno">(3.138)<a class="headerlink" href="#equation-95a5a02f-4683-4bb9-81e2-d16139ae1ec3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+Z_{\pi} X_{\pi} = i Y_{\pi}
+\qquad , \qquad
+Z_{\pi} Y_{\pi} = -i X_{\pi}
+\end{equation}\]</div>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>Véase que a lo que llamamos puertas <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> e <span class="math notranslate nohighlight">\(Z\)</span>, son rotaciones de ángulo <span class="math notranslate nohighlight">\(\pi\)</span>, con lo que <span class="math notranslate nohighlight">\(X = X_{\pi}\)</span>, <span class="math notranslate nohighlight">\(Y = Y_{\pi}\)</span> e <span class="math notranslate nohighlight">\(Z = Z_{\pi}\)</span>.</p>
+</div>
+<p>Esta analogía entre el cambio de fase de una señal generada por AWG y la aplicación de rotaciones <span class="math notranslate nohighlight">\(Z\)</span> puede utilizarse para implementar puertas <span class="math notranslate nohighlight">\(Z\)</span> “virtuales”. Esta intuición puede formalizarse mediante el siguiente ejemplo: consideremos el caso de aplicar un pulso con un ángulo <span class="math notranslate nohighlight">\(\theta\)</span> en el canal <span class="math notranslate nohighlight">\(I\)</span> (es decir, un <span class="math notranslate nohighlight">\(X_\theta\)</span>) seguido de otro pulso <span class="math notranslate nohighlight">\(\theta\)</span> en el canal <span class="math notranslate nohighlight">\(I\)</span>, pero con una fase <span class="math notranslate nohighlight">\(\phi_\theta\)</span> respecto al primer pulso (denotado <span class="math notranslate nohighlight">\(X_\theta^{(\phi_0)}\)</span>, donde <span class="math notranslate nohighlight">\(X\)</span> indica que seguimos utilizando el canal <span class="math notranslate nohighlight">\(I\)</span>, pero el eje de rotación está ahora a un ángulo <span class="math notranslate nohighlight">\(\phi_0\)</span> del eje <span class="math notranslate nohighlight">\(x\)</span>). Usando la Ec.  <a class="reference internal" href="#equation-ec-scq-pulse-secuence-one-qubit">(3.137)</a> corresponde a una secuencia de pulsos</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-virtual-x-gate-ejemplo">
+<span class="eqno">(3.139)<a class="headerlink" href="#equation-ec-scq-virtual-x-gate-ejemplo" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{aligned}
+X_\theta^{(\phi_0)} X_\theta &amp; = e^{-i \frac{\theta}{2} \lp \cos(\phi_0) \sigma_x - \sin(\phi_0) \sigma_y \rp } X_\theta \\
+&amp; = Z_{-\phi_0} X_\theta Z_{\phi_0} X_\theta \, ,
+\end{aligned}
+\end{equation} \end{split}\]</div>
+<p>de donde vemos que el efecto de la fase <span class="math notranslate nohighlight">\(\phi_0\)</span> es aplicar <span class="math notranslate nohighlight">\(Z_{\phi_0}\)</span>. El <span class="math notranslate nohighlight">\(Z_{-\phi_0}\)</span> final se debe a que la rotación se produce en el marco de referencia del qubit. Sin embargo, dado que la lectura se realiza a lo largo del eje <span class="math notranslate nohighlight">\(z\)</span>, una rotación de fase final alrededor de <span class="math notranslate nohighlight">\(z\)</span> no cambiará el resultado de la medición. Por lo tanto, si se desea implementar la secuencia de puerta de la Fig.  <a class="reference internal" href="#fig-scq-vz-gate-sequence-1"><span class="std std-numref">3.18</span></a></p>
+<figure class="align-center" id="fig-scq-vz-gate-sequence-1">
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_vZ_gate_sequence_1.png"><img alt="../../../_images/Fig_scq_vZ_gate_sequence_1.png" src="../../../_images/Fig_scq_vZ_gate_sequence_1.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.18 </span><span class="caption-text">Ejemplo de secuencia de puertas donde se incluyen puertas <span class="math notranslate nohighlight">\(Z\)</span>. Figura tomada de  <span id="id4">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id92" title="Vladimir E. Manucharyan, Jens Koch, Leonid I. Glazman, and Michel H. Devoret. Fluxonium: single cooper-pair circuit free of charge offsets. Science, 326(5949):113-116, 2009. URL: https://www.science.org/doi/abs/10.1126/science.1175552, arXiv:https://www.science.org/doi/pdf/10.1126/science.1175552, doi:10.1126/science.1175552.">18</a>]</span>.</span><a class="headerlink" href="#fig-scq-vz-gate-sequence-1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>donde las <span class="math notranslate nohighlight">\(U_i\)</span>’s son puertas arbitrarias, esto se puede hacer mediante la revisión de la secuencia de puertas (en el software de control para el AWG) y el cambio de la fase de los pulsos posteriores. El resultado lo vemos en la Fig.  <a class="reference internal" href="#fig-scq-vz-gate-sequence-2"><span class="std std-numref">3.19</span></a></p>
+<figure class="align-center" id="fig-scq-vz-gate-sequence-2">
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_vZ_gate_sequence_2.png"><img alt="../../../_images/Fig_scq_vZ_gate_sequence_2.png" src="../../../_images/Fig_scq_vZ_gate_sequence_2.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.19 </span><span class="caption-text">Ejemplo de secuencia de puertas donde se han absorbido las puertas <span class="math notranslate nohighlight">\(Z\)</span> de la Fig.  <a class="reference internal" href="#fig-scq-vz-gate-sequence-1"><span class="std std-numref">3.18</span></a> como fases en las otras puertas. Figura tomada de  <span id="id5">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id92" title="Vladimir E. Manucharyan, Jens Koch, Leonid I. Glazman, and Michel H. Devoret. Fluxonium: single cooper-pair circuit free of charge offsets. Science, 326(5949):113-116, 2009. URL: https://www.science.org/doi/abs/10.1126/science.1175552, arXiv:https://www.science.org/doi/pdf/10.1126/science.1175552, doi:10.1126/science.1175552.">18</a>]</span>.</span><a class="headerlink" href="#fig-scq-vz-gate-sequence-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>lo que reduce el número total de puertas. Además, las puertas virtuales-Z son “perfectas”, en el sentido de que no requieren pulsos adicionales, y la puerta tarda “tiempo cero”, por lo que la fidelidad de la compuerta es nominalmente unidad.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Verifica la veracidad de la Ec.  <a class="reference internal" href="#equation-ec-scq-virtual-x-gate-ejemplo">(3.139)</a>. Es decir, comprueba que</p>
+<div class="amsmath math notranslate nohighlight" id="equation-abd3cc30-0211-4ce1-baa5-48a7545b6214">
+<span class="eqno">(3.140)<a class="headerlink" href="#equation-abd3cc30-0211-4ce1-baa5-48a7545b6214" title="Permalink to this equation">#</a></span>\[\begin{equation}
+Z_{-\phi_0} X_\theta Z_{\phi_0} = e^{-i \frac{\theta}{2} \lp \cos(\phi_0) \sigma_x - \sin(\phi_0) \sigma_y \rp}
+\end{equation}\]</div>
+<p>Para ello ten en cuenta que (ver Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code> y Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-53ac71dc-bd71-4f65-80b0-c28689ac4cb5">
+<span class="eqno">(3.141)<a class="headerlink" href="#equation-53ac71dc-bd71-4f65-80b0-c28689ac4cb5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{aligned}
+X_\theta &amp; = e^{-i \frac{\theta}{2} \sigma_x} = \mathbb{I} \cos \lp \frac{\theta}{2} \rp -i \sigma_x \sin \lp \frac{\theta}{2} \rp \\
+Z_\theta &amp; = e^{-i \frac{\theta}{2} \sigma_z} = \mathbb{I} \cos \lp \frac{\theta}{2} \rp -i \sigma_z \sin \lp \frac{\theta}{2} \rp
+\end{aligned}
+\end{equation}\]</div>
+<p>No desarrolles las matrices!!! Trabaja con las matrices de Pauli y sus propiedades de multiplicación  (ver Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>).</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e06f95e7-f87d-450c-82f1-02a0f556d5b7">
+<span class="eqno">(3.142)<a class="headerlink" href="#equation-e06f95e7-f87d-450c-82f1-02a0f556d5b7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\sigma_i \sigma_j = \delta_{ij} I + i \sum_{k=1}^3 \varepsilon_{ijk} \sigma_k,
+\qquad \qquad
+\left\{ \begin{aligned}
+&amp;\varepsilon_{123}=\varepsilon_{231}=\varepsilon_{312} = 1 \\
+&amp;\varepsilon_{213}=\varepsilon_{132}=\varepsilon_{312} = -1 \\
+&amp;\text{y el resto cero}
+\end{aligned} \right.
+\end{equation}\]</div>
+</div>
+<p>Por último, mencionamos una característica más destacada de las puertas virtuales <span class="math notranslate nohighlight">\(Z\)</span>: cualquier operación de un solo qubit (salvo una fase global) puede escribirse como</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-single-gates-from-zxzxz">
+<span class="eqno">(3.143)<a class="headerlink" href="#equation-ec-scq-single-gates-from-zxzxz" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+U (\theta, \phi, \lambda) = Z_{\phi - \frac{\pi}{2}} X_{\frac{\pi}{2}} Z_{\pi - \theta} X_{\frac{\pi}{2}} Z_{\lambda - \frac{\pi}{2}} \, ,
+\end{equation} \]</div>
+<p>para una elección adecuada de los ángulos <span class="math notranslate nohighlight">\(\theta, \phi, \lambda\)</span>. Esto significa que el acceso a una única <span class="math notranslate nohighlight">\(X_{\frac{\pi}{2}}\)</span> físico combinado con la <span class="math notranslate nohighlight">\(Z\)</span> virtual da acceso a un conjunto completo de puertas de un solo qubit! Un ejemplo explícito de la Ec.  <a class="reference internal" href="#equation-ec-scq-single-gates-from-zxzxz">(3.143)</a> en acción es la puerta Hadamard, que puede escribirse como <span class="math notranslate nohighlight">\(H = Z_{\pi/2} X_{\pi/2} Z_{\pi/2}\)</span>, pero como las <span class="math notranslate nohighlight">\(Z\)</span>’s pueden ser virtuales, es posible implementar Hadamards como una operación efectiva de un solo pulso en qubits superconductores.</p>
+</section>
+<section id="el-sistema-drag">
+<h2><span class="section-number">3.8.3. </span>El sistema DRAG<a class="headerlink" href="#el-sistema-drag" title="Permalink to this heading">#</a></h2>
+<p>Al pasar de la Ec.  <a class="reference internal" href="#equation-ec-scq-drive-no-tls">(3.119)</a> a la Ec.  <a class="reference internal" href="#equation-ec-scq-drive-h">(3.120)</a>, asumimos que podíamos ignorar los niveles superiores del qubit. Sin embargo, para qubits débilmente anarmónicos, como el transmón normal (ver Sección  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#sec-scq-transmon-normal"><span class="std std-numref">3.4.6</span></a>), esta suposición puede no estar justificada, ya que <span class="math notranslate nohighlight">\(\omega_q^{1 \rightarrow 2}\)</span> sólo difiere de <span class="math notranslate nohighlight">\(\omega_q (=\omega_q^{0 \rightarrow 1}\)</span>) por la anarmonicidad, <span class="math notranslate nohighlight">\(\alpha = \omega_q^{1 \rightarrow 2} - \omega_q\)</span> (ver Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-scq-anarmonicidad">(3.94)</a>), que para este caso es negativa y suele estar en torno a 200 o 300 MHz.</p>
+<p>Esta situación se esboza en las Figs.  <a class="reference internal" href="#fig-scq-drag-scheme-3"><span class="std std-numref">3.20</span></a>(a)- <a class="reference internal" href="#fig-scq-drag-scheme-3"><span class="std std-numref">3.20</span></a>©, donde ilustramos cómo los pulsos gaussianos con desviaciones estándar <span class="math notranslate nohighlight">\(\sigma = {1,2,5}\)</span> ns tienen un contenido espectral que conduce a solapamientos no nulos con la frecuencia <span class="math notranslate nohighlight">\(\omega_q^{1 \rightarrow 2} = \omega_q - |\alpha|\)</span>. Esto conduce a dos efectos perjudiciales: (1) errores de fuga que sacan al qubit del subespacio computacional, y (2) errores de fase.</p>
+<p>El efecto 2 se produce porque la presencia del pulso provoca una repulsión entre los niveles <span class="math notranslate nohighlight">\(\ket{1}\)</span> y <span class="math notranslate nohighlight">\(\ket{2}\)</span>, cambiando a su vez <span class="math notranslate nohighlight">\(\omega_q^{0 \rightarrow 1}\)</span> a medida que se aplica el pulso. Esto conduce a la acumulación de una fase relativa entre <span class="math notranslate nohighlight">\(\ket{0}\)</span> y <span class="math notranslate nohighlight">\(\ket{1}\)</span>.</p>
+<p>El procedimiento denominado <b>DRAG</b> (<b>Derivative Reduction by Adiabatic Gate</b>) trata de combatir estos dos efectos aplicando una señal adicional en la componente “out-of-phase”. El truco consiste en modificar la envolvente de la forma de onda <span class="math notranslate nohighlight">\(s(t)\)</span> según</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-drag-pulse">
+<span class="eqno">(3.144)<a class="headerlink" href="#equation-ec-scq-drag-pulse" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+s(t) \rightarrow s'(t) =
+\left\{
+\begin{matrix}
+s(t) &amp; \text{en} &amp; I \\
+\lambda \frac{\dot{s}(t)}{\alpha} &amp; \text{en} &amp; Q\,,
+\end{matrix}
+\right.
+\end{equation} \end{split}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\lambda\)</span> es un parámetro de escala adimensional, y <span class="math notranslate nohighlight">\(\lambda = 0\)</span> corresponde a no aplicar un pulso DRAG y <span class="math notranslate nohighlight">\(\dot{s}(t)\)</span> es la derivada temporal de <span class="math notranslate nohighlight">\(s(t)\)</span>. La elección teóricamente óptima para reducir el error de desfase es <span class="math notranslate nohighlight">\(\lambda = 0,5\)</span> y una elección óptima para reducir el error de fuga es <span class="math notranslate nohighlight">\(\lambda = 1\)</span>. Intercambiar <span class="math notranslate nohighlight">\(I\)</span> y <span class="math notranslate nohighlight">\(Q\)</span> en la Ec.  <a class="reference internal" href="#equation-ec-scq-drag-pulse">(3.144)</a> corresponde al pulso DRAG para la componente <span class="math notranslate nohighlight">\(Q\)</span>.</p>
+<p>En la práctica, puede haber una desviación de estos dos valores óptimos, a menudo debido a distorsiones del pulso en las líneas que conducen a los qubits. Normalmente, para determinar el valor óptimo de <span class="math notranslate nohighlight">\(\lambda\)</span> se utilizan experimentos benchmarking aleatorios combinados con mediciones de un solo shot del estado <span class="math notranslate nohighlight">\(\ket{2}\)</span>. Sin embargo, ampliando la implementación original del pulso DRAG, es posible reducir ambos errores simultáneamente. Introduciendo un parámetro de desfase de frecuencia <span class="math notranslate nohighlight">\(\delta f\)</span> en la forma de la onda (definida de forma que <span class="math notranslate nohighlight">\(\delta f = 0\)</span> corresponda a la frecuencia del qubit), es decir</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c2aa2a09-a2a7-4f4a-9037-05de07e92f81">
+<span class="eqno">(3.145)<a class="headerlink" href="#equation-c2aa2a09-a2a7-4f4a-9037-05de07e92f81" title="Permalink to this equation">#</a></span>\[\begin{equation}
+s'_{\delta f} (t) = s'(t) e^{i 2 \pi \delta f t}
+\end{equation}\]</div>
+<p>y eligiendo <span class="math notranslate nohighlight">\(\lambda\)</span> para minimizar los errores de fuga, entonces los errores de fase pueden reducirse simultáneamente. De forma similar, mediante un uso sensato de la puerta virtual <span class="math notranslate nohighlight">\(Z\)</span>, también es posible reducir los errores de fase en combinación con el pulso DRAG para reducir las fugas. Las puertas modernas de un solo qubit que utilizan pulsos DRAG alcanzan ahora fidelidades rutinarias de <span class="math notranslate nohighlight">\(F_{1qb} \geq 0.99\)</span></p>
+<figure class="align-center" id="fig-scq-drag-scheme-3">
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_drag_scheme_3.png"><img alt="../../../_images/Fig_scq_drag_scheme_3.png" src="../../../_images/Fig_scq_drag_scheme_3.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.20 </span><span class="caption-text">(a) Diagrama esquemático de niveles de un qubit transmón débilmente anarmónico sometido a un pulso a la frecuencia de transición <span class="math notranslate nohighlight">\(\omega_d = \omega_q\)</span>. (b) Forma de onda gaussiana con desviación estandar <span class="math notranslate nohighlight">\(\sigma\)</span>. © Transformada de Fourier de (b) que muestra cómo las longitudes de pulso cortas conducen a un solapamiento significativo con la transición <span class="math notranslate nohighlight">\(\omega_q^{1 \rightarrow 2}\)</span>, separada de <span class="math notranslate nohighlight">\(\omega_q\)</span> por la anarmonicidad <span class="math notranslate nohighlight">\(\alpha\)</span>. (d) Forma de onda de un pulso <span class="math notranslate nohighlight">\(X_\pi\)</span> sin modulación DRAG. (e) Efecto de la forma de onda de (d) sobre un qubit inicializado en el estado <span class="math notranslate nohighlight">\(\ket{0}\)</span> con a <span class="math notranslate nohighlight">\(\alpha = - 200\)</span> MHz y <span class="math notranslate nohighlight">\(\omega_q =  4\)</span> GHz. El error de desfase es visible como una desviación del <span class="math notranslate nohighlight">\(\ket{1}\)</span> tras el pulso. (f) Forma de onda de un pulso <span class="math notranslate nohighlight">\(X_\pi\)</span> con modulación DRAG para un qubit con anarmonicidad <span class="math notranslate nohighlight">\(\alpha = - 200\)</span> MHz y parámetro DRAG <span class="math notranslate nohighlight">\(\lambda = 0.5\)</span> para cancelar los errores de desfase (véase el texto para más detalles). (g) Efecto de la forma de onda de (f) sobre el mismo qubit que (e). Calculado utilizando mesolve en el paquete de software QuTiP <span id="id6">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id93" title="J.R. Johansson, P.D. Nation, and Franco Nori. Qutip 2: a python framework for the dynamics of open quantum systems. Computer Physics Communications, 184(4):1234-1240, 2013. URL: https://www.sciencedirect.com/science/article/pii/S0010465512003955, doi:https://doi.org/10.1016/j.cpc.2012.11.019.">11</a>]</span>. Figura tomada de <span id="id7">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id90" title="P. Krantz, M. Kjaergaard, F. Yan, T. P. Orlando, S. Gustavsson, and W. D. Oliver. A quantum engineer's guide to superconducting qubits. Applied Physics Reviews, 6(2):021318, 06 2019. URL: https://doi.org/10.1063/1.5089550, arXiv:https://pubs.aip.org/aip/apr/article-pdf/doi/10.1063/1.5089550/16667201/021318\_1\_online.pdf, doi:10.1063/1.5089550.">16</a>]</span>.</span><a class="headerlink" href="#fig-scq-drag-scheme-3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<hr class="docutils" />
+<p>Autor:</p>
+<p>David Castaño (<a class="reference external" href="https://www.scbi.uma.es/site/">UMA-SCBI</a>)</p>
+<a class="reference internal image-reference" href="../../../_images/Logo_UMA3.jpeg"><img alt="../../../_images/Logo_UMA3.jpeg" src="../../../_images/Logo_UMA3.jpeg" style="width: 170px;" /></a>
+<hr class="docutils" />
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png"><img alt="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" src="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" style="width: 2000px;" /></a>
+</figure>
+<center>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img aling="left" alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</center>
+<p>License: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+<p>This work has been financially supported by the Ministry for Digital Transformation and of Civil Service of the Spanish Government through the QUANTUM ENIA project call - Quantum Spain project, and by the European Union through the Recovery, Transformation and Resilience Plan - NextGenerationEU within the framework of the Digital Spain 2026 Agenda.</p>
+<center>
+<img align="left" src="https://quantumspain-project.es/wp-content/uploads/2024/02/Banner-QS_GOB_v2.png" width="1000px" />
+</center></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/Part_01/Chapter_003_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.7. </span>Acoplamientos: Hamiltonianos de interacción</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Section_009_puertas_de_dos_qubits__myst.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.9. </span>Puertas de dos qubits</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acoplamiento-capacitivo-para-las-puertas-x-e-y">3.8.1. Acoplamiento capacitivo para las puertas <span class="math notranslate nohighlight">\(X\)</span> e <span class="math notranslate nohighlight">\(Y\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-del-circuito-de-la-fig-s">3.8.1.1. Modelado del circuito de la Fig.  <code class="xref std std-numref docutils literal notranslate"><span class="pre">%s</span></code>.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagen-de-rotacion-o-de-interaccion">3.8.1.2. Imagen de rotación (o de interacción)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#componentes-in-phase-y-out-of-phase">3.8.1.3. Componentes “in-phase” y “out-of-phase”.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-pulso-in-phase">3.8.1.4. Ejemplo de pulso “in-phase”.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puerta-z-virtual">3.8.2. Puerta <span class="math notranslate nohighlight">\(Z\)</span> virtual</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-sistema-drag">3.8.3. El sistema DRAG</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://quantumspain-project.es">QuantumSpain</a> & <a href="https://www.talentq.es/es_es/">TalentQ</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

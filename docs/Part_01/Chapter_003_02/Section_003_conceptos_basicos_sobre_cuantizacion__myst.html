@@ -1,0 +1,939 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.3. Conceptos básicos sobre cuantización &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfile.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_003_02/Section_003_conceptos_basicos_sobre_cuantizacion__myst';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.4. El Transmon Qubit: Del oscilador armónico al Transmón" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html" />
+    <link rel="prev" title="3.2. Conceptos básicos sobre Mecánida Clásica" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_001_modelos_de_computacion_cuantica_myst.html">1.1. Modelos de Computación Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_002_estructura_del_hardware_de_un_ordenador_cuantico_myst.html">1.2. Estructura del Hardware de un Ordenador Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.html">1.3. Tipos de Tecnologías de qubits.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_004_pulso_de_microondas_myst.html">1.4. Pulso de microondas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_005_conceptos_erroneos_sobre_el_hardware_de_computacion_cuantica_myst.html">1.5. Conceptos Erróneos sobre el Hardware de Computación Cuántica.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_006_algunos_roadmaps_publicos_myst.html">1.6. Algunos Roadmaps públicos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_002_01_computacion_cuantica_con_iones_atrapados_trapped_ions__myst.html">2. Computación Cuántica con Iones Atrapados (Trapped Ions)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_001_produccion_de_iones_myst.html">2.1. Producción de iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_002_trampas_de_iones_myst.html">2.2. Trampas de iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_003_enfriamiento_de_iones_por_laser__myst.html">2.3. Enfriamiento de iones por láser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_004_manipulando_iones_individuales_puertas_simples__myst.html">2.4. Manipulando iones individuales: puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_005_manipulacion_de_multiples_iones_myst.html">2.5. Manipulación de múltiples iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_006_lectura_del_estado_de_los_iones_myst.html">2.6. Lectura del estado de los iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_007_puertas_multiqubit_con_iones__myst.html">2.7. Puertas multiqubit con iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_008_conclusiones_pros_y_contras_myst.html">2.8. Conclusiones: pros y contras</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.html">3. Computación Cuántica con qubits Superconductores</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Section_001_conceptos_basicos_sobre_superconductividad__myst.html">3.1. Conceptos básicos sobre Superconductividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html">3.2. Conceptos básicos sobre Mecánida Clásica</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Conceptos básicos sobre cuantización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html">3.4. El <i>Transmon Qubit</i>: Del oscilador armónico al Transmón</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.html">3.5. El <i>Split Transmon Qubit</i> (qubit ajustable mendiante flujo)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_006_el_iflux_qubiti_y_el_ifluxoniumi_hacia_una_mayor_anarmonicidad__myst.html">3.6. El <i>Flux Qubit</i> y el <i>Fluxonium</i>: Hacia una mayor anarmonicidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.html">3.7. Acoplamientos: Hamiltonianos de interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_008_puertas_simples__myst.html">3.8. Puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_009_puertas_de_dos_qubits__myst.html">3.9. Puertas de dos qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_010_lectura_de_los_qubits_myst.html">3.10. Lectura de los qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_011_conectividad__myst.html">3.11. Conectividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_012_retos_con_qubits_superconductores_myst.html">3.12. Retos con qubits superconductores</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_004_01_tecnicas_de_control_y_computacion_en_rmn_myst.html">4. Técnicas de control y computación en RMN.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_001_introduccion_myst.html">4.1. Introducción.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_002_el_espin_nuclear__myst.html">4.2. El espín nuclear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_003_qubits_de_rmn_myst.html">4.3. qubits de RMN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales__myst.html">4.4. Técnicas de pulsos elementales.</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_005_01_decoherencia_y_desfase_myst.html">5. Decoherencia y desfase</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.html">5.1. La coherencia en Mecánica Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_002_la_coherencia_en_computacion_cuantica_t_1_y_t_2_myst.html">5.2. La coherencia en Computación Cuántica: <span class="math notranslate nohighlight">\(T_1\)</span> y <span class="math notranslate nohighlight">\(T_2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_003_decoherencia_y_las_ecuaciones_de_bloch_myst.html">5.3. Decoherencia y las ecuaciones de Bloch.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_004_resumen_myst.html">5.4. Resumen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter_Bibliografia_myst.html">Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_003_02/Section_003_conceptos_basicos_sobre_cuantizacion__myst.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_003_conceptos_basicos_sobre_cuantizacion__myst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/docs/Part_01/Chapter_003_02/Section_003_conceptos_basicos_sobre_cuantizacion__myst.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Conceptos básicos sobre cuantización</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangiano-y-hamiltonianos-en-la-mecanica-cuantica">3.3.1. Lagrangiano y Hamiltonianos en la Mecánica Cuántica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuantizacion-canonica">3.3.2. Cuantización canónica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagen-de-schrodinger-schrodinger-picture">3.3.2.1. Imagen de Schrödinger (Schrödinger picture)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagen-de-heisenberg-heisenberg-picture">3.3.2.2. Imagen de Heisenberg (Heisenberg picture)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-metodo-canonico-de-cuantizacion">3.3.2.3. El método canónico de cuántización</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilador-armonico-cuantico">3.3.2.4. Oscilador armónico cuántico</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segunda-cuantizacion">3.3.3. Segunda cuantización</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particulas-identicas">3.3.3.1. Partículas idénticas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estados-de-fock">3.3.3.2. Estados de Fock</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-creacion-y-aniquilacion">3.3.3.3. Operadores de creación y aniquilación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilador-armonico-operadores-escalera">3.3.3.4. Oscilador armónico: operadores escalera</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <blockquote>
+<div><p>Jun 03, 2025 | 9 min read</p>
+</div></blockquote>
+<a href="https://www.talentq.es/es_es/cursos/">
+    <button class="rounded" style="float: right;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="var(--fill, white)"
+        d="M18.1 15.3c-.1.1-.3.2-.4.3l-2.4.4l1.7 3.6c.2.4 0 .8-.4
+            1l-2.8 1.3c-.1.1-.2.1-.3.1c-.3 0-.6-.2-.7-.4L11.2
+            18l-1.9 1.5c-.1.1-.3.2-.5.2c-.4 0-.8-.3-.8-.8V7.5c0-.5.3-.8.8-.8c.2 0
+            .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
+            1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
+    </svg>
+    Volver a TalentQ
+    </button>
+</a>
+<p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ket}[1]{|#1\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\branew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketnew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\braket}[2]{\langle #1|#2\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketbra}[2]{| #1\rangle \langle #2 |} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\i}{{\color{blue} i}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Hil}{{\cal H}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\cg}[1]{{\rm C}#1} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lp}{\left(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rp}{\right)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lc}{\left[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rc}{\right]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lch}{\left\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rch}{\right\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lp}{\Bigl(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rp}{\Bigr)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lc}{\Bigl[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rc}{\Bigr]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lch}{\Bigl\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rch}{\Bigr\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rqa}{\quad \Rightarrow \quad} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\bm}{\boldsymbol}\)</span></p>
+<section class="tex2jax_ignore mathjax_ignore" id="conceptos-basicos-sobre-cuantizacion">
+<span id="sec-scq-conceptos-cuantizacion"></span><h1><span class="section-number">3.3. </span>Conceptos básicos sobre cuantización<a class="headerlink" href="#conceptos-basicos-sobre-cuantizacion" title="Permalink to this heading">#</a></h1>
+<section id="lagrangiano-y-hamiltonianos-en-la-mecanica-cuantica">
+<h2><span class="section-number">3.3.1. </span>Lagrangiano y Hamiltonianos en la Mecánica Cuántica<a class="headerlink" href="#lagrangiano-y-hamiltonianos-en-la-mecanica-cuantica" title="Permalink to this heading">#</a></h2>
+<p>Se pueden escribir ríos de tinta hablando de la importancia de los formalismos Lagrangiano y Hamiltoniano en la física. Pese a haber nacido en el seno de la mecánica clásica, la generalidad de los mismos ha hecho que se empleen en todos los campos de la física teórica, incluida la Mecánica Cuántica y su variante más avanzada, las Teorías Cuánticas de Campos.</p>
+<p>Quizás uno de los Lagrangianos cuánticos más conocidos es el del Modelo Estándar de Física de Partículas (ver Fig.  <a class="reference internal" href="#fig-sqc-taza-modelo-estandar"><span class="std std-numref">3.3</span></a>), la Teoría Cuántica de Campos más grande que se ha construido hasta el momento. Esta teoría, que gracias al formalismo lagragiano podemos resumir en poco más de una linea, tiene tras de sí miles de folios de cálculos para llegar a predicciones medibles en laboratorio a partir de este Lagrangiano.</p>
+<figure class="align-center" id="fig-sqc-taza-modelo-estandar">
+<a class="reference internal image-reference" href="../../../_images/Fig_sqc_taza_Modelo_Estandar.png"><img alt="../../../_images/Fig_sqc_taza_Modelo_Estandar.png" src="../../../_images/Fig_sqc_taza_Modelo_Estandar.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.3 </span><span class="caption-text">Taza con el Lagrangiano del Modelo Estandar de Física de Partículas</span><a class="headerlink" href="#fig-sqc-taza-modelo-estandar" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="cuantizacion-canonica">
+<span id="sec-scq-cuantizacion-canonica"></span><h2><span class="section-number">3.3.2. </span>Cuantización canónica<a class="headerlink" href="#cuantizacion-canonica" title="Permalink to this heading">#</a></h2>
+<p>En esta sección vamos a ver como en ciertos casos podemos obtener el Hamiltoniano de un sistema cuántico a partir del Hamiltoniano clásico del sistema. Esto es lo que se llama la <b>cuantización canónica</b>. Para poder entenderla, primero tenemos que ver que es la Imagen de Heisenberg. Para ello, vemos a ver primero que es la imagen de Schrödinger.</p>
+<p>El concepto es sencillo: en física tenemos principalmente tres formulaciones de la Mecánica Cuántica que denominamos <b>imágenes</b> (pictures): la de Schrödinger, la de Heisenberg y la de interacción. Las tres describen la misma teoría, la Mecánica Cuántica, pero de maneras diferentes. La principal difetencia es <b>donde ponemos la dependencia temporal</b>: en los estados, en los operadores o en ambos.</p>
+<p>Dependiendo del contexto en el que estemos trabajando, en algunos casos nos será más fácil usar una imagen o otra.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (Operadores y funciones)</p>
+<p>En esta sección vamos a ponerle un gorro (,<span class="math notranslate nohighlight">\(\hat{}\,\)</span>) a los operadores (cuánticos) para distinguirlos de las funciones (clásicas).</p>
+<p>Aunque en las secciones anteriores sobre Mecánica Clásica estuvimos usando los términos “Hamiltoniano” y “Lagrangiano”, esto en realidad es un abuso de lenguaje. En Mecánica Clásica deberíamos usar los termino “lagrangiana” y “hamiltoniana”, pues son <b>funciones</b> (función hamiltoniana y función lagrangiana).</p>
+<p>Los términos “Hamiltoniano” y “Lagrangiano” se usan en Mecánica Cuántica cuando lidiamos con <b>operadores</b> (es decir, matrices). Sin embargo, este abuso de lenguaje es muy extendido en física.</p>
+</div>
+<section id="imagen-de-schrodinger-schrodinger-picture">
+<h3><span class="section-number">3.3.2.1. </span>Imagen de Schrödinger (Schrödinger picture)<a class="headerlink" href="#imagen-de-schrodinger-schrodinger-picture" title="Permalink to this heading">#</a></h3>
+<p>La imagen de Schrödinger es la “típica”, pues suele ser la primera que se enseña. Es también la que hemos usado hasta ahora.</p>
+<p>La <b>imagen de Schrödinger</b> o <b>representación de Schrödinger</b> es una formulación de la mecánica cuántica en la que los vectores de estado evolucionan con el tiempo, pero los operadores (observables y otros) son en su mayoría constantes con respecto al tiempo.</p>
+<p>En la representación de Schrödinger, el estado de un sistema evoluciona con el tiempo, siguiendo la <b>ecuación de Schrödinger</b></p>
+<div class="amsmath math notranslate nohighlight" id="equation-2baaf009-41d3-49f8-8c04-b6e46eaac884">
+<span class="eqno">(3.36)<a class="headerlink" href="#equation-2baaf009-41d3-49f8-8c04-b6e46eaac884" title="Permalink to this equation">#</a></span>\[\begin{equation}
+i \hbar \frac{\partial}{\partial t} \ket{\psi(t)} = \hat{H} \ket{\psi (t)}
+\end{equation}\]</div>
+<p>Al resolver esta ecuación se ve que la evolución para un sistema cuántico cerrado se produce mediante un operador unitario, el operador de <b>evolución temporal</b>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-51f4ced8-aaac-45cf-bbd5-da473ffd9e0f">
+<span class="eqno">(3.37)<a class="headerlink" href="#equation-51f4ced8-aaac-45cf-bbd5-da473ffd9e0f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\ket{\psi(t)} = \hat{U}(t, t_0) \ket{\psi (t_0}
+\end{equation}\]</div>
+<p>En el caso de que el Hamiltoniano <span class="math notranslate nohighlight">\(H\)</span> del sistema no varíe con el tiempo, el operador de evolución temporal tiene la forma</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b11269ff-950c-4d5f-88b6-ae236e806a6b">
+<span class="eqno">(3.38)<a class="headerlink" href="#equation-b11269ff-950c-4d5f-88b6-ae236e806a6b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\hat{U} (t, t_0) = e^{-i \hat{H} \cdot (t-t_0)/\hbar}
+\end{equation}\]</div>
+</section>
+<section id="imagen-de-heisenberg-heisenberg-picture">
+<h3><span class="section-number">3.3.2.2. </span>Imagen de Heisenberg (Heisenberg picture)<a class="headerlink" href="#imagen-de-heisenberg-heisenberg-picture" title="Permalink to this heading">#</a></h3>
+<p>La <b>imagen de Heisenberg</b> o <b>representación de Heisenberg</b> es una formulación de la mecánica cuántica en la que los observables, <span class="math notranslate nohighlight">\(A\)</span>, incorporan una dependencia del tiempo, pero los estados, <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, son independientes del tiempo.</p>
+<p>En el caso en que el Hamiltoniano en la imagen de Schrödinger, <span class="math notranslate nohighlight">\(H_S\)</span>, no dependa del tiempo, la conexión entre los estados y operadores en la imagen de Schrödinger y de Heisenberg es la siguiente:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ec272cba-e986-4dfa-bf33-0fc01349594c">
+<span class="eqno">(3.39)<a class="headerlink" href="#equation-ec272cba-e986-4dfa-bf33-0fc01349594c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\ket{\psi_H} = e^{it \hat{H}/\hbar} \ket{\psi_S(t)}
+\qquad; \qquad
+\hat{A}_H(t) = e^{it \hat{H}/\hbar} \hat{A}_S e^{-it \hat{H}/\hbar}
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\hat{H}_S = \hat{H}_H = \hat{H}\)</span>, y donde recordemos que <span class="math notranslate nohighlight">\(e^{-it \hat{H}/\hbar} = \hat{U}(t,0)\)</span></p>
+<p>Podemos ver como es la evolución de un observable <span class="math notranslate nohighlight">\(\hat{A}_H(t)\)</span> derivando la expresión de <span class="math notranslate nohighlight">\(\hat{A}_H(t)\)</span> respecto a <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e3887bc3-3f56-47c4-affb-f58a0b1feb79">
+<span class="eqno">(3.40)<a class="headerlink" href="#equation-e3887bc3-3f56-47c4-affb-f58a0b1feb79" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{aligned}
+\frac{d}{dt} \hat{A}_H(t) &amp; = \frac{d}{dt} \lp e^{it\hat{H}/\hbar} \hat{A}_S e^{-it\hat{H}/\hbar}  \rp =  \\
+&amp; = \frac{i}{\hbar} \lc \hat{H} e^{it \hat{H}/\hbar} \hat{A}_S e^{-it \hat{H}/\hbar} - e^{it \hat{H}/\hbar} \hat{A}_S \hat{H} e^{-it \hat{H}/\hbar} \rc  + e^{it \hat{H}/\hbar} \frac{d \hat{A}_S}{d t}  e^{- it \hat{H}/\hbar} = \\
+&amp; = \frac{i}{\hbar} \lc \hat{H} \hat{A}_H(t) - \hat{A}_H(t) \hat{H}  \rc  + e^{it \hat{H}/\hbar} \frac{\partial \hat{A}_S}{\partial t}  e^{- it \hat{H}/\hbar}
+\end{aligned}
+\end{equation}\]</div>
+<p>donde hemos usado que <span class="math notranslate nohighlight">\(\hat{H}\)</span> conmuta <span class="math notranslate nohighlight">\(e^{it \hat{H}/\hbar}\)</span>, y que <span class="math notranslate nohighlight">\(\frac{d \hat{A}_S}{d t} = \frac{\partial \hat{A}_S}{\partial t}\)</span> ya que en la imagen de Schrödonger los operadores no tiene dependencias implícitas en el tiempo. La ecuación anterios podemos reercribirla como:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-canonica-heisenberg">
+<span class="eqno">(3.41)<a class="headerlink" href="#equation-ec-sqc-canonica-heisenberg" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{aligned}
+\frac{d}{dt} \hat{A}_H(t) &amp; = \frac{1}{i\hbar} \lc \hat{A}_H(t), \hat{H} \rc + \lp \frac{\partial \hat{A}_S}{\partial t} \rp_H \\
+\end{aligned}
+\end{equation} \end{split}\]</div>
+<p>donde se ha usado la definición del <b>conmutador</b></p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-cononica-conmutador">
+<span class="eqno">(3.42)<a class="headerlink" href="#equation-ec-sqc-cononica-conmutador" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+[\hat{A},\hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}
+\end{equation} \]</div>
+<p>y se han invertido <span class="math notranslate nohighlight">\(\hat{A}_H(t)\)</span> y <span class="math notranslate nohighlight">\(\hat{H}\)</span> en el conmutador debido al signo <span class="math notranslate nohighlight">\(-\)</span> que aparece al bajar la <span class="math notranslate nohighlight">\(i\)</span> al denominador.
+La Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-heisenberg">(3.41)</a> se denomina <b>Ecuación de Heisenberg</b>.</p>
+<p>Si el operador <span class="math notranslate nohighlight">\(\hat{A}_S\)</span> no tiene dependencia explicita en el tiempo, la Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-heisenberg">(3.41)</a> se simplifica a</p>
+<div class="amsmath math notranslate nohighlight" id="equation-aea094d9-cd9c-4229-b187-e19acf5fce86">
+<span class="eqno">(3.43)<a class="headerlink" href="#equation-aea094d9-cd9c-4229-b187-e19acf5fce86" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{d}{dt} \hat{A}_H(t) = \frac{i}{\hbar} \lc \hat{H}, \hat{A}_H(t) \rc
+\end{equation}\]</div>
+<p>Podemos escribir las relaciones de conmutación entre los operadores de las coordenadas generalizadas <span class="math notranslate nohighlight">\(\hat{q}_j\)</span> y los operadores de los momentos generalizados <span class="math notranslate nohighlight">\(\hat{p}_j = -i \hbar \partial/\partial \hat{q}_j \)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-canonica-conmutadores-coordenadas">
+<span class="eqno">(3.44)<a class="headerlink" href="#equation-ec-sqc-canonica-conmutadores-coordenadas" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{aligned}
+\lc \hat{q}_k, \hat{q}_l \rc = 0\,, \\
+\lc \hat{p}_k, \hat{p}_l \rc = 0\,, \\
+\lc \hat{q}_k, \hat{p}_l \rc = i \hbar \delta_{kl} \,.
+\end{aligned}
+\end{equation} \end{split}\]</div>
+<div class="note admonition">
+<p class="admonition-title">Nota (Demostración)</p>
+<p>Las relaciones de la Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-conmutadores-coordenadas">(3.44)</a> pueden verse facilmente si aplicamos los conmutadores sobre una función de onda <span class="math notranslate nohighlight">\(\psi(\hat{\vec{q}})\)</span>. Por ejemplo:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d7382aad-36e3-4a2a-a1fd-482f5f18f7f8">
+<span class="eqno">(3.45)<a class="headerlink" href="#equation-d7382aad-36e3-4a2a-a1fd-482f5f18f7f8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lc \hat{q}_k, \hat{p}_l \rc \psi (\hat{\vec{q}}) = \hat{q}_k (-i\hbar) \frac{\partial}{\partial \hat{q}_l} \psi(\hat{\vec{q}}) - (-i\hbar) \frac{\partial}{\partial \hat{q}_l} \lc \hat{q}_k \, \psi(\hat{\vec{q}}) \rc = i \hbar \delta_{kl} \psi (\hat{\vec{q}})
+\end{equation}\]</div>
+</div>
+</section>
+<section id="el-metodo-canonico-de-cuantizacion">
+<h3><span class="section-number">3.3.2.3. </span>El método canónico de cuántización<a class="headerlink" href="#el-metodo-canonico-de-cuantizacion" title="Permalink to this heading">#</a></h3>
+<p>Ahora podemos dar un paso atrás y comparar la formulación del corchete de Poisson de la mecánica clásica con las ecuaciones en la imagen de Heisenberg de la Mecánica Cuántica. Comparando la Ec.  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-poisson-corchetes-coordenadas">(3.32)</a> con la Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-conmutadores-coordenadas">(3.44)</a> y la Ec.  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-poisson-df">(3.35)</a>  con la Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-heisenberg">(3.41)</a>. Parece que una teoría hamiltoniana clásica puede transcribirse a la mecánica cuántica mediante la regla simple,</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-cuantizacion-canonica">
+<span class="eqno">(3.46)<a class="headerlink" href="#equation-ec-scq-cuantizacion-canonica" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\lch A, B \rch \rqa \frac{1}{i \hbar} \lc \hat{A} , \hat{B} \rc
+\end{equation} \]</div>
+<p>donde los operadores cuánticos <span class="math notranslate nohighlight">\(\hat{A} = \hat{A}(\hat{\vec{q}}, \hat{\vec{p}},t)\)</span> y <span class="math notranslate nohighlight">\(\hat{B} = \hat{B}(\hat{\vec{q}}, \hat{\vec{p}},t)\)</span> son las mismas funciones de los operadores <span class="math notranslate nohighlight">\(\hat{\vec{q}}\)</span> y <span class="math notranslate nohighlight">\(\hat{\vec{p}}\)</span>, que las funciones <span class="math notranslate nohighlight">\(A = A(\vec{q}, \vec{p}, t)\)</span> Y <span class="math notranslate nohighlight">\(B = B(\vec{q}, \vec{p}, t)\)</span> lo son de <span class="math notranslate nohighlight">\(\vec{q}\)</span> y <span class="math notranslate nohighlight">\(\vec{p}\)</span>.</p>
+<p>Es decir, partiendo de la formulación clásica de un sistema podemos obtener la formulación cuántica cambiando las funciones por operadores y los corchetes de Poisson por conmutadores (con el <span class="math notranslate nohighlight">\(1/(i \hbar)\)</span>). El procedimiento se denomina <b>cuantización canónica</b> porque se deduce de la descripción hamiltoniana canónica de la dinámica clásica. Sin embargo, hay algunas limitaciones importantes del método de cuantización canónica que escapan del objetivo de esta explicación.</p>
+<p>Vamos a resumir los sencillos pasos necesarios para encontrar el equivalente cuántico de un sistema hamiltoniano clásico</p>
+<ul class="simple">
+<li><p>Establecer la dinámica Hamiltoniana clásica en términos de coordenadas canónicas <span class="math notranslate nohighlight">\(\vec{q}\)</span> y momentos <span class="math notranslate nohighlight">\(\vec{p}\)</span>, con un Hamiltoniano <span class="math notranslate nohighlight">\(H\)</span>.</p></li>
+<li><p>Escribir las ecuaciones de movimiento en forma de corchete de Poisson.</p></li>
+<li><p>Reinterpretar las variables dinámicas clásicas como operadores cuánticos en un espacio de Hilbert de estados, y los corchetes de Poisson como conmutadores (ver Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-conmutadores-coordenadas">(3.44)</a>.</p></li>
+</ul>
+</section>
+<section id="oscilador-armonico-cuantico">
+<h3><span class="section-number">3.3.2.4. </span>Oscilador armónico cuántico<a class="headerlink" href="#oscilador-armonico-cuantico" title="Permalink to this heading">#</a></h3>
+<p>Con el método de la cuantización canónica, podemos obtener el Hamiltoniano del oscilador armónico cuántico (unidimensional) a partir del Hamiltoniano clásico que vimos en la Ec.  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-oscilador-h">(3.29)</a>. Simplemente tenemos que promocional las coordenadas a operadores:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-canonica-oscilador-h">
+<span class="eqno">(3.47)<a class="headerlink" href="#equation-ec-sqc-canonica-oscilador-h" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\hat{H}_{QHO} = \frac{1}{2m} \hat{p}^2 + \frac{1}{2} k \hat{x}^2
+\end{equation} \]</div>
+<p>donde <span class="math notranslate nohighlight">\(\hat{p}\)</span> y <span class="math notranslate nohighlight">\(\hat{x}\)</span> cumples las reglas de conmutación de la Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-conmutadores-coordenadas">(3.44)</a>, donde ya vimos que (Ec.  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-oscilador-omega">(3.30)</a>)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a1f362e4-9f38-477c-8178-5dd95c864d0c">
+<span class="eqno">(3.48)<a class="headerlink" href="#equation-a1f362e4-9f38-477c-8178-5dd95c864d0c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+k = m \omega^2
+\end{equation}\]</div>
+<p>Resolviendo la ecuación de Schrödinger independiente del tiempo (ecuación de autovalores) para este Hamiltoniano</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-canonica-qho-schrodinger">
+<span class="eqno">(3.49)<a class="headerlink" href="#equation-ec-sqc-canonica-qho-schrodinger" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\hat{H}_{QHO} \ket{n} = E_n \ket{n}
+\end{equation} \]</div>
+<p>puede verse que la energía está cuantizada y toma los valores:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-canonica-qho-e">
+<span class="eqno">(3.50)<a class="headerlink" href="#equation-ec-sqc-canonica-qho-e" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+E_n = \hbar \omega \lp n + \frac{1}{2} \rp
+\end{equation} \]</div>
+<p>Vemos que las energías están equiespaciadas, <span class="math notranslate nohighlight">\(E_{n+1} - E_n = \hbar \omega\)</span>, y que el estado fundamental (<span class="math notranslate nohighlight">\(n=0\)</span>) tiene una energía diferente de cero: <span class="math notranslate nohighlight">\(E_0 = \hbar \omega/2\)</span>. En la Fig.  <a class="reference internal" href="#fig-sqc-oscilador-armonico-amplitudes-y-prob"><span class="std std-numref">3.4</span></a> podemos ver la distribución espacial de las amplitudes y de las probabilidades.</p>
+<figure class="align-center" id="fig-sqc-oscilador-armonico-amplitudes-y-prob">
+<a class="reference internal image-reference" href="../../../_images/Fig_Hardware_Oscilador_Armonico1.png"><img alt="../../../_images/Fig_Hardware_Oscilador_Armonico1.png" src="../../../_images/Fig_Hardware_Oscilador_Armonico1.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.4 </span><span class="caption-text">Primeros <span class="math notranslate nohighlight">\(8\)</span> estados del oscilador armónico cuántico (<span class="math notranslate nohighlight">\(n=0,1, \dots,7\)</span>) en una dimensión (<span class="math notranslate nohighlight">\(\hat{x}\)</span>). El eje horizontal representa la posición <span class="math notranslate nohighlight">\(x\)</span>. Source <span id="id1">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id87" title="Wikipedia contributors. Quantum harmonic oscillator — Wikipedia, the free encyclopedia. 2024. [Online; accessed 12-September-2024]. URL: https://en.wikipedia.org/w/index.php?title=Quantum_harmonic_oscillator&amp;oldid=1242936583.">25</a>]</span></span><a class="headerlink" href="#fig-sqc-oscilador-armonico-amplitudes-y-prob" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="segunda-cuantizacion">
+<h2><span class="section-number">3.3.3. </span>Segunda cuantización<a class="headerlink" href="#segunda-cuantizacion" title="Permalink to this heading">#</a></h2>
+<p>La <b>segunda cuantización</b>, también denominada <b>representación del número de ocupación</b>, es un formalismo utilizado para describir y analizar sistemas cuánticos de muchos cuerpos. En este enfoque, los estados cuánticos de muchos cuerpos se representan en la base de estados de Fock, que se construyen rellenando cada estado de con un cierto número de partículas idénticas.</p>
+<section id="particulas-identicas">
+<h3><span class="section-number">3.3.3.1. </span>Partículas idénticas<a class="headerlink" href="#particulas-identicas" title="Permalink to this heading">#</a></h3>
+<p>El punto de partida del segundo formalismo de cuantización es la noción de <b>indistinguibilidad</b> de las partículas en mecánica cuántica. En la mecánica clásica, cada partícula está etiquetada por un vector de posición distinto <span class="math notranslate nohighlight">\(\vec{r}_k\)</span> y diferentes configuraciones del conjunto de <span class="math notranslate nohighlight">\(\vec{r}_k\)</span> corresponden a diferentes estados de muchos cuerpos. Por otro lado,  en la mecánica cuántica, las partículas son <b>idénticas</b>, de tal manera que intercambiar dos partículas, es decir, <span class="math notranslate nohighlight">\(\vec{r}_k \leftrightarrow \vec{r}_l\)</span>, no conduce a un estado cuántico de muchos cuerpos diferente. Esto implica que la función de onda cuántica de muchos cuerpos debe ser invariante (salvo un factor de fase) bajo el intercambio de dos partículas</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cdf9aa09-690e-4d4e-8c54-593bb99a4a37">
+<span class="eqno">(3.51)<a class="headerlink" href="#equation-cdf9aa09-690e-4d4e-8c54-593bb99a4a37" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{aligned}
+\Psi_B (\cdots, \hat{\vec{r}}_k, \cdots, \hat{\vec{r}}_l, \cdots) &amp;= + \Psi_B (\cdots, \hat{\vec{r}}_l, \cdots, \hat{\vec{r}}_k, \cdots)  \text{ si las partículas son bosones} \\
+\Psi_F (\cdots, \hat{\vec{r}}_k, \cdots, \hat{\vec{r}}_l, \cdots) &amp;= - \Psi_F (\cdots, \hat{\vec{r}}_l, \cdots, \hat{\vec{r}}_k, \cdots)  \text{ si las partículas son ferminones}
+\end{aligned}
+\end{equation}\]</div>
+<p>Esta propiedad de simetría de intercambio impone una restricción a la función de onda de muchos cuerpos. Cada vez que se añade o elimina una partícula del sistema multicuerpo, la función de onda debe simetrizarse o anti-simetrizarse adecuadamente para satisfacer la restricción de simetría.</p>
+</section>
+<section id="estados-de-fock">
+<h3><span class="section-number">3.3.3.2. </span>Estados de Fock<a class="headerlink" href="#estados-de-fock" title="Permalink to this heading">#</a></h3>
+<p>En el segunda cuantización, en lugar de preguntar “¿en que estado está cada partícula?”, se pregunta “¿Cuántas partículas hay en cada estado?”. Dado que esta descripción no hace referencia al etiquetado de las partículas, no contiene información redundante y, por tanto, conduce a una descripción precisa y más sencilla del estado cuántico de muchos cuerpos.</p>
+<p>En este enfoque, el estado de muchos cuerpos se representa en la base del <b>números de ocupación</b>, y el estado se etiqueta mediante el conjunto de números de ocupación, denotado como</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e4a8163b-4c71-4b49-ae87-b1575040eb95">
+<span class="eqno">(3.52)<a class="headerlink" href="#equation-e4a8163b-4c71-4b49-ae87-b1575040eb95" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\ket{\lc n_\alpha \rc} = \ket{n_1, n_2, \cdots, n_\alpha, \cdots},
+\end{equation}\]</div>
+<p>lo que significa que hay <span class="math notranslate nohighlight">\(n_\alpha\)</span> partículas en el estado <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>. Los números de ocupación suman al número total de partículas <span class="math notranslate nohighlight">\(\sum_\alpha n_\alpha = N\)</span>.</p>
+<p>El estado de Fork con todos los números de ocupación igual a cero se llama el <b>vacío</b>, denotado como</p>
+<div class="amsmath math notranslate nohighlight" id="equation-40fb9552-8159-4ba9-ae01-63f75aab4db8">
+<span class="eqno">(3.53)<a class="headerlink" href="#equation-40fb9552-8159-4ba9-ae01-63f75aab4db8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\ket{0} \equiv \ket{\cdots, 0_\alpha, \cdots}.
+\end{equation}\]</div>
+</section>
+<section id="operadores-de-creacion-y-aniquilacion">
+<h3><span class="section-number">3.3.3.3. </span>Operadores de creación y aniquilación<a class="headerlink" href="#operadores-de-creacion-y-aniquilacion" title="Permalink to this heading">#</a></h3>
+<p>Los operadores de creación (<span class="math notranslate nohighlight">\(\hat{a}^\dagger_\alpha\)</span>) y aniquilación (<span class="math notranslate nohighlight">\(\hat{a}_\alpha\)</span>) se introducen para añadir o eliminar una partícula del sistema de muchos cuerpos. La aplicación del operador de creación (aniquilación) a una función de onda de muchos cuerpos cuantificada insertará (eliminará) un estado de una sola partícula de la función de onda de forma simetrizada dependiendo de las estadísticas de la partícula.</p>
+<p>Para estados <b>bosónicos</b>, estos operadores se comportan de la siguiente forma:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-a-y-a-dagger-sobre-n-generico">
+<span class="eqno">(3.54)<a class="headerlink" href="#equation-ec-sqc-a-y-a-dagger-sobre-n-generico" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{aligned}
+\hat{a}_\alpha^\dagger \ket{\cdots, n_\beta, n_\alpha, n_\gamma,\cdots } &amp; = \sqrt{n_\alpha+1} \ket{\cdots, n_\beta, n_\alpha + 1, n_\gamma,\cdots } \\
+\hat{a}_\alpha \ket{\cdots, n_\beta, n_\alpha, n_\gamma,\cdots } &amp; = \sqrt{n_\alpha} \ket{\cdots, n_\beta, n_\alpha - 1, n_\gamma,\cdots }
+\end{aligned}
+\end{equation} \end{split}\]</div>
+<p>Teniendo en cuenta las anteriores relaciones, vemos podemos construir un estado de <span class="math notranslate nohighlight">\(n_\alpha\)</span> partículas en el estado <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span> aplicando operadores de creación sobre el vacío:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-65865936-dc3d-4551-ab51-aa003c96a8e1">
+<span class="eqno">(3.55)<a class="headerlink" href="#equation-65865936-dc3d-4551-ab51-aa003c96a8e1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\ket{n_\alpha} = \frac{1}{\sqrt{n_\alpha !}} (\hat{a}^\dagger_\alpha)^{n_\alpha} \ket{0_\alpha}
+\end{equation}\]</div>
+<p>También se puede definir un <b>operador número</b>, <span class="math notranslate nohighlight">\(N_\alpha\)</span>, que nos da el número de partículas en un estado</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d9aad737-1d6e-4e60-ac97-3665df97f83f">
+<span class="eqno">(3.56)<a class="headerlink" href="#equation-d9aad737-1d6e-4e60-ac97-3665df97f83f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\hat{N}_\alpha = \hat{a}_\alpha^\dagger \hat{a}_\alpha \rqa \hat{N}_\alpha \ket{n_\alpha} = n_\alpha \ket{n_\alpha}
+\end{equation}\]</div>
+</section>
+<section id="oscilador-armonico-operadores-escalera">
+<h3><span class="section-number">3.3.3.4. </span>Oscilador armónico: operadores escalera<a class="headerlink" href="#oscilador-armonico-operadores-escalera" title="Permalink to this heading">#</a></h3>
+<p>Cuando tratamos con el oscilador armónico, a los operadores de creación y aniquilación se los suele llamar operadores de <b>subida</b> (raising) y <b>bajada</b> (lowering), comunmente conocidos como <b>operadores escalera</b>. Esta diferencia en el nombre es porque en el caso anterior decíamos que los <span class="math notranslate nohighlight">\(n_\alpha\)</span> era los números de ocupación. Es decir, el número de particulas en un estado <span class="math notranslate nohighlight">\(\alpha\)</span>. Para el oscilador armónico, aunque el tratamiento es formalmente idéntico, el significado de <span class="math notranslate nohighlight">\(n\)</span> va a ser diferente. En este caso, <span class="math notranslate nohighlight">\(n\)</span> va a ser el estado de vibración del oscilador (de la partícula). Los operadores <span class="math notranslate nohighlight">\(\ket{a}\)</span> y <span class="math notranslate nohighlight">\(\ket{a}^{\dagger}\)</span> lo que van hacer es <b>subir y bajar el estado de vibración del oscilador</b>.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>Véase que precisamente es por esto, por tener solo un oscilador, por lo que en esta sección no aparecen los subíndices <span class="math notranslate nohighlight">\(\alpha\)</span> de la anterior.</p>
+</div>
+<p>Vamos a tratar con un solo oscilador que va estar en un esto <span class="math notranslate nohighlight">\(\ket{n}\)</span> de oscilación. Definimos los operadores <span class="math notranslate nohighlight">\(\ket{a}\)</span> (bajada/aniquilación) y su hermítico conjugado <span class="math notranslate nohighlight">\(\ket{a}^{\dagger}\)</span> (subida/creación) como</p>
+<div class="amsmath math notranslate nohighlight" id="equation-48e1430c-8e86-4ae1-a33e-39ad5150a7bc">
+<span class="eqno">(3.57)<a class="headerlink" href="#equation-48e1430c-8e86-4ae1-a33e-39ad5150a7bc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\left\{
+\begin{aligned}
+\hat{a} &amp; = \sqrt{\frac{m \omega}{2 \hbar}} \lp \hat{x} + \frac{i}{m \omega} \hat{p} \rp \\
+\hat{a}^{\dagger} &amp; = \sqrt{\frac{m \omega}{2 \hbar}} \lp \hat{x} - \frac{i}{m \omega} \hat{p} \rp
+\end{aligned}
+\right.
+\rqa
+\left\{
+\begin{aligned}
+\hat{x} = \sqrt{\frac{\hbar}{2 m \omega}} \lp \hat{a}^\dagger + \hat{a} \rp \\
+\hat{p} = \sqrt{\frac{\hbar m \omega}{2}} \lp \hat{a}^\dagger - \hat{a} \rp
+\end{aligned}
+\right.
+\end{equation}\]</div>
+<p>donde, siguiendo la Ec.  <a class="reference internal" href="#equation-ec-sqc-a-y-a-dagger-sobre-n-generico">(3.54)</a> vemos que</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a10b3cac-152f-43f0-83ce-1743eb5596bf">
+<span class="eqno">(3.58)<a class="headerlink" href="#equation-a10b3cac-152f-43f0-83ce-1743eb5596bf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\begin{aligned}
+\hat{a}^\dagger \ket{n} &amp;= \sqrt{n+1} \ket{n+1} \\
+\hat{a} \ket{n} &amp;= \sqrt{n} \ket{n-1}
+\end{aligned}
+\end{equation}\]</div>
+<p>Usando estos operadores, podemos reescribir el Hamiltoniano de la Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-oscilador-h">(3.47)</a> de la siguiente forma</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-qho-second-quant">
+<span class="eqno">(3.59)<a class="headerlink" href="#equation-ec-sqc-qho-second-quant" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\hat{H}_{QHO} = \hbar \omega \lp \hat{a}^\dagger \hat{a} + \frac{1}{2} \rp \, .
+\end{equation} \]</div>
+<hr class="docutils" />
+<p>Autor:</p>
+<p>David Castaño (<a class="reference external" href="https://www.scbi.uma.es/site/">UMA-SCBI</a>)</p>
+<a class="reference internal image-reference" href="../../../_images/Logo_UMA3.jpeg"><img alt="../../../_images/Logo_UMA3.jpeg" src="../../../_images/Logo_UMA3.jpeg" style="width: 170px;" /></a>
+<hr class="docutils" />
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png"><img alt="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" src="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" style="width: 2000px;" /></a>
+</figure>
+<center>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img aling="left" alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</center>
+<p>License: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+<p>This work has been financially supported by the Ministry for Digital Transformation and of Civil Service of the Spanish Government through the QUANTUM ENIA project call - Quantum Spain project, and by the European Union through the Recovery, Transformation and Resilience Plan - NextGenerationEU within the framework of the Digital Spain 2026 Agenda.</p>
+<center>
+<img align="left" src="https://quantumspain-project.es/wp-content/uploads/2024/02/Banner-QS_GOB_v2.png" width="1000px" />
+</center></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/Part_01/Chapter_003_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Conceptos básicos sobre Mecánida Clásica</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.4. </span>El <i>Transmon Qubit</i>: Del oscilador armónico al Transmón</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangiano-y-hamiltonianos-en-la-mecanica-cuantica">3.3.1. Lagrangiano y Hamiltonianos en la Mecánica Cuántica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuantizacion-canonica">3.3.2. Cuantización canónica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagen-de-schrodinger-schrodinger-picture">3.3.2.1. Imagen de Schrödinger (Schrödinger picture)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagen-de-heisenberg-heisenberg-picture">3.3.2.2. Imagen de Heisenberg (Heisenberg picture)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-metodo-canonico-de-cuantizacion">3.3.2.3. El método canónico de cuántización</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilador-armonico-cuantico">3.3.2.4. Oscilador armónico cuántico</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segunda-cuantizacion">3.3.3. Segunda cuantización</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particulas-identicas">3.3.3.1. Partículas idénticas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estados-de-fock">3.3.3.2. Estados de Fock</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-creacion-y-aniquilacion">3.3.3.3. Operadores de creación y aniquilación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oscilador-armonico-operadores-escalera">3.3.3.4. Oscilador armónico: operadores escalera</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://quantumspain-project.es">QuantumSpain</a> & <a href="https://www.talentq.es/es_es/">TalentQ</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
