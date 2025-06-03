@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2.7. Puertas multiqubit con iones &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_002_02/Section_007_puertas_multiqubit_con_iones__myst';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="2.8. Conclusiones: pros y contras" href="Section_008_conclusiones_pros_y_contras_myst.html" />
+    <link rel="prev" title="2.6. Lectura del estado de los iones" href="Section_006_lectura_del_estado_de_los_iones_myst.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    El camino de los Qubits
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_001_modelos_de_computacion_cuantica_myst.html">1.1. Modelos de Computación Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_002_estructura_del_hardware_de_un_ordenador_cuantico_myst.html">1.2. Estructura del Hardware de un Ordenador Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.html">1.3. Tipos de Tecnologías de qubits.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_004_pulso_de_microondas_myst.html">1.4. Pulso de microondas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_005_conceptos_erroneos_sobre_el_hardware_de_computacion_cuantica_myst.html">1.5. Conceptos Erróneos sobre el Hardware de Computación Cuántica.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_006_algunos_roadmaps_publicos_myst.html">1.6. Algunos Roadmaps públicos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Chapter_002_01_computacion_cuantica_con_iones_atrapados_trapped_ions__myst.html">2. Computación Cuántica con Iones Atrapados (Trapped Ions)</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Section_001_produccion_de_iones_myst.html">2.1. Producción de iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_002_trampas_de_iones_myst.html">2.2. Trampas de iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_003_enfriamiento_de_iones_por_laser__myst.html">2.3. Enfriamiento de iones por láser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_004_manipulando_iones_individuales_puertas_simples__myst.html">2.4. Manipulando iones individuales: puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_005_manipulacion_de_multiples_iones_myst.html">2.5. Manipulación de múltiples iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_006_lectura_del_estado_de_los_iones_myst.html">2.6. Lectura del estado de los iones</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.7. Puertas multiqubit con iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_008_conclusiones_pros_y_contras_myst.html">2.8. Conclusiones: pros y contras</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.html">3. Computación Cuántica con qubits Superconductores</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad_myst.html">3.1. Conceptos básicos sobre Superconductividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_002_tipos_de_qubits_superconductores_myst.html">3.2. Tipos de qubits superconductores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_003_fisica_de_los_qubits_superconductores__myst.html">3.3. Física de los qubits superconductores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_004_operaciones_con_qubits_superconductores_myst.html">3.4. Operaciones con qubits superconductores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_005_retos_con_qubits_superconductores_myst.html">3.5. Retos con qubits superconductores</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_004_01_tecnicas_de_control_y_computacion_en_rmn_myst.html">4. Técnicas de control y computación en RMN.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_001_introduccion_myst.html">4.1. Introducción.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_002_el_espin_nuclear__myst.html">4.2. El espín nuclear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_003_qubits_de_rmn_myst.html">4.3. qubits de RMN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales__myst.html">4.4. Técnicas de pulsos elementales.</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter_Bibliografia_myst.html">Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/docs/Part_01/Chapter_002_02/Section_007_puertas_multiqubit_con_iones__myst.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Puertas multiqubit con iones</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puerta-de-hadammard">2.7.1. Puerta de Hadammard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puerta-controlada-z">2.7.2. Puerta controlada <span class="math notranslate nohighlight">\(Z\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puerta-de-swap-entre-estados-atomicos-y-vibracionales-text-swap-av">2.7.2.1. Puerta de SWAP entre estados atómicos y vibracionales (<span class="math notranslate nohighlight">\(\text{SWAP}_{av}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puerta-cz-entre-estados-atomicos-y-vibracionales-text-cz-av">2.7.2.2. Puerta CZ entre estados atómicos y vibracionales (<span class="math notranslate nohighlight">\(\text{CZ}_{av})\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-la-puerta-cz">2.7.3. Implementación de la puerta CZ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-puerta-cnot">2.7.4. La puerta CNOT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-los-estados-de-bell">2.7.5. Creación de los estados de Bell</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <blockquote>
+<div><p>Jun 03, 2025 | 5 min read</p>
+</div></blockquote>
+<img src="Figuras/Fig_logo_UMA_scbi.png" align=center  width="2000px"/>
+<a href="https://www.scbi.uma.es/web/es/computacion-cuantica/">
+    <button class="rounded" style="float: right;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="var(--fill, white)"
+        d="M18.1 15.3c-.1.1-.3.2-.4.3l-2.4.4l1.7 3.6c.2.4 0 .8-.4
+            1l-2.8 1.3c-.1.1-.2.1-.3.1c-.3 0-.6-.2-.7-.4L11.2
+            18l-1.9 1.5c-.1.1-.3.2-.5.2c-.4 0-.8-.3-.8-.8V7.5c0-.5.3-.8.8-.8c.2 0
+            .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
+            1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
+    </svg>
+    Volver a SCBI - Computación Cuantica
+    </button>
+</a>
+<p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ket}[1]{|#1\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\branew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketnew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\braket}[2]{\langle #1|#2\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketbra}[2]{| #1\rangle \langle #2 |} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\i}{{\color{blue} i}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Hil}{{\cal H}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\cg}[1]{{\rm C}#1} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lp}{\left(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rp}{\right)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lc}{\left[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rc}{\right]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lch}{\left\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rch}{\right\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lp}{\Bigl(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rp}{\Bigr)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lc}{\Bigl[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rc}{\Bigr]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lch}{\Bigl\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rch}{\Bigr\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rqa}{\quad \Rightarrow \quad} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\bm}{\boldsymbol}\)</span></p>
+<section class="tex2jax_ignore mathjax_ignore" id="puertas-multiqubit-con-iones">
+<span id="sec-ions-multiqubit"></span><h1><span class="section-number">2.7. </span>Puertas multiqubit con iones<a class="headerlink" href="#puertas-multiqubit-con-iones" title="Permalink to this heading">#</a></h1>
+<p>Hemos demostrado que se puede preparar con precisión un sistema de iones atrapados en un estado fiduciario. Se ha demostrado experimentalmente que un sistema de este tipo es escalable hasta unos cien iones, puede manipularse utilizando la interacción láser-ión y el estado final puede leerse de forma efectiva. También hemos demostrado que se puede aplicar cualquier puerta de 1 qubit al estado inicial utilizando un pulso láser con una fase, duración y frecuencia concreta usando la <i>carrier resonance</i>.</p>
+<p>Sin embargo, queda por ver si se puede aplicar alguna puerta de múltiples qubits al sistema. Como ya se discutió, cualquier puerta de múltiples qubits puede obtenerse utilizando puertas de 1 qubit y la puerta CNOT de 2 qubits. En esta sección, discutiremos el proceso de implementación de la puerta CNOT. Demostraremos que una puerta CNOT puede construirse utilizando puertas Hadamard y Z controladas.</p>
+<p>Al igual que antes, definimos <span class="math notranslate nohighlight">\(\ket{g,0} \equiv \ket{0}\)</span> y <span class="math notranslate nohighlight">\(\ket{e,0} \equiv \ket{1}\)</span> como la base computacional.  Aunque tanto el estado atómico como los estados vibracionales pueden utilizarse como qubits separados, normalmente los qubits vibracionales sólo se consideran qubits auxiliares (para cálculo intermedio) y no como qubits medibles porque son difíciles para medir.</p>
+<section id="puerta-de-hadammard">
+<h2><span class="section-number">2.7.1. </span>Puerta de Hadammard<a class="headerlink" href="#puerta-de-hadammard" title="Permalink to this heading">#</a></h2>
+<p>La puerta de Hadammard (ver Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>) puede construirse (salvo una fase global) aplicando dos veces la <i>carrier transition</i> (Fig.  <a class="reference internal" href="Section_004_manipulando_iones_individuales_puertas_simples__myst.html#fig-ions-u-carrier"><span class="std std-numref">2.6</span></a>)</p>
+<div class="math notranslate nohighlight" id="equation-ec-ions-h">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-ec-ions-h" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+H = \mathcal{U}_I^{(\text{c})}(\beta = \pi, \phi = \pi) \mathcal{U}_I^{(\text{c})}(\beta = \pi/2, \phi = -\pi/2) \, .
+\end{equation} \]</div>
+<div class="tip admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Demuestra el resultado de la Ec.  <a class="reference internal" href="#equation-ec-ions-h">(2.4)</a>. Para ello, recuerda como la <i>carrier transition</i> solo afecta a los estados  <span class="math notranslate nohighlight">\(\ket{g,0} \equiv \ket{0}\)</span> y <span class="math notranslate nohighlight">\(\ket{e,0} \equiv \ket{1}\)</span>, la matriz <span class="math notranslate nohighlight">\(4\times4\)</span> de la Fig.  <a class="reference internal" href="Section_004_manipulando_iones_individuales_puertas_simples__myst.html#fig-ions-u-carrier"><span class="std std-numref">2.6</span></a> puede escribirse como una matriz <span class="math notranslate nohighlight">\(2\times2\)</span> tomando como base <span class="math notranslate nohighlight">\(\{\ket{g,0},\ket{e,0}\}\)</span>.</p>
+</div>
+</section>
+<section id="puerta-controlada-z">
+<h2><span class="section-number">2.7.2. </span>Puerta controlada <span class="math notranslate nohighlight">\(Z\)</span><a class="headerlink" href="#puerta-controlada-z" title="Permalink to this heading">#</a></h2>
+<p>La puerta controlada-Z (CZ) es una puerta de dos qubits. Su acción puede describirse como:</p>
+<ul class="simple">
+<li><p>No hace nada al qubit objetivo si el qubit de control es <span class="math notranslate nohighlight">\(\ket{0}\)</span></p></li>
+<li><p>Aplica una puerta <span class="math notranslate nohighlight">\(Z\)</span> en el qubit objetivo si el qubit de control es <span class="math notranslate nohighlight">\(\ket{1}\)</span>.</p></li>
+</ul>
+<p>Como CZ es una puerta de dos qubits, necesitamos dos etiquetas para los grados de libertad atómicos de los dos iones. La base del espacio de Hilbert de dos qubits es ahora
+\begin{equation*}
+{\ket{gg}, \ket{ge}, \ket{eg}, \ket{ee} }, ,
+\end{equation*}
+(todos con <span class="math notranslate nohighlight">\(n=0\)</span>) donde la primera etiqueta indica el <b>qubit de control</b> y la segunda etiqueta indica el <b>qubit de objetivo</b>. En notación matricial, la puerta CZ puede expresarse como</p>
+<figure class="align-center" id="fig-ions-cz-matrix">
+<a class="reference internal image-reference" href="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_CZ_matrix.png"><img alt="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_CZ_matrix.png" src="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_CZ_matrix.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.10 </span><span class="caption-text">Puerta CZ</span><a class="headerlink" href="#fig-ions-cz-matrix" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Para implementar la puerta CZ necesitamos construir otras dos puertas de un ión que se describen a continuación.</p>
+<section id="puerta-de-swap-entre-estados-atomicos-y-vibracionales-text-swap-av">
+<h3><span class="section-number">2.7.2.1. </span>Puerta de SWAP entre estados atómicos y vibracionales (<span class="math notranslate nohighlight">\(\text{SWAP}_{av}\)</span>)<a class="headerlink" href="#puerta-de-swap-entre-estados-atomicos-y-vibracionales-text-swap-av" title="Permalink to this heading">#</a></h3>
+<p>En este caso, consideramos tanto el estado atómico como el vibracional de un ion. La base de este espacio es
+\begin{equation}
+\lch \ket{g,0}, \ket{g,1}, \ket{e,0}, \ket{e,1} \rch.
+\end{equation}
+La acción de la puerta <span class="math notranslate nohighlight">\(\text{SWAP}_{av}\)</span> se representa mediante la matriz</p>
+<figure class="align-center" id="fig-ions-swapav-matrix">
+<a class="reference internal image-reference" href="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_SWAPav_matrix.png"><img alt="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_SWAPav_matrix.png" src="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_SWAPav_matrix.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">Puerta SWAP<span class="math notranslate nohighlight">\({}_\text{av}\)</span></span><a class="headerlink" href="#fig-ions-swapav-matrix" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>con las únicas transiciones no triviales siendo
+\begin{equation}
+\begin{aligned}
+\ket{g,1} &amp; \rightarrow - \ket{e,0} \
+\ket{e,0} &amp; \rightarrow \ket{g,1}
+\end{aligned}
+\end{equation}
+La puerta <span class="math notranslate nohighlight">\(\text{SWAP}_{av}\)</span> puede implementarse mediante un láser usando la red sideband resonance. Utilizando la Fig.  <a class="reference internal" href="Section_004_manipulando_iones_individuales_puertas_simples__myst.html#fig-ions-u-rsb"><span class="std std-numref">2.8</span></a>, la puerta  <span class="math notranslate nohighlight">\(\text{SWAP}_{av}\)</span> puede realizarse mediante la elección de un pulso láser con <span class="math notranslate nohighlight">\(\eta \beta = \pi\)</span> y <span class="math notranslate nohighlight">\(\phi + \pi/2 = 3 \pi/2\)</span>. La inversa de la puerta se puede implementar cambiando la fase del láser a  <span class="math notranslate nohighlight">\(\text{SWAP}_{av}\)</span>.</p>
+</section>
+<section id="puerta-cz-entre-estados-atomicos-y-vibracionales-text-cz-av">
+<h3><span class="section-number">2.7.2.2. </span>Puerta CZ entre estados atómicos y vibracionales (<span class="math notranslate nohighlight">\(\text{CZ}_{av})\)</span><a class="headerlink" href="#puerta-cz-entre-estados-atomicos-y-vibracionales-text-cz-av" title="Permalink to this heading">#</a></h3>
+<p>Se trata de una puerta controlada-Z que actúa sobre los estados atómico y vibracional de un único ion, donde el estado atómico actúa como qubit de control y el estado vibracional actúa como qubit objetivo. En la base de un solo ion
+\begin{equation}
+\lch \ket{g,0}, \ket{g,1}, \ket{e,0}, \ket{e,1} \rch, ,
+\end{equation}
+esta puerta se representa como</p>
+<figure class="align-center" id="fig-ions-czav-matrix">
+<a class="reference internal image-reference" href="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_CZav_matrix.png"><img alt="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_CZav_matrix.png" src="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_CZav_matrix.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Puerta CZ<span class="math notranslate nohighlight">\({}_\text{av}\)</span></span><a class="headerlink" href="#fig-ions-czav-matrix" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>con la única acción no trivial siendo
+\begin{equation}
+\ket{e,1} \rightarrow - \ket{e,1} , .
+\end{equation}</p>
+<p>Para implementar esta puerta, se busca un nivel auxiliar <span class="math notranslate nohighlight">\(\ket{\tilde{e},0}\)</span> del ion que puede alcanzarse <b>solo desde</b> <span class="math notranslate nohighlight">\(\ket{e,1}\)</span> mediante un láser de frecuencia <span class="math notranslate nohighlight">\(\omega_{e\tilde{e}} + \omega_z\)</span> (ver Fig.  <a class="reference internal" href="#fig-ions-niveles-czav"><span class="std std-numref">2.13</span></a>). Si nos fijamos, la transición
+\begin{equation}
+\ket{\tilde{e},0} \leftrightarrow \ket{e,1}
+\end{equation}
+es una transición <i>blue sideband</i>, donde cambiamos <span class="math notranslate nohighlight">\(g\)</span> por <span class="math notranslate nohighlight">\(\tilde{e}\)</span> en la Fig.  <a class="reference internal" href="Section_004_manipulando_iones_individuales_puertas_simples__myst.html#fig-ions-u-bsb"><span class="std std-numref">2.7</span></a>. Si tomamos la Fig.  <a class="reference internal" href="Section_004_manipulando_iones_individuales_puertas_simples__myst.html#fig-ions-u-bsb"><span class="std std-numref">2.7</span></a> para la base
+\begin{equation}
+\lch \ket{\tilde{e},0}, \ket{\tilde{e},1}, \ket{e,0}, \ket{e,1} \rch.
+\end{equation}
+con <span class="math notranslate nohighlight">\(\eta \beta = 2\pi\)</span> y la aplicamos sobre el estado <span class="math notranslate nohighlight">\(\ket{e,1}\)</span> obtenemos:
+\begin{equation}
+\ket{e,1} \rightarrow -\ket{e,1}
+\end{equation}
+Dado que utilizamos un nivel auxiliar para la transición, los demás estados originales no se modifican, lo que da lugar al único cambio no trivial en la Fig.  <a class="reference internal" href="#fig-ions-czav-matrix"><span class="std std-numref">2.12</span></a>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Comprueba este resultado, es decir, aplica el operador de la Fig.  <a class="reference internal" href="Section_004_manipulando_iones_individuales_puertas_simples__myst.html#fig-ions-u-bsb"><span class="std std-numref">2.7</span></a> sobre <span class="math notranslate nohighlight">\(\ket{e,1}\)</span> tomando la base <span class="math notranslate nohighlight">\(\lch \ket{\tilde{e},0}, \ket{\tilde{e},1}, \ket{e,0}, \ket{e,1} \rch\)</span> y tomando <span class="math notranslate nohighlight">\(\eta \beta = 2\pi\)</span>.</p>
+</div>
+<figure class="align-center" id="fig-ions-niveles-czav">
+<a class="reference internal image-reference" href="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_Niveles_CZav.png"><img alt="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_Niveles_CZav.png" src="docs/Part_01/Chapter_002_02/Figuras/Fig_ions_Niveles_CZav.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Nivel auxiliar utilizado para la implementación de la puerta <span class="math notranslate nohighlight">\(\text{CZ}_{av}\)</span>. Un ion en el estado atómico fundamental (<span class="math notranslate nohighlight">\(\ket{g}\)</span>) permanece en el estado fundamental debido a la frecuencia fuera de resonancia  del láser para las transiciones de este estado.</span><a class="headerlink" href="#fig-ions-niveles-czav" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="implementacion-de-la-puerta-cz">
+<h2><span class="section-number">2.7.3. </span>Implementación de la puerta CZ<a class="headerlink" href="#implementacion-de-la-puerta-cz" title="Permalink to this heading">#</a></h2>
+<p>Ahora estamos listos para implementar la puerta CZ para dos iones. El estado más genérico de un sistema de dos iones en el estado fundamental vibracional viene dado por la ecuación</p>
+<div class="math notranslate nohighlight" id="equation-ec-ions-psi-2-ions">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-ec-ions-psi-2-ions" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\ket{\Psi_0} = a_{gg} \ket{gg,0} + a_{ge} \ket{ge,0} + a_{eg} \ket{eg,0} + a_{ee} \ket{ee,0}
+\end{equation} \]</div>
+<p>La puerta CZ puede implementarse en este estado siguiendo paso a paso el siguiente procedimiento (las fuentes en negrita en los siguientes pasos resaltan los cambios en el estado <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>)</p>
+<ul class="simple">
+<li><p>Aplicamos la puerta <span class="math notranslate nohighlight">\(\text{SWAP}_{av}\)</span> en el segundo ion:
+\begin{equation}
+\ket{\Psi_1} = a_{gg} \ket{gg,0} + a_{ge} \ket{g\mathbf{e},\mathbf{1}} + a_{eg} \ket{eg,0} + a_{ee} \ket{e\mathbf{g},\mathbf{1}}
+\end{equation}</p></li>
+<li><p>Aplicamos la puerta <span class="math notranslate nohighlight">\(\text{CZ}_{av}\)</span> en el primer ion:
+\begin{equation}
+\ket{\Psi_2} = a_{gg} \ket{gg,0} + a_{ge} \ket{ge,1} + a_{eg} \ket{eg,0} - a_{ee} \ket{\mathbf{e}g,\mathbf{1}}
+\end{equation}</p></li>
+<li><p>Aplicamos la inversa de la puerta <span class="math notranslate nohighlight">\(\text{SWAP}_{av}\)</span> en el segundo ion:
+\begin{equation}
+\ket{\Psi_1} = a_{gg} \ket{gg,0} + a_{ge} \ket{g\mathbf{g},\mathbf{0}} + a_{eg} \ket{eg,0} - a_{ee} \ket{e\mathbf{e},\mathbf{0}}
+\end{equation}</p></li>
+</ul>
+<p>Obsérvese que tras el conjunto de operaciones descritas anteriormente, el qubit vibracional vuelve al estado fundamental (de donde partió). El qubit vibracional puede eliminarse ahora de la descripción del paso inicial y de final, lo que da la transformación efectiva
+\begin{equation}
+a_{gg} \ket{gg} + a_{ge} \ket{ge} + a_{eg} \ket{eg} + a_{ee} \ket{ee}
+\rightarrow
+a_{gg} \ket{gg} + a_{ge} \ket{ge} + a_{eg} \ket{eg} - a_{ee} \ket{ee}
+\end{equation}
+Ahora es evidente que los pasos descritos anteriormente implementan efectivamente la puerta CZ en un sistema de dos iones.</p>
+</section>
+<section id="la-puerta-cnot">
+<h2><span class="section-number">2.7.4. </span>La puerta CNOT<a class="headerlink" href="#la-puerta-cnot" title="Permalink to this heading">#</a></h2>
+<p>Para implementar la puerta CNOT solo tenemos que tener en cuenta la siguiente relación:</p>
+<div class="math notranslate nohighlight" id="equation-ec-ions-cnot-from-hczh">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-ec-ions-cnot-from-hczh" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\text{CNOT} = (\mathbb{I} \otimes H) \text{CZ} (\mathbb{I} \otimes H)
+\end{equation} \]</div>
+<p>(donde la CZ está controlada por el qubit de la izquierda en el par).</p>
+<p>Al poder implementar cualquier puerta de un qubit y la CNOT, tenemos un <b>conjunto universal de puertas</b>. Es decir, se cumple el criterio 4 de DiVicenzo (sección  <a class="reference internal" href="../Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.html#sec-criterio-divicenzo"><span class="std std-numref">1.3.1</span></a>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Ejercicio</p>
+<p>Comprueba la relación de la Ec.  <a class="reference internal" href="#equation-ec-ions-cnot-from-hczh">(2.6)</a>.</p>
+</div>
+</section>
+<section id="creacion-de-los-estados-de-bell">
+<h2><span class="section-number">2.7.5. </span>Creación de los estados de Bell<a class="headerlink" href="#creacion-de-los-estados-de-bell" title="Permalink to this heading">#</a></h2>
+<p>Una vez tenemos construidas la CNOT y las puertas de un qubit, podemos construir los estados de Bell como ejemplo para ver que se puede generar entrelazamiento con iones. Construyamos por ejemplo el <span class="math notranslate nohighlight">\(B_{00}\)</span> (ver Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>:
+\begin{equation}
+CNOT (H \otimes \mathbb{I}) \ket{gg} = \frac{\ket{gg} + \ket{ee}}{\sqrt{2}}
+\end{equation}</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png"><img alt="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" src="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" style="width: 2000px;" /></a>
+</figure>
+<center>
+<img align="left" src="https://quantumspain-project.es/wp-content/uploads/2024/02/Banner-QS_GOB_v2.png" width="1000px" />
+</center></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/Part_01/Chapter_002_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Section_006_lectura_del_estado_de_los_iones_myst.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.6. </span>Lectura del estado de los iones</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Section_008_conclusiones_pros_y_contras_myst.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.8. </span>Conclusiones: pros y contras</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puerta-de-hadammard">2.7.1. Puerta de Hadammard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#puerta-controlada-z">2.7.2. Puerta controlada <span class="math notranslate nohighlight">\(Z\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puerta-de-swap-entre-estados-atomicos-y-vibracionales-text-swap-av">2.7.2.1. Puerta de SWAP entre estados atómicos y vibracionales (<span class="math notranslate nohighlight">\(\text{SWAP}_{av}\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puerta-cz-entre-estados-atomicos-y-vibracionales-text-cz-av">2.7.2.2. Puerta CZ entre estados atómicos y vibracionales (<span class="math notranslate nohighlight">\(\text{CZ}_{av})\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-la-puerta-cz">2.7.3. Implementación de la puerta CZ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-puerta-cnot">2.7.4. La puerta CNOT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-los-estados-de-bell">2.7.5. Creación de los estados de Bell</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

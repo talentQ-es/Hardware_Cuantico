@@ -1,0 +1,134 @@
+################################################################
+### Los cuadros \Teorema{}, \Lemma{},... de la forma
+
+\Teorema{ \textit{(Subtitulo)} \label{Teo_...}           ---> importante!!!, los parentesis dentro del \textit{} y nada de texto fuera del textit o el \label{}
+Contenido del primer paragrafo del cuadro
+\vspace{0.3cm}
+
+Contenido del segundo parágrafo del cuadro
+}
+
+El subtitulo y la label son opcionales.
+Puede haber lineas en blando dentro.
+
+Sobre las label, deben empezar con:
+    - teorema_
+    - definicion_
+    - lemma_
+    - lema_
+    - corolario_
+    - post_
+    - prop_
+    - axioma_
+#################################################################
+
+Los \bm deben ir como \bm{texto en negrita}
+
+################################################################
+Sobre las ecuaciones:
+    - Las label siempre en la misma linea que el \begin{equation}:
+    \begin{equation} \label{...}
+    ...
+    \end{equation}
+
+Para meter texto dentro de una ecuación, usar \text{...}.
+Si se quiere, por ejemplo, meter cursiva, usar: \text{\textit{...}}
+
+Sobre los align:
+
+No usar \begin{align}!!! Usar:
+
+\begin{equation} \label{...}
+\begin{aligned}
+...
+\end{aligned}
+\end{equation}
+
+No se pueden refereciar por separado las ecuaciones en un aligned,
+referenciar siempre el begin{equation}
+
+################################################################
+
+Las label de las secciones deben de ir en la misma linea que los \section{} y \subsection.
+
+Los \begin{equation} y \end{equation} debem de ir al principio de las lineas (no pueden ir en medio)
+
+No puede haber \footnote{} --> mybox_blue
+
+No se pueden meter cajas de colores dentro de cajas de colores. Falla al hacer la web
+
+
+Las labels de los capitulos, secciones y subseciones deben de empezar con sec_. Pueden ser
+de la forma:
+- Capitulos: sec_chapter_...
+- Seccion: sec_...
+- Subseccion: sec_subsec_...
+################################################################
+
+\begin{mybox_blue}{Nota/Resumen: Subtitulo}
+
+################################################################
+
+\begin{itemize} e \begin{enumerate}
+
+Se acepta usar:
+
+\item
+\item[1.], \item[2.], ...
+\item[a)], ....
+
+No se aceptan las \subfigure: poner una única imagen con un único pie de foto
+
+
+Las caption de las figuras deben de ir en una linea: \caption{.....}
+Los nombres de las figuras deben llevar la extensión
+
+################################################################
+Sobre las tablas. Sintaxis (los \hline son opcionales):
+
+\begin{table}[...]
+\centering
+\begin{tabular}{...}
+.... \\ \hline
+.... \\ \hline
+\end{tabular}
+\caption{....}
+\label{Tab_...}
+\end{table}
+
+Cada linea de la tabla debe de ser una sola linea en el .txt !!!!
+Es decir, no se acepta:
+\begin{tabular}{...}
+....
+....
+.... \\ \hline
+....
+....
+.... \\ \hline
+\end{tabular}
+################################################################
+
+## Bibliografia: poner esto antes
+
+% == Bibliograf
+
+
+## Omitir una zona
+
+% == Star_omitir_en_Notebook
+% == End_omitir_en_Notebook
+
+
+######### Cosas para hacer
+
+- Añadir colortex a plantilla
+- Corregir los \underline{}
+
+- Lidiar con refs a partes y tablas
+- Pasar de dropdown a proof??? No se yo
+
+
+
+
+
+

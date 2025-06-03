@@ -1,0 +1,546 @@
+===========================
+Input File  =  ../Book/docs/Part_01/Chapter_001_01_introduccion.ipynb
+Output file =  ../Book/docs/Part_01/Chapter_001_01_introduccion_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Bibliografia.ipynb
+Output file =  ../Book/docs/Bibliografia_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_002_02/Section_001_numeros_complejos.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_002_02/Section_001_numeros_complejos_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_002_02/Section_002_vectores.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_002_02/Section_002_vectores_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_002_02/Section_003_operadores.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_002_02/Section_003_operadores_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_002_02/Section_004_tensores.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_002_02/Section_004_tensores_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_002_02/Section_005_probabilidades.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_002_02/Section_005_probabilidades_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_003_02/Section_001_axiomas.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_003_02/Section_001_axiomas_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_003_02/Section_002_bases_ortogonales.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_003_02/Section_002_bases_ortogonales_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_003_02/Section_003_medidas_estadisticas.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_003_02/Section_003_medidas_estadisticas_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_003_02/Section_004_evolucion_temporal.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_003_02/Section_004_evolucion_temporal_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_003_02/Section_005_estados_mezcla_y_matriz_densidad.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_003_02/Section_005_estados_mezcla_y_matriz_densidad_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_002_01_formalismo_matematico_.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_002_01_formalismo_matematico__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_02/Chapter_003_01_fundamentos_de_mecanica_cuantica_.ipynb
+Output file =  ../Book/docs/Part_02/Chapter_003_01_fundamentos_de_mecanica_cuantica__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_004_02/Section_001_definicion_y_bases.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_004_02/Section_001_definicion_y_bases_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_004_02/Section_002_el_estado_de_un_qubit_y_la_esfera_de_bloch.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_004_02/Section_002_el_estado_de_un_qubit_y_la_esfera_de_bloch_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_005_02/Section_001_rotaciones_en_la_esfera_de_bloch.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_005_02/Section_001_rotaciones_en_la_esfera_de_bloch_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_005_02/Section_002_puertas_simples.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_005_02/Section_002_puertas_simples_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_005_02/Section_003_circuitos_cuanticos_1_qubit.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_005_02/Section_003_circuitos_cuanticos_1_qubit_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_006_02/Section_001_en_la_base_computacional.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_006_02/Section_001_en_la_base_computacional_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_006_02/Section_002_la_moneda_cuantica.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_006_02/Section_002_la_moneda_cuantica_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_006_02/Section_003_medidas_en_una_base_general.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_006_02/Section_003_medidas_en_una_base_general_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_006_02/Section_004_valores_esperados.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_006_02/Section_004_valores_esperados_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_007_02/Section_001_algunas_definiciones.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_007_02/Section_001_algunas_definiciones_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_007_02/Section_002_entrelazamiento.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_007_02/Section_002_entrelazamiento_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_007_02/Section_003_circuitos_multiqubit.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_007_02/Section_003_circuitos_multiqubit_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_007_02/Section_004_puertas_multi-qubit_no_controladas.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_007_02/Section_004_puertas_multi-qubit_no_controladas_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_007_02/Section_005_puertas_controladas.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_007_02/Section_005_puertas_controladas_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_007_02/Section_006_puertas_multicontroladas.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_007_02/Section_006_puertas_multicontroladas_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_008_02/Section_001_medidas_en_la_base_computacional.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_008_02/Section_001_medidas_en_la_base_computacional_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_008_02/Section_002_medidas_en_bases_generales.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_008_02/Section_002_medidas_en_bases_generales_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_008_02/Section_003_valores_esperados.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_008_02/Section_003_valores_esperados_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_008_02/Section_004_medida_de_hadamard.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_008_02/Section_004_medida_de_hadamard_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_009_02/Section_001_desigualdades_de_bell.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_009_02/Section_001_desigualdades_de_bell_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_009_02/Section_002_experimento_ghz.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_009_02/Section_002_experimento_ghz_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_009_02/Section_003_teleportacion.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_009_02/Section_003_teleportacion_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_009_02/Section_004_intercambio_de_entrelazamiento.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_009_02/Section_004_intercambio_de_entrelazamiento_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_009_02/Section_005_teorema_de_no-clonacion_.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_009_02/Section_005_teorema_de_no-clonacion__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_004_01_qubits.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_004_01_qubits_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_005_01_puertas_simples.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_005_01_puertas_simples_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_006_01_medidas,_parte_i_medida_de_1_qubit.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_006_01_medidas,_parte_i_medida_de_1_qubit_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_007_01_multi-qubit_definiciones_y_puertas.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_007_01_multi-qubit_definiciones_y_puertas_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_008_01_medidas,_parte_ii_medida_de_estados_multi-qubit.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_008_01_medidas,_parte_ii_medida_de_estados_multi-qubit_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_009_01_entrelazamiento_en_accion.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_009_01_entrelazamiento_en_accion_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_010_01_hardware_tecnicas_de_control_y_computacion_en_rmn.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_010_01_hardware_tecnicas_de_control_y_computacion_en_rmn_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_011_01_decoherencia_y_desfase.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_011_01_decoherencia_y_desfase_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_010_02/Section_001_introduccion.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_010_02/Section_001_introduccion_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_010_02/Section_002_el_espin_nuclear_.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_010_02/Section_002_el_espin_nuclear__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_010_02/Section_003_qubits_de_rmn.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_010_02/Section_003_qubits_de_rmn_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_010_02/Section_004_tecnicas_de_pulsos_elementales_.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_010_02/Section_004_tecnicas_de_pulsos_elementales__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_011_02/Section_001_introduccion.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_011_02/Section_001_introduccion_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_011_02/Section_002_decoherencia_y_las_ecuaciones_de_bloch.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_011_02/Section_002_decoherencia_y_las_ecuaciones_de_bloch_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_03/Chapter_011_02/Section_003_resumen.ipynb
+Output file =  ../Book/docs/Part_03/Chapter_011_02/Section_003_resumen_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_012_02/Section_001_circuitos.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_012_02/Section_001_circuitos_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_012_02/Section_002_retroceso_de_fase_phase_kickback.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_012_02/Section_002_retroceso_de_fase_phase_kickback_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_012_02/Section_003_circuitos_equivalentes.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_012_02/Section_003_circuitos_equivalentes_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_012_02/Section_004_operadores_de_clifford.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_012_02/Section_004_operadores_de_clifford_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_012_02/Section_005_universalidad_de_la_computacion_cuantica_con_puertas_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_012_02/Section_005_universalidad_de_la_computacion_cuantica_con_puertas__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_012_02/Section_006_medidas_de_calidad_de_un_circuitos.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_012_02/Section_006_medidas_de_calidad_de_un_circuitos_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_013_02/Section_001_preparacion_de_un_estado_inicial_generico.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_013_02/Section_001_preparacion_de_un_estado_inicial_generico_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_013_02/Section_002_oraculos_funciones_digitales.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_013_02/Section_002_oraculos_funciones_digitales_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_014_02/Section_001_algoritmo_de_deutsch-jozsa.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_014_02/Section_001_algoritmo_de_deutsch-jozsa_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_014_02/Section_002_algoritmo_de_bernstein-vazirani.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_014_02/Section_002_algoritmo_de_bernstein-vazirani_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_014_02/Section_003_algoritmo_de_simon.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_014_02/Section_003_algoritmo_de_simon_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_015_02/Section_001_la_qft_en_computacion_cuantica.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_015_02/Section_001_la_qft_en_computacion_cuantica_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_015_02/Section_002_intuicion.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_015_02/Section_002_intuicion_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_015_02/Section_003_circuito_que_implementa_la_qft.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_015_02/Section_003_circuito_que_implementa_la_qft_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_015_02/Section_004_complegidad_y_qft_aproximada.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_015_02/Section_004_complegidad_y_qft_aproximada_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_016_02/Section_001_introduccion.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_016_02/Section_001_introduccion_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_016_02/Section_002_circuito.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_016_02/Section_002_circuito_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_016_02/Section_003_formulacion_matematica.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_016_02/Section_003_formulacion_matematica_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_016_02/Section_004_y_si_no_conocemos_el_autoestado.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_016_02/Section_004_y_si_no_conocemos_el_autoestado_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_017_02/Section_001_introduccion.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_017_02/Section_001_introduccion_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_017_02/Section_002_hallar_del_periodo_de_una_funcion_period_finding.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_017_02/Section_002_hallar_del_periodo_de_una_funcion_period_finding_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_017_02/Section_003_implementacion_ad_hoc_en_qiskit_para_n=15.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_017_02/Section_003_implementacion_ad_hoc_en_qiskit_para_n=15_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_012_01_elementos_basicos_de_los_algoritmos_cuanticos.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_012_01_elementos_basicos_de_los_algoritmos_cuanticos_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_013_01_estado_inicial_y_oraculos.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_013_01_estado_inicial_y_oraculos_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_014_01_primeros_algoritmos_algoritmos_del_oraculo.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_014_01_primeros_algoritmos_algoritmos_del_oraculo_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_015_01_qft_quantum_fourier_transform_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_015_01_qft_quantum_fourier_transform__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_016_01_qpe_estimacion_de_fase_cuantica_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_016_01_qpe_estimacion_de_fase_cuantica__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_017_01_algoritmo_de_shor_periodicity_finding_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_017_01_algoritmo_de_shor_periodicity_finding__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_018_01_algoritmo_de_shor_implementacion_con_2n+3_qubit.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_018_01_algoritmo_de_shor_implementacion_con_2n+3_qubit_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_019_01_algoritmo_de_grover_amplificacion_de_amplitud_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_019_01_algoritmo_de_grover_amplificacion_de_amplitud__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_020_01_criptografia_y_quantum_key_distribution_qkd_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_020_01_criptografia_y_quantum_key_distribution_qkd__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_018_02/Section_001_la_idea_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_018_02/Section_001_la_idea__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_018_02/Section_002_explicacion_desgranada.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_018_02/Section_002_explicacion_desgranada_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_018_02/Section_003_implementacion_aproximada_de_la_qft.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_018_02/Section_003_implementacion_aproximada_de_la_qft_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_018_02/Section_004_implementacion_de_las_swap_controladas.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_018_02/Section_004_implementacion_de_las_swap_controladas_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_019_02/Section_001_diccionario_de_notaciones.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_019_02/Section_001_diccionario_de_notaciones_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_019_02/Section_002_introduccion.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_019_02/Section_002_introduccion_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_019_02/Section_003_explicacion_geometrica_del_algoritmo_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_019_02/Section_003_explicacion_geometrica_del_algoritmo__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_019_02/Section_004_numero_conocido_de_soluciones_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_019_02/Section_004_numero_conocido_de_soluciones__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_019_02/Section_005_numero_desconocido_de_soluciones_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_019_02/Section_005_numero_desconocido_de_soluciones__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_019_02/Section_006_conteo_de_soluciones_quantum_counting_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_019_02/Section_006_conteo_de_soluciones_quantum_counting__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_019_02/Section_007_consideraciones_sobre_la_implementacion_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_019_02/Section_007_consideraciones_sobre_la_implementacion__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_019_02/Section_008_distribucion_de_probababilidad_inicial_aleatoria_.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_019_02/Section_008_distribucion_de_probababilidad_inicial_aleatoria__myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_019_02/Section_009_implementaciones_con_qiskit.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_019_02/Section_009_implementaciones_con_qiskit_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_020_02/Section_001_introduccion.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_020_02/Section_001_introduccion_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_020_02/Section_002_fundamentos_de_qkd.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_020_02/Section_002_fundamentos_de_qkd_myst.ipynb
+===========================
+===========================
+Input File  =  ../Book/docs/Part_04/Chapter_020_02/Section_003_protocolos_de_qkd_tres_familias.ipynb
+Output file =  ../Book/docs/Part_04/Chapter_020_02/Section_003_protocolos_de_qkd_tres_familias_myst.ipynb
+===========================
+Running Jupyter-Book v1.0.0
+Source Folder: /home/dcb/Repos_Git/Notebook_to_myst/scripts/../Book
+Config Path: /home/dcb/Repos_Git/Notebook_to_myst/scripts/../Book/_config.yml
+Output Path: /home/dcb/Repos_Git/Notebook_to_myst/scripts/../Book/_build/html
+[01mRunning Sphinx v5.3.0[39;49;00m
+[etoc] Changing master_doc to 'docs/index'
+[etoc] Excluded 303 extra file(s) not in toc
+checking bibtex cache... out of date
+parsing bibtex file /home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Bibliografia.bib... parsed 71 entries
+[01mmyst v1.0.0:[39;49;00m MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions={'substitution', 'colon_fence', 'linkify', 'html_admonition', 'deflist', 'amsmath', 'html_image', 'smartquotes', 'tasklist', 'replacements', 'fieldlist', 'strikethrough', 'dollarmath'}, disable_syntax=[], all_links_external=False, url_schemes=('mailto', 'http', 'https'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+[01mmyst-nb v1.0.0:[39;49;00m NbParserConfig(custom_formats={}, metadata_key='mystnb', cell_metadata_key='mystnb', kernel_rgx_aliases={}, eval_name_regex='^[a-zA-Z_][a-zA-Z0-9_]*$', execution_mode='cache', execution_cache_path='', execution_excludepatterns=['pattern1', 'pattern2', '*pattern3withwildcard'], execution_timeout=100, execution_in_temp=False, execution_allow_errors=True, execution_raise_on_error=False, execution_show_tb=False, merge_streams=False, render_plugin='default', remove_code_source=False, remove_code_outputs=False, code_prompt_show='Show code cell {type}', code_prompt_hide='Hide code cell {type}', number_source_lines=False, output_stderr='show', render_text_lexer='myst-ansi', render_error_lexer='ipythontb', render_image_options={}, render_figure_options={}, render_markdown_format='commonmark', output_folder='build', append_css=True, metadata_to_fm=False)
+Using jupyter-cache at: /home/dcb/Repos_Git/Notebook_to_myst/Book/_build/.jupyter_cache
+[01msphinx-multitoc-numbering v0.1.3:[39;49;00m Loaded
+The default value for `navigation_with_keys` will change to `False` in the next release. If you wish to preserve the old behavior for your site, set `navigation_with_keys=True` in the `html_theme_options` dict in your `conf.py` file. Be aware that `navigation_with_keys = True` has negative accessibility implications: https://github.com/pydata/pydata-sphinx-theme/issues/1492
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mbuilding [html]: [39;49;00mtargets for 101 source files that are out of date
+[01mupdating environment: [39;49;00m[new config] 101 added, 0 changed, 0 removed
+[01mreading sources... [39;49;00m[  0%] [35mdocs/Chapter_Bibliografia_myst[39;49;00m                       /home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Chapter_Bibliografia_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[  1%] [35mdocs/Part_01/Chapter_001_01_introduccion_myst[39;49;00m        /home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_01/Chapter_001_01_introduccion_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[  2%] [35mdocs/Part_02/Chapter_002_01_formalismo_matematico__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_002_01_formalismo_matematico__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[  3%] [35mdocs/Part_02/Chapter_002_02/Section_001_numeros_complejos_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_002_02/Section_001_numeros_complejos_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[  4%] [35mdocs/Part_02/Chapter_002_02/Section_002_vectores_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_002_02/Section_002_vectores_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[  5%] [35mdocs/Part_02/Chapter_002_02/Section_003_operadores_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_002_02/Section_003_operadores_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[  6%] [35mdocs/Part_02/Chapter_002_02/Section_004_tensores_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_002_02/Section_004_tensores_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[  7%] [35mdocs/Part_02/Chapter_002_02/Section_005_probabilidades_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_002_02/Section_005_probabilidades_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[  8%] [35mdocs/Part_02/Chapter_003_01_fundamentos_de_mecanica_cuantica__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_003_01_fundamentos_de_mecanica_cuantica__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[  9%] [35mdocs/Part_02/Chapter_003_02/Section_001_axiomas_myst[39;49;00m /home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_003_02/Section_001_axiomas_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 10%] [35mdocs/Part_02/Chapter_003_02/Section_002_bases_ortogonales_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_003_02/Section_002_bases_ortogonales_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 11%] [35mdocs/Part_02/Chapter_003_02/Section_003_medidas_estadisticas_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_003_02/Section_003_medidas_estadisticas_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 12%] [35mdocs/Part_02/Chapter_003_02/Section_004_evolucion_temporal_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_003_02/Section_004_evolucion_temporal_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 13%] [35mdocs/Part_02/Chapter_003_02/Section_005_estados_mezcla_y_matriz_densidad_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_02/Chapter_003_02/Section_005_estados_mezcla_y_matriz_densidad_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 14%] [35mdocs/Part_03/Chapter_004_01_qubits_myst[39;49;00m              /home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_004_01_qubits_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 15%] [35mdocs/Part_03/Chapter_004_02/Section_001_definicion_y_bases_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_004_02/Section_001_definicion_y_bases_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 16%] [35mdocs/Part_03/Chapter_004_02/Section_002_el_estado_de_un_qubit_y_la_esfera_de_bloch_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_004_02/Section_002_el_estado_de_un_qubit_y_la_esfera_de_bloch_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 17%] [35mdocs/Part_03/Chapter_005_01_puertas_simples_myst[39;49;00m     /home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_005_01_puertas_simples_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 18%] [35mdocs/Part_03/Chapter_005_02/Section_001_rotaciones_en_la_esfera_de_bloch_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_005_02/Section_001_rotaciones_en_la_esfera_de_bloch_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 19%] [35mdocs/Part_03/Chapter_005_02/Section_002_puertas_simples_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_005_02/Section_002_puertas_simples_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 20%] [35mdocs/Part_03/Chapter_005_02/Section_003_circuitos_cuanticos_1_qubit_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_005_02/Section_003_circuitos_cuanticos_1_qubit_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 21%] [35mdocs/Part_03/Chapter_006_01_medidas,_parte_i_medida_de_1_qubit_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_006_01_medidas,_parte_i_medida_de_1_qubit_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 22%] [35mdocs/Part_03/Chapter_006_02/Section_001_en_la_base_computacional_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_006_02/Section_001_en_la_base_computacional_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 23%] [35mdocs/Part_03/Chapter_006_02/Section_002_la_moneda_cuantica_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_006_02/Section_002_la_moneda_cuantica_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 24%] [35mdocs/Part_03/Chapter_006_02/Section_003_medidas_en_una_base_general_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_006_02/Section_003_medidas_en_una_base_general_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 25%] [35mdocs/Part_03/Chapter_006_02/Section_004_valores_esperados_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_006_02/Section_004_valores_esperados_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 26%] [35mdocs/Part_03/Chapter_007_01_multi-qubit_definiciones_y_puertas_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_007_01_multi-qubit_definiciones_y_puertas_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 27%] [35mdocs/Part_03/Chapter_007_02/Section_001_algunas_definiciones_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_007_02/Section_001_algunas_definiciones_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 28%] [35mdocs/Part_03/Chapter_007_02/Section_002_entrelazamiento_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_007_02/Section_002_entrelazamiento_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 29%] [35mdocs/Part_03/Chapter_007_02/Section_003_circuitos_multiqubit_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_007_02/Section_003_circuitos_multiqubit_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 30%] [35mdocs/Part_03/Chapter_007_02/Section_004_puertas_multi-qubit_no_controladas_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_007_02/Section_004_puertas_multi-qubit_no_controladas_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 31%] [35mdocs/Part_03/Chapter_007_02/Section_005_puertas_controladas_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_007_02/Section_005_puertas_controladas_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 32%] [35mdocs/Part_03/Chapter_007_02/Section_006_puertas_multicontroladas_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_007_02/Section_006_puertas_multicontroladas_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 33%] [35mdocs/Part_03/Chapter_008_01_medidas,_parte_ii_medida_de_estados_multi-qubit_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_008_01_medidas,_parte_ii_medida_de_estados_multi-qubit_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 34%] [35mdocs/Part_03/Chapter_008_02/Section_001_medidas_en_la_base_computacional_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_008_02/Section_001_medidas_en_la_base_computacional_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 35%] [35mdocs/Part_03/Chapter_008_02/Section_002_medidas_en_bases_generales_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_008_02/Section_002_medidas_en_bases_generales_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 36%] [35mdocs/Part_03/Chapter_008_02/Section_003_valores_esperados_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_008_02/Section_003_valores_esperados_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 37%] [35mdocs/Part_03/Chapter_008_02/Section_004_medida_de_hadamard_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_008_02/Section_004_medida_de_hadamard_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 38%] [35mdocs/Part_03/Chapter_009_01_entrelazamiento_en_accion_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_009_01_entrelazamiento_en_accion_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 39%] [35mdocs/Part_03/Chapter_009_02/Section_001_desigualdades_de_bell_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_009_02/Section_001_desigualdades_de_bell_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 40%] [35mdocs/Part_03/Chapter_009_02/Section_002_experimento_ghz_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_009_02/Section_002_experimento_ghz_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 41%] [35mdocs/Part_03/Chapter_009_02/Section_003_teleportacion_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_009_02/Section_003_teleportacion_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 42%] [35mdocs/Part_03/Chapter_009_02/Section_004_intercambio_de_entrelazamiento_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_009_02/Section_004_intercambio_de_entrelazamiento_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 43%] [35mdocs/Part_03/Chapter_009_02/Section_005_teorema_de_no-clonacion__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_009_02/Section_005_teorema_de_no-clonacion__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 44%] [35mdocs/Part_03/Chapter_010_01_hardware_tecnicas_de_control_y_computacion_en_rmn_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_010_01_hardware_tecnicas_de_control_y_computacion_en_rmn_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 45%] [35mdocs/Part_03/Chapter_010_02/Section_001_introduccion_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_010_02/Section_001_introduccion_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 46%] [35mdocs/Part_03/Chapter_010_02/Section_002_el_espin_nuclear__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_010_02/Section_002_el_espin_nuclear__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 47%] [35mdocs/Part_03/Chapter_010_02/Section_003_qubits_de_rmn_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_010_02/Section_003_qubits_de_rmn_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 48%] [35mdocs/Part_03/Chapter_010_02/Section_004_tecnicas_de_pulsos_elementales__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_010_02/Section_004_tecnicas_de_pulsos_elementales__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 49%] [35mdocs/Part_03/Chapter_011_01_decoherencia_y_desfase_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_011_01_decoherencia_y_desfase_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 50%] [35mdocs/Part_03/Chapter_011_02/Section_001_introduccion_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_011_02/Section_001_introduccion_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 51%] [35mdocs/Part_03/Chapter_011_02/Section_002_decoherencia_y_las_ecuaciones_de_bloch_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_011_02/Section_002_decoherencia_y_las_ecuaciones_de_bloch_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 52%] [35mdocs/Part_03/Chapter_011_02/Section_003_resumen_myst[39;49;00m /home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_03/Chapter_011_02/Section_003_resumen_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 53%] [35mdocs/Part_04/Chapter_012_01_elementos_basicos_de_los_algoritmos_cuanticos_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_012_01_elementos_basicos_de_los_algoritmos_cuanticos_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 54%] [35mdocs/Part_04/Chapter_012_02/Section_001_circuitos_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_012_02/Section_001_circuitos_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 55%] [35mdocs/Part_04/Chapter_012_02/Section_002_retroceso_de_fase_phase_kickback_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_012_02/Section_002_retroceso_de_fase_phase_kickback_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 56%] [35mdocs/Part_04/Chapter_012_02/Section_003_circuitos_equivalentes_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_012_02/Section_003_circuitos_equivalentes_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 57%] [35mdocs/Part_04/Chapter_012_02/Section_004_operadores_de_clifford_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_012_02/Section_004_operadores_de_clifford_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 58%] [35mdocs/Part_04/Chapter_012_02/Section_005_universalidad_de_la_computacion_cuantica_con_puertas__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_012_02/Section_005_universalidad_de_la_computacion_cuantica_con_puertas__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 59%] [35mdocs/Part_04/Chapter_012_02/Section_006_medidas_de_calidad_de_un_circuitos_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_012_02/Section_006_medidas_de_calidad_de_un_circuitos_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 60%] [35mdocs/Part_04/Chapter_013_01_estado_inicial_y_oraculos_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_013_01_estado_inicial_y_oraculos_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 61%] [35mdocs/Part_04/Chapter_013_02/Section_001_preparacion_de_un_estado_inicial_generico_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_013_02/Section_001_preparacion_de_un_estado_inicial_generico_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 62%] [35mdocs/Part_04/Chapter_013_02/Section_002_oraculos_funciones_digitales_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_013_02/Section_002_oraculos_funciones_digitales_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 63%] [35mdocs/Part_04/Chapter_014_01_primeros_algoritmos_algoritmos_del_oraculo_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_014_01_primeros_algoritmos_algoritmos_del_oraculo_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 64%] [35mdocs/Part_04/Chapter_014_02/Section_001_algoritmo_de_deutsch-jozsa_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_014_02/Section_001_algoritmo_de_deutsch-jozsa_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 65%] [35mdocs/Part_04/Chapter_014_02/Section_002_algoritmo_de_bernstein-vazirani_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_014_02/Section_002_algoritmo_de_bernstein-vazirani_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 66%] [35mdocs/Part_04/Chapter_014_02/Section_003_algoritmo_de_simon_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_014_02/Section_003_algoritmo_de_simon_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 67%] [35mdocs/Part_04/Chapter_015_01_qft_quantum_fourier_transform__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_015_01_qft_quantum_fourier_transform__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 68%] [35mdocs/Part_04/Chapter_015_02/Section_001_la_qft_en_computacion_cuantica_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_015_02/Section_001_la_qft_en_computacion_cuantica_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 69%] [35mdocs/Part_04/Chapter_015_02/Section_002_intuicion_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_015_02/Section_002_intuicion_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 70%] [35mdocs/Part_04/Chapter_015_02/Section_003_circuito_que_implementa_la_qft_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_015_02/Section_003_circuito_que_implementa_la_qft_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 71%] [35mdocs/Part_04/Chapter_015_02/Section_004_complegidad_y_qft_aproximada_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_015_02/Section_004_complegidad_y_qft_aproximada_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 72%] [35mdocs/Part_04/Chapter_016_01_qpe_estimacion_de_fase_cuantica__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_016_01_qpe_estimacion_de_fase_cuantica__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 73%] [35mdocs/Part_04/Chapter_016_02/Section_001_introduccion_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_016_02/Section_001_introduccion_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 74%] [35mdocs/Part_04/Chapter_016_02/Section_002_circuito_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_016_02/Section_002_circuito_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 75%] [35mdocs/Part_04/Chapter_016_02/Section_003_formulacion_matematica_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_016_02/Section_003_formulacion_matematica_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 76%] [35mdocs/Part_04/Chapter_016_02/Section_004_y_si_no_conocemos_el_autoestado_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_016_02/Section_004_y_si_no_conocemos_el_autoestado_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 77%] [35mdocs/Part_04/Chapter_017_01_algoritmo_de_shor_periodicity_finding__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_017_01_algoritmo_de_shor_periodicity_finding__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 78%] [35mdocs/Part_04/Chapter_017_02/Section_001_introduccion_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_017_02/Section_001_introduccion_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 79%] [35mdocs/Part_04/Chapter_017_02/Section_002_hallar_del_periodo_de_una_funcion_period_finding_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_017_02/Section_002_hallar_del_periodo_de_una_funcion_period_finding_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 80%] [35mdocs/Part_04/Chapter_017_02/Section_003_implementacion_ad_hoc_en_qiskit_para_n=15_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_017_02/Section_003_implementacion_ad_hoc_en_qiskit_para_n=15_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 81%] [35mdocs/Part_04/Chapter_018_01_algoritmo_de_shor_implementacion_con_2n+3_qubit_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_018_01_algoritmo_de_shor_implementacion_con_2n+3_qubit_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 82%] [35mdocs/Part_04/Chapter_018_02/Section_001_la_idea__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_018_02/Section_001_la_idea__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 83%] [35mdocs/Part_04/Chapter_018_02/Section_002_explicacion_desgranada_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_018_02/Section_002_explicacion_desgranada_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 84%] [35mdocs/Part_04/Chapter_018_02/Section_003_implementacion_aproximada_de_la_qft_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_018_02/Section_003_implementacion_aproximada_de_la_qft_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 85%] [35mdocs/Part_04/Chapter_018_02/Section_004_implementacion_de_las_swap_controladas_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_018_02/Section_004_implementacion_de_las_swap_controladas_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 86%] [35mdocs/Part_04/Chapter_019_01_algoritmo_de_grover_amplificacion_de_amplitud__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_019_01_algoritmo_de_grover_amplificacion_de_amplitud__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 87%] [35mdocs/Part_04/Chapter_019_02/Section_001_diccionario_de_notaciones_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_019_02/Section_001_diccionario_de_notaciones_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 88%] [35mdocs/Part_04/Chapter_019_02/Section_002_introduccion_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_019_02/Section_002_introduccion_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 89%] [35mdocs/Part_04/Chapter_019_02/Section_003_explicacion_geometrica_del_algoritmo__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_019_02/Section_003_explicacion_geometrica_del_algoritmo__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 90%] [35mdocs/Part_04/Chapter_019_02/Section_004_numero_conocido_de_soluciones__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_019_02/Section_004_numero_conocido_de_soluciones__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 91%] [35mdocs/Part_04/Chapter_019_02/Section_005_numero_desconocido_de_soluciones__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_019_02/Section_005_numero_desconocido_de_soluciones__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 92%] [35mdocs/Part_04/Chapter_019_02/Section_006_conteo_de_soluciones_quantum_counting__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_019_02/Section_006_conteo_de_soluciones_quantum_counting__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 93%] [35mdocs/Part_04/Chapter_019_02/Section_007_consideraciones_sobre_la_implementacion__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_019_02/Section_007_consideraciones_sobre_la_implementacion__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 94%] [35mdocs/Part_04/Chapter_019_02/Section_008_distribucion_de_probababilidad_inicial_aleatoria__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_019_02/Section_008_distribucion_de_probababilidad_inicial_aleatoria__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 95%] [35mdocs/Part_04/Chapter_019_02/Section_009_implementaciones_con_qiskit_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_019_02/Section_009_implementaciones_con_qiskit_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 96%] [35mdocs/Part_04/Chapter_020_01_criptografia_y_quantum_key_distribution_qkd__myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_020_01_criptografia_y_quantum_key_distribution_qkd__myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 97%] [35mdocs/Part_04/Chapter_020_02/Section_001_introduccion_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_020_02/Section_001_introduccion_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 98%] [35mdocs/Part_04/Chapter_020_02/Section_002_fundamentos_de_qkd_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_020_02/Section_002_fundamentos_de_qkd_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[ 99%] [35mdocs/Part_04/Chapter_020_02/Section_003_protocolos_de_qkd_tres_familias_myst[39;49;00m/home/dcb/Repos_Git/Notebook_to_myst/Book/docs/Part_04/Chapter_020_02/Section_003_protocolos_de_qkd_tres_familias_myst.ipynb: Using cached notebook: ID=1 [mystnb]
+[01mreading sources... [39;49;00m[100%] [35mdocs/index[39;49;00m                                           
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00mdone
+[01mpreparing documents... [39;49;00mdone
+[01mwriting output... [39;49;00m[  0%] [32mdocs/Chapter_Bibliografia_myst[39;49;00m                        [01mwriting output... [39;49;00m[  1%] [32mdocs/Part_01/Chapter_001_01_introduccion_myst[39;49;00m         [01mwriting output... [39;49;00m[  2%] [32mdocs/Part_02/Chapter_002_01_formalismo_matematico__myst[39;49;00m[01mwriting output... [39;49;00m[  3%] [32mdocs/Part_02/Chapter_002_02/Section_001_numeros_complejos_myst[39;49;00m[01mwriting output... [39;49;00m[  4%] [32mdocs/Part_02/Chapter_002_02/Section_002_vectores_myst[39;49;00m [01mwriting output... [39;49;00m[  5%] [32mdocs/Part_02/Chapter_002_02/Section_003_operadores_myst[39;49;00m[01mwriting output... [39;49;00m[  6%] [32mdocs/Part_02/Chapter_002_02/Section_004_tensores_myst[39;49;00m [01mwriting output... [39;49;00m[  7%] [32mdocs/Part_02/Chapter_002_02/Section_005_probabilidades_myst[39;49;00m[01mwriting output... [39;49;00m[  8%] [32mdocs/Part_02/Chapter_003_01_fundamentos_de_mecanica_cuantica__myst[39;49;00m[01mwriting output... [39;49;00m[  9%] [32mdocs/Part_02/Chapter_003_02/Section_001_axiomas_myst[39;49;00m  [01mwriting output... [39;49;00m[ 10%] [32mdocs/Part_02/Chapter_003_02/Section_002_bases_ortogonales_myst[39;49;00m[01mwriting output... [39;49;00m[ 11%] [32mdocs/Part_02/Chapter_003_02/Section_003_medidas_estadisticas_myst[39;49;00m[01mwriting output... [39;49;00m[ 12%] [32mdocs/Part_02/Chapter_003_02/Section_004_evolucion_temporal_myst[39;49;00m[01mwriting output... [39;49;00m[ 13%] [32mdocs/Part_02/Chapter_003_02/Section_005_estados_mezcla_y_matriz_densidad_myst[39;49;00m[01mwriting output... [39;49;00m[ 14%] [32mdocs/Part_03/Chapter_004_01_qubits_myst[39;49;00m               [01mwriting output... [39;49;00m[ 15%] [32mdocs/Part_03/Chapter_004_02/Section_001_definicion_y_bases_myst[39;49;00m[01mwriting output... [39;49;00m[ 16%] [32mdocs/Part_03/Chapter_004_02/Section_002_el_estado_de_un_qubit_y_la_esfera_de_bloch_myst[39;49;00m[01mwriting output... [39;49;00m[ 17%] [32mdocs/Part_03/Chapter_005_01_puertas_simples_myst[39;49;00m      [01mwriting output... [39;49;00m[ 18%] [32mdocs/Part_03/Chapter_005_02/Section_001_rotaciones_en_la_esfera_de_bloch_myst[39;49;00m[01mwriting output... [39;49;00m[ 19%] [32mdocs/Part_03/Chapter_005_02/Section_002_puertas_simples_myst[39;49;00m[01mwriting output... [39;49;00m[ 20%] [32mdocs/Part_03/Chapter_005_02/Section_003_circuitos_cuanticos_1_qubit_myst[39;49;00m[01mwriting output... [39;49;00m[ 21%] [32mdocs/Part_03/Chapter_006_01_medidas,_parte_i_medida_de_1_qubit_myst[39;49;00m[01mwriting output... [39;49;00m[ 22%] [32mdocs/Part_03/Chapter_006_02/Section_001_en_la_base_computacional_myst[39;49;00m[01mwriting output... [39;49;00m[ 23%] [32mdocs/Part_03/Chapter_006_02/Section_002_la_moneda_cuantica_myst[39;49;00m[01mwriting output... [39;49;00m[ 24%] [32mdocs/Part_03/Chapter_006_02/Section_003_medidas_en_una_base_general_myst[39;49;00m[01mwriting output... [39;49;00m[ 25%] [32mdocs/Part_03/Chapter_006_02/Section_004_valores_esperados_myst[39;49;00m[01mwriting output... [39;49;00m[ 26%] [32mdocs/Part_03/Chapter_007_01_multi-qubit_definiciones_y_puertas_myst[39;49;00m[01mwriting output... [39;49;00m[ 27%] [32mdocs/Part_03/Chapter_007_02/Section_001_algunas_definiciones_myst[39;49;00m[01mwriting output... [39;49;00m[ 28%] [32mdocs/Part_03/Chapter_007_02/Section_002_entrelazamiento_myst[39;49;00m[01mwriting output... [39;49;00m[ 29%] [32mdocs/Part_03/Chapter_007_02/Section_003_circuitos_multiqubit_myst[39;49;00m[01mwriting output... [39;49;00m[ 30%] [32mdocs/Part_03/Chapter_007_02/Section_004_puertas_multi-qubit_no_controladas_myst[39;49;00m[01mwriting output... [39;49;00m[ 31%] [32mdocs/Part_03/Chapter_007_02/Section_005_puertas_controladas_myst[39;49;00m[01mwriting output... [39;49;00m[ 32%] [32mdocs/Part_03/Chapter_007_02/Section_006_puertas_multicontroladas_myst[39;49;00m[01mwriting output... [39;49;00m[ 33%] [32mdocs/Part_03/Chapter_008_01_medidas,_parte_ii_medida_de_estados_multi-qubit_myst[39;49;00m[01mwriting output... [39;49;00m[ 34%] [32mdocs/Part_03/Chapter_008_02/Section_001_medidas_en_la_base_computacional_myst[39;49;00m[01mwriting output... [39;49;00m[ 35%] [32mdocs/Part_03/Chapter_008_02/Section_002_medidas_en_bases_generales_myst[39;49;00m[01mwriting output... [39;49;00m[ 36%] [32mdocs/Part_03/Chapter_008_02/Section_003_valores_esperados_myst[39;49;00m[01mwriting output... [39;49;00m[ 37%] [32mdocs/Part_03/Chapter_008_02/Section_004_medida_de_hadamard_myst[39;49;00m[01mwriting output... [39;49;00m[ 38%] [32mdocs/Part_03/Chapter_009_01_entrelazamiento_en_accion_myst[39;49;00m[01mwriting output... [39;49;00m[ 39%] [32mdocs/Part_03/Chapter_009_02/Section_001_desigualdades_de_bell_myst[39;49;00m[01mwriting output... [39;49;00m[ 40%] [32mdocs/Part_03/Chapter_009_02/Section_002_experimento_ghz_myst[39;49;00m[01mwriting output... [39;49;00m[ 41%] [32mdocs/Part_03/Chapter_009_02/Section_003_teleportacion_myst[39;49;00m[01mwriting output... [39;49;00m[ 42%] [32mdocs/Part_03/Chapter_009_02/Section_004_intercambio_de_entrelazamiento_myst[39;49;00m[01mwriting output... [39;49;00m[ 43%] [32mdocs/Part_03/Chapter_009_02/Section_005_teorema_de_no-clonacion__myst[39;49;00m[01mwriting output... [39;49;00m[ 44%] [32mdocs/Part_03/Chapter_010_01_hardware_tecnicas_de_control_y_computacion_en_rmn_myst[39;49;00m[01mwriting output... [39;49;00m[ 45%] [32mdocs/Part_03/Chapter_010_02/Section_001_introduccion_myst[39;49;00m[01mwriting output... [39;49;00m[ 46%] [32mdocs/Part_03/Chapter_010_02/Section_002_el_espin_nuclear__myst[39;49;00m[01mwriting output... [39;49;00m[ 47%] [32mdocs/Part_03/Chapter_010_02/Section_003_qubits_de_rmn_myst[39;49;00m[01mwriting output... [39;49;00m[ 48%] [32mdocs/Part_03/Chapter_010_02/Section_004_tecnicas_de_pulsos_elementales__myst[39;49;00m[01mwriting output... [39;49;00m[ 49%] [32mdocs/Part_03/Chapter_011_01_decoherencia_y_desfase_myst[39;49;00m[01mwriting output... [39;49;00m[ 50%] [32mdocs/Part_03/Chapter_011_02/Section_001_introduccion_myst[39;49;00m[01mwriting output... [39;49;00m[ 51%] [32mdocs/Part_03/Chapter_011_02/Section_002_decoherencia_y_las_ecuaciones_de_bloch_myst[39;49;00m[01mwriting output... [39;49;00m[ 52%] [32mdocs/Part_03/Chapter_011_02/Section_003_resumen_myst[39;49;00m  [01mwriting output... [39;49;00m[ 53%] [32mdocs/Part_04/Chapter_012_01_elementos_basicos_de_los_algoritmos_cuanticos_myst[39;49;00m[01mwriting output... [39;49;00m[ 54%] [32mdocs/Part_04/Chapter_012_02/Section_001_circuitos_myst[39;49;00m[01mwriting output... [39;49;00m[ 55%] [32mdocs/Part_04/Chapter_012_02/Section_002_retroceso_de_fase_phase_kickback_myst[39;49;00m[01mwriting output... [39;49;00m[ 56%] [32mdocs/Part_04/Chapter_012_02/Section_003_circuitos_equivalentes_myst[39;49;00m[01mwriting output... [39;49;00m[ 57%] [32mdocs/Part_04/Chapter_012_02/Section_004_operadores_de_clifford_myst[39;49;00m[01mwriting output... [39;49;00m[ 58%] [32mdocs/Part_04/Chapter_012_02/Section_005_universalidad_de_la_computacion_cuantica_con_puertas__myst[39;49;00m[01mwriting output... [39;49;00m[ 59%] [32mdocs/Part_04/Chapter_012_02/Section_006_medidas_de_calidad_de_un_circuitos_myst[39;49;00m[01mwriting output... [39;49;00m[ 60%] [32mdocs/Part_04/Chapter_013_01_estado_inicial_y_oraculos_myst[39;49;00m[01mwriting output... [39;49;00m[ 61%] [32mdocs/Part_04/Chapter_013_02/Section_001_preparacion_de_un_estado_inicial_generico_myst[39;49;00m[01mwriting output... [39;49;00m[ 62%] [32mdocs/Part_04/Chapter_013_02/Section_002_oraculos_funciones_digitales_myst[39;49;00m[01mwriting output... [39;49;00m[ 63%] [32mdocs/Part_04/Chapter_014_01_primeros_algoritmos_algoritmos_del_oraculo_myst[39;49;00m[01mwriting output... [39;49;00m[ 64%] [32mdocs/Part_04/Chapter_014_02/Section_001_algoritmo_de_deutsch-jozsa_myst[39;49;00m[01mwriting output... [39;49;00m[ 65%] [32mdocs/Part_04/Chapter_014_02/Section_002_algoritmo_de_bernstein-vazirani_myst[39;49;00m[01mwriting output... [39;49;00m[ 66%] [32mdocs/Part_04/Chapter_014_02/Section_003_algoritmo_de_simon_myst[39;49;00m[01mwriting output... [39;49;00m[ 67%] [32mdocs/Part_04/Chapter_015_01_qft_quantum_fourier_transform__myst[39;49;00m[01mwriting output... [39;49;00m[ 68%] [32mdocs/Part_04/Chapter_015_02/Section_001_la_qft_en_computacion_cuantica_myst[39;49;00m[01mwriting output... [39;49;00m[ 69%] [32mdocs/Part_04/Chapter_015_02/Section_002_intuicion_myst[39;49;00m[01mwriting output... [39;49;00m[ 70%] [32mdocs/Part_04/Chapter_015_02/Section_003_circuito_que_implementa_la_qft_myst[39;49;00m[01mwriting output... [39;49;00m[ 71%] [32mdocs/Part_04/Chapter_015_02/Section_004_complegidad_y_qft_aproximada_myst[39;49;00m[01mwriting output... [39;49;00m[ 72%] [32mdocs/Part_04/Chapter_016_01_qpe_estimacion_de_fase_cuantica__myst[39;49;00m[01mwriting output... [39;49;00m[ 73%] [32mdocs/Part_04/Chapter_016_02/Section_001_introduccion_myst[39;49;00m[01mwriting output... [39;49;00m[ 74%] [32mdocs/Part_04/Chapter_016_02/Section_002_circuito_myst[39;49;00m [01mwriting output... [39;49;00m[ 75%] [32mdocs/Part_04/Chapter_016_02/Section_003_formulacion_matematica_myst[39;49;00m[01mwriting output... [39;49;00m[ 76%] [32mdocs/Part_04/Chapter_016_02/Section_004_y_si_no_conocemos_el_autoestado_myst[39;49;00m[01mwriting output... [39;49;00m[ 77%] [32mdocs/Part_04/Chapter_017_01_algoritmo_de_shor_periodicity_finding__myst[39;49;00m[01mwriting output... [39;49;00m[ 78%] [32mdocs/Part_04/Chapter_017_02/Section_001_introduccion_myst[39;49;00m[01mwriting output... [39;49;00m[ 79%] [32mdocs/Part_04/Chapter_017_02/Section_002_hallar_del_periodo_de_una_funcion_period_finding_myst[39;49;00m[01mwriting output... [39;49;00m[ 80%] [32mdocs/Part_04/Chapter_017_02/Section_003_implementacion_ad_hoc_en_qiskit_para_n=15_myst[39;49;00m[01mwriting output... [39;49;00m[ 81%] [32mdocs/Part_04/Chapter_018_01_algoritmo_de_shor_implementacion_con_2n+3_qubit_myst[39;49;00m[01mwriting output... [39;49;00m[ 82%] [32mdocs/Part_04/Chapter_018_02/Section_001_la_idea__myst[39;49;00m [01mwriting output... [39;49;00m[ 83%] [32mdocs/Part_04/Chapter_018_02/Section_002_explicacion_desgranada_myst[39;49;00m[01mwriting output... [39;49;00m[ 84%] [32mdocs/Part_04/Chapter_018_02/Section_003_implementacion_aproximada_de_la_qft_myst[39;49;00m[01mwriting output... [39;49;00m[ 85%] [32mdocs/Part_04/Chapter_018_02/Section_004_implementacion_de_las_swap_controladas_myst[39;49;00m[01mwriting output... [39;49;00m[ 86%] [32mdocs/Part_04/Chapter_019_01_algoritmo_de_grover_amplificacion_de_amplitud__myst[39;49;00m[01mwriting output... [39;49;00m[ 87%] [32mdocs/Part_04/Chapter_019_02/Section_001_diccionario_de_notaciones_myst[39;49;00m[01mwriting output... [39;49;00m[ 88%] [32mdocs/Part_04/Chapter_019_02/Section_002_introduccion_myst[39;49;00m[01mwriting output... [39;49;00m[ 89%] [32mdocs/Part_04/Chapter_019_02/Section_003_explicacion_geometrica_del_algoritmo__myst[39;49;00m[01mwriting output... [39;49;00m[ 90%] [32mdocs/Part_04/Chapter_019_02/Section_004_numero_conocido_de_soluciones__myst[39;49;00m[01mwriting output... [39;49;00m[ 91%] [32mdocs/Part_04/Chapter_019_02/Section_005_numero_desconocido_de_soluciones__myst[39;49;00m[01mwriting output... [39;49;00m[ 92%] [32mdocs/Part_04/Chapter_019_02/Section_006_conteo_de_soluciones_quantum_counting__myst[39;49;00m[01mwriting output... [39;49;00m[ 93%] [32mdocs/Part_04/Chapter_019_02/Section_007_consideraciones_sobre_la_implementacion__myst[39;49;00m[01mwriting output... [39;49;00m[ 94%] [32mdocs/Part_04/Chapter_019_02/Section_008_distribucion_de_probababilidad_inicial_aleatoria__myst[39;49;00m[01mwriting output... [39;49;00m[ 95%] [32mdocs/Part_04/Chapter_019_02/Section_009_implementaciones_con_qiskit_myst[39;49;00m[01mwriting output... [39;49;00m[ 96%] [32mdocs/Part_04/Chapter_020_01_criptografia_y_quantum_key_distribution_qkd__myst[39;49;00m[01mwriting output... [39;49;00m[ 97%] [32mdocs/Part_04/Chapter_020_02/Section_001_introduccion_myst[39;49;00m[01mwriting output... [39;49;00m[ 98%] [32mdocs/Part_04/Chapter_020_02/Section_002_fundamentos_de_qkd_myst[39;49;00m[01mwriting output... [39;49;00m[ 99%] [32mdocs/Part_04/Chapter_020_02/Section_003_protocolos_de_qkd_tres_familias_myst[39;49;00m[01mwriting output... [39;49;00m[100%] [32mdocs/index[39;49;00m                                            
+[01mgenerating indices... [39;49;00mgenindex done
+[01mwriting additional pages... [39;49;00msearch done
+[01mcopying images... [39;49;00m[  1%] [33mdocs/Part_01/Figuras/Fig_logo_UMA_scbi.png[39;49;00m            [01mcopying images... [39;49;00m[  3%] [33mdocs/Part_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m            [01mcopying images... [39;49;00m[  4%] [33mdocs/Part_02/Chapter_002_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[  6%] [33mdocs/Part_02/Chapter_002_02/Figuras/Fig_subfig_formalismo_nums_en_plano_complejo.png[39;49;00m[01mcopying images... [39;49;00m[  7%] [33mdocs/Part_02/Chapter_002_02/Figuras/Fig_formalismo_histograma.png[39;49;00m[01mcopying images... [39;49;00m[  9%] [33mdocs/Part_02/Chapter_002_02/Figuras/Fig_formalismo_dist_binomial.png[39;49;00m[01mcopying images... [39;49;00m[ 10%] [33mdocs/Part_02/Chapter_002_02/Figuras/Fig_subfig_formalismo_dist_normal.png[39;49;00m[01mcopying images... [39;49;00m[ 12%] [33mdocs/Part_02/Chapter_002_02/Figuras/Fig_formalismo_binaryentropy.png[39;49;00m[01mcopying images... [39;49;00m[ 13%] [33mdocs/Part_02/Chapter_003_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 15%] [33mdocs/Part_03/Figuras/Fig_logo_UMA_scbi.png[39;49;00m            [01mcopying images... [39;49;00m[ 16%] [33mdocs/Part_03/Chapter_004_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 18%] [33mdocs/Part_03/Chapter_004_02/Figuras/Fig_qubit_BlochSphere.png[39;49;00m[01mcopying images... [39;49;00m[ 19%] [33mdocs/Part_03/Chapter_005_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 21%] [33mdocs/Part_03/Chapter_005_02/Figuras/Fig_puertas_simples_BlochSphere_rot.png[39;49;00m[01mcopying images... [39;49;00m[ 22%] [33mdocs/Part_03/Chapter_006_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 24%] [33mdocs/Part_03/Chapter_006_02/Figuras/Fig_subfig_medidas1_cubit_meter.png[39;49;00m[01mcopying images... [39;49;00m[ 25%] [33mdocs/Part_03/Chapter_006_02/Figuras/Fig_medidas1_vev_unitary_V.png[39;49;00m[01mcopying images... [39;49;00m[ 27%] [33mdocs/Part_03/Chapter_007_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 28%] [33mdocs/Part_03/Chapter_008_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 30%] [33mdocs/Part_03/Chapter_008_02/Figuras/Fig_subfig_medidas2_Hadamard_measure.png[39;49;00m[01mcopying images... [39;49;00m[ 31%] [33mdocs/Part_03/Chapter_009_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 33%] [33mdocs/Part_03/Chapter_010_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 34%] [33mdocs/Part_03/Chapter_010_02/Figuras/Fig_Harware_NMR_precesion.png[39;49;00m[01mcopying images... [39;49;00m[ 36%] [33mdocs/Part_03/Chapter_010_02/Figuras/Fig_Hardware_NMR_espines_en_B.png[39;49;00m[01mcopying images... [39;49;00m[ 37%] [33mdocs/Part_03/Chapter_010_02/Figuras/Fig_Harware_NMR_espiral_bloch_2.png[39;49;00m[01mcopying images... [39;49;00m[ 39%] [33mdocs/Part_03/Chapter_010_02/Figuras/Fig_Harware_NMR_posible_couplings.png[39;49;00m[01mcopying images... [39;49;00m[ 40%] [33mdocs/Part_03/Chapter_011_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 42%] [33mdocs/Part_04/Figuras/Fig_logo_UMA_scbi.png[39;49;00m            [01mcopying images... [39;49;00m[ 43%] [33mdocs/Part_04/Chapter_012_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 45%] [33mdocs/Part_04/Chapter_012_02/Figuras/Fig_elementos_teleportacion.png[39;49;00m[01mcopying images... [39;49;00m[ 46%] [33mdocs/Part_04/Chapter_013_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 48%] [33mdocs/Part_04/Figuras/Fig_algoritmos_didac_Busqueda_Oraculo.png[39;49;00m[01mcopying images... [39;49;00m[ 50%] [33mdocs/Part_04/Chapter_014_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 51%] [33mdocs/Part_04/Chapter_014_02/Figuras/Fig_algoritmos_circuito_genérico_Deutsch-Jozsa.png[39;49;00m[01mcopying images... [39;49;00m[ 53%] [33mdocs/Part_04/Chapter_014_02/Figuras/Fig_algoritmos_BV_circuit.png[39;49;00m[01mcopying images... [39;49;00m[ 54%] [33mdocs/Part_04/Chapter_014_02/Figuras/Fig_algoritmos_Bernstein_Vazirani_trick.png[39;49;00m[01mcopying images... [39;49;00m[ 56%] [33mdocs/Part_04/Chapter_014_02/Figuras/Fig_algoritmos_SimonCircuit.png[39;49;00m[01mcopying images... [39;49;00m[ 57%] [33mdocs/Part_04/Chapter_015_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 59%] [33mdocs/Part_04/Chapter_015_02/Figuras/Fig_subfig_QFT_compu_fourier_bases.png[39;49;00m[01mcopying images... [39;49;00m[ 60%] [33mdocs/Part_04/Chapter_015_02/Figuras/Fig_QFT_circuit.png[39;49;00m[01mcopying images... [39;49;00m[ 62%] [33mdocs/Part_04/Chapter_016_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 63%] [33mdocs/Part_04/Chapter_016_02/Figuras/Fig-QPE-Circuito.png[39;49;00m[01mcopying images... [39;49;00m[ 65%] [33mdocs/Part_04/Chapter_017_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 66%] [33mdocs/Part_04/Chapter_017_02/Figuras/Fig-3_QPE-Shor.png[39;49;00m[01mcopying images... [39;49;00m[ 68%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 69%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig-Addition-Transform.png[39;49;00m[01mcopying images... [39;49;00m[ 71%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig-phiADD(a).png[39;49;00m [01mcopying images... [39;49;00m[ 72%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig-phiADD(a)^-1.png[39;49;00m[01mcopying images... [39;49;00m[ 74%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig-phiADD(a)MOD(N).png[39;49;00m[01mcopying images... [39;49;00m[ 75%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig-CMULT(a)MOD(N).png[39;49;00m[01mcopying images... [39;49;00m[ 77%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig-C-U_a.png[39;49;00m     [01mcopying images... [39;49;00m[ 78%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig-Circuito-paper.png[39;49;00m[01mcopying images... [39;49;00m[ 80%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig_IPE_1.png[39;49;00m     [01mcopying images... [39;49;00m[ 81%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig_IPE_3.png[39;49;00m     [01mcopying images... [39;49;00m[ 83%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig_IPE_4.png[39;49;00m     [01mcopying images... [39;49;00m[ 84%] [33mdocs/Part_04/Chapter_018_02/Figuras/Fig-Truco-qubit-control.png[39;49;00m[01mcopying images... [39;49;00m[ 86%] [33mdocs/Part_04/Chapter_019_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 87%] [33mdocs/Part_04/Chapter_019_02/Figuras/Fig_geo_1.png[39;49;00m     [01mcopying images... [39;49;00m[ 89%] [33mdocs/Part_04/Chapter_019_02/Figuras/Fig_subfig_geo_phase_kick.png[39;49;00m[01mcopying images... [39;49;00m[ 90%] [33mdocs/Part_04/Chapter_019_02/Figuras/Fig_geo_2.png[39;49;00m     [01mcopying images... [39;49;00m[ 92%] [33mdocs/Part_04/Chapter_019_02/Figuras/Fig_geo_3.png[39;49;00m     [01mcopying images... [39;49;00m[ 93%] [33mdocs/Part_04/Chapter_019_02/Figuras/Fig_QC_QPE.png[39;49;00m    [01mcopying images... [39;49;00m[ 95%] [33mdocs/Part_04/Chapter_019_02/Figuras/Fig_QC_QPE_G.png[39;49;00m  [01mcopying images... [39;49;00m[ 96%] [33mdocs/Part_04/Chapter_020_02/Figuras/Fig_logo_UMA_scbi.png[39;49;00m[01mcopying images... [39;49;00m[ 98%] [33mdocs/Part_04/Chapter_020_02/Figuras/Fig_QKD_setup.png[39;49;00m [01mcopying images... [39;49;00m[100%] [33mdocs/Part_04/Chapter_020_02/Figuras/Fig_QKD_DFR.png[39;49;00m   
+[01mcopying static files... [39;49;00mdone
+[01mcopying extra files... [39;49;00mdone
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded, 185 warnings.[39;49;00m
+
+The HTML pages are in ../Book/_build/html.
+
+[92m===============================================================================[0m
+
+Finished generating HTML for book.
+Your book's HTML pages are here:
+    ../Book/_build/html/
+You can look at your book by opening this file in a browser:
+    ../Book/_build/html/index.html
+Or paste this line directly into your browser bar:
+    file:///home/dcb/Repos_Git/Notebook_to_myst/Book/_build/html/index.html            
+
+[92m===============================================================================[0m
+

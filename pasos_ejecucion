@@ -1,0 +1,8 @@
+conda activate qiskit_qibo_pennylane 
+cd Latex_to_Notebook
+python Latex_to_Notebook.py Hardware_Cuantico.tex Figuras Bibliografia.bib
+cd ..
+cd scripts
+./Notebook_to_myst_from_latex.sh
+cd ..
+ghp-import -n -p -f repo_mybookname/_build/html

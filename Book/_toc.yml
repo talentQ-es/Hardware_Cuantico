@@ -1,0 +1,42 @@
+format: jb-book
+root: docs/index
+options:
+  numbered: true
+parts:
+- caption:  Hardware de Computación Cuántica
+  numbered: true
+  chapters:
+  - file:  docs/Part_01/Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.ipynb
+    sections:
+    - file:  docs/Part_01/Chapter_001_02/Section_001_modelos_de_computacion_cuantica_myst.ipynb
+    - file:  docs/Part_01/Chapter_001_02/Section_002_estructura_del_hardware_de_un_ordenador_cuantico_myst.ipynb
+    - file:  docs/Part_01/Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.ipynb
+    - file:  docs/Part_01/Chapter_001_02/Section_004_pulso_de_microondas_myst.ipynb
+    - file:  docs/Part_01/Chapter_001_02/Section_005_conceptos_erroneos_sobre_el_hardware_de_computacion_cuantica_myst.ipynb
+    - file:  docs/Part_01/Chapter_001_02/Section_006_algunos_roadmaps_publicos_myst.ipynb
+  - file:  docs/Part_01/Chapter_002_01_computacion_cuantica_con_iones_atrapados_trapped_ions__myst.ipynb
+    sections:
+    - file:  docs/Part_01/Chapter_002_02/Section_001_produccion_de_iones_myst.ipynb
+    - file:  docs/Part_01/Chapter_002_02/Section_002_trampas_de_iones_myst.ipynb
+    - file:  docs/Part_01/Chapter_002_02/Section_003_enfriamiento_de_iones_por_laser__myst.ipynb
+    - file:  docs/Part_01/Chapter_002_02/Section_004_manipulando_iones_individuales_puertas_simples__myst.ipynb
+    - file:  docs/Part_01/Chapter_002_02/Section_005_manipulacion_de_multiples_iones_myst.ipynb
+    - file:  docs/Part_01/Chapter_002_02/Section_006_lectura_del_estado_de_los_iones_myst.ipynb
+    - file:  docs/Part_01/Chapter_002_02/Section_007_puertas_multiqubit_con_iones__myst.ipynb
+    - file:  docs/Part_01/Chapter_002_02/Section_008_conclusiones_pros_y_contras_myst.ipynb
+  - file:  docs/Part_01/Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.ipynb
+    sections:
+    - file:  docs/Part_01/Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad_myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_002_tipos_de_qubits_superconductores_myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_003_fisica_de_los_qubits_superconductores__myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_004_operaciones_con_qubits_superconductores_myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_005_retos_con_qubits_superconductores_myst.ipynb
+  - file:  docs/Part_01/Chapter_004_01_tecnicas_de_control_y_computacion_en_rmn_myst.ipynb
+    sections:
+    - file:  docs/Part_01/Chapter_004_02/Section_001_introduccion_myst.ipynb
+    - file:  docs/Part_01/Chapter_004_02/Section_002_el_espin_nuclear__myst.ipynb
+    - file:  docs/Part_01/Chapter_004_02/Section_003_qubits_de_rmn_myst.ipynb
+    - file:  docs/Part_01/Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales__myst.ipynb
+- caption: Referencias
+  chapters:
+  - file: docs/Chapter_Bibliografia_myst.ipynb
