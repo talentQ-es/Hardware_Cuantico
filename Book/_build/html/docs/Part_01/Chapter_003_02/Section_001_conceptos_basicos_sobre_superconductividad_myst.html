@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.1. Conceptos básicos sobre Superconductividad. &#8212; My Jupyter Book</title>
+    <title>3.1. Conceptos básicos sobre Superconductividad. &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
   
   
   
@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfile.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -55,6 +58,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,6 +103,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad_myst';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="3.2. Tipos de qubits superconductores" href="Section_002_tipos_de_qubits_superconductores_myst.html" />
@@ -153,8 +191,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
   
-    <p class="title logo__title">My Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -170,14 +214,6 @@ const thebe_selector_output = ".output, .cell_output"
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../index.html">
-                    El camino de los Qubits
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -260,6 +296,70 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad_myst.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad_myst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -381,10 +481,9 @@ document.write(`
                 <article class="bd-article">
                   
   <blockquote>
-<div><p>Jun 03, 2025 | 4 min read</p>
+<div><p>Jun 03, 2025 | 5 min read</p>
 </div></blockquote>
-<img src="Figuras/Fig_logo_UMA_scbi.png" align=center  width="2000px"/>
-<a href="https://www.scbi.uma.es/web/es/computacion-cuantica/">
+<a href="https://www.talentq.es/es_es/cursos/">
     <button class="rounded" style="float: right;">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
         <path fill="var(--fill, white)"
@@ -394,7 +493,7 @@ document.write(`
             .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
             1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
     </svg>
-    Volver a SCBI - Computación Cuantica
+    Volver a TalentQ
     </button>
 </a>
 <p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
@@ -433,7 +532,7 @@ document.write(`
 <section id="union-de-josephson-josephson-junction">
 <h2><span class="section-number">3.1.2. </span>Unión de Josephson (Josephson Junction)<a class="headerlink" href="#union-de-josephson-josephson-junction" title="Permalink to this heading">#</a></h2>
 <p>Cuando dos superconductores están bien separados, son bastante independientes y pueden ser tratados por separado. Cuando entre ellos hay un contacto superconductor sustancial, estos forman un único superconductor: se dice que están <i>fuertemente ligados</i> (<b>strongly linked</b>).</p>
-<p>Sin embargo, tenemos casos intermedios en los que los electrones (pares de Cooper) pueden fluir de un superconductor a otro, pero de forma tan débil que cada superconductor puede ser visto como esencialmente en equilibro estático. Esto sucede, por ejemplo, cuando los superconductores están separados por una fina capa de un óxido el cual puede ser atravesado por los electrones mediante efecto túnel. También puede ser una fina capa de un metal normal o semiconductor, o un pequeño puente de material superconductor. A este tipo de uniones entre superconductores se las denomina <b>uniones Josephson</b> (<b>JJ</b> de sus siglas en inglés), y fueros descubiertas en 1962 por Brian Josephson .</p>
+<p>Sin embargo, tenemos casos intermedios en los que los electrones (pares de Cooper) pueden fluir de un superconductor a otro, pero de forma tan débil que cada superconductor puede ser visto como esencialmente en equilibro estático. Esto sucede, por ejemplo, cuando los superconductores están separados por una fina capa de un óxido el cual puede ser atravesado por los electrones mediante efecto túnel. También puede ser una fina capa de un metal normal o semiconductor, o un pequeño puente de material superconductor. A este tipo de uniones entre superconductores se las denomina <b>uniones Josephson</b> (<b>JJ</b> de sus siglas en inglés), y fueros descubiertas en 1962 por Brian Josephson <span id="id1">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id77" title="B.D. Josephson. Possible new effects in superconductive tunnelling. Physics Letters, 1(7):251-253, 1962. URL: https://www.sciencedirect.com/science/article/pii/0031916362913690, doi:https://doi.org/10.1016/0031-9163(62)91369-0.">11</a>]</span>.</p>
 <p>Supongamos que conectamos los superconductores a los polos de una batería, de forma que aplicamos una diferencia de potencial <span class="math notranslate nohighlight">\(V\)</span> en la unión, supongamos que podemos jugar con la batería para hacer variar esta diferencia de potencial. Es decir, la diferencia de potencial es función del tiempo: <span class="math notranslate nohighlight">\(V(t)\)</span> . Es estas situaciones tenemos una corriente entre los dos superconductores que está descrita por las <b>ecuaciones de Josephson</b></p>
 <div class="math notranslate nohighlight" id="equation-ec-scq-jj">
 <span class="eqno">(3.1)<a class="headerlink" href="#equation-ec-scq-jj" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
@@ -445,32 +544,49 @@ J &amp;= J_0 \sin \delta \\
 <p>donde <span class="math notranslate nohighlight">\(J\)</span> es la densidad de corriente, <span class="math notranslate nohighlight">\(e\)</span> es la carga del electrón y <span class="math notranslate nohighlight">\(\delta\)</span> es la diferencia de fase entre los dos superconductores <span class="math notranslate nohighlight">\(\delta = \theta_1 - \theta_2\)</span>.</p>
 <div class="note admonition">
 <p class="admonition-title">Nota (modelo simple de Feynman)</p>
-<p>Las ecuaciones  <a class="reference internal" href="#equation-ec-scq-jj">(3.1)</a> pueden derivarse siguiendo un modelo simple del efecto Josephson descrito por Feynman en sus Lectures . En concreto, puede encontrase online <a class="reference external" href="https://www.feynmanlectures.caltech.edu/III_21.html#Ch21-S9">aquí</a> o verse en el capítulo “Superconductivity: Tunneling” del libro .</p>
+<p>Las ecuaciones  <a class="reference internal" href="#equation-ec-scq-jj">(3.1)</a> pueden derivarse siguiendo un modelo simple del efecto Josephson descrito por Feynman en sus Lectures <span id="id2">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id75" title="Richard Phillips Feynman, Robert Benjamin Leighton, and Matthew Sands. The Feynman lectures on physics; New millennium ed. Basic Books, New York, NY, 2010. Originally published 1963-1965. URL: https://cds.cern.ch/record/1494701.">7</a>]</span>. En concreto, puede encontrase online <a class="reference external" href="https://www.feynmanlectures.caltech.edu/III_21.html#Ch21-S9">aquí</a> o verse en el capítulo “Superconductivity: Tunneling” del libro <span id="id3">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id76" title="G.F. Bassani, G. Liedl, and P. Wyder. Encyclopedia of Condensed Matter Physics. Elsevier Science, 2005. ISBN 9780122276101. URL: https://www.sciencedirect.com/referencework/9780123694010/encyclopedia-of-condensed-matter-physics.">2</a>]</span>.</p>
 </div>
-<p>Suponiendo una densidad de corriente uniforme a través del área <span class="math notranslate nohighlight">\(A\)</span> de la unión, la corriente total es <span class="math notranslate nohighlight">\(I = AJ\)</span>, con lo que
-\begin{equation}
-\boxed{I = I_0 \sin \delta} , .
-\end{equation}
-Además, integrando la segunda ecuación de la Ec.  <a class="reference internal" href="#equation-ec-scq-jj">(3.1)</a> tenemos
-\begin{equation}
-\boxed{\delta(t) = \delta_0 + \frac{2e}{\hbar} \int V(t)dt} ,.
-\end{equation}</p>
-<p>Aunque la unión Josephson produce varios efectos, vamos a centrarnos en los dos que nos interesan (pueden verse más en ):</p>
-<ul class="simple">
-<li><p><b>Efecto Josephson de Corriente Continua (DC Josephson effect)</b>: Si tenemos <span class="math notranslate nohighlight">\(V(t)=0\)</span>, entonces
-\begin{equation}
-\delta = \delta_0 \rqa I = I_0 \sin \delta_0
-\end{equation}
-Es decir, cuando no hay diferencia de voltaje en la unión tenemos una <b>corriente continua</b> entre <span class="math notranslate nohighlight">\(-I_0\)</span> y <span class="math notranslate nohighlight">\(I_0\)</span>.</p></li>
-<li><p><b>Efecto Josephson de Corriente Alterna (AC Josephson effect)</b>: Si tenemos <span class="math notranslate nohighlight">\(V(t) = V_0\)</span> constante, entonces
-\begin{equation}
-\delta = \delta_0 + \frac{2eV_0}{\hbar} t \rqa I = I_0 \sin \lp \delta_0 + \frac{2eV_0}{\hbar} t  \rp
-\end{equation}
-Es decir, al aplicar una diferencia de pontecial constante en la unión, aparece una <b>corriente alterna</b> de frecuencia proporcional a la diferencia de potencial.</p></li>
+<p>Suponiendo una densidad de corriente uniforme a través del área <span class="math notranslate nohighlight">\(A\)</span> de la unión, la corriente total es <span class="math notranslate nohighlight">\(I = AJ\)</span>, con lo que</p>
+<div class="amsmath math notranslate nohighlight" id="equation-82bd95d4-ddc2-4d2d-86c1-f475171f8c14">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-82bd95d4-ddc2-4d2d-86c1-f475171f8c14" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\boxed{I = I_0 \sin \delta} \, .
+\end{equation}\]</div>
+<p>Además, integrando la segunda ecuación de la Ec.  <a class="reference internal" href="#equation-ec-scq-jj">(3.1)</a> tenemos</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fae77994-4bc0-441f-8f86-1f07c577190c">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-fae77994-4bc0-441f-8f86-1f07c577190c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\boxed{\delta(t) = \delta_0 + \frac{2e}{\hbar} \int V(t)dt} \,.
+\end{equation}\]</div>
+<p>Aunque la unión Josephson produce varios efectos, vamos a centrarnos en los dos que nos interesan (pueden verse más en <span id="id4">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id78" title="J R Waldram. The josephson effects in weakly coupled superconductors. Reports on Progress in Physics, 39(8):751, aug 1976. URL: https://dx.doi.org/10.1088/0034-4885/39/8/002, doi:10.1088/0034-4885/39/8/002.">17</a>]</span>):</p>
+<ul>
+<li><p><b>Efecto Josephson de Corriente Continua (DC Josephson effect)</b>: Si tenemos <span class="math notranslate nohighlight">\(V(t)=0\)</span>, entonces</p>
+<div class="amsmath math notranslate nohighlight" id="equation-17be9329-fc33-4c12-95ee-b0fab2211a42">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-17be9329-fc33-4c12-95ee-b0fab2211a42" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \delta = \delta_0 \rqa I = I_0 \sin \delta_0
+    \end{equation}\]</div>
+<p>Es decir, cuando no hay diferencia de voltaje en la unión tenemos una <b>corriente continua</b> entre <span class="math notranslate nohighlight">\(-I_0\)</span> y <span class="math notranslate nohighlight">\(I_0\)</span>.</p>
+</li>
+<li><p><b>Efecto Josephson de Corriente Alterna (AC Josephson effect)</b>: Si tenemos <span class="math notranslate nohighlight">\(V(t) = V_0\)</span> constante, entonces</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7befc335-3815-4b7f-b93b-21010480dce9">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-7befc335-3815-4b7f-b93b-21010480dce9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \delta = \delta_0 + \frac{2eV_0}{\hbar} t \rqa I = I_0 \sin \lp \delta_0 + \frac{2eV_0}{\hbar} t  \rp
+    \end{equation}\]</div>
+<p>Es decir, al aplicar una diferencia de pontecial constante en la unión, aparece una <b>corriente alterna</b> de frecuencia proporcional a la diferencia de potencial.</p>
+</li>
 </ul>
+<hr class="docutils" />
+<p>Autor:</p>
+<p>David Castaño (<a class="reference external" href="https://www.scbi.uma.es/site/">UMA-SCBI</a>)</p>
+<a class="reference internal image-reference" href="../../../_images/Logo_UMA3.jpeg"><img alt="../../../_images/Logo_UMA3.jpeg" src="../../../_images/Logo_UMA3.jpeg" style="width: 170px;" /></a>
+<hr class="docutils" />
 <figure class="align-center">
 <a class="reference internal image-reference" href="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png"><img alt="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" src="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" style="width: 2000px;" /></a>
 </figure>
+<center>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img aling="left" alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</center>
+<p>License: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+<p>This work has been financially supported by the Ministry for Digital Transformation and of Civil Service of the Spanish Government through the QUANTUM ENIA project call - Quantum Spain project, and by the European Union through the Recovery, Transformation and Resilience Plan - NextGenerationEU within the framework of the Digital Spain 2026 Agenda.</p>
 <center>
 <img align="left" src="https://quantumspain-project.es/wp-content/uploads/2024/02/Banner-QS_GOB_v2.png" width="1000px" />
 </center></section>
@@ -556,7 +672,7 @@ Es decir, al aplicar una diferencia de pontecial constante en la unión, aparece
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By <a href="https://quantumspain-project.es">QuantumSpain</a> & <a href="https://www.talentq.es/es_es/">TalentQ</a>
 </p>
 
   </div>

@@ -15,14 +15,16 @@ def help_message():
 Help Message:
 
  Este script convierte un archivo .tex en una serie de notebooks (uno por seccion).
- Este script debe de ejecutarse dentro de una carpeta "scripts" que contenga las plantillas.
+ Este script debe de ejecutarse dentro de una carpeta "Latex_to_Notebook" que contenga
+ las plantillas.
  Los notebook se generarán en una carpeta "../Notebooks" que estará al mismo nivel que
- la carpeta donde se ejecuta el scipt. Es decir, la estructura de carpetas es:
+ la carpeta donde se ejecuta el script. Es decir, la estructura de carpetas es:
 
-    /.../scripts
-    /.../scripts/Latex_to_Notebook.py
-    /.../scripts/Plantilla_seccion.ipynb
-    /.../scripts/Plantilla_Bibliografia.ipynb
+    /.../Latex_to_Notebook
+    /.../Latex_to_Notebook/Latex_to_Notebook.py
+    /.../Latex_to_Notebook/Plantillas/index.md
+    /.../Latex_to_Notebook/Plantillas/Plantilla_seccion.ipynb
+    /.../Latex_to_Notebook/Plantillas/Plantilla_Bibliografia.ipynb
     /.../Notebooks
 
  Parametros:
@@ -118,8 +120,9 @@ except:
 
 Notebook_folder_path = "../Notebooks"
 Notebook_old_folder_path = "../No_Notebooks_old"
-Plantilla_section_path = "Plantilla_seccion.ipynb"
-Plantilla_Bib = "Plantilla_Bibliografia.ipynb"
+Plantilla_section_path = "Plantillas/Plantilla_seccion.ipynb"
+Plantilla_Bib          = "Plantillas/Plantilla_Bibliografia.ipynb"
+Path_index             = "Plantillas/index.md"
 
 #######################################################################################################################
 ### Prints de las Rutas
@@ -171,7 +174,7 @@ if os.path.exists(Notebook_folder_path):
     os.rename(Notebook_folder_path,Notebook_old_folder_path)
 
 os.mkdir(Notebook_folder_path)
-shutil.copy("index.md", Notebook_folder_path+"/")
+shutil.copy(Path_index, Notebook_folder_path+"/")
 #shutil.copytree(Figures_folder,Notebook_folder_path +"/"+ Figures_folder)
 
 

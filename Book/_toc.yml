@@ -26,17 +26,30 @@ parts:
     - file:  docs/Part_01/Chapter_002_02/Section_008_conclusiones_pros_y_contras_myst.ipynb
   - file:  docs/Part_01/Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.ipynb
     sections:
-    - file:  docs/Part_01/Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad_myst.ipynb
-    - file:  docs/Part_01/Chapter_003_02/Section_002_tipos_de_qubits_superconductores_myst.ipynb
-    - file:  docs/Part_01/Chapter_003_02/Section_003_fisica_de_los_qubits_superconductores__myst.ipynb
-    - file:  docs/Part_01/Chapter_003_02/Section_004_operaciones_con_qubits_superconductores_myst.ipynb
-    - file:  docs/Part_01/Chapter_003_02/Section_005_retos_con_qubits_superconductores_myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad__myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_003_conceptos_basicos_sobre_cuantizacion__myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_006_el_iflux_qubiti_y_el_ifluxoniumi_hacia_una_mayor_anarmonicidad__myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_008_puertas_simples__myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_009_puertas_de_dos_qubits__myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_010_lectura_de_los_qubits_myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_011_conectividad__myst.ipynb
+    - file:  docs/Part_01/Chapter_003_02/Section_012_retos_con_qubits_superconductores_myst.ipynb
   - file:  docs/Part_01/Chapter_004_01_tecnicas_de_control_y_computacion_en_rmn_myst.ipynb
     sections:
     - file:  docs/Part_01/Chapter_004_02/Section_001_introduccion_myst.ipynb
     - file:  docs/Part_01/Chapter_004_02/Section_002_el_espin_nuclear__myst.ipynb
     - file:  docs/Part_01/Chapter_004_02/Section_003_qubits_de_rmn_myst.ipynb
     - file:  docs/Part_01/Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales__myst.ipynb
+  - file:  docs/Part_01/Chapter_005_01_decoherencia_y_desfase_myst.ipynb
+    sections:
+    - file:  docs/Part_01/Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.ipynb
+    - file:  docs/Part_01/Chapter_005_02/Section_002_la_coherencia_en_computacion_cuantica_t_1_y_t_2_myst.ipynb
+    - file:  docs/Part_01/Chapter_005_02/Section_003_decoherencia_y_las_ecuaciones_de_bloch_myst.ipynb
+    - file:  docs/Part_01/Chapter_005_02/Section_004_resumen_myst.ipynb
 - caption: Referencias
   chapters:
   - file: docs/Chapter_Bibliografia_myst.ipynb

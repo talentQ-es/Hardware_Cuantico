@@ -1,0 +1,1109 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.4. El Transmon Qubit: Del oscilador armónico al Transmón &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfile.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_003_02/Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.5. El Split Transmon Qubit (qubit ajustable mendiante flujo)" href="Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.html" />
+    <link rel="prev" title="3.3. Conceptos básicos sobre cuantización" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_001_modelos_de_computacion_cuantica_myst.html">1.1. Modelos de Computación Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_002_estructura_del_hardware_de_un_ordenador_cuantico_myst.html">1.2. Estructura del Hardware de un Ordenador Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.html">1.3. Tipos de Tecnologías de qubits.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_004_pulso_de_microondas_myst.html">1.4. Pulso de microondas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_005_conceptos_erroneos_sobre_el_hardware_de_computacion_cuantica_myst.html">1.5. Conceptos Erróneos sobre el Hardware de Computación Cuántica.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_006_algunos_roadmaps_publicos_myst.html">1.6. Algunos Roadmaps públicos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_002_01_computacion_cuantica_con_iones_atrapados_trapped_ions__myst.html">2. Computación Cuántica con Iones Atrapados (Trapped Ions)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_001_produccion_de_iones_myst.html">2.1. Producción de iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_002_trampas_de_iones_myst.html">2.2. Trampas de iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_003_enfriamiento_de_iones_por_laser__myst.html">2.3. Enfriamiento de iones por láser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_004_manipulando_iones_individuales_puertas_simples__myst.html">2.4. Manipulando iones individuales: puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_005_manipulacion_de_multiples_iones_myst.html">2.5. Manipulación de múltiples iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_006_lectura_del_estado_de_los_iones_myst.html">2.6. Lectura del estado de los iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_007_puertas_multiqubit_con_iones__myst.html">2.7. Puertas multiqubit con iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_008_conclusiones_pros_y_contras_myst.html">2.8. Conclusiones: pros y contras</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.html">3. Computación Cuántica con qubits Superconductores</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Section_001_conceptos_basicos_sobre_superconductividad__myst.html">3.1. Conceptos básicos sobre Superconductividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html">3.2. Conceptos básicos sobre Mecánida Clásica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html">3.3. Conceptos básicos sobre cuantización</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4. El <i>Transmon Qubit</i>: Del oscilador armónico al Transmón</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.html">3.5. El <i>Split Transmon Qubit</i> (qubit ajustable mendiante flujo)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_006_el_iflux_qubiti_y_el_ifluxoniumi_hacia_una_mayor_anarmonicidad__myst.html">3.6. El <i>Flux Qubit</i> y el <i>Fluxonium</i>: Hacia una mayor anarmonicidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.html">3.7. Acoplamientos: Hamiltonianos de interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_008_puertas_simples__myst.html">3.8. Puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_009_puertas_de_dos_qubits__myst.html">3.9. Puertas de dos qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_010_lectura_de_los_qubits_myst.html">3.10. Lectura de los qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_011_conectividad__myst.html">3.11. Conectividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_012_retos_con_qubits_superconductores_myst.html">3.12. Retos con qubits superconductores</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_004_01_tecnicas_de_control_y_computacion_en_rmn_myst.html">4. Técnicas de control y computación en RMN.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_001_introduccion_myst.html">4.1. Introducción.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_002_el_espin_nuclear__myst.html">4.2. El espín nuclear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_003_qubits_de_rmn_myst.html">4.3. qubits de RMN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales__myst.html">4.4. Técnicas de pulsos elementales.</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_005_01_decoherencia_y_desfase_myst.html">5. Decoherencia y desfase</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.html">5.1. La coherencia en Mecánica Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_002_la_coherencia_en_computacion_cuantica_t_1_y_t_2_myst.html">5.2. La coherencia en Computación Cuántica: <span class="math notranslate nohighlight">\(T_1\)</span> y <span class="math notranslate nohighlight">\(T_2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_003_decoherencia_y_las_ecuaciones_de_bloch_myst.html">5.3. Decoherencia y las ecuaciones de Bloch.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_004_resumen_myst.html">5.4. Resumen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter_Bibliografia_myst.html">Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_003_02/Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/docs/Part_01/Chapter_003_02/Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>El <i>Transmon Qubit</i>: Del oscilador armónico al Transmón</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condensador">3.4.1. Condensador</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor">3.4.2. Inductor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-lc-clasico">3.4.3. Circuito LC Clásico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacion-cualitativa">3.4.3.1. Explicación cualitativa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltoniano-del-oscilador-armonico">3.4.3.2. Hamiltoniano del oscilador armónico</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-lc-cuantico">3.4.4. Circuito LC Cuántico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuantizacion-del-circuito-lc">3.4.4.1. Cuantización del circuito LC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-lc-cuantico-en-segunda-cuantizacion">3.4.4.2. Circuito LC Cuántico en segunda cuantización</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-lc-con-union-josephson-lcjj">3.4.4.3. Circuito LC con Unión Josephson (LCJJ)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-qubit-de-carga-caja-de-pares-de-cooper">3.4.5. El qubit de carga: Caja de pares de Cooper.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-transmon-mitigando-el-ruido-de-carga">3.4.6. El transmón: mitigando el ruido de carga</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sobre-los-tls-sistemas-de-dos-niveles">3.4.6.1. Sobre los TLS (sistemas de dos niveles)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <blockquote>
+<div><p>Jun 03, 2025 | 19 min read</p>
+</div></blockquote>
+<a href="https://www.talentq.es/es_es/cursos/">
+    <button class="rounded" style="float: right;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="var(--fill, white)"
+        d="M18.1 15.3c-.1.1-.3.2-.4.3l-2.4.4l1.7 3.6c.2.4 0 .8-.4
+            1l-2.8 1.3c-.1.1-.2.1-.3.1c-.3 0-.6-.2-.7-.4L11.2
+            18l-1.9 1.5c-.1.1-.3.2-.5.2c-.4 0-.8-.3-.8-.8V7.5c0-.5.3-.8.8-.8c.2 0
+            .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
+            1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
+    </svg>
+    Volver a TalentQ
+    </button>
+</a>
+<p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ket}[1]{|#1\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\branew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketnew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\braket}[2]{\langle #1|#2\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketbra}[2]{| #1\rangle \langle #2 |} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\i}{{\color{blue} i}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Hil}{{\cal H}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\cg}[1]{{\rm C}#1} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lp}{\left(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rp}{\right)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lc}{\left[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rc}{\right]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lch}{\left\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rch}{\right\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lp}{\Bigl(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rp}{\Bigr)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lc}{\Bigl[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rc}{\Bigr]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lch}{\Bigl\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rch}{\Bigr\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rqa}{\quad \Rightarrow \quad} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\bm}{\boldsymbol}\)</span></p>
+<section class="tex2jax_ignore mathjax_ignore" id="el-transmon-qubit-del-oscilador-armonico-al-transmon">
+<span id="sec-sub-scq-qho"></span><h1><span class="section-number">3.4. </span>El <i>Transmon Qubit</i>: Del oscilador armónico al Transmón<a class="headerlink" href="#el-transmon-qubit-del-oscilador-armonico-al-transmon" title="Permalink to this heading">#</a></h1>
+<p>En esta sección vamos a deducir el Hamiltoniano de qubit transmónico (Transmon Qubit, <span id="id1">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id91" title="Jens Koch, Terri M. Yu, Jay Gambetta, A. A. Houck, D. I. Schuster, J. Majer, Alexandre Blais, M. H. Devoret, S. M. Girvin, and R. J. Schoelkopf. Charge-insensitive qubit design derived from the cooper pair box. Phys. Rev. A, 76:042319, Oct 2007. URL: https://link.aps.org/doi/10.1103/PhysRevA.76.042319, doi:10.1103/PhysRevA.76.042319.">14</a>]</span>). Para ello veremos cual es al Hamiltoniano de un <b>circuito LC</b> clásico (sección  <a class="reference internal" href="#sec-scq-circuito-lc-clasico"><span class="std std-numref">3.4.3</span></a>), lo cuantizaremos y sustituiremos la inductancia por una inductacia no lineal (una <b>unión Josephson</b>, ver sección  <a class="reference internal" href="#sec-scq-circuito-lc-cuantico"><span class="std std-numref">3.4.4</span></a>). Finalmente, hablaremos del famoso <b>qubit Transmón</b> (sección  <a class="reference internal" href="#sec-scq-transmon-normal"><span class="std std-numref">3.4.6</span></a>), viendo antes unos comentarios sobre el <b>qubit de carga</b>.</p>
+<p>Para comprender bien el circuito LC, presentaremos primero las ecuaciones para un Condensador (sección  <a class="reference internal" href="#sec-sub-scq-condensador"><span class="std std-numref">3.4.1</span></a>) y un Inductor (sección  <a class="reference internal" href="#sec-sqc-inductor"><span class="std std-numref">3.4.2</span></a>).</p>
+<section id="condensador">
+<span id="sec-sub-scq-condensador"></span><h2><span class="section-number">3.4.1. </span>Condensador<a class="headerlink" href="#condensador" title="Permalink to this heading">#</a></h2>
+<p>En electrotecnia, un <b>condensador</b> (“capacitor” en inglés) es un dispositivo que almacena <b>energía eléctrica</b> mediante la acumulación de cargas eléctricas en dos superficies muy próximas y aisladas entre sí.</p>
+<p>Un condensador consta de dos conductores separados por una región no conductora. La región no conductora está compuesta por un material dielectrico, es decir, un material no conductor (por ejemplo, el aire es un dieléctrico). De este modo, los conductores mantienen cargas iguales y opuestas en sus superficies enfrentadas, y en el dieléctrico aparece un campo eléctrico.</p>
+<p>Un condensador ideal se caracteriza por una <b>capacitancia</b> constante <span class="math notranslate nohighlight">\(C\)</span>, en faradios en el sistema de unidades SI, definida como la relación entre la carga positiva o negativa <span class="math notranslate nohighlight">\(Q\)</span> de cada conductor y la tensión <span class="math notranslate nohighlight">\(V\)</span> entre ellos:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-capacitance">
+<span class="eqno">(3.60)<a class="headerlink" href="#equation-ec-sqc-capacitance" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+C = \frac{Q}{V}
+\end{equation} \]</div>
+<p>La capacitancia se puede definir también en términos de cambios incrementales:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-d-capacitance">
+<span class="eqno">(3.61)<a class="headerlink" href="#equation-ec-sqc-d-capacitance" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+C = \frac{dQ}{dV}
+\end{equation} \]</div>
+<p>Para aumentar la carga y el voltaje en un condensador, el trabajo debe ser realizado por una fuente de energía externa para mover la carga de la placa negativa a la positiva contra la fuerza opuesta del campo eléctrico. Si el voltaje en el condensador es <span class="math notranslate nohighlight">\(V\)</span>, el trabajo <span class="math notranslate nohighlight">\(dW\)</span> necesario para mover un pequeño incremento de carga <span class="math notranslate nohighlight">\(dq\)</span> de la placa negativa a la positiva es <span class="math notranslate nohighlight">\(dW=Vdq\)</span>. La energía se almacena en el aumento del campo eléctrico entre las placas. La energía total <span class="math notranslate nohighlight">\(E_C\)</span> almacenada en un condensador (expresada en julios) es igual al trabajo total <span class="math notranslate nohighlight">\(W\)</span> realizado para establecer el campo eléctrico a partir de un estado sin carga:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-capacitor-e">
+<span class="eqno">(3.62)<a class="headerlink" href="#equation-ec-sqc-capacitor-e" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+E_C = W = \int_0^Q V (q) dq = \int_0^Q \frac{q}{C} dq = \frac{1}{2} \frac{Q^2}{C} = \frac{1}{2} C V^2
+\end{equation} \]</div>
+<p>donde se ha usado la Ec.  <a class="reference internal" href="#equation-ec-sqc-capacitance">(3.60)</a>, <span class="math notranslate nohighlight">\(Q\)</span> es la carga almacenada en el condensador, <span class="math notranslate nohighlight">\(V\)</span> es la tensión a través del condensador y <span class="math notranslate nohighlight">\(C\)</span> es la capacitancia.</p>
+<figure class="align-center" id="fig-types-of-capacitor-png">
+<a class="reference internal image-reference" href="../../../_images/Fig_Types_of_capacitor.png"><img alt="../../../_images/Fig_Types_of_capacitor.png" src="../../../_images/Fig_Types_of_capacitor.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.5 </span><span class="caption-text">Representación de un condensador en un circuito</span><a class="headerlink" href="#fig-types-of-capacitor-png" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="inductor">
+<span id="sec-sqc-inductor"></span><h2><span class="section-number">3.4.2. </span>Inductor<a class="headerlink" href="#inductor" title="Permalink to this heading">#</a></h2>
+<p>Un <b>inductor</b>, también llamado bobina, estrangulador o reactor, es un componente eléctrico pasivo de dos terminales que almacena energía en un <b>campo magnético</b> cuando una corriente eléctrica fluye a través de él. Un inductor suele consistir en un alambre aislado enrollado en una bobina.</p>
+<p>Un inductor está caracterizado por su <b>inductancia</b>, <span class="math notranslate nohighlight">\(L\)</span>. Una corriente eléctrica que circula por un conductor genera un campo magnético a su alrededor. El enlace de flujo magnético <span class="math notranslate nohighlight">\(\Phi\)</span> generado por una corriente <span class="math notranslate nohighlight">\(I\)</span> dada depende de la forma geométrica del circuito. Su relación define la inductancia <span class="math notranslate nohighlight">\(L\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-inductor-l">
+<span class="eqno">(3.63)<a class="headerlink" href="#equation-ec-sqc-inductor-l" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+L = \frac{\Phi_B}{I}
+\end{equation} \]</div>
+<p>Cualquier cambio en la corriente a través de un inductor crea un flujo cambiante, induciendo un voltaje a través del inductor. Por la ley de inducción de Faraday, el voltaje <span class="math notranslate nohighlight">\(\mathcal {E}\)</span> inducido por cualquier cambio en el flujo magnético a través del circuito viene dado por</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-inductor-emf-flux">
+<span class="eqno">(3.65)<a class="headerlink" href="#equation-ec-sqc-inductor-emf-flux" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\mathcal{E} = - \frac{d \Phi_B}{dt} = - \frac{d}{dt}(LI)
+\rqa
+\Phi_B = - \int_{-\infty}^t \mathcal{E}(t')  dt'
+\end{equation} \]</div>
+<p>Juntando  <a class="reference internal" href="#equation-ec-sqc-inductor-l">(3.63)</a> y  <a class="reference internal" href="#equation-ec-sqc-inductor-emf-flux">(3.65)</a> llegamos a</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-inductor-emf-flux">
+<span class="eqno">(3.65)<a class="headerlink" href="#equation-ec-sqc-inductor-emf-flux" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\mathcal{E} = - L \frac{d I}{dt}
+\end{equation} \]</div>
+<p>donde se ha tomado que <span class="math notranslate nohighlight">\(L\)</span> es independiente del tiempo, la corriente y el flujo magnético.</p>
+<p>La polaridad (dirección) de la tensión inducida viene dada por la <b>ley de Lenz</b>, que establece que la tensión inducida será tal que se oponga al cambio en la corriente. Por ejemplo, si la corriente a través de un inductor aumenta, la diferencia de potencial inducida será positiva en el punto de entrada de la corriente y negativa en el punto de salida, tendiendo a oponerse a la corriente adicional. La energía del circuito externo necesaria para superar esta “colina” de potencial se almacena en el campo magnético del inductor. Si la corriente es decreciente, la tensión inducida será negativa en el punto de entrada de la corriente y positiva en el punto de salida, tendiendo a mantener la corriente. En este caso, la energía del campo magnético se devuelve al circuito.</p>
+<p>Dado que la tensión inducida es positiva en el terminal de entrada de la corriente, la relación corriente-tensión del inductor se expresa a menudo sin signo negativo utilizando el terminal de salida de la corriente como punto de referencia para la tensión <span class="math notranslate nohighlight">\(V(t)\)</span> en el terminal de entrada de la corriente. La forma derivada de esta relación corriente-tensión es entonces:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-inductor-v-flux">
+<span class="eqno">(3.66)<a class="headerlink" href="#equation-ec-sqc-inductor-v-flux" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+V(t) = \frac{d \Phi_B}{dt} = L \frac{dI}{dt}
+\rqa
+\Phi_B = \int_{-\infty}^t V(t')  dt'
+\end{equation} \]</div>
+<p>El trabajo realizado por unidad de carga en las cargas que pasan a través del inductor es <span class="math notranslate nohighlight">\(-\mathcal{E}\)</span>. El signo negativo indica que el trabajo se hace en contra de la emf, y no se hace por la emf. La corriente <span class="math notranslate nohighlight">\(I\)</span> es la carga por unidad de tiempo que pasa a través del inductor. Por lo tanto, la tasa de trabajo <span class="math notranslate nohighlight">\(W\)</span> realizado por las cargas en contra de la emf, que es la tasa de cambio de energía de la corriente, está dada por</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2de5189d-19a9-4660-ae65-c119807cd38e">
+<span class="eqno">(3.67)<a class="headerlink" href="#equation-2de5189d-19a9-4660-ae65-c119807cd38e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{dW}{dt} = - \mathcal{E} I = \lp L \frac{dI}{dt} \rp I
+\rqa
+dW = LI \cdot dI
+\end{equation}\]</div>
+<p>Sin tener en cuenta las pérdidas, la energía <span class="math notranslate nohighlight">\(E_L\)</span> almacenada por un inductor con una corriente <span class="math notranslate nohighlight">\(I\)</span> que pasa a través de él es igual a la cantidad de trabajo necesario para establecer la corriente a través del inductor:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ddbb18db-d7b1-4211-8179-7756695d4227">
+<span class="eqno">(3.68)<a class="headerlink" href="#equation-ddbb18db-d7b1-4211-8179-7756695d4227" title="Permalink to this equation">#</a></span>\[\begin{equation}
+E_L = W = \int_0^{I} L I^{'} dI^{'} = \frac{1}{2} L I^2
+\end{equation}\]</div>
+<p>donde se ha asumido una inductancia constante (<span class="math notranslate nohighlight">\(L \neq L(I^{'})\)</span>). Usando la Ec.  <a class="reference internal" href="#equation-ec-sqc-inductor-l">(3.63)</a> llegamos a</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-inductor-e">
+<span class="eqno">(3.69)<a class="headerlink" href="#equation-ec-sqc-inductor-e" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+E_L = \frac{1}{2L} \Phi_B^2
+\end{equation} \]</div>
+<figure class="align-center" id="fig-sqc-inductor">
+<a class="reference internal image-reference" href="../../../_images/Fig_sqc_inductor.jpg"><img alt="../../../_images/Fig_sqc_inductor.jpg" src="../../../_images/Fig_sqc_inductor.jpg" style="width: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.6 </span><span class="caption-text">Representación de un inductor en un circuito</span><a class="headerlink" href="#fig-sqc-inductor" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="circuito-lc-clasico">
+<span id="sec-scq-circuito-lc-clasico"></span><h2><span class="section-number">3.4.3. </span>Circuito LC Clásico<a class="headerlink" href="#circuito-lc-clasico" title="Permalink to this heading">#</a></h2>
+<p>Un Circuito LC es un circuito eléctrico formado por una inductor, <span class="math notranslate nohighlight">\(L\)</span>, y un condensador, <span class="math notranslate nohighlight">\(C\)</span>, conectados en paralelo (Fig.  <a class="reference internal" href="#fig-sqc-circuitos-lc"><span class="std std-numref">3.7</span></a>a). Como vamos a ver a continuación, este circuito funciona como un orcilador.</p>
+<section id="explicacion-cualitativa">
+<h3><span class="section-number">3.4.3.1. </span>Explicación cualitativa<a class="headerlink" href="#explicacion-cualitativa" title="Permalink to this heading">#</a></h3>
+<p>Empecemos viendo una explicación cualitativa del funcionamiento de este circuito.</p>
+<p>Supongamos que partimos de la situación en que no tenemos corriente y tenemos el condensador cargado, en el sentido de que una cara del condensador tiene carga positiva y el otro carga negativa. En este caso, toda la energía del circuito se almacena en el condensador en forma de campo eléctrico. En esta situación, la tendencia del circuito es a equilibrar la carga entre los dos caras del condensador, “liberando” la energía almacenada. De esta forma, la carga negativa fluye por el circuito hacía la cara cargada positivamente, generando una corriente.</p>
+<p>Si el condensador estuviera solo en el circuito, simplemente se descargaría. Sin embargo, la presencia de un inductor hace que al haber una corriente se genere un campo magnético. Este a su vez genera un campo eléctrico que arranca más electrones de la cara negativa del condensador. El resultado es que, en vez de alcanzar el equilibrio de carga en el condensador, lo que sucede es que la cara que antes estaba cargada positivamente, ahora está cargada negativamente, y viceversa. Es decir, la carga del condensador se ha invertido. Estamos en la misma situación del principio pero con la carga invertida, por lo que sucederá lo mismo, pero está vez la corriente irá en sentido inverso.</p>
+<p>Este ciclo se irá repitiendo, generando una corriente que oscila a una frecuencia determinada por los valores de la inductancia <span class="math notranslate nohighlight">\(L\)</span> y del capacitancia <span class="math notranslate nohighlight">\(C\)</span></p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-lcc-omega">
+<span class="eqno">(3.70)<a class="headerlink" href="#equation-ec-sqc-lcc-omega" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\omega = \sqrt{\frac{1}{LC}}
+\end{equation} \]</div>
+<p>El circuito actúa como un resonador eléctrico a la frecuencia de resonancia del circuito.</p>
+<figure class="align-center" id="fig-sqc-circuitos-lc">
+<a class="reference internal image-reference" href="../../../_images/Fig_sqc_circuitos_LC.png"><img alt="../../../_images/Fig_sqc_circuitos_LC.png" src="../../../_images/Fig_sqc_circuitos_LC.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.7 </span><span class="caption-text">(a) Circuito para un oscilador LC paralelo (oscilador armónico cuántico, QHO), con inductancia <span class="math notranslate nohighlight">\(L\)</span> en paralelo con capacitancia, <span class="math notranslate nohighlight">\(C\)</span>. La fase superconductora en la isla se denota como <span class="math notranslate nohighlight">\(\phi\)</span>, referenciando la tierra como cero. (b) Potencial energético para el QHO, donde los niveles de energía están equidistantemente espaciados <span class="math notranslate nohighlight">\(\hbar \omega_r\)</span>. © Circuito qubit Josephson, en el que la inductancia no lineal <span class="math notranslate nohighlight">\(L_J\)</span> (representada por el subcircuito Josephson en el recuadro naranja discontinuo) es derivada por una capacitancia, <span class="math notranslate nohighlight">\(C_s\)</span>. (d) La inductancia de Josephson transforma el potencial energético cuadrático (rojo discontinuo) en sinusoidal (azul sólido), lo que produce niveles de energía no equidistantes. Esto nos permite aislar los dos niveles de energía más bajos <span class="math notranslate nohighlight">\(\ket{0}\)</span> y <span class="math notranslate nohighlight">\(\ket{1}\)</span>, formando un subespacio computacional con una separación energética <span class="math notranslate nohighlight">\(\hbar \omega_{01}\)</span>, que es diferente de <span class="math notranslate nohighlight">\(\hbar \omega_{1}\)</span>. Figura tomada de <span id="id2">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id90" title="P. Krantz, M. Kjaergaard, F. Yan, T. P. Orlando, S. Gustavsson, and W. D. Oliver. A quantum engineer's guide to superconducting qubits. Applied Physics Reviews, 6(2):021318, 06 2019. URL: https://doi.org/10.1063/1.5089550, arXiv:https://pubs.aip.org/aip/apr/article-pdf/doi/10.1063/1.5089550/16667201/021318\_1\_online.pdf, doi:10.1063/1.5089550.">16</a>]</span></span><a class="headerlink" href="#fig-sqc-circuitos-lc" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="hamiltoniano-del-oscilador-armonico">
+<h3><span class="section-number">3.4.3.2. </span>Hamiltoniano del oscilador armónico<a class="headerlink" href="#hamiltoniano-del-oscilador-armonico" title="Permalink to this heading">#</a></h3>
+<p>Como acabamos de comentar, en este circuito la corriente oscila cambiando de sentido. En esta sección vamos a escribir el Hamiltoniano del circuito LC y ver que llegamos al Hamiltoniano de un orcilador armónico.</p>
+<p>Cuando se producen estas oscilaciones en el sentido de la corriente, la energía total almacenada en el circuito se mantiene constante. Sin embargo, esta oscila entre la <b>energía eléctrica</b> almacenada en el condensador y la <b>energía magnética</b> almacenada en el inductor.</p>
+<p>En lo sucesivo, asociaremos arbitrariamente:</p>
+<ul>
+<li><p>La energía eléctrica a la “energía cinética” del oscilador. Teniendo en cuenta la Ec.  <a class="reference internal" href="#equation-ec-sqc-capacitor-e">(3.62)</a>, vemos que:</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-lcc-t">
+<span class="eqno">(3.71)<a class="headerlink" href="#equation-ec-scq-lcc-t" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+T_{LC} = E_C = \frac{1}{2} C V^2 = \frac{1}{2} C \lp \frac{d \Phi_B}{dt} \rp = \frac{1}{2} C \dot{\Phi}_B
+\end{equation} \]</div>
+<p>donde se ha usado la Ec.  <a class="reference internal" href="#equation-ec-sqc-inductor-v-flux">(3.66)</a></p>
+</li>
+<li><p>La energía magnética a la “energía potencial” del oscilador. Teniendo en cuenta la Ec.  <a class="reference internal" href="#equation-ec-sqc-inductor-e">(3.69)</a>, vemos que</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-lcc-v">
+<span class="eqno">(3.72)<a class="headerlink" href="#equation-ec-scq-lcc-v" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+V_{LC} = E_L =  \frac{1}{2L} \Phi_B^2
+\end{equation} \]</div>
+</li>
+</ul>
+<p>Para derivar el hamiltoniano clásico, vamos a representar el circuito en términos de una de sus coordenadas generalizadas, <b>carga</b> o <b>flujo</b>. Siguiendo la elección anterior de las energías, vamos a elegir el flujo (ver Ec.  <a class="reference internal" href="#equation-ec-sqc-inductor-v-flux">(3.66)</a>) como coordenada generalizada.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (Flujo como coordenada generalizada)</p>
+<p>Vamos a comprobar que nuestras elecciones son coherentes. Comparemos la Ec.  <a class="reference internal" href="#equation-ec-scq-lcc-t">(3.71)</a> y la Ec.  <a class="reference internal" href="#equation-ec-scq-lcc-v">(3.72)</a> con la Ec.  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-oscilador-t-v">(3.26)</a>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-80b87295-e492-4f2a-9569-09553db47c50">
+<span class="eqno">(3.73)<a class="headerlink" href="#equation-80b87295-e492-4f2a-9569-09553db47c50" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\left.
+\begin{aligned}
+V_{LC} = \frac{1}{2L} \Phi_B^2 \\
+V_{HO} = \frac{1}{2} k x^2
+\end{aligned}
+\right\} \Rightarrow \text{Asociamos: } x = \Phi_B, \, k = \frac{1}{L}
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-34c39bc7-a5a3-4f0a-8302-dde92815abc3">
+<span class="eqno">(3.74)<a class="headerlink" href="#equation-34c39bc7-a5a3-4f0a-8302-dde92815abc3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\left.
+\begin{aligned}
+T_{LC} = \frac{1}{2} C \dot{\Phi}_B\\
+T_{HO} = \frac{1}{2} m \dot{x}^2
+\end{aligned}
+\right\} \Rightarrow \text{Asociamos: } \dot{x} = \dot{\Phi}_B, \, m = C
+\end{equation}\]</div>
+<p>Con estas identificaciones, las expresiones de las frecuencias (Ec.  <a class="reference internal" href="#equation-ec-sqc-lcc-omega">(3.70)</a> y Ec.  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-oscilador-omega">(3.30)</a>) también coinciden.</p>
+<p>Es decir, vemos que todo es coherente.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Nota (Carga como coordenada generalizada)</p>
+<p>En esta sección hemos tomado el flujo <span class="math notranslate nohighlight">\(\Phi_B\)</span> en la inductancia como coordenada generalizada. Podríamos hacer el mismo análisis tomando la carga <span class="math notranslate nohighlight">\(Q\)</span> del condensador como coordenada generalizada.  En este caso, las asociaciones de energías tendrían que ser al revés:</p>
+<ul class="simple">
+<li><p>La energía eléctrica a la “energía potencia” del oscilador.</p></li>
+<li><p>La energía magnética a la “energía cinética” del oscilador.</p></li>
+</ul>
+<p>Simplemente habría que darle una vuelta a las Ecs.  <a class="reference internal" href="#equation-ec-sqc-capacitor-e">(3.62)</a> y  <a class="reference internal" href="#equation-ec-sqc-inductor-e">(3.69)</a> para escribirlas en función de <span class="math notranslate nohighlight">\(Q\)</span> y <span class="math notranslate nohighlight">\(\dot{Q}\)</span>.</p>
+</div>
+<p>Para calcular el Hamiltoniano, seguiremos los mismos pasos que en el ejemplo del oscilador armónico. Teniendo en cuenta la Ec.
+<a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-flagrangiano-l-t-v">(3.19)</a>, el Lagrangiano es de la forma:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-lc-l">
+<span class="eqno">(3.75)<a class="headerlink" href="#equation-ec-sqc-lc-l" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+L_{LC} = \frac{1}{2} C \dot{\Phi}_B - \frac{1}{2L} \Phi_B^2
+\end{equation} \]</div>
+<p>Para calcular el Hamiltoniano, calculemos primero el momento  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-fhamiltoniano-p">(3.21)</a>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1277d6e2-f2f6-4d07-ae44-893f4fdeafc0">
+<span class="eqno">(3.76)<a class="headerlink" href="#equation-1277d6e2-f2f6-4d07-ae44-893f4fdeafc0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+p = \frac{\partial L}{\partial \dot{\Phi}_B} = C  \dot{\Phi}_B
+\end{equation}\]</div>
+<p>Volviendo a la ecuación de la capacitancia (Ec.  <a class="reference internal" href="#equation-ec-sqc-capacitance">(3.60)</a>), vemos que</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8e54d918-a1aa-4797-a0f0-1137e522b58f">
+<span class="eqno">(3.77)<a class="headerlink" href="#equation-8e54d918-a1aa-4797-a0f0-1137e522b58f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+Q = C V = C \frac{d \Psi_B}{dt} = C \dot{\Phi}_B
+\end{equation}\]</div>
+<p>donde se ha usado la Ec.  <a class="reference internal" href="#equation-ec-sqc-inductor-v-flux">(3.66)</a>. Vemos que en nuestra analogía con el oscilador armónico, la carga del condensador es equivalente al momento (ver Ec.  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-oscialdor-p">(3.28)</a>).</p>
+<p>Calculemos ahora el Hamiltoniano usando la Ec.  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-fhamiltoniano-legendre">(3.22)</a></p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-lc-h">
+<span class="eqno">(3.78)<a class="headerlink" href="#equation-ec-sqc-lc-h" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+H_{LC} = Q - L_{LC} = \frac{1}{2C} Q^2 + \frac{1}{2L} \Phi_B^2
+\end{equation} \]</div>
+</section>
+</section>
+<section id="circuito-lc-cuantico">
+<span id="sec-scq-circuito-lc-cuantico"></span><h2><span class="section-number">3.4.4. </span>Circuito LC Cuántico<a class="headerlink" href="#circuito-lc-cuantico" title="Permalink to this heading">#</a></h2>
+<section id="cuantizacion-del-circuito-lc">
+<h3><span class="section-number">3.4.4.1. </span>Cuantización del circuito LC<a class="headerlink" href="#cuantizacion-del-circuito-lc" title="Permalink to this heading">#</a></h3>
+<p>Vamos usar la cuantización canónica (sección  <a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html#sec-scq-cuantizacion-canonica"><span class="std std-numref">3.3.2</span></a>) para cuantizar el hamiltoniano de la Ec.  <a class="reference internal" href="#equation-ec-sqc-lc-h">(3.78)</a>. Tenemos ahora pues que</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-lc-cuantico-h-1">
+<span class="eqno">(3.79)<a class="headerlink" href="#equation-ec-sqc-lc-cuantico-h-1" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\hat{H}_{LC} = \frac{1}{2C} \hat{Q}^2 + \frac{1}{2L} \hat{\Phi}_B^2
+\end{equation} \]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d90dc42c-f831-4eab-b110-58a4178e8ea6">
+<span class="eqno">(3.80)<a class="headerlink" href="#equation-d90dc42c-f831-4eab-b110-58a4178e8ea6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lc \hat{\Phi}_B, \hat{Q} \rc = \hat{\Phi}_B \hat{Q} - \hat{Q} \hat{\Phi}_B = i \hbar \, ,
+\end{equation}\]</div>
+<p>Definamos el <b>flujo reducido</b>, <span class="math notranslate nohighlight">\(\hat{\phi}\)</span>, y la <b>carga reducida</b>, <span class="math notranslate nohighlight">\(\hat{n}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-720af98e-a165-4650-b61c-d26d1608462a">
+<span class="eqno">(3.81)<a class="headerlink" href="#equation-720af98e-a165-4650-b61c-d26d1608462a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\hat{\phi} \equiv 2 \pi \frac{\hat{\Phi}_B}{\Phi_0}, \qquad \text{donde} \qquad \Phi_0 = \frac{h}{2e}
+\end{equation}\]</div>
+<div class="math notranslate nohighlight" id="equation-ec-scq-carga-reducida">
+<span class="eqno">(3.82)<a class="headerlink" href="#equation-ec-scq-carga-reducida" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\hat{n} \equiv \frac{\hat{Q}}{2e}\, .
+\end{equation} \]</div>
+<p>La constante <span class="math notranslate nohighlight">\(\Phi_0\)</span> es el <b>cuanto de flujo magnético superconductor</b>.</p>
+<p>Podemos reescribir ahora el hamiltoniano de la forma</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-lc-cuantico-h">
+<span class="eqno">(3.83)<a class="headerlink" href="#equation-ec-sqc-lc-cuantico-h" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+H_{LC} = 4 E_C \hat{n}^2 + \frac{1}{2} E_L \hat{\phi}^2 \, ,
+\end{equation} \]</div>
+<p>con</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5507d790-b44b-4e1c-9857-334f989e8dd9">
+<span class="eqno">(3.84)<a class="headerlink" href="#equation-5507d790-b44b-4e1c-9857-334f989e8dd9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+E_C = \frac{e^2}{2C} \, ,
+\qquad
+E_L = \frac{(\Phi_0/(2 \pi))^2}{L}
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(E_C\)</span> es la <b>energía de carga</b> y <span class="math notranslate nohighlight">\(E_L\)</span> es la <b>energía inductiva</b>.</p>
+<p>Además, el operador cuántico <span class="math notranslate nohighlight">\(\hat{n}\)</span> es el <b>número en exceso de pares de Cooper en la isla</b>, y <span class="math notranslate nohighlight">\(\hat{\phi}\)</span> es la <b>fase invariante de gauge</b> a través del inductor.  Estos dos operadores forman un par conjugado canónico que obedece a la relación de conmutación</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c81e4769-f17d-46f7-93a2-55724bbc2aab">
+<span class="eqno">(3.85)<a class="headerlink" href="#equation-c81e4769-f17d-46f7-93a2-55724bbc2aab" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lc \hat{\phi}, \hat{n} \rc = i
+\end{equation}\]</div>
+<p>Observamos que el factor 4 delante de la energía de carga <span class="math notranslate nohighlight">\(E_C\)</span> en la Ec.  <a class="reference internal" href="#equation-ec-sqc-lc-cuantico-h">(3.83)</a> es únicamente un artefacto histórico, a razón de que esta escala de energía se definió primero para sistemas de un solo electrón y luego se adoptó para sistemas de pares de Cooper de dos electrones.</p>
+<p>Como podemos ver, el Hamiltoniano de la Ec.  <a class="reference internal" href="#equation-ec-sqc-lc-cuantico-h">(3.83)</a> es idéntico al de una partícula moviéndose en un potencial cuadrático unidimensional, es decir, al de un <b>oscilador armónico cuántico</b> (QHO de sus siglas en inglés), formalmente idéntico al clásico de la Ec.  <a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html#equation-ec-sqc-canonica-oscilador-h">(3.47)</a>. Podemos tratar <span class="math notranslate nohighlight">\(\hat{\phi}\)</span> como la coordenada de posición generalizada, de modo que el primer término es la energía cinética y el segundo término es la energía potencial.</p>
+<p>Como ya sabemos, la forma funcional del potencial influencia las soluciones (autovalores y autoestados). En este caso tenemos un potencial cuadrático (<span class="math notranslate nohighlight">\(V_{LC} \propto \hat{\phi}^2\)</span>), que podemos ver en la Fig.  <a class="reference internal" href="#fig-sqc-circuitos-lc"><span class="std std-numref">3.7</span></a>(b).</p>
+<p>Como ya vimos en la Ecs.  <a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html#equation-ec-sqc-canonica-qho-schrodinger">(3.49)</a> y  <a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html#equation-ec-sqc-canonica-qho-e">(3.50)</a>, la solución del QHO pasa por una serie de estados <span class="math notranslate nohighlight">\(\ket{k}\)</span> con energías equiespaciadas:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4d49446d-2f4f-4b0c-b3ac-8b74c79d6a92">
+<span class="eqno">(3.86)<a class="headerlink" href="#equation-4d49446d-2f4f-4b0c-b3ac-8b74c79d6a92" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\hat{H}_{QHO} \ket{k} = E_k \ket{k}
+\qquad , \qquad
+E_k = \hbar \omega \lp k + \frac{1}{2} \rp
+\qquad , \qquad
+E_{k+1} - E_k = \hbar \omega
+\end{equation}\]</div>
+</section>
+<section id="circuito-lc-cuantico-en-segunda-cuantizacion">
+<h3><span class="section-number">3.4.4.2. </span>Circuito LC Cuántico en segunda cuantización<a class="headerlink" href="#circuito-lc-cuantico-en-segunda-cuantizacion" title="Permalink to this heading">#</a></h3>
+<p>Como ya vimos en la Ec.  <a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html#equation-ec-sqc-qho-second-quant">(3.59)</a>, podemos escribir el QHO en función de los operadores de subida (creación) y de bajada (destrucción). En concreto, tenemos que re-expresar nuestros operadores de <span class="math notranslate nohighlight">\(\hat{n}\)</span> y <span class="math notranslate nohighlight">\(\hat{\phi}\)</span> de la forma</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-lc-cuantico-segunda-cuant-variables">
+<span class="eqno">(3.87)<a class="headerlink" href="#equation-ec-scq-lc-cuantico-segunda-cuant-variables" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\hat{n} = n_{zpf} i (\hat{a} - \hat{a}^\dagger)
+\qquad , \qquad
+\hat{\phi} = \phi_{zpf} (\hat{a} + \hat{a}^\dagger)
+\end{equation} \]</div>
+<p>donde</p>
+<div class="amsmath math notranslate nohighlight" id="equation-28cd56ee-81f5-409b-aecd-dbab2176da57">
+<span class="eqno">(3.88)<a class="headerlink" href="#equation-28cd56ee-81f5-409b-aecd-dbab2176da57" title="Permalink to this equation">#</a></span>\[\begin{equation}
+n_{zpf} = \lc \frac{E_L}{32 E_C} \rc^{\frac{1}{4}}
+\qquad \text{y} \qquad
+\phi_{zpf} = \lc \frac{2E_C}{E_L} \rc^{\frac{1}{4}}
+\end{equation}\]</div>
+<p>son las fluctuaciones a punto cero (zero-point fluctuations) de la carga y la fase respectivamente. Desde el punto de vista de la mecánica cuántica, los estados cuánticos se representan como funciones de onda que, por lo general, se distribuyen en un rango de valores de <span class="math notranslate nohighlight">\(\hat{n}\)</span> y <span class="math notranslate nohighlight">\(\hat{\phi}\)</span>, en consecuencia, las funciones de onda tienen desviaciones estándar distintas de cero. Estas distribuciones de las funciones de onda se denominan <b>fluctuaciones cuánticas</b> y existen incluso en el estado fundamental, donde se denominan fluctuaciones de punto cero.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>A partir de aquí vamos a dejar de usar los gorros (<span class="math notranslate nohighlight">\(\, \hat{} \,\)</span>) encima de los operadores, pues, como todo es cuántico, ya se sobreentiende.</p>
+</div>
+</section>
+<section id="circuito-lc-con-union-josephson-lcjj">
+<h3><span class="section-number">3.4.4.3. </span>Circuito LC con Unión Josephson (LCJJ)<a class="headerlink" href="#circuito-lc-con-union-josephson-lcjj" title="Permalink to this heading">#</a></h3>
+<p>Las característica lineal del QHO tienen una limitación natural en sus aplicaciones para el procesamiento de la información cuántica. Antes de poder utilizar el sistema como un qubit, necesitamos poder definir un subespacio computacional que consista en sólo dos estados de energía (normalmente los dos autoestados de menor energía) entre los cuales se puedan inducir transiciones sin excitar también otros niveles del sistema. Dado que muchas operaciones de puertas dependen de la selección de la frecuencia, el espaciado equidistante entre niveles del QHO, ilustrado en la Fig.  <a class="reference internal" href="#fig-sqc-circuitos-lc"><span class="std std-numref">3.7</span></a>(b), supone una limitación práctica.</p>
+<p>Para mitigar el problema de la dinámica no deseada que implica estados no computacionales, necesitamos añadir <b>anarmonicidad</b> (o no <b>linealidad</b>) a nuestro sistema. En pocas palabras, requerimos que las frecuencias de transición <span class="math notranslate nohighlight">\(\omega_{01}\)</span> y <span class="math notranslate nohighlight">\(\omega_{12}\)</span> sean lo suficientemente diferentes como para ser abordables individualmente. En general, cuanto mayor sea la anarmonicidad, mejor. En la práctica, la cantidad de anarmonicidad establece un límite sobre lo cortos que pueden ser los pulsos utilizados para dirigir el qubit.</p>
+<p>Para introducir la no linealidad necesaria para modificar el potencial armónico, utilizamos la <b>unión Josephson</b> (JJ): un elemento de circuito no lineal y sin disipación que constituye la columna vertebral de los circuitos superconductores. Sustituyendo el inductor lineal del QHO por una unión Josephson, que desempeña el papel de <b>inductor no lineal</b>, podemos modificar la forma funcional de la energía potencial, que toma la forma de la Ec.  <a class="reference internal" href="Section_001_conceptos_basicos_sobre_superconductividad__myst.html#equation-ec-sqc-jj-e">(3.9)</a>: <span class="math notranslate nohighlight">\(E(\phi) = -E_J \cos \phi\)</span>. De esta forma, el hamiltoniano nos queda como</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-lcjj-h">
+<span class="eqno">(3.89)<a class="headerlink" href="#equation-ec-sqc-lcjj-h" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+H = 4 E_C n^2 - E_J \cos (\phi)
+\end{equation} \]</div>
+<p>con</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c1009a25-2a4b-4df9-9add-de31ca2a49c7">
+<span class="eqno">(3.90)<a class="headerlink" href="#equation-c1009a25-2a4b-4df9-9add-de31ca2a49c7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+E_C = \frac{e^2}{2 C_{\varSigma}}\,,
+\qquad
+C_{\varSigma} = C_s + C_J \, ,
+\qquad
+E_J = \frac{I_c \Phi_0}{2 \pi}\, ,
+\qquad
+\Phi_0 = \frac{h}{2e}
+\end{equation}\]</div>
+<p>donde</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span>: Diferencia de fase en la unión Josephson (lo que llamábamos <span class="math notranslate nohighlight">\(\delta\)</span> en la sección  <a class="reference internal" href="Section_001_conceptos_basicos_sobre_superconductividad__myst.html#sec-scq-josephson"><span class="std std-numref">3.1.3</span></a>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_C\)</span>: Energía de carga</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_s\)</span>: Capacitancia del condensador</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_J\)</span>: Capacitancia de la unión Josephson</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{\varSigma}\)</span>: Capacitancia total</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_J\)</span>: Energía de Josephson (ver Ec.  <a class="reference internal" href="Section_001_conceptos_basicos_sobre_superconductividad__myst.html#equation-ec-sqc-jj-ej">(3.10)</a>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(I_c\)</span>: Corriente crítica de la unión Josephson (ver Ec.  <a class="reference internal" href="Section_001_conceptos_basicos_sobre_superconductividad__myst.html#equation-ec-scq-jj-i">(3.3)</a>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Phi_0\)</span>: Cuanto de flujo magnético superconductor</p></li>
+</ul>
+<p>Tras introducir la unión Josephson en el circuito, la energía potencial ya no adopta una forma manifiestamente parabólica (de la que procede el espectro armónico), sino que presenta una forma de coneso, lo que hace que el espectro energético no sea degenerado. Por lo tanto, la unión Josephson es el ingrediente clave que hace que el oscilador sea anarmónico y, por lo tanto, nos permite quedarnos con los dos niveles de menor energía y tratar el sistema <i>como si fuera un sistema de dos niveles</i>, véase la Fig.  <a class="reference internal" href="#fig-sqc-circuitos-lc"><span class="std std-numref">3.7</span></a>(d).</p>
+</section>
+</section>
+<section id="el-qubit-de-carga-caja-de-pares-de-cooper">
+<h2><span class="section-number">3.4.5. </span>El qubit de carga: Caja de pares de Cooper.<a class="headerlink" href="#el-qubit-de-carga-caja-de-pares-de-cooper" title="Permalink to this heading">#</a></h2>
+<p>Una vez añadida la no linealidad, la dinámica del sistema se rige por la energía dominante en la Ec.  <a class="reference internal" href="#equation-ec-sqc-lcjj-h">(3.89)</a>, reflejada en la relación <span class="math notranslate nohighlight">\(E_J/E_C\)</span>. Las primeras propuestas de qubits superconductores que se hicieron estaban en el régimen de carga (<span class="math notranslate nohighlight">\(E_J \ll E_C\)</span>) y eran los denominados <b>qubits de carga</b> o <b>cajas de pares de Cooper</b> (Cooper-pair box).</p>
+<p>Estos consisten en un circuito superconductor con uniones Josephson y un condensadores. La zona que se forma entre las uniones Josephson y el condensador se denomina <b>isla</b>.</p>
+<p>El tipo más simple de esta clase de qubits es el que podemos ver en la Fig.  <a class="reference internal" href="#fig-scq-charge-qubit"><span class="std std-numref">3.8</span></a>, con una sola unión Josephson.  Este consiste en una pequeña isla superconductora (“caja”) con <span class="math notranslate nohighlight">\(n\)</span> cargas de pares de Cooper en exceso (en relación con algún estado neutro de referencia), conectada mediante una unión Josephson con capacitancia <span class="math notranslate nohighlight">\(C_J\)</span> y energía de acoplamiento Josephson <span class="math notranslate nohighlight">\(E_J\)</span> a un electrodo superconductor. Una tensión de control <span class="math notranslate nohighlight">\(V_g\)</span> se acopla al sistema a través de un condensador de capacitancia <span class="math notranslate nohighlight">\(C_g\)</span>. En este qubit los estados viene dados por el número <span class="math notranslate nohighlight">\(n\)</span> de pares de Cooper en exceso. Estos qubits presentan el problema del <b>ruido de carga</b> (veremos que es en la sección  <a class="reference internal" href="#sec-scq-transmon-normal"><span class="std std-numref">3.4.6</span></a>.</p>
+<figure class="align-center" id="fig-scq-charge-qubit">
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_charge_qubit.png"><img alt="../../../_images/Fig_scq_charge_qubit.png" src="../../../_images/Fig_scq_charge_qubit.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.8 </span><span class="caption-text">Forma simple de un circuito superconductor para generar un qubit de carga</span><a class="headerlink" href="#fig-scq-charge-qubit" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="el-transmon-mitigando-el-ruido-de-carga">
+<span id="sec-scq-transmon-normal"></span><h2><span class="section-number">3.4.6. </span>El transmón: mitigando el ruido de carga<a class="headerlink" href="#el-transmon-mitigando-el-ruido-de-carga" title="Permalink to this heading">#</a></h2>
+<p>Con el tiempo, la comunidad de qubits superconductores ha convergido hacia diseños de circuitos con <span class="math notranslate nohighlight">\(E_J \gg E_C\)</span>. En el caso opuesto, cuando <span class="math notranslate nohighlight">\(E_J \ll E_C\)</span>, el qubit se vuelve muy sensible al <b>ruido de carga</b>, que ha demostrado ser más difícil de mitigar que el <b>ruido de flujo</b>, lo que hace muy difícil lograr una alta coherencia. Por lo tanto, nos centraremos aquí en las modalidades de qubits que caen en el régimen <span class="math notranslate nohighlight">\(E_J \gg E_C\)</span>, es decir, el régimen del <b>qubit transmón</b>.</p>
+<p>Dos magnitudes cruciales para el funcionamiento de un qubit superconductor son la <b>anarmonicidad</b> y la <b>dispersión de carga</b> de los niveles de energía. Por un lado, se necesita una anarmonicidad suficientemente grande para evitar que las operaciones de los qubits exciten otras transiciones en el sistema.</p>
+<p>Por otro lado, la dispersión de carga describe la variación de los niveles de energía con respecto a la <b>carga de offset</b> ambiental y al voltaje de puerta, y determina la sensibilidad del qubit superconductor al <b>ruido de carga</b>: cuanto menor sea la dispersión de carga, menos cambiará la frecuencia del qubit en respuesta a las fluctuaciones de carga. Las magnitudes de la dispersión de carga y la anarmonicidad vienen determinadas por la relación entre la energía Josephson y la energía de carga <span class="math notranslate nohighlight">\(E_J/E_C\)</span> . El aumento de esta relación reduce la anarmonicidad (relativa) del nivel de energía (que limita la velocidad de las operaciones del qubit). Sin embargo, también disminuye la dispersión global de la carga y, por tanto, la sensibilidad al ruido de carga.</p>
+<p>El transmón <span id="id3">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id91" title="Jens Koch, Terri M. Yu, Jay Gambetta, A. A. Houck, D. I. Schuster, J. Majer, Alexandre Blais, M. H. Devoret, S. M. Girvin, and R. J. Schoelkopf. Charge-insensitive qubit design derived from the cooper pair box. Phys. Rev. A, 76:042319, Oct 2007. URL: https://link.aps.org/doi/10.1103/PhysRevA.76.042319, doi:10.1103/PhysRevA.76.042319.">14</a>]</span> explota un hecho notable: la dispersión de la carga se reduce exponencialmente en <span class="math notranslate nohighlight">\(E_J/E_C\)</span>, mientras que la anarmonicidad sólo disminuye algebraicamente con una ley de potencia lenta en <span class="math notranslate nohighlight">\(E_J/E_C\)</span>. En consecuencia, operando el transmón a una relación <span class="math notranslate nohighlight">\(E_J/E_C\)</span> grande (del orden de decenas o cientos), se puede reducir enormemente la sensibilidad al ruido de carga en el qubit sacrificando sólo una parte de la anarmonicidad. De hecho, la dispersión de carga puede suprimirse tan fuertemente que el qubit se vuelve prácticamente insensible al ruido de carga.</p>
+<p>Veamos esto más en detalle. Primero empecemos comentando que, siendo más precisos, el Hamiltoniano de la Ec.  <a class="reference internal" href="#equation-ec-sqc-lcjj-h">(3.89)</a> deberíamos escribirlo como:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-transmon-h-offset">
+<span class="eqno">(3.91)<a class="headerlink" href="#equation-ec-sqc-transmon-h-offset" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+H = 4 E_C (n-n_g)^2 - E_J \cos (\phi)
+\end{equation} \]</div>
+<p>El término <span class="math notranslate nohighlight">\(n_g\)</span> se denomina <b>carga efectiva de desplazamiento</b> (effective offset charge) (en unidades de <span class="math notranslate nohighlight">\(2e\)</span>). Esta carga de offset depende tanto del ambiente como del acoplamiento del qubit con una fuente de microondas para su control. Desarrollaremos esto ultimo en la sección  <a class="reference internal" href="Section_008_puertas_simples__myst.html#sec-scq-puertas-1-qubits"><span class="std std-numref">3.8</span></a> (ver Fig.  <a class="reference internal" href="Section_008_puertas_simples__myst.html#fig-scq-qubit-acoplado-a-fuente"><span class="std std-numref">3.15</span></a>)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-398934f4-9965-4033-987e-cc5a182a5ddd">
+<span class="eqno">(3.92)<a class="headerlink" href="#equation-398934f4-9965-4033-987e-cc5a182a5ddd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+n_g = \frac{Q_r}{2e} + \frac{C_g V_g}{2e}
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(V_d\)</span> y <span class="math notranslate nohighlight">\(C_d\)</span> son el voltaje y la capacitancia de la fuente de microondas (a veces llamados voltaje y capacitancia de puerta), y <span class="math notranslate nohighlight">\(Q_r\)</span> representa la carga de offset inducida por el ambiente.</p>
+<p>En la Fig.  <a class="reference internal" href="#fig-sqc-transmon-offset-charge"><span class="std std-numref">3.9</span></a> podemos ver como varían los niveles de energía con respecto a <span class="math notranslate nohighlight">\(n_g\)</span> para diferentes valores de <span class="math notranslate nohighlight">\(E_J/E_C\)</span>. Vemos que <span class="math notranslate nohighlight">\(E_J/E_C=50\)</span>, los niveles de energía no varían con <span class="math notranslate nohighlight">\(n_g\)</span>, haciendo el qubit resistente a errores de carga. Por este motivo, a partir de ahora vamos a seguir usando el Hamiltoniano de la Ec.  <a class="reference internal" href="#equation-ec-sqc-lcjj-h">(3.89)</a>, ignorando el termino <span class="math notranslate nohighlight">\(n_g\)</span>.</p>
+<figure class="align-center" id="fig-sqc-transmon-offset-charge">
+<a class="reference internal image-reference" href="../../../_images/Fig_sqc_transmon_offset_charge.png"><img alt="../../../_images/Fig_sqc_transmon_offset_charge.png" src="../../../_images/Fig_sqc_transmon_offset_charge.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.9 </span><span class="caption-text">Tres primeros niveles de energías <span class="math notranslate nohighlight">\(E_n\)</span> (<span class="math notranslate nohighlight">\(n = 0, 1, 2\)</span>) del Hamiltoniano del la Ec.  <a class="reference internal" href="#equation-ec-sqc-transmon-h-offset">(3.91)</a> en función de la carga efectiva de desplazamiento <span class="math notranslate nohighlight">\(n_g\)</span> para diferentes relaciones <span class="math notranslate nohighlight">\(E_J/E_C\)</span>. Las energías se dan en unidades de la energía de transición <span class="math notranslate nohighlight">\(E_{01}\)</span>, evaluada en el punto de degeneración <span class="math notranslate nohighlight">\(n_g = 1/2\)</span>. El punto cero de energía se elige como la parte inferior del nivel <span class="math notranslate nohighlight">\(n = 0\)</span>. Las líneas discontinuas verticales en (a) marcan los puntos óptimos de operación del qubit de carga (<span class="math notranslate nohighlight">\(n_g\)</span> semientero). Figura tomada de  <span id="id4">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id91" title="Jens Koch, Terri M. Yu, Jay Gambetta, A. A. Houck, D. I. Schuster, J. Majer, Alexandre Blais, M. H. Devoret, S. M. Girvin, and R. J. Schoelkopf. Charge-insensitive qubit design derived from the cooper pair box. Phys. Rev. A, 76:042319, Oct 2007. URL: https://link.aps.org/doi/10.1103/PhysRevA.76.042319, doi:10.1103/PhysRevA.76.042319.">14</a>]</span></span><a class="headerlink" href="#fig-sqc-transmon-offset-charge" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>La forma preferida de conseguir estos ratios <span class="math notranslate nohighlight">\(E_J \gg E_C\)</span> es haciendo el valor de <span class="math notranslate nohighlight">\(E_C\)</span> derivando la unión con un condensador grande, <span class="math notranslate nohighlight">\(C_s \gg C_J\)</span>. En este límite, la fase superconductora <span class="math notranslate nohighlight">\(\phi\)</span> es un <b>buen número cuántico</b>, es decir, la dispersión (o fluctuación cuántica) de los valores <span class="math notranslate nohighlight">\(\phi\)</span> representados por la función de onda cuántica es pequeña. Por otro lado, por el principio de indeterminación,  <span class="math notranslate nohighlight">\(n\)</span> se vuelve un <b>mal número cuántico</b> (gran dispersión), pues es la variable conjugada de <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
+<p>Podemos obtener más información expandiendo el término de potencial de la Ec.  <a class="reference internal" href="#equation-ec-sqc-lcjj-h">(3.89)</a> en una serie de potencias (en los casos en los que que <span class="math notranslate nohighlight">\(\phi\)</span> es pequeño, es decir, los dos superconductores tiene fases parecidas), es decir</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-transmon-potencial-taylor">
+<span class="eqno">(3.93)<a class="headerlink" href="#equation-ec-scq-transmon-potencial-taylor" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+E_J \cos \phi = \frac{1}{2} E_J \phi^2 - \frac{1}{24} E_J \phi^2 + \mathcal{O} (\phi^2)
+\end{equation} \]</div>
+<p>El primer término cuadrático de la Ec.  <a class="reference internal" href="#equation-ec-scq-transmon-potencial-taylor">(3.93)</a> por sí solo dará lugar a un QHO, (ver Ec.  <a class="reference internal" href="#equation-ec-sqc-lc-cuantico-h">(3.83)</a>). El segundo término, sin embargo, es cuártico, lo que modifica los autoestados y altera la estructura de energía, que de otro modo sería armónica. Nótese que, el coeficiente negativo del término cuártico indica que la <b>anarmonicidad</b></p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-anarmonicidad">
+<span class="eqno">(3.94)<a class="headerlink" href="#equation-ec-scq-anarmonicidad" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\alpha = \omega_q^{1 \rightarrow 2} - \omega_q^{0 \rightarrow 1}
+\end{equation} \]</div>
+<p>es negativa y, por tanto, su límite en magnitud no puede hacerse arbitrariamente grande. Para el caso del transmón, <span class="math notranslate nohighlight">\(\alpha = - E_C\)</span> se suele diseñar para que sea de 100-300 MHz, según se requiera para mantener una frecuencia de qubit deseable</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2507b799-04d4-4ccc-b718-1c4b1d4e2d1b">
+<span class="eqno">(3.95)<a class="headerlink" href="#equation-2507b799-04d4-4ccc-b718-1c4b1d4e2d1b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\omega_q = (\sqrt{8 E_J E_C} - E_C)/\hbar
+\end{equation}\]</div>
+<p>de entorno a 3-6 GHz, mientras se mantiene una relación de energía suficientemente grande (<span class="math notranslate nohighlight">\(E_J/E_C \geq 50\)</span>) para suprimir la sensibilidad de carga.</p>
+<p>Incluyendo los términos hasta el cuarto orden de la Ec.  <a class="reference internal" href="#equation-ec-scq-transmon-potencial-taylor">(3.93)</a>, podemos reescribir el Hamiltoniano de la Ec.  <a class="reference internal" href="#equation-ec-sqc-lcjj-h">(3.89)</a> en segunda cuantización y obtenemos el oscilador de Duffing</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-transmon-duff-h">
+<span class="eqno">(3.96)<a class="headerlink" href="#equation-ec-sqc-transmon-duff-h" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+H_{\phi^4} = \hbar \omega_q a^\dagger a + \hbar \frac{\alpha}{2} a^\dagger a^\dagger a a\, .
+\end{equation} \]</div>
+<p>Como <span class="math notranslate nohighlight">\(|\alpha| \ll \omega_q\)</span>, podemos ver que el qubit transmón es básicamente un oscilador débilmente anarmónico. Si la excitación a estados superiores no computacionales se suprime sobre cualquier operación de puerta, ya sea debido a un <span class="math notranslate nohighlight">\(|\alpha|\)</span> suficientemente grande o debido a técnicas de control robustas como el pulso (DRAG), podemos tratar efectivamente el oscilador anarmónico como un <b>sistema cuántico de dos niveles</b> (<b>TLS</b> de sus siglas en inglés), simplificando el Hamiltoniano a</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-transmon-tls-h">
+<span class="eqno">(3.97)<a class="headerlink" href="#equation-ec-sqc-transmon-tls-h" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+H_{TLS} =
+\hbar \omega_q \frac{\sigma_z}{2} =
+\lp \begin{matrix}
+\hbar \omega_q/2 &amp; 0 \\
+0 &amp; -\hbar \omega_q /2
+\end{matrix} \rp
+\end{equation} \end{split}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\sigma_z\)</span> es la matriz de Pauli z. Véase que <b>no estamos diciendo que los Hamiltonianos de la Ec.  <a class="reference internal" href="#equation-ec-sqc-transmon-duff-h">(3.96)</a> y de la Ec.  <a class="reference internal" href="#equation-ec-sqc-transmon-tls-h">(3.97)</a> sean iguales</b>, sino que estamos diciendo que cuando en el primer caso podemos despreciar los estados de mayor energía y quedarnos con los dos de menos, entonces es cuando podemos describir el sistema como un TLS (Ec.  <a class="reference internal" href="#equation-ec-sqc-transmon-tls-h">(3.97)</a>).</p>
+<p>Sin embargo, siempre hay que tener en cuenta que los niveles superiores existen físicamente. Su influencia en la dinámica del sistema debe tenerse en cuenta a la hora de diseñar el sistema y sus procesos de control. De hecho, hay muchos casos en los que los niveles superiores han resultado útiles para aplicar operaciones de puerta más eficientes.</p>
+<section id="sobre-los-tls-sistemas-de-dos-niveles">
+<h3><span class="section-number">3.4.6.1. </span>Sobre los TLS (sistemas de dos niveles)<a class="headerlink" href="#sobre-los-tls-sistemas-de-dos-niveles" title="Permalink to this heading">#</a></h3>
+<p>Si tratamos con un TLS, podemos hacer las identificaciones:</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-tls-operadores-escalera">
+<span class="eqno">(3.98)<a class="headerlink" href="#equation-ec-scq-tls-operadores-escalera" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+a \rightarrow \sigma^{-} = \lp \begin{matrix} 0 &amp;1 \\ 0 &amp; 0 \end{matrix} \rp
+\qquad , \qquad
+a^\dagger \rightarrow \sigma^{+} = \lp \begin{matrix} 0 &amp; 0 \\ 1 &amp; 0 \end{matrix} \rp
+\end{equation} \end{split}\]</div>
+<p>con lo que podemos escribir:</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-tls-matrices-pauli">
+<span class="eqno">(3.99)<a class="headerlink" href="#equation-ec-scq-tls-matrices-pauli" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{split}
+\sigma_z &amp; = \lp \begin{matrix} 1 &amp; 0 \\ 0 &amp; -1 \end{matrix} \rp  \\
+&amp; = \sigma^{-}\sigma^{+} - \sigma^{+} \sigma^{-}  \\
+&amp; = \sigma^{-}\sigma^{+} - I  \\
+&amp; = I - \sigma^{+}\sigma^{-}
+\end{split}
+\qquad , \qquad
+\sigma_x = \lp \begin{matrix} 0 &amp; 1 \\ 1 &amp; 0 \end{matrix} \rp = \sigma^{+} + \sigma^{-}
+\qquad , \qquad
+\sigma_y = \lp \begin{matrix} 0 &amp; -i \\ i &amp; 0 \end{matrix} \rp = i(\sigma^{+} - \sigma^{-})
+\end{equation} \end{split}\]</div>
+<div class="note admonition">
+<p class="admonition-title">Nota (un ejemplo de sistema de dos niveles)</p>
+<p>El Hamiltoniano de la Ec.  <a class="reference internal" href="#equation-ec-sqc-transmon-tls-h">(3.97)</a> es el de un sistema típico de dos niveles con una diferencia de energía entre ellos de <span class="math notranslate nohighlight">\(\hbar \omega_q\)</span>. Por ejemplo, cuando tenemos una partícula de espín 1/2 (un electrón por ejemplo) y tenemos un campo magnético en la dirección <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(\vec{B} = B_0 \hat{z}\)</span> (donde <span class="math notranslate nohighlight">\(\hat{z}\)</span> no es un operador, sino un vector unitario en la dirección <span class="math notranslate nohighlight">\(z\)</span>), el Hamiltoniano es de la forma:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b9b65077-ecd5-40a3-b585-c8c82f72e4e0">
+<span class="eqno">(3.100)<a class="headerlink" href="#equation-b9b65077-ecd5-40a3-b585-c8c82f72e4e0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+H = - \vec{\mu} \cdot \vec{B} = - \gamma \vec{B} \cdot \vec{S} = - \gamma \hbar S_z B_0 \sigma_z
+= - \hbar \omega_0 \sigma_z
+\end{equation}\]</div>
+<p>donde</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\gamma = gq/(2m)\)</span> es ratio giromagnético,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega/2 \pi = \gamma B_0 \)</span> es la <b>frecuencia de Larmor</b></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{S} = (S_x,S_y,S_z)\)</span> es un vector formado por los operadores de espín en los tres ejes, <span class="math notranslate nohighlight">\(S_i = (\hbar/2)\sigma_i\)</span>.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<p>Autor:</p>
+<p>David Castaño (<a class="reference external" href="https://www.scbi.uma.es/site/">UMA-SCBI</a>)</p>
+<a class="reference internal image-reference" href="../../../_images/Logo_UMA3.jpeg"><img alt="../../../_images/Logo_UMA3.jpeg" src="../../../_images/Logo_UMA3.jpeg" style="width: 170px;" /></a>
+<hr class="docutils" />
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png"><img alt="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" src="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" style="width: 2000px;" /></a>
+</figure>
+<center>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img aling="left" alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</center>
+<p>License: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+<p>This work has been financially supported by the Ministry for Digital Transformation and of Civil Service of the Spanish Government through the QUANTUM ENIA project call - Quantum Spain project, and by the European Union through the Recovery, Transformation and Resilience Plan - NextGenerationEU within the framework of the Digital Spain 2026 Agenda.</p>
+<center>
+<img align="left" src="https://quantumspain-project.es/wp-content/uploads/2024/02/Banner-QS_GOB_v2.png" width="1000px" />
+</center></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/Part_01/Chapter_003_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>Conceptos básicos sobre cuantización</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.5. </span>El <i>Split Transmon Qubit</i> (qubit ajustable mendiante flujo)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condensador">3.4.1. Condensador</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inductor">3.4.2. Inductor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-lc-clasico">3.4.3. Circuito LC Clásico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicacion-cualitativa">3.4.3.1. Explicación cualitativa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamiltoniano-del-oscilador-armonico">3.4.3.2. Hamiltoniano del oscilador armónico</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-lc-cuantico">3.4.4. Circuito LC Cuántico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuantizacion-del-circuito-lc">3.4.4.1. Cuantización del circuito LC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-lc-cuantico-en-segunda-cuantizacion">3.4.4.2. Circuito LC Cuántico en segunda cuantización</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-lc-con-union-josephson-lcjj">3.4.4.3. Circuito LC con Unión Josephson (LCJJ)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-qubit-de-carga-caja-de-pares-de-cooper">3.4.5. El qubit de carga: Caja de pares de Cooper.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-transmon-mitigando-el-ruido-de-carga">3.4.6. El transmón: mitigando el ruido de carga</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sobre-los-tls-sistemas-de-dos-niveles">3.4.6.1. Sobre los TLS (sistemas de dos niveles)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://quantumspain-project.es">QuantumSpain</a> & <a href="https://www.talentq.es/es_es/">TalentQ</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

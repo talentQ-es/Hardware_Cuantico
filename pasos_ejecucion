@@ -5,4 +5,5 @@ cd ..
 cd scripts
 ./Notebook_to_myst_from_latex.sh
 cd ..
-ghp-import -n -p -f repo_mybookname/_build/html
+ghp-import -n -p -f Book/_build/html
+

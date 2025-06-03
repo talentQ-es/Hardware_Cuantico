@@ -1,8 +1,7 @@
-# El camino de los Qubits
-## Curso de Introducción a la Computación Cuántica
+# Introducción al Hawdware en Computación Cuántica
 
 
-<a href="https://www.scbi.uma.es/web/es/computacion-cuantica/">
+<a href="https://www.talentq.es/es_es/cursos/">
     <button class="rounded" style="float: right;">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
         <path fill="var(--fill, white)"
@@ -12,7 +11,7 @@
             .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
             1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
     </svg>
-    Volver a SCBI - Computación Cuantica
+    Volver a TalentQ
     </button>
 </a>
 <div style="clear: both;"></div>
@@ -35,7 +34,7 @@ Curso de Introducción a la Computación Cuántica del [Servicio de Supercomputa
 %```
 
 <br>
-<a href="https://www.scbi.uma.es/web/es/computacion-cuantica/">
+<a href="https://www.talentq.es/es_es/cursos/">
     <button class="rounded" style="float: right;">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
         <path fill="var(--fill, white)"
@@ -45,6 +44,6 @@ Curso de Introducción a la Computación Cuántica del [Servicio de Supercomputa
             .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
             1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
     </svg>
-    Volver a SCBI - Computación Cuantica
+    Volver a TalentQ
     </button>
 </a>

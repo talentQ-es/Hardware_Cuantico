@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4.3. qubits de RMN &#8212; My Jupyter Book</title>
+    <title>4.3. qubits de RMN &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
   
   
   
@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfile.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -55,6 +58,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,6 +103,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_004_02/Section_003_qubits_de_rmn_myst';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="4.4. Técnicas de pulsos elementales." href="Section_004_tecnicas_de_pulsos_elementales__myst.html" />
@@ -153,8 +191,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
   
-    <p class="title logo__title">My Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -170,14 +214,6 @@ const thebe_selector_output = ".output, .cell_output"
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../index.html">
-                    El camino de los Qubits
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -201,11 +237,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.html">3. Computación Cuántica con qubits Superconductores</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad_myst.html">3.1. Conceptos básicos sobre Superconductividad.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_002_tipos_de_qubits_superconductores_myst.html">3.2. Tipos de qubits superconductores</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_003_fisica_de_los_qubits_superconductores__myst.html">3.3. Física de los qubits superconductores</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_004_operaciones_con_qubits_superconductores_myst.html">3.4. Operaciones con qubits superconductores</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_005_retos_con_qubits_superconductores_myst.html">3.5. Retos con qubits superconductores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad__myst.html">3.1. Conceptos básicos sobre Superconductividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html">3.2. Conceptos básicos sobre Mecánida Clásica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_003_conceptos_basicos_sobre_cuantizacion__myst.html">3.3. Conceptos básicos sobre cuantización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html">3.4. El <i>Transmon Qubit</i>: Del oscilador armónico al Transmón</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.html">3.5. El <i>Split Transmon Qubit</i> (qubit ajustable mendiante flujo)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_006_el_iflux_qubiti_y_el_ifluxoniumi_hacia_una_mayor_anarmonicidad__myst.html">3.6. El <i>Flux Qubit</i> y el <i>Fluxonium</i>: Hacia una mayor anarmonicidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.html">3.7. Acoplamientos: Hamiltonianos de interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_008_puertas_simples__myst.html">3.8. Puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_009_puertas_de_dos_qubits__myst.html">3.9. Puertas de dos qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_010_lectura_de_los_qubits_myst.html">3.10. Lectura de los qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_011_conectividad__myst.html">3.11. Conectividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_012_retos_con_qubits_superconductores_myst.html">3.12. Retos con qubits superconductores</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Chapter_004_01_tecnicas_de_control_y_computacion_en_rmn_myst.html">4. Técnicas de control y computación en RMN.</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -213,6 +256,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Section_002_el_espin_nuclear__myst.html">4.2. El espín nuclear</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3. qubits de RMN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html">4.4. Técnicas de pulsos elementales.</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_005_01_decoherencia_y_desfase_myst.html">5. Decoherencia y desfase</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.html">5.1. La coherencia en Mecánica Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_002_la_coherencia_en_computacion_cuantica_t_1_y_t_2_myst.html">5.2. La coherencia en Computación Cuántica: <span class="math notranslate nohighlight">\(T_1\)</span> y <span class="math notranslate nohighlight">\(T_2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_003_decoherencia_y_las_ecuaciones_de_bloch_myst.html">5.3. Decoherencia y las ecuaciones de Bloch.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_004_resumen_myst.html">5.4. Resumen</a></li>
 </ul>
 </li>
 </ul>
@@ -260,6 +310,70 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_004_02/Section_003_qubits_de_rmn_myst.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_004_02/Section_003_qubits_de_rmn_myst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -392,8 +506,7 @@ document.write(`
   <blockquote>
 <div><p>Jun 03, 2025 | 12 min read</p>
 </div></blockquote>
-<img src="Figuras/Fig_logo_UMA_scbi.png" align=center  width="2000px"/>
-<a href="https://www.scbi.uma.es/web/es/computacion-cuantica/">
+<a href="https://www.talentq.es/es_es/cursos/">
     <button class="rounded" style="float: right;">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
         <path fill="var(--fill, white)"
@@ -403,7 +516,7 @@ document.write(`
             .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
             1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
     </svg>
-    Volver a SCBI - Computación Cuantica
+    Volver a TalentQ
     </button>
 </a>
 <p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
@@ -438,27 +551,29 @@ document.write(`
 <h3><span class="section-number">4.3.1.1. </span>Espines simples.<a class="headerlink" href="#espines-simples" title="Permalink to this heading">#</a></h3>
 <p>Una partícula con espín constituye un <b>dipolo magnético</b>. En esencia, dipolo magnético es un pequeño imán, es decir, una fuente de campo magnético. El <b>momento dipolar magnético</b>, <span class="math notranslate nohighlight">\(\vec{\mu}\)</span>, es proporcional al momento angular de espín, <span class="math notranslate nohighlight">\(\vec{S}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-mu">
-<span class="eqno">(4.5)<a class="headerlink" href="#equation-ec-hardware-nmr-mu" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-ec-hardware-nmr-mu" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \vec{\mu} = \gamma \vec{S}\, ,
 \end{equation} \]</div>
 <p>donde la constate de proporcionalidad, <span class="math notranslate nohighlight">\(\gamma\)</span>, se denomina ratio giromagnético (<b>gyromagnetic ratio</b>). Este toma la forma</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-gamma">
-<span class="eqno">(4.6)<a class="headerlink" href="#equation-ec-hardware-nmr-gamma" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-ec-hardware-nmr-gamma" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \gamma = g \frac{q}{2m} \, ,
 \end{equation} \]</div>
 <p>donde <span class="math notranslate nohighlight">\(q\)</span> es la carga eléctrica de la partícula, <span class="math notranslate nohighlight">\(m\)</span> su masa y <span class="math notranslate nohighlight">\(g\)</span> se denomina <b>factor <span class="math notranslate nohighlight">\(g\)</span> (<span class="math notranslate nohighlight">\(g\)</span>-factor)</b>.</p>
-<p>Cuando un dipolo magnético se sitúa en un campo magnético <span class="math notranslate nohighlight">\(\vec{B}\)</span>, este dipolo experimenta un torque, <span class="math notranslate nohighlight">\(\vec{\mu} \times \vec{B}\)</span>, que tiende a alinearlo paralelo al campo (como la aguja de una brújula). La energía asociada con este torque es
-\begin{equation}
+<p>Cuando un dipolo magnético se sitúa en un campo magnético <span class="math notranslate nohighlight">\(\vec{B}\)</span>, este dipolo experimenta un torque, <span class="math notranslate nohighlight">\(\vec{\mu} \times \vec{B}\)</span>, que tiende a alinearlo paralelo al campo (como la aguja de una brújula). La energía asociada con este torque es</p>
+<div class="amsmath math notranslate nohighlight" id="equation-57bbabbe-68d3-4a23-bf8e-5d22318bb4ac">
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-57bbabbe-68d3-4a23-bf8e-5d22318bb4ac" title="Permalink to this equation">#</a></span>\[\begin{equation}
 E = - \vec{\mu} \cdot \vec{B}
-\end{equation}
-con lo que el Hamiltoniano para una partícula cargada con espín, en reposo en un campo magnético <span class="math notranslate nohighlight">\(\vec{B}\)</span>, es
-\begin{equation}
-\mathcal{H} = - \gamma \vec{B} \cdot S
-\end{equation}
-donde <span class="math notranslate nohighlight">\(S\)</span> es el operador de espín (ver Ec.  <a class="reference internal" href="Section_002_el_espin_nuclear__myst.html#equation-ec-hardware-nmr-operador-s-sigma-vec">(4.2)</a> para el caso de partículad de espín 1/2).</p>
-<p>Si tenemos una partícula (o un núcleo) de espín 1/2 (no consideraremos espines de mayor orden en estas notas) en un campo magnético <span class="math notranslate nohighlight">\(\vec{B}_0\)</span> a lo largo del eje <span class="math notranslate nohighlight">\(\hat{z}\)</span>, entonces su evolución temporal está gobernada por el Hamiltoniano</p>
+\end{equation}\]</div>
+<p>con lo que el Hamiltoniano para una partícula cargada con espín, en reposo en un campo magnético <span class="math notranslate nohighlight">\(\vec{B}\)</span>, es</p>
+<div class="amsmath math notranslate nohighlight" id="equation-19a3b6ce-bb89-4d5b-8310-514f208fe56b">
+<span class="eqno">(4.12)<a class="headerlink" href="#equation-19a3b6ce-bb89-4d5b-8310-514f208fe56b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\mathcal{H} = - \gamma \vec{B} \cdot \vec{S}
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(S\)</span> es el operador de espín (ver Ec.  <a class="reference internal" href="Section_002_el_espin_nuclear__myst.html#equation-ec-hardware-nmr-operador-s-sigma-vec">(4.5)</a> para el caso de partículad de espín 1/2).</p>
+<p>Si tenemos una partícula (o un núcleo) de espín 1/2 (no consideraremos espines de mayor orden en estas notas) en un campo magnético <span class="math notranslate nohighlight">\(\vec{B}\)</span> a lo largo del eje <span class="math notranslate nohighlight">\(\hat{z}\)</span>, entonces su evolución temporal está gobernada por el Hamiltoniano</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-h-sys-1">
-<span class="eqno">(4.7)<a class="headerlink" href="#equation-ec-hardware-nmr-h-sys-1" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+<span class="eqno">(4.13)<a class="headerlink" href="#equation-ec-hardware-nmr-h-sys-1" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
 \boxed{\mathcal{H} = -  \gamma B_0 S_z = - \omega_0 S_z =
 \begin{bmatrix}
 - \hbar \omega_0/2  &amp; 0 \\
@@ -467,25 +582,25 @@ donde <span class="math notranslate nohighlight">\(S\)</span> es el operador de 
 \end{equation} \end{split}\]</div>
 <p>donde</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> es ratio giromagnético del núcleo (ver Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-gamma">(4.6)</a>),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> es ratio giromagnético del núcleo (ver Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-gamma">(4.10)</a>),</p></li>
 <li><p><span class="math notranslate nohighlight">\(\omega/2 \pi = \gamma B_0 \)</span> es la <b>frecuencia de Larmor</b></p></li>
-<li><p>e <span class="math notranslate nohighlight">\(S_z\)</span> es el operador de espín en la dirección <span class="math notranslate nohighlight">\(\hat{z}\)</span> (ver Ec.  <a class="reference internal" href="Section_002_el_espin_nuclear__myst.html#equation-ec-hardware-nmr-sx-sy-sz">(4.4)</a>).</p></li>
+<li><p>e <span class="math notranslate nohighlight">\(S_z\)</span> es el operador de espín en la dirección <span class="math notranslate nohighlight">\(\hat{z}\)</span> (ver Ec.  <a class="reference internal" href="Section_002_el_espin_nuclear__myst.html#equation-ec-hardware-nmr-sx-sy-sz">(4.7)</a>).</p></li>
 </ul>
 <div class="note admonition">
 <p class="admonition-title">Nota (frecuencia y frecuencia angular)</p>
 <p>En Física, la <b>frecuencia</b> se define como el inverso del periodo de rotación: <span class="math notranslate nohighlight">\(f = 1/T\)</span> y se mide en Hz (1/segundos). Además, se define la <b>frecuencia angular</b> como <span class="math notranslate nohighlight">\(\omega = 2\pi f\)</span> y se mide en radianes/segundo. Muchas veces se denomina a las dos, simplemente, frecuencia.</p>
 </div>
-<p>La interpretación de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-1">(4.7)</a> es simple. Cuando tenemos una partícula de espín 1/2 aislada, las dos proyecciones del espín son <b>degeneradas</b>, es decir, tiene la misma energía. Esto es fácil de entender si pensamos en que no hay ninguna dirección privilegiada en el sistema. Cuando introducimos un campo magnético, ahora sí hay una dirección privilegiada: aquella con el momento dipolar magnético <span class="math notranslate nohighlight">\(\vec{\mu}\)</span> apuntando en la misma dirección que el campo magnético. Esto es debido a que el espín es como un pequeño imán y tiende a orientarse con el campo magnéticos. En este momento, el sistema pasa a ser <b>no-degenerado</b>, y un estado tiene más energía que el otro.</p>
-<p>Esto último se traduce matemáticamente en la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-1">(4.7)</a>. Como el Hamiltoniano es diagonal, los elementos de la diagonal son las energías de los estados. Vemos que el estado con el espín apuntando en la misma dirección (es estado <span class="math notranslate nohighlight">\(\ket{0}\)</span> o <span class="math notranslate nohighlight">\(\ket{\uparrow}\)</span>) que el campo magnético tiene menos energía que el estado que apunta en la dirección contraria (el estado <span class="math notranslate nohighlight">\(\ket{1}\)</span> o <span class="math notranslate nohighlight">\(\ket{\downarrow}\)</span>). La diferencia de energía entre los estados es de <span class="math notranslate nohighlight">\(\hbar \omega_0\)</span>, como se puede ver en la Fig.  <a class="reference internal" href="#fig-harware-nmr-split-zeeman"><span class="std std-numref">4.1</span></a>. Esta separación de energías (<i>energy splitting</i>) se conoce como <b>Zeeman spliting</b>.</p>
+<p>La interpretación de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-1">(4.13)</a> es simple. Cuando tenemos una partícula de espín 1/2 aislada, las dos proyecciones del espín son <b>degeneradas</b>, es decir, tiene la misma energía. Esto es fácil de entender si pensamos en que no hay ninguna dirección privilegiada en el sistema. Cuando introducimos un campo magnético, ahora sí hay una dirección privilegiada: aquella con el momento dipolar magnético <span class="math notranslate nohighlight">\(\vec{\mu}\)</span> apuntando en la misma dirección que el campo magnético. Esto es debido a que el espín es como un pequeño imán y tiende a orientarse con el campo magnéticos. En este momento, el sistema pasa a ser <b>no-degenerado</b>, y un estado tiene más energía que el otro.</p>
+<p>Esto último se traduce matemáticamente en la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-1">(4.13)</a>. Como el Hamiltoniano es diagonal, los elementos de la diagonal son las energías de los estados. Vemos que el estado con el espín apuntando en la misma dirección (es estado <span class="math notranslate nohighlight">\(\ket{0}\)</span> o <span class="math notranslate nohighlight">\(\ket{\uparrow}\)</span>) que el campo magnético tiene menos energía que el estado que apunta en la dirección contraria (el estado <span class="math notranslate nohighlight">\(\ket{1}\)</span> o <span class="math notranslate nohighlight">\(\ket{\downarrow}\)</span>). La diferencia de energía entre los estados es de <span class="math notranslate nohighlight">\(\hbar \omega_0\)</span>, como se puede ver en la Fig.  <a class="reference internal" href="#fig-harware-nmr-split-zeeman"><span class="std std-numref">4.1</span></a>. Esta separación de energías (<i>energy splitting</i>) se conoce como <b>Zeeman spliting</b>.</p>
 <figure class="align-center" id="fig-harware-nmr-split-zeeman">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_split_Zeeman.png"><img alt="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_split_Zeeman.png" src="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_split_Zeeman.png" style="width: 150px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_Harware_NMR_split_Zeeman.png"><img alt="../../../_images/Fig_Harware_NMR_split_Zeeman.png" src="../../../_images/Fig_Harware_NMR_split_Zeeman.png" style="width: 150px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Diagrama de energías de una partícula de espín 1/2 en un campo magnético.</span><a class="headerlink" href="#fig-harware-nmr-split-zeeman" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Podemos entender gráficamente la evolución temporal <span class="math notranslate nohighlight">\(U = e^{-i \mathcal{H} t/ \hbar}\)</span> bajo el Hamiltoniano de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-1">(4.7)</a> como un movimiento de precesión en la esfera de Bloch al rededor de <span class="math notranslate nohighlight">\(\vec{B}_0\)</span>, como se muestra en la Fig.  <a class="reference internal" href="#fig-harware-nmr-precesion"><span class="std std-numref">4.2</span></a>. Como es habitual, definimos el eje <span class="math notranslate nohighlight">\(\hat{z}\)</span> de la esfera de Bloch como el eje de cuantización del Hamiltoniano, con <span class="math notranslate nohighlight">\(\ket{0}\)</span> a lo largo de <span class="math notranslate nohighlight">\(+\hat{z}\)</span> y <span class="math notranslate nohighlight">\(\ket{1}\)</span> a lo largo de <span class="math notranslate nohighlight">\(-\hat{z}\)</span>.</p>
+<p>Podemos entender gráficamente la evolución temporal <span class="math notranslate nohighlight">\(U = e^{-i \mathcal{H} t/ \hbar}\)</span> bajo el Hamiltoniano de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-1">(4.13)</a> como un movimiento de precesión en la esfera de Bloch al rededor de <span class="math notranslate nohighlight">\(\vec{B}_0\)</span>, como se muestra en la Fig.  <a class="reference internal" href="#fig-harware-nmr-precesion"><span class="std std-numref">4.2</span></a>. Como es habitual, definimos el eje <span class="math notranslate nohighlight">\(\hat{z}\)</span> de la esfera de Bloch como el eje de cuantización del Hamiltoniano, con <span class="math notranslate nohighlight">\(\ket{0}\)</span> a lo largo de <span class="math notranslate nohighlight">\(+\hat{z}\)</span> y <span class="math notranslate nohighlight">\(\ket{1}\)</span> a lo largo de <span class="math notranslate nohighlight">\(-\hat{z}\)</span>.</p>
 <figure class="align-center" id="fig-harware-nmr-precesion">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_precesion.png"><img alt="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_precesion.png" src="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_precesion.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_Harware_NMR_precesion.png"><img alt="../../../_images/Fig_Harware_NMR_precesion.png" src="../../../_images/Fig_Harware_NMR_precesion.png" style="width: 450px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Precesión del valor esperado del espín entorno al campo magnético.</span><a class="headerlink" href="#fig-harware-nmr-precesion" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -497,7 +612,7 @@ en 3D del vector de espín.</p>
 </div>
 <div class="note admonition">
 <p class="admonition-title">Nota (orientación del espín)</p>
-<p>En las Ecs.  <a class="reference internal" href="#equation-ec-hardware-nmr-mu">(4.5)</a> y  <a class="reference internal" href="#equation-ec-hardware-nmr-gamma">(4.6)</a> vemos que el vector de espín
+<p>En las Ecs.  <a class="reference internal" href="#equation-ec-hardware-nmr-mu">(4.9)</a> y  <a class="reference internal" href="#equation-ec-hardware-nmr-gamma">(4.10)</a> vemos que el vector de espín
 y el momento dipolar magnético se relacionan por una constate que <span class="math notranslate nohighlight">\(\gamma\)</span> que puede ser positiva o
 negativa, dependiendo del valor de la carga eléctrica de la partícula. Es decir, estos vectores pueden
 apuntar en la misma dirección o en dirección opuesta.</p>
@@ -506,7 +621,7 @@ estado de menor energía es aquel con el <b>momento dipolar magnético</b> apunt
 del campo. Como podemos ver en la Fig.  <a class="reference internal" href="#fig-hardware-nmr-espines-en-b"><span class="std std-numref">4.3</span></a>, tenemos dos opciones
 dependiendo de la carga de la partícula.</p>
 <figure class="align-center" id="fig-hardware-nmr-espines-en-b">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_004_02/Figuras/Fig_Hardware_NMR_espines_en_B.png"><img alt="docs/Part_01/Chapter_004_02/Figuras/Fig_Hardware_NMR_espines_en_B.png" src="docs/Part_01/Chapter_004_02/Figuras/Fig_Hardware_NMR_espines_en_B.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_Hardware_NMR_espines_en_B.png"><img alt="../../../_images/Fig_Hardware_NMR_espines_en_B.png" src="../../../_images/Fig_Hardware_NMR_espines_en_B.png" style="width: 1000px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Momentos dipolares magnéticos en presencia de un campo magnético externo. En las dos figuras de la derecha vemos que, dependiendo de la carga de la partícula, el momento dipolar puede apuntar en la misma dirección o en la contraria al espín. Figura tomada de \url{<a class="reference external" href="http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/nmr.html">http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/nmr.html</a>}</span><a class="headerlink" href="#fig-hardware-nmr-espines-en-b" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -520,81 +635,88 @@ Demostración<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><b>(Precesión de Larmor, Griffiths  ejemplo 4.3)</b></p>
-<p class="sd-card-text">Supongamos una partícula con espín 1/2 sometida a un campo magnético en la dirección <span class="math notranslate nohighlight">\(\vec{z}\)</span>, i.e. <span class="math notranslate nohighlight">\(\vec{B}_0 = B_0 \hat{z}\)</span>. El Hamiltoniano estará dado por
-\begin{equation}
+<p class="sd-card-text"><b>(Precesión de Larmor, Griffiths <span id="id1">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id10" title="David J. Griffiths and Darrell F. Schroeter. Introduction to Quantum Mechanics. Cambridge University Press, 3 edition, 2018. doi:10.1017/9781316995433.">8</a>]</span> ejemplo 4.3)</b></p>
+<p class="sd-card-text">Supongamos una partícula con espín 1/2 sometida a un campo magnético en la dirección <span class="math notranslate nohighlight">\(\vec{z}\)</span>, i.e. <span class="math notranslate nohighlight">\(\vec{B}_0 = B_0 \hat{z}\)</span>. El Hamiltoniano estará dado por</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c241a4ca-c4b5-41c6-a40f-443222846ef1">
+<span class="eqno">(4.14)<a class="headerlink" href="#equation-c241a4ca-c4b5-41c6-a40f-443222846ef1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathcal{H} = - \gamma B_0 S_z = - \frac{\gamma B_0 \hbar}{2}
-\begin{bmatrix}1 &amp; 0 \ 0 &amp; -1 \end{bmatrix}
-\end{equation}
-Los autovectores y autovalores (energías) de este Hamiltoniano son
-\begin{equation}
+\begin{bmatrix}1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}
+\end{equation}\]</div>
+<p class="sd-card-text">Los autovectores y autovalores (energías) de este Hamiltoniano son</p>
+<div class="amsmath math notranslate nohighlight" id="equation-664e6378-95c6-4359-9592-2fe1586cc33d">
+<span class="eqno">(4.15)<a class="headerlink" href="#equation-664e6378-95c6-4359-9592-2fe1586cc33d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lch
 \begin{matrix}
-\ket{0} = \begin{bmatrix} 1 \ 0 \end{bmatrix} ,
-\text{con energía } E_{\ket{0}} = - (\gamma B_0 \hbar) /2 , \
-\ket{1} = \begin{bmatrix} 0 \ 1 \end{bmatrix} ,
+\ket{0} = \begin{bmatrix} 1 \\ 0 \end{bmatrix} \,
+\text{con energía } E_{\ket{0}} = - (\gamma B_0 \hbar) /2 \, \\
+\ket{1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix} \,
 \text{con energía } E_{\ket{1}} = + (\gamma B_0 \hbar) / 2
 \end{matrix}
 \right.
-\end{equation}
-La energía es menor cando el momento dipolar es paralelo al campo magnético, al igual que en el caso clásico.</p>
+\end{equation}\]</div>
+<p class="sd-card-text">La energía es menor cando el momento dipolar es paralelo al campo magnético, al igual que en el caso clásico.</p>
 <p class="sd-card-text">Como el Hamiltoniano es independiente del tiempo, la solución general para la ecuación de Schrödinger dependiente de tiempo,</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-schrodinger">
-<span class="eqno">(4.8)<a class="headerlink" href="#equation-ec-hardware-nmr-schrodinger" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.16)<a class="headerlink" href="#equation-ec-hardware-nmr-schrodinger" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 i \hbar \frac{\partial \ket{\Psi}}{\partial t} = \mathcal{H} \ket{\Psi}
 \end{equation} \]</div>
 <p class="sd-card-text">puede expresarse en función de estados estacionarios:</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-schrodinger-sol">
-<span class="eqno">(4.9)<a class="headerlink" href="#equation-ec-hardware-nmr-schrodinger-sol" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+<span class="eqno">(4.17)<a class="headerlink" href="#equation-ec-hardware-nmr-schrodinger-sol" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
 \ket{\Psi (t)} = a  e^{-i E_{\ket{0}} t/ \hbar} \ket{0} + b  e^{-i E_{\ket{1}} t/ \hbar} \ket{1}  =
 \begin{bmatrix}
 a e ^{i \gamma B_0 t/2} \\
 b e ^{i \gamma B_0 t/2}
 \end{bmatrix}
 \end{equation} \end{split}\]</div>
-<p class="sd-card-text">Las constantes <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> se pueden determinar mediante las condiciones iniciales:
-\begin{equation}
-\ket{\Psi (t = 0)} = \begin{bmatrix} a \ b\end{bmatrix}
-\end{equation}
-(por supuesto, <span class="math notranslate nohighlight">\(|a|^2 + |b|^2 = 1\)</span>). Sin perdida de generalidad, podemos elegir <span class="math notranslate nohighlight">\(a = \cos (\alpha/2)\)</span> y <span class="math notranslate nohighlight">\(b = \sin (\alpha/2)\)</span>, donde <span class="math notranslate nohighlight">\(\alpha\)</span> es un ángulo fijo cuyo significado físico veremos dentro de poco.
-Tenemos entonces
-\begin{equation}
+<p class="sd-card-text">Las constantes <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> se pueden determinar mediante las condiciones iniciales:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8d6a91ab-60b8-4b26-b61b-038305e6c12e">
+<span class="eqno">(4.18)<a class="headerlink" href="#equation-8d6a91ab-60b8-4b26-b61b-038305e6c12e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\ket{\Psi (t = 0)} = \begin{bmatrix} a \\ b\end{bmatrix}
+\end{equation}\]</div>
+<p class="sd-card-text">(por supuesto, <span class="math notranslate nohighlight">\(|a|^2 + |b|^2 = 1\)</span>). Sin perdida de generalidad, podemos elegir <span class="math notranslate nohighlight">\(a = \cos (\alpha/2)\)</span> y <span class="math notranslate nohighlight">\(b = \sin (\alpha/2)\)</span>, donde <span class="math notranslate nohighlight">\(\alpha\)</span> es un ángulo fijo cuyo significado físico veremos dentro de poco.
+Tenemos entonces</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9a7685f4-5650-4bca-a4dc-4f143b619b7f">
+<span class="eqno">(4.19)<a class="headerlink" href="#equation-9a7685f4-5650-4bca-a4dc-4f143b619b7f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ket{\Psi (t)} =
 \begin{bmatrix}
-\cos (\alpha/2) e^{i \gamma B_0 t/2} \
+\cos (\alpha/2) e^{i \gamma B_0 t/2} \\
 \sin (\alpha/2) e^{-i \gamma B_0 t/2}
 \end{bmatrix}
-\end{equation}
-Para ver que está pasando con el espín bajo la evolución de este Hamiltoniano, calculemos el calor esperado del espín <span class="math notranslate nohighlight">\(\vec{S}\)</span> como función del tiempo.
-\begin{equation}
+\end{equation}\]</div>
+<p class="sd-card-text">Para ver que está pasando con el espín bajo la evolución de este Hamiltoniano, calculemos el calor esperado del espín <span class="math notranslate nohighlight">\(\vec{S}\)</span> como función del tiempo.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ef255105-5605-456b-9c1d-3c1dda56b6b6">
+<span class="eqno">(4.20)<a class="headerlink" href="#equation-ef255105-5605-456b-9c1d-3c1dda56b6b6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
-\left\langle S_x \right\rangle = &amp; , \bra{\Psi(t)} S_x \ket{\Psi(t)} =
-\nonumber \
-= &amp; , \Lc \psi_0^* \quad \psi_1^* \Rc
-\begin{bmatrix} 1 &amp; 0 \ 0 &amp; 1 \end{bmatrix}
-\begin{bmatrix} \psi_0 \ \psi_1 \end{bmatrix}
-\nonumber \
-= &amp; , \Lc a e ^{-i \gamma B_0 t/2} \qquad  b e ^{-i \gamma B_0 t/2} \Rc
-\frac{\hbar}{2} \begin{bmatrix} 0 &amp; 1 \ 1 &amp; 0 \end{bmatrix}
-\begin{bmatrix} \cos (\alpha/2) e^{i \gamma B_0 t/2} \ \sin (\alpha/2) e^{-i \gamma B_0 t/2} \end{bmatrix}
-\nonumber \
-= &amp; , \frac{\hbar}{2} \sin \alpha \cos (\gamma B_0 t )
+\left\langle S_x \right\rangle = &amp; \, \bra{\Psi(t)} S_x \ket{\Psi(t)} =
+\nonumber \\
+= &amp; \, \Lc \psi_0^* \quad \psi_1^* \Rc
+\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}
+\begin{bmatrix} \psi_0 \\ \psi_1 \end{bmatrix}
+\nonumber \\
+= &amp; \, \Lc a e ^{-i \gamma B_0 t/2} \qquad  b e ^{-i \gamma B_0 t/2} \Rc
+\frac{\hbar}{2} \begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix}
+\begin{bmatrix} \cos (\alpha/2) e^{i \gamma B_0 t/2} \\ \sin (\alpha/2) e^{-i \gamma B_0 t/2} \end{bmatrix}
+\nonumber \\
+= &amp; \, \frac{\hbar}{2} \sin \alpha \cos (\gamma B_0 t )
 \end{aligned}
-\end{equation}
-De forma análoga,
-\begin{equation}
+\end{equation}\]</div>
+<p class="sd-card-text">De forma análoga,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0a616f59-68c9-42d6-9649-25de6cc5c527">
+<span class="eqno">(4.21)<a class="headerlink" href="#equation-0a616f59-68c9-42d6-9649-25de6cc5c527" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
-\left\langle S_y \right\rangle = &amp; , - \frac{\hbar}{2} \sin \alpha \sin (\gamma B_0 t )  \
+\left\langle S_y \right\rangle = &amp; \, - \frac{\hbar}{2} \sin \alpha \sin (\gamma B_0 t )  \\
 \left\langle S_z \right\rangle = &amp; \frac{\hbar}{2} \cos \alpha
 \end{aligned}
-\end{equation}</p>
-<p class="sd-card-text">Con lo cual, <span class="math notranslate nohighlight">\(\left\langle \vec{S} \right\rangle\)</span> está inclinado un ángulo <span class="math notranslate nohighlight">\(\alpha\)</span> respecto al eje <span class="math notranslate nohighlight">\(\hat{z}\)</span>, y precesa al rededor del campo con una frecuencia
-\begin{equation}
+\end{equation}\]</div>
+<p class="sd-card-text">Con lo cual, <span class="math notranslate nohighlight">\(\left\langle \vec{S} \right\rangle\)</span> está inclinado un ángulo <span class="math notranslate nohighlight">\(\alpha\)</span> respecto al eje <span class="math notranslate nohighlight">\(\hat{z}\)</span>, y precesa al rededor del campo con una frecuencia</p>
+<div class="amsmath math notranslate nohighlight" id="equation-be16400d-f730-4a42-8c6a-501bf3f4d21c">
+<span class="eqno">(4.22)<a class="headerlink" href="#equation-be16400d-f730-4a42-8c6a-501bf3f4d21c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f_0 = \omega_0 / 2 \pi = \gamma B_0 / 2 \pi
-\end{equation}
-(la frecuencia de Larmor) al igual que en el caso clásico (una peonza inclinada). No tenemos ninguna sorpresa aquí, pues el teorema de Ehrenfest nos asegura que los valores esperados evolucionan de acuerdo a las leyes clásicas del movimiento (algunos autores limitan esta afirmación solo al par de ecuaciones <span class="math notranslate nohighlight">\(\left\langle p \right\rangle = m d \left\langle x \right\rangle / dt\)</span> y <span class="math notranslate nohighlight">\(\left\langle - \partial V / \partial x \right\rangle = d \left\langle p \right\rangle / dt\)</span>) Puede verse esto en el Griffiths, .</p>
+\end{equation}\]</div>
+<p class="sd-card-text">(la frecuencia de Larmor) al igual que en el caso clásico (una peonza inclinada). No tenemos ninguna sorpresa aquí, pues el teorema de Ehrenfest nos asegura que los valores esperados evolucionan de acuerdo a las leyes clásicas del movimiento (algunos autores limitan esta afirmación solo al par de ecuaciones <span class="math notranslate nohighlight">\(\left\langle p \right\rangle = m d \left\langle x \right\rangle / dt\)</span> y <span class="math notranslate nohighlight">\(\left\langle - \partial V / \partial x \right\rangle = d \left\langle p \right\rangle / dt\)</span>) Puede verse esto en el Griffiths, <span id="id2">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id10" title="David J. Griffiths and Darrell F. Schroeter. Introduction to Quantum Mechanics. Cambridge University Press, 3 edition, 2018. doi:10.1017/9781316995433.">8</a>]</span>.</p>
 <figure class="align-center" id="fig-harware-nmr-precession-griffiths">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_precession_griffiths.png"><img alt="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_precession_griffiths.png" src="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_precession_griffiths.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_Harware_NMR_precession_griffiths.png"><img alt="../../../_images/Fig_Harware_NMR_precession_griffiths.png" src="../../../_images/Fig_Harware_NMR_precession_griffiths.png" style="width: 300px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Precesión de Larmor en un campo magnético uniforme.</span><a class="headerlink" href="#fig-harware-nmr-precession-griffiths" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -602,11 +724,11 @@ f_0 = \omega_0 / 2 \pi = \gamma B_0 / 2 \pi
 </div>
 </details><div class="tip admonition">
 <p class="admonition-title">Ejercicio</p>
-<p>Verifica que la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-schrodinger-sol">(4.9)</a> es solución de la ecuación de Schrödinger, Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-schrodinger">(4.8)</a></p>
+<p>Verifica que la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-schrodinger-sol">(4.17)</a> es solución de la ecuación de Schrödinger, Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-schrodinger">(4.16)</a></p>
 </div>
 <p>El Hamiltoniano de espín para una molécula con <span class="math notranslate nohighlight">\(n\)</span> núcleos desacoplados viene dado por</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-h-single">
-<span class="eqno">(4.10)<a class="headerlink" href="#equation-ec-hardware-nmr-h-single" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.23)<a class="headerlink" href="#equation-ec-hardware-nmr-h-single" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \mathcal{H}_0 = - \sum_{i=1}^n  \omega_0^i S_z^i
 \end{equation} \]</div>
 <p>Véase que, los espines de especies nucleares diferentes (espines heteronucleares) tendrán diferentes valores de <span class="math notranslate nohighlight">\(\omega_0^i\)</span>, así como también es posibles que los espines de la misma especie nuclear (espines homonucleares) que formen una molécula  tengan también diferentes valores de esta frecuencia.</p>
@@ -618,7 +740,7 @@ f_0 = \omega_0 / 2 \pi = \gamma B_0 / 2 \pi
 <li><p><b>Interacción directa dipolo-dipolo.</b>
 La interacción magnética dipolo-dipolo es similar a la interacción entre dos barras magnéticas cercanas. Tiene lugar puramente a través del espacio (no se requiere ningún medio para esta interacción) y depende del vector internuclear <span class="math notranslate nohighlight">\(\vec{r}_{ij}\)</span> que conecta los dos núcleos <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(j\)</span>, tal y como describe el Hamiltoniano</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-h-dipolo-dipolo">
-<span class="eqno">(4.11)<a class="headerlink" href="#equation-ec-hardware-nmr-h-dipolo-dipolo" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.24)<a class="headerlink" href="#equation-ec-hardware-nmr-h-dipolo-dipolo" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \mathcal{H}_D = \sum_{i&lt;j} \frac{\mu_0 \gamma_i \gamma_j}{4 \pi | \vec{r}_{ij}|^3 \hbar}
 \lc \vec{S}^i \cdot \vec{S}^j - \frac{3}{| \vec{r}_{ij}|^2} \lp \vec{S}^i \cdot \vec{r}_{ij} \rp \lp \vec{S}^j \cdot \vec{r}_{ij} \rp \rc
 \end{equation} \]</div>
@@ -627,22 +749,23 @@ No vamos a entrar en dalles sobre esta interacción, pues usualmente se promedia
 </li>
 <li><p><b>Interacción del contrato de Fermi mediada por electrones (acoplamiento J).</b>
 El segundo mecanismo de interacción entre los espines nucleares de una molécula es el acoplamiento <span class="math notranslate nohighlight">\(J\)</span> o acoplamiento escalar. Esta interacción está mediada por los electrones compartidos en los enlaces químicos entre los átomos, y es debido al solapamiento de la función de onda del electrón compartido con los dos núcleos acoplados. Es decir, una interacción de contacto de Fermi. La fuerza de acoplamiento de enlace J depende de la especie nuclear respectiva y disminuye con el número de enlaces químicos que separan los núcleos.
-El Hamiltoniano es
-\begin{equation}
-\mathcal{H} = \frac{1}{\hbar} \sum_{i &lt;j} 2 \pi J_{ij} S^i S^j =
-\frac{1}{\hbar} \sum_{i &lt; j} 2 \pi J_{ij} \lp S_x^i S_x^j + S_y^i S_y^j + S_z^i S_z^j  \rp
-\end{equation}
-donde <span class="math notranslate nohighlight">\(J_{ij}\)</span> es la fuerza de acoplamiento entre los espines <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(j\)</span>. Cuando <span class="math notranslate nohighlight">\(| \omega_0^i - \omega_0^j |\)</span> es mucho más grande que el acoplamiento <span class="math notranslate nohighlight">\(J_{ij}\)</span> (<span class="math notranslate nohighlight">\(| \omega_0^i - \omega_0^j | \gg 2 \pi |J_{ij}|\)</span>), los acoplamiento transversos se pueden despreciar. De esta forma, el Hamiltoniano se simplifica</p>
+El Hamiltoniano es</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2911c605-feb3-457e-8bfc-6bb0b74cf14b">
+<span class="eqno">(4.25)<a class="headerlink" href="#equation-2911c605-feb3-457e-8bfc-6bb0b74cf14b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \mathcal{H} = \frac{1}{\hbar} \sum_{i &lt;j} 2 \pi J_{ij} S^i S^j =
+    \frac{1}{\hbar} \sum_{i &lt; j} 2 \pi J_{ij} \lp S_x^i S_x^j + S_y^i S_y^j + S_z^i S_z^j  \rp
+    \end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(J_{ij}\)</span> es la fuerza de acoplamiento entre los espines <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(j\)</span>. Cuando <span class="math notranslate nohighlight">\(| \omega_0^i - \omega_0^j |\)</span> es mucho más grande que el acoplamiento <span class="math notranslate nohighlight">\(J_{ij}\)</span> (<span class="math notranslate nohighlight">\(| \omega_0^i - \omega_0^j | \gg 2 \pi |J_{ij}|\)</span>), los acoplamiento transversos se pueden despreciar. De esta forma, el Hamiltoniano se simplifica</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-j-coupling">
-<span class="eqno">(4.12)<a class="headerlink" href="#equation-ec-hardware-nmr-j-coupling" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.26)<a class="headerlink" href="#equation-ec-hardware-nmr-j-coupling" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \boxed{\mathcal{H}_j = \frac{1}{\hbar} \sum_{i &lt; j}^n 2 \pi J_{ij} S_z^{i} S_z^{j}}
 \end{equation} \]</div>
 <p>Esta condición (<span class="math notranslate nohighlight">\(| \omega_0^i - \omega_0^j | \gg 2 \pi |J_{ij}|\)</span>) se cumple fácilmente para los espines heteronucleares y que también puede cumplirse para las moléculas homonucleares pequeñas.
-La interpretación del término de acoplamiento escalar de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-j-coupling">(4.12)</a><i> es que un espín “siente” un campo magnético estático a lo largo de <span class="math notranslate nohighlight">\(\pm z\)</span> producido por los espines vecinos</i>, además del campo <span class="math notranslate nohighlight">\(\vec{B}_0\)</span> aplicado externamente. Este campo adicional desplaza los niveles de energía como podemos ver en la Fig.  <a class="reference internal" href="#fig-harware-nmr-diagrama"><span class="std std-numref">4.5</span></a>. Como resultado, la frecuencia de Larmor del espín <span class="math notranslate nohighlight">\(i\)</span> se mueve en una cantidad <span class="math notranslate nohighlight">\(-J_{ij}/2\)</span> si el espín <span class="math notranslate nohighlight">\(j\)</span> está en el estado <span class="math notranslate nohighlight">\(\ket{0}\)</span> (lineas rojas) y una cantidad <span class="math notranslate nohighlight">\(+J_{ij}/2\)</span> si está en el estado <span class="math notranslate nohighlight">\(\ket{1}\)</span> (líneas azules).</p>
+La interpretación del término de acoplamiento escalar de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-j-coupling">(4.26)</a><i> es que un espín “siente” un campo magnético estático a lo largo de <span class="math notranslate nohighlight">\(\pm z\)</span> producido por los espines vecinos</i>, además del campo <span class="math notranslate nohighlight">\(\vec{B}_0\)</span> aplicado externamente. Este campo adicional desplaza los niveles de energía como podemos ver en la Fig.  <a class="reference internal" href="#fig-harware-nmr-diagrama"><span class="std std-numref">4.5</span></a>. Como resultado, la frecuencia de Larmor del espín <span class="math notranslate nohighlight">\(i\)</span> se mueve en una cantidad <span class="math notranslate nohighlight">\(-J_{ij}/2\)</span> si el espín <span class="math notranslate nohighlight">\(j\)</span> está en el estado <span class="math notranslate nohighlight">\(\ket{0}\)</span> (lineas rojas) y una cantidad <span class="math notranslate nohighlight">\(+J_{ij}/2\)</span> si está en el estado <span class="math notranslate nohighlight">\(\ket{1}\)</span> (líneas azules).</p>
 <figure class="align-center" id="fig-harware-nmr-diagrama">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_diagrama.png"><img alt="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_diagrama.png" src="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_diagrama.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_Harware_NMR_diagrama.png"><img alt="../../../_images/Fig_Harware_NMR_diagrama.png" src="../../../_images/Fig_Harware_NMR_diagrama.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Diagrama de niveles de energía para dos espines desacoplados (líneas discontinuas) y dos espines acoplados (líneas continuas) por un Hamiltoniano de la forma de la Ec. <a class="reference internal" href="#equation-ec-hardware-nmr-j-coupling">(4.12)</a> (en unidades de <span class="math notranslate nohighlight">\(\hbar\)</span>). Marcadas en rojo están las dos transiciones en las que el espín que no cambia está en el estado <span class="math notranslate nohighlight">\(\ket{0}\)</span>, mientras que en azul están en las que el espín que no cambia está en el estado <span class="math notranslate nohighlight">\(\ket{1}\)</span>. Vemos que la energía de transición de las primera disminuye, mientras que de las segundas aumenta.</span><a class="headerlink" href="#fig-harware-nmr-diagrama" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Diagrama de niveles de energía para dos espines desacoplados (líneas discontinuas) y dos espines acoplados (líneas continuas) por un Hamiltoniano de la forma de la Ec. <a class="reference internal" href="#equation-ec-hardware-nmr-j-coupling">(4.26)</a> (en unidades de <span class="math notranslate nohighlight">\(\hbar\)</span>). Marcadas en rojo están las dos transiciones en las que el espín que no cambia está en el estado <span class="math notranslate nohighlight">\(\ket{0}\)</span>, mientras que en azul están en las que el espín que no cambia está en el estado <span class="math notranslate nohighlight">\(\ket{1}\)</span>. Vemos que la energía de transición de las primera disminuye, mientras que de las segundas aumenta.</span><a class="headerlink" href="#fig-harware-nmr-diagrama" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </li>
@@ -650,9 +773,9 @@ La interpretación del término de acoplamiento escalar de la Ec.  <a class="ref
 </section>
 <section id="hamiltoniano-completo">
 <h3><span class="section-number">4.3.1.3. </span>Hamiltoniano completo.<a class="headerlink" href="#hamiltoniano-completo" title="Permalink to this heading">#</a></h3>
-<p>En resumen, la forma más simple del Hamiltoniano para un sistema de <span class="math notranslate nohighlight">\(n\)</span> espines nucleares acoplados es, pues (de las Ecs.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-single">(4.10)</a> y  <a class="reference internal" href="#equation-ec-hardware-nmr-j-coupling">(4.12)</a>)</p>
+<p>En resumen, la forma más simple del Hamiltoniano para un sistema de <span class="math notranslate nohighlight">\(n\)</span> espines nucleares acoplados es, pues (de las Ecs.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-single">(4.23)</a> y  <a class="reference internal" href="#equation-ec-hardware-nmr-j-coupling">(4.26)</a>)</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-h-sys-final">
-<span class="eqno">(4.13)<a class="headerlink" href="#equation-ec-hardware-nmr-h-sys-final" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.27)<a class="headerlink" href="#equation-ec-hardware-nmr-h-sys-final" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \boxed{\mathcal{H}_{sys} = - \sum_{i}^n \omega_0^i S_z^{i}  + \frac{1}{\hbar} \sum_{i&lt;j} 2 \pi J_{ij} S_z^i S_z^j}
 \end{equation} \]</div>
 </section>
@@ -661,13 +784,14 @@ La interpretación del término de acoplamiento escalar de la Ec.  <a class="ref
 <span id="sec-subsub-harware-nmr-h-control"></span><h2><span class="section-number">4.3.2. </span>Hamiltoniano de control<a class="headerlink" href="#hamiltoniano-de-control" title="Permalink to this heading">#</a></h2>
 <section id="campos-de-radiofrecuencia">
 <h3><span class="section-number">4.3.2.1. </span>Campos de radiofrecuencia<a class="headerlink" href="#campos-de-radiofrecuencia" title="Permalink to this heading">#</a></h3>
-<p>Pasemos ahora a los mecanismos físicos para controlar el sistema de RMN. El estado de una partícula de espín <span class="math notranslate nohighlight">\(1/2\)</span> en un campo magnético estático <span class="math notranslate nohighlight">\(\vec{B}_0\)</span> a lo largo del eje <span class="math notranslate nohighlight">\(\hat{z}\)</span> puede manipularse aplicando un campo electromagnético <span class="math notranslate nohighlight">\(\vec{B}_1(t)\)</span> que gira en el plano <span class="math notranslate nohighlight">\(\hat{x}-\hat{y}\)</span> a frecuencia <span class="math notranslate nohighlight">\(\omega_{rf}\)</span>, en o cerca de la frecuencia de precesión del espín <span class="math notranslate nohighlight">\(\omega_0\)</span>. El Hamiltoniano de espín  correspondiente al campo de radiofrecuencia (RF) es, análogo a la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-1">(4.7)</a> para el campo estático <span class="math notranslate nohighlight">\(B_0\)</span>,
-\begin{equation}
-\mathcal{H}<em>{rf} = - \gamma B_1 \Lc \cos (\omega</em>{rf} + \phi) S_x + \sin (\omega_{rf} + \phi) S_y \Rc ,
-\end{equation}
-donde <span class="math notranslate nohighlight">\(\phi\)</span> es la fase del campo de RF, y <span class="math notranslate nohighlight">\(B_1\)</span> su amplitud. Para <span class="math notranslate nohighlight">\(n\)</span> espines tenemos</p>
+<p>Pasemos ahora a los mecanismos físicos para controlar el sistema de RMN. El estado de una partícula de espín <span class="math notranslate nohighlight">\(1/2\)</span> en un campo magnético estático <span class="math notranslate nohighlight">\(\vec{B}_0\)</span> a lo largo del eje <span class="math notranslate nohighlight">\(\hat{z}\)</span> puede manipularse aplicando un campo electromagnético <span class="math notranslate nohighlight">\(\vec{B}_1(t)\)</span> que gira en el plano <span class="math notranslate nohighlight">\(\hat{x}-\hat{y}\)</span> a frecuencia <span class="math notranslate nohighlight">\(\omega_{rf}\)</span>, en o cerca de la frecuencia de precesión del espín <span class="math notranslate nohighlight">\(\omega_0\)</span>. El Hamiltoniano de espín  correspondiente al campo de radiofrecuencia (RF) es, análogo a la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-1">(4.13)</a> para el campo estático <span class="math notranslate nohighlight">\(B_0\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4d504688-2f8a-4b4d-9664-c8d6ac7bb1fc">
+<span class="eqno">(4.28)<a class="headerlink" href="#equation-4d504688-2f8a-4b4d-9664-c8d6ac7bb1fc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\mathcal{H}_{rf} = - \gamma B_1 \Lc \cos (\omega_{rf} + \phi) S_x + \sin (\omega_{rf} + \phi) S_y \Rc \,
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\phi\)</span> es la fase del campo de RF, y <span class="math notranslate nohighlight">\(B_1\)</span> su amplitud. Para <span class="math notranslate nohighlight">\(n\)</span> espines tenemos</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-h-rf">
-<span class="eqno">(4.14)<a class="headerlink" href="#equation-ec-hardware-nmr-h-rf" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.29)<a class="headerlink" href="#equation-ec-hardware-nmr-h-rf" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \boxed{\mathcal{H}_{rf} = - \sum_{i}^n \gamma_i B_1 \Lc \cos (\omega_{rf} t + \phi) S_x^i + \sin (\omega_{rf} t+ \phi ) S_y^i \Rc} \, ,
 \end{equation} \]</div>
 <div class="note admonition">
@@ -685,32 +809,34 @@ desplazamiento insignificante de la frecuencia de Larmor, llamado desplazamiento
 <h3><span class="section-number">4.3.2.2. </span>Sistema de referencia rotante (<i>rotating frame</i>).<a class="headerlink" href="#sistema-de-referencia-rotante-rotating-frame" title="Permalink to this heading">#</a></h3>
 <p>El movimiento de un espín nuclear individual sometido a un campo magnético estático y giratorio es bastante complejo cuando se describe en el sistema de coordenadas habitual del laboratorio (el marco del laboratorio). Sin embargo, se simplifica mucho describiendo el movimiento en un <b>sistema de coordenadas que gira</b> alrededor de <span class="math notranslate nohighlight">\(\hat{z}\)</span> a frecuencia <span class="math notranslate nohighlight">\(\omega_{rf}\)</span> (el <b>rotating frame</b>):</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-psi-rot">
-<span class="eqno">(4.15)<a class="headerlink" href="#equation-ec-hardware-nmr-psi-rot" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.30)<a class="headerlink" href="#equation-ec-hardware-nmr-psi-rot" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \ket{\psi}^{rot} = \exp \lp -i \omega_{rf} t S_z/\hbar \rp \ket{\psi}
 \end{equation} \]</div>
-<p>Para un solo espín libre, el Hamiltoniano será la suma  <a class="reference internal" href="#equation-ec-hardware-nmr-h-single">(4.10)</a> y  <a class="reference internal" href="#equation-ec-hardware-nmr-h-rf">(4.14)</a> (con <span class="math notranslate nohighlight">\(n=1\)</span>), es decir,</p>
+<p>Para un solo espín libre, el Hamiltoniano será la suma  <a class="reference internal" href="#equation-ec-hardware-nmr-h-single">(4.23)</a> y  <a class="reference internal" href="#equation-ec-hardware-nmr-h-rf">(4.29)</a> (con <span class="math notranslate nohighlight">\(n=1\)</span>), es decir,</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-h-lab-single">
-<span class="eqno">(4.16)<a class="headerlink" href="#equation-ec-hardware-nmr-h-lab-single" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.31)<a class="headerlink" href="#equation-ec-hardware-nmr-h-lab-single" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \mathcal{H} = - \omega_0 S_z - \omega_1 \Lc \cos (\omega_{rf} t+ \phi) S_x + \sin (\omega_{rf} t + \phi) S_y \Rc
 \end{equation} \]</div>
-<p>Este Hamiltoniano junto con el estado en el sistema de referencia estático cumplen la ecuación de Schrödinger
-\begin{equation}
+<p>Este Hamiltoniano junto con el estado en el sistema de referencia estático cumplen la ecuación de Schrödinger</p>
+<div class="amsmath math notranslate nohighlight" id="equation-960c6680-c504-4977-b9f5-b7f8106a7b91">
+<span class="eqno">(4.32)<a class="headerlink" href="#equation-960c6680-c504-4977-b9f5-b7f8106a7b91" title="Permalink to this equation">#</a></span>\[\begin{equation}
 i \hbar \frac{d \ket{\psi}}{dt} = \mathcal{H} \ket{\psi}
-\end{equation}
-Sustituyendo el cambio de variable de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-final">(4.13)</a> en la ecuación de Schrödinger, podemos calcular como tendría que ser el <span class="math notranslate nohighlight">\(\mathcal{H}^{rot}\)</span> que cumpla
-\begin{equation}
+\end{equation}\]</div>
+<p>Sustituyendo el cambio de variable de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-final">(4.27)</a> en la ecuación de Schrödinger, podemos calcular como tendría que ser el <span class="math notranslate nohighlight">\(\mathcal{H}^{rot}\)</span> que cumpla</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9a3aac43-d587-4987-a2d5-ab8bf4c2173f">
+<span class="eqno">(4.33)<a class="headerlink" href="#equation-9a3aac43-d587-4987-a2d5-ab8bf4c2173f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 i \hbar \frac{d \ket{\psi}^{rot}}{dt} = \mathcal{H}^{rot} \ket{\psi}^{rot}
-\end{equation}
-Puede ver que el resultado es</p>
+\end{equation}\]</div>
+<p>Puede ver que el resultado es</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-h-rot-single">
-<span class="eqno">(4.17)<a class="headerlink" href="#equation-ec-hardware-nmr-h-rot-single" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.34)<a class="headerlink" href="#equation-ec-hardware-nmr-h-rot-single" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \boxed{\mathcal{H}^{rot} = - (\omega_0 - \omega_{rf}) S_z - \omega_1 \Lc \cos (\phi) S_x + \sin  (\phi) S_y \Rc}
 \end{equation} \]</div>
 <p>Naturalmente, el campo de RF se encuentra a lo largo de un eje fijo en el sistema de referencia que gira a <span class="math notranslate nohighlight">\(\omega_{rf}\)</span>. El movimiento del espín visto desde un sistema de referencia o el otro es diferente.</p>
 <ul>
 <li><p>En el <b>sistema laboratorio (en reposo)</b>, al aplicar el campo magnético rotante <span class="math notranslate nohighlight">\(\vec{B}_1\)</span> lo que sucede es que <i>el valor esperado del espín rota en espiral, bajando por la esfera</i>, como podemos ver en la Fig.  <a class="reference internal" href="#fig-harware-nmr-espiral-bloch"><span class="std std-numref">4.6</span></a>b.</p>
 <figure class="align-center" id="fig-harware-nmr-espiral-bloch">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_espiral_bloch.png"><img alt="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_espiral_bloch.png" src="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_espiral_bloch.png" style="width: 550px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_Harware_NMR_espiral_bloch.png"><img alt="../../../_images/Fig_Harware_NMR_espiral_bloch.png" src="../../../_images/Fig_Harware_NMR_espiral_bloch.png" style="width: 550px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.6 </span><span class="caption-text">Nutación de un espín sometido a un campo de RF transversal observada en el marco de rotación (a) y observada en el marco de laboratorio (b).</span><a class="headerlink" href="#fig-harware-nmr-espiral-bloch" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -718,14 +844,15 @@ Puede ver que el resultado es</p>
 </li>
 <li><p>En el <b>sistema rotante</b>, tenemos dos casos:</p>
 <ul>
-<li><p>Caso <b>resonante</b> (<span class="math notranslate nohighlight">\(\omega_{rf} = \omega_0\)</span>): en este caso el primer término de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-rot-single">(4.17)</a> desaparece. En este caso, un observador en el sistema rotante verá el espín simplemente <i>precesar</i> alrededor de <span class="math notranslate nohighlight">\(\vec{B}_1\)</span> (Fig.  <a class="reference internal" href="#fig-harware-nmr-espiral-bloch"><span class="std std-numref">4.6</span></a>a), un movimiento llamado nutación. La elección de <span class="math notranslate nohighlight">\(\phi\)</span> controla el eje de nutación.</p></li>
-<li><p>Caso <b>fuera de resonancia</b>: Si el campo de RF está fuera de resonancia con respecto a la frecuencia de espín en <span class="math notranslate nohighlight">\(\Delta \omega = \omega_0 - \omega_{rf}\)</span>, el espín precesa en el marco de rotación alrededor de un eje inclinado con respecto al eje <span class="math notranslate nohighlight">\(\vec{z}\)</span> en un ángulo
-\begin{equation}
-\alpha = \arctan (\omega_1 / \Delta \omega)
-\end{equation}
-como se ilustra en la Fig.  <a class="reference internal" href="#fig-harware-nmr-nutacion-inclinada"><span class="std std-numref">4.7</span></a>.</p>
+<li><p>Caso <b>resonante</b> (<span class="math notranslate nohighlight">\(\omega_{rf} = \omega_0\)</span>): en este caso el primer término de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-rot-single">(4.34)</a> desaparece. En este caso, un observador en el sistema rotante verá el espín simplemente <i>precesar</i> alrededor de <span class="math notranslate nohighlight">\(\vec{B}_1\)</span> (Fig.  <a class="reference internal" href="#fig-harware-nmr-espiral-bloch"><span class="std std-numref">4.6</span></a>a), un movimiento llamado nutación. La elección de <span class="math notranslate nohighlight">\(\phi\)</span> controla el eje de nutación.</p></li>
+<li><p>Caso <b>fuera de resonancia</b>: Si el campo de RF está fuera de resonancia con respecto a la frecuencia de espín en <span class="math notranslate nohighlight">\(\Delta \omega = \omega_0 - \omega_{rf}\)</span>, el espín precesa en el marco de rotación alrededor de un eje inclinado con respecto al eje <span class="math notranslate nohighlight">\(\vec{z}\)</span> en un ángulo</p>
+<div class="amsmath math notranslate nohighlight" id="equation-001535ca-7393-4ec3-9e26-a71b5215d837">
+<span class="eqno">(4.35)<a class="headerlink" href="#equation-001535ca-7393-4ec3-9e26-a71b5215d837" title="Permalink to this equation">#</a></span>\[\begin{equation}
+        \alpha = \arctan (\omega_1 / \Delta \omega)
+        \end{equation}\]</div>
+<p>como se ilustra en la Fig.  <a class="reference internal" href="#fig-harware-nmr-nutacion-inclinada"><span class="std std-numref">4.7</span></a>.</p>
 <figure class="align-center" id="fig-harware-nmr-nutacion-inclinada">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_nutacion_inclinada.png"><img alt="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_nutacion_inclinada.png" src="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_nutacion_inclinada.png" style="width: 350px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_Harware_NMR_nutacion_inclinada.png"><img alt="../../../_images/Fig_Harware_NMR_nutacion_inclinada.png" src="../../../_images/Fig_Harware_NMR_nutacion_inclinada.png" style="width: 350px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.7 </span><span class="caption-text">Eje de rotación (en el marco giratorio) durante un pulso de radiofrecuencia fuera de resonancia.</span><a class="headerlink" href="#fig-harware-nmr-nutacion-inclinada" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -737,37 +864,50 @@ como se ilustra en la Fig.  <a class="reference internal" href="#fig-harware-nmr
 <p>En este último caso se deduce que <b>el campo de RF no tiene prácticamente ningún efecto sobre espines que están lejos de la resonancia</b>, ya que <span class="math notranslate nohighlight">\(\alpha\)</span> es muy pequeño cuando <span class="math notranslate nohighlight">\(|\Delta \omega | \gg \omega_1\)</span> (ver Fig.  <a class="reference internal" href="#fig-harware-nmr-espiral-bloch-2"><span class="std std-numref">4.8</span></a>). Si todos los espines tienen frecuencias de Larmor bien separadas, en principio podemos <b>rotar selectivamente</b> cualquier qubit sin rotar los otros espines.</p>
 <p>Los pulsos moderadamente fuera de resonancia (<span class="math notranslate nohighlight">\(|\Delta \omega| \approx \omega_1\)</span>) hacen girar el espín, pero debido a la inclinación del eje de rotación, un solo pulso de este tipo no puede, por ejemplo, voltear un espín de <span class="math notranslate nohighlight">\(|0 \rangle\)</span> a <span class="math notranslate nohighlight">\(|1 \rangle\)</span> (véase de nuevo la Fig.  <a class="reference internal" href="#fig-harware-nmr-espiral-bloch-2"><span class="std std-numref">4.8</span></a>). Por supuesto, los pulsos fuera de resonancia también pueden ser útiles, por ejemplo para la implementación directa de rotaciones sobre un eje fuera del plano <span class="math notranslate nohighlight">\(\hat{x} - \hat{y}\)</span>.</p>
 <figure class="align-center" id="fig-harware-nmr-espiral-bloch-2">
-<a class="reference internal image-reference" href="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_espiral_bloch_2.png"><img alt="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_espiral_bloch_2.png" src="docs/Part_01/Chapter_004_02/Figuras/Fig_Harware_NMR_espiral_bloch_2.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/Fig_Harware_NMR_espiral_bloch_2.png"><img alt="../../../_images/Fig_Harware_NMR_espiral_bloch_2.png" src="../../../_images/Fig_Harware_NMR_espiral_bloch_2.png" style="width: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.8 </span><span class="caption-text">Trayectoria en la esfera de Bloch (en el sistema de referencia rotante) descrita por un qubit inicialmente en <span class="math notranslate nohighlight">\(\ket{0}\)</span> (a lo largo de <span class="math notranslate nohighlight">\(+\hat{z}\)</span>), después de aplicar un pulso de 250 <span class="math notranslate nohighlight">\(\mu s\)</span> de intensidad <span class="math notranslate nohighlight">\(\omega_1 = 1\)</span> kHz fuera de resonancia en <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(0.5\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(\dots\)</span> 4 kHz. En resonancia, el pulso produce una rotación <span class="math notranslate nohighlight">\(90º\)</span>. Lejos de la resonancia, el qubit apenas rota alejándose de <span class="math notranslate nohighlight">\(\ket{0}\)</span>.</span><a class="headerlink" href="#fig-harware-nmr-espiral-bloch-2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Por otro lado, podemos elegir trabajar en <b>un sistema de referencia que rote a</b> <span class="math notranslate nohighlight">\(\bm{\omega_0}\)</span> (en vez de a <span class="math notranslate nohighlight">\(\omega_{rf}\)</span>, donde
-\begin{equation}
+<p>Por otro lado, podemos elegir trabajar en <b>un sistema de referencia que rote a</b> <span class="math notranslate nohighlight">\(\bm{\omega_0}\)</span> (en vez de a <span class="math notranslate nohighlight">\(\omega_{rf}\)</span>, donde</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8be9dc5a-0524-4efa-94e3-6fe2aa3fc58b">
+<span class="eqno">(4.36)<a class="headerlink" href="#equation-8be9dc5a-0524-4efa-94e3-6fe2aa3fc58b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \boxed{\mathcal{H}^{rot} = - \omega_1 \Lc \cos ((\omega_{rf} - \omega_0)t + \phi) S_x + \sin ((\omega_{rf} - \omega_0)t + \phi) S_y \Rc}
-\end{equation}</p>
-<p>Esta transformación no da un Hamiltoniano de RF independiente del tiempo (a menos que <span class="math notranslate nohighlight">\(\omega_{rf} = \omega_0\)</span>), como fue el caso para <span class="math notranslate nohighlight">\(\mathcal{H}^{rot}\)</span> en la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-rot-single">(4.17)</a>). Sin embargo, es un punto de partida natural para la extensión al caso de <b>múltiples espines</b>, donde puede introducirse un marco de rotación separado para cada espín:</p>
+\end{equation}\]</div>
+<p>Esta transformación no da un Hamiltoniano de RF independiente del tiempo (a menos que <span class="math notranslate nohighlight">\(\omega_{rf} = \omega_0\)</span>), como fue el caso para <span class="math notranslate nohighlight">\(\mathcal{H}^{rot}\)</span> en la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-rot-single">(4.34)</a>). Sin embargo, es un punto de partida natural para la extensión al caso de <b>múltiples espines</b>, donde puede introducirse un marco de rotación separado para cada espín:</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-psi-rot-multi">
-<span class="eqno">(4.18)<a class="headerlink" href="#equation-ec-hardware-nmr-psi-rot-multi" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<span class="eqno">(4.37)<a class="headerlink" href="#equation-ec-hardware-nmr-psi-rot-multi" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \ket{\psi}^{rot} = \Lc \prod_i \exp (-i \omega_0^i t S^i_z/\hbar ) \Rc \ket{\psi}
 \end{equation} \]</div>
-<p>En presencia de múltiples campos de RF indexados con <span class="math notranslate nohighlight">\(r\)</span>, el Hamiltoniano en este marco de referencia rotante e <span class="math notranslate nohighlight">\(\omega_0\)</span> nos queda
-\begin{equation}
+<p>En presencia de múltiples campos de RF indexados con <span class="math notranslate nohighlight">\(r\)</span>, el Hamiltoniano en este marco de referencia rotante e <span class="math notranslate nohighlight">\(\omega_0\)</span> nos queda</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a4f7f4aa-7d5f-4cc3-b8b8-790fa6bafc37">
+<span class="eqno">(4.38)<a class="headerlink" href="#equation-a4f7f4aa-7d5f-4cc3-b8b8-790fa6bafc37" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \boxed{\mathcal{H}^{rot} = \sum_{i,r} - \omega_1^r \Lc \cos ((\omega_{rf}^r - \omega_0^i)t + \phi^r) S_x^i + \sin ((\omega_{rf}^r - \omega_0^i) t +\phi^r) S_y^i  \Rc}
-\end{equation}
-donde las amplitudes <span class="math notranslate nohighlight">\(\omega_i^r\)</span> y las fases <span class="math notranslate nohighlight">\(\phi^r\)</span> están bajo control.</p>
-<p>El Hamiltoniano del sistema de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-final">(4.13)</a> se simplifica en el sistema de referencia multi-rotante de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-psi-rot-multi">(4.18)</a>: el termino <span class="math notranslate nohighlight">\(S_z^i\)</span> desparece dejando solo el término de acoplamiento <span class="math notranslate nohighlight">\(J_{ij} S_z^i S_z^j\)</span>, que permanecen invariantes.</p>
+\end{equation}\]</div>
+<p>donde las amplitudes <span class="math notranslate nohighlight">\(\omega_i^r\)</span> y las fases <span class="math notranslate nohighlight">\(\phi^r\)</span> están bajo control.</p>
+<p>El Hamiltoniano del sistema de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-h-sys-final">(4.27)</a> se simplifica en el sistema de referencia multi-rotante de la Ec.  <a class="reference internal" href="#equation-ec-hardware-nmr-psi-rot-multi">(4.37)</a>: el termino <span class="math notranslate nohighlight">\(S_z^i\)</span> desparece dejando solo el término de acoplamiento <span class="math notranslate nohighlight">\(J_{ij} S_z^i S_z^j\)</span>, que permanecen invariantes.</p>
 <p>En resumen, en el sistema de referencia multi-rotante, el Hamiltoniano de <span class="math notranslate nohighlight">\(NMR\)</span> <span class="math notranslate nohighlight">\(\mathcal{H} = \mathcal{H}_{sys} + \mathcal{H}_{control}\)</span> toma la forma</p>
 <div class="math notranslate nohighlight" id="equation-ec-hardware-nmr-h-sys-control-final-multi-rot">
-<span class="eqno">(4.19)<a class="headerlink" href="#equation-ec-hardware-nmr-h-sys-control-final-multi-rot" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+<span class="eqno">(4.39)<a class="headerlink" href="#equation-ec-hardware-nmr-h-sys-control-final-multi-rot" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
 \begin{aligned}
 &amp; ~~~~ \boxed{ \mathcal{H}_{sys} =  \, \frac{1}{\hbar} \sum_{i&lt;j} 2 \pi J_{ij} S_z^i S_z^j} \\
 &amp;\boxed{\mathcal{H}_{control} =  \, \sum_{i,j} - \omega_1^r \Lc \cos ((\omega_{rf}^r - \omega_0^i)t +\phi^r) S_x^i + \sin ((\omega_{rf}^r-\omega_0^i)t +\phi^r) S^i_y \Rc}
 \end{aligned}
 \end{equation} \end{split}\]</div>
+<hr class="docutils" />
+<p>Autor:</p>
+<p>David Castaño (<a class="reference external" href="https://www.scbi.uma.es/site/">UMA-SCBI</a>)</p>
+<a class="reference internal image-reference" href="../../../_images/Logo_UMA4.jpeg"><img alt="../../../_images/Logo_UMA4.jpeg" src="../../../_images/Logo_UMA4.jpeg" style="width: 170px;" /></a>
+<hr class="docutils" />
 <figure class="align-center">
 <a class="reference internal image-reference" href="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png"><img alt="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" src="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" style="width: 2000px;" /></a>
 </figure>
+<center>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img aling="left" alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</center>
+<p>License: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+<p>This work has been financially supported by the Ministry for Digital Transformation and of Civil Service of the Spanish Government through the QUANTUM ENIA project call - Quantum Spain project, and by the European Union through the Recovery, Transformation and Resilience Plan - NextGenerationEU within the framework of the Digital Spain 2026 Agenda.</p>
 <center>
 <img align="left" src="https://quantumspain-project.es/wp-content/uploads/2024/02/Banner-QS_GOB_v2.png" width="1000px" />
 </center></section>
@@ -863,7 +1003,7 @@ donde las amplitudes <span class="math notranslate nohighlight">\(\omega_i^r\)</
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By <a href="https://quantumspain-project.es">QuantumSpain</a> & <a href="https://www.talentq.es/es_es/">TalentQ</a>
 </p>
 
   </div>

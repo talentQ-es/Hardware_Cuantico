@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.5. Conceptos Erróneos sobre el Hardware de Computación Cuántica. &#8212; My Jupyter Book</title>
+    <title>1.5. Conceptos Erróneos sobre el Hardware de Computación Cuántica. &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
   
   
   
@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfile.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -55,6 +58,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,6 +103,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_001_02/Section_005_conceptos_erroneos_sobre_el_hardware_de_computacion_cuantica_myst';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="1.6. Algunos Roadmaps públicos" href="Section_006_algunos_roadmaps_publicos_myst.html" />
@@ -153,8 +191,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
   
-    <p class="title logo__title">My Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -170,14 +214,6 @@ const thebe_selector_output = ".output, .cell_output"
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../index.html">
-                    El camino de los Qubits
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -201,11 +237,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.html">3. Computación Cuántica con qubits Superconductores</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad_myst.html">3.1. Conceptos básicos sobre Superconductividad.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_002_tipos_de_qubits_superconductores_myst.html">3.2. Tipos de qubits superconductores</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_003_fisica_de_los_qubits_superconductores__myst.html">3.3. Física de los qubits superconductores</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_004_operaciones_con_qubits_superconductores_myst.html">3.4. Operaciones con qubits superconductores</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_005_retos_con_qubits_superconductores_myst.html">3.5. Retos con qubits superconductores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad__myst.html">3.1. Conceptos básicos sobre Superconductividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html">3.2. Conceptos básicos sobre Mecánida Clásica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_003_conceptos_basicos_sobre_cuantizacion__myst.html">3.3. Conceptos básicos sobre cuantización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html">3.4. El <i>Transmon Qubit</i>: Del oscilador armónico al Transmón</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.html">3.5. El <i>Split Transmon Qubit</i> (qubit ajustable mendiante flujo)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_006_el_iflux_qubiti_y_el_ifluxoniumi_hacia_una_mayor_anarmonicidad__myst.html">3.6. El <i>Flux Qubit</i> y el <i>Fluxonium</i>: Hacia una mayor anarmonicidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.html">3.7. Acoplamientos: Hamiltonianos de interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_008_puertas_simples__myst.html">3.8. Puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_009_puertas_de_dos_qubits__myst.html">3.9. Puertas de dos qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_010_lectura_de_los_qubits_myst.html">3.10. Lectura de los qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_011_conectividad__myst.html">3.11. Conectividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_012_retos_con_qubits_superconductores_myst.html">3.12. Retos con qubits superconductores</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_004_01_tecnicas_de_control_y_computacion_en_rmn_myst.html">4. Técnicas de control y computación en RMN.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -213,6 +256,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_002_el_espin_nuclear__myst.html">4.2. El espín nuclear</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_003_qubits_de_rmn_myst.html">4.3. qubits de RMN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales__myst.html">4.4. Técnicas de pulsos elementales.</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_005_01_decoherencia_y_desfase_myst.html">5. Decoherencia y desfase</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.html">5.1. La coherencia en Mecánica Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_002_la_coherencia_en_computacion_cuantica_t_1_y_t_2_myst.html">5.2. La coherencia en Computación Cuántica: <span class="math notranslate nohighlight">\(T_1\)</span> y <span class="math notranslate nohighlight">\(T_2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_003_decoherencia_y_las_ecuaciones_de_bloch_myst.html">5.3. Decoherencia y las ecuaciones de Bloch.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_004_resumen_myst.html">5.4. Resumen</a></li>
 </ul>
 </li>
 </ul>
@@ -260,6 +310,70 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_001_02/Section_005_conceptos_erroneos_sobre_el_hardware_de_computacion_cuantica_myst.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_001_02/Section_005_conceptos_erroneos_sobre_el_hardware_de_computacion_cuantica_myst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -372,8 +486,7 @@ document.write(`
   <blockquote>
 <div><p>Jun 03, 2025 | 1 min read</p>
 </div></blockquote>
-<img src="Figuras/Fig_logo_UMA_scbi.png" align=center  width="2000px"/>
-<a href="https://www.scbi.uma.es/web/es/computacion-cuantica/">
+<a href="https://www.talentq.es/es_es/cursos/">
     <button class="rounded" style="float: right;">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
         <path fill="var(--fill, white)"
@@ -383,7 +496,7 @@ document.write(`
             .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
             1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
     </svg>
-    Volver a SCBI - Computación Cuantica
+    Volver a TalentQ
     </button>
 </a>
 <p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
@@ -429,9 +542,20 @@ document.write(`
 <ul class="simple">
 <li><p>Muchos tienen muy poco o ningún valor, así que encontrar cálculo que se pueden hacer en ordenadores cuánticos pero que son imposibles en ordenadores cuánticos no es suficiente. Tiene que poder calcularse algo útil.</p></li>
 </ul>
+<hr class="docutils" />
+<p>Autor:</p>
+<p>David Castaño (<a class="reference external" href="https://www.scbi.uma.es/site/">UMA-SCBI</a>)</p>
+<a class="reference internal image-reference" href="../../../_images/Logo_UMA1.jpeg"><img alt="../../../_images/Logo_UMA1.jpeg" src="../../../_images/Logo_UMA1.jpeg" style="width: 170px;" /></a>
+<hr class="docutils" />
 <figure class="align-center">
 <a class="reference internal image-reference" href="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png"><img alt="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" src="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" style="width: 2000px;" /></a>
 </figure>
+<center>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img aling="left" alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</center>
+<p>License: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+<p>This work has been financially supported by the Ministry for Digital Transformation and of Civil Service of the Spanish Government through the QUANTUM ENIA project call - Quantum Spain project, and by the European Union through the Recovery, Transformation and Resilience Plan - NextGenerationEU within the framework of the Digital Spain 2026 Agenda.</p>
 <center>
 <img align="left" src="https://quantumspain-project.es/wp-content/uploads/2024/02/Banner-QS_GOB_v2.png" width="1000px" />
 </center></section>
@@ -502,7 +626,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By <a href="https://quantumspain-project.es">QuantumSpain</a> & <a href="https://www.talentq.es/es_es/">TalentQ</a>
 </p>
 
   </div>

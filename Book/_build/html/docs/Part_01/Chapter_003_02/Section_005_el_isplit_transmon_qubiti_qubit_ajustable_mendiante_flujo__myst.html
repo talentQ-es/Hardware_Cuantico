@@ -1,0 +1,737 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.5. El Split Transmon Qubit (qubit ajustable mendiante flujo) &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfile.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_003_02/Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.6. El Flux Qubit y el Fluxonium: Hacia una mayor anarmonicidad" href="Section_006_el_iflux_qubiti_y_el_ifluxoniumi_hacia_una_mayor_anarmonicidad__myst.html" />
+    <link rel="prev" title="3.4. El Transmon Qubit: Del oscilador armónico al Transmón" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_001_modelos_de_computacion_cuantica_myst.html">1.1. Modelos de Computación Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_002_estructura_del_hardware_de_un_ordenador_cuantico_myst.html">1.2. Estructura del Hardware de un Ordenador Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.html">1.3. Tipos de Tecnologías de qubits.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_004_pulso_de_microondas_myst.html">1.4. Pulso de microondas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_005_conceptos_erroneos_sobre_el_hardware_de_computacion_cuantica_myst.html">1.5. Conceptos Erróneos sobre el Hardware de Computación Cuántica.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_006_algunos_roadmaps_publicos_myst.html">1.6. Algunos Roadmaps públicos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_002_01_computacion_cuantica_con_iones_atrapados_trapped_ions__myst.html">2. Computación Cuántica con Iones Atrapados (Trapped Ions)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_001_produccion_de_iones_myst.html">2.1. Producción de iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_002_trampas_de_iones_myst.html">2.2. Trampas de iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_003_enfriamiento_de_iones_por_laser__myst.html">2.3. Enfriamiento de iones por láser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_004_manipulando_iones_individuales_puertas_simples__myst.html">2.4. Manipulando iones individuales: puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_005_manipulacion_de_multiples_iones_myst.html">2.5. Manipulación de múltiples iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_006_lectura_del_estado_de_los_iones_myst.html">2.6. Lectura del estado de los iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_007_puertas_multiqubit_con_iones__myst.html">2.7. Puertas multiqubit con iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_008_conclusiones_pros_y_contras_myst.html">2.8. Conclusiones: pros y contras</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.html">3. Computación Cuántica con qubits Superconductores</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Section_001_conceptos_basicos_sobre_superconductividad__myst.html">3.1. Conceptos básicos sobre Superconductividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html">3.2. Conceptos básicos sobre Mecánida Clásica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html">3.3. Conceptos básicos sobre cuantización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html">3.4. El <i>Transmon Qubit</i>: Del oscilador armónico al Transmón</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.5. El <i>Split Transmon Qubit</i> (qubit ajustable mendiante flujo)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_006_el_iflux_qubiti_y_el_ifluxoniumi_hacia_una_mayor_anarmonicidad__myst.html">3.6. El <i>Flux Qubit</i> y el <i>Fluxonium</i>: Hacia una mayor anarmonicidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.html">3.7. Acoplamientos: Hamiltonianos de interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_008_puertas_simples__myst.html">3.8. Puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_009_puertas_de_dos_qubits__myst.html">3.9. Puertas de dos qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_010_lectura_de_los_qubits_myst.html">3.10. Lectura de los qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_011_conectividad__myst.html">3.11. Conectividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_012_retos_con_qubits_superconductores_myst.html">3.12. Retos con qubits superconductores</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_004_01_tecnicas_de_control_y_computacion_en_rmn_myst.html">4. Técnicas de control y computación en RMN.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_001_introduccion_myst.html">4.1. Introducción.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_002_el_espin_nuclear__myst.html">4.2. El espín nuclear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_003_qubits_de_rmn_myst.html">4.3. qubits de RMN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales__myst.html">4.4. Técnicas de pulsos elementales.</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_005_01_decoherencia_y_desfase_myst.html">5. Decoherencia y desfase</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.html">5.1. La coherencia en Mecánica Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_002_la_coherencia_en_computacion_cuantica_t_1_y_t_2_myst.html">5.2. La coherencia en Computación Cuántica: <span class="math notranslate nohighlight">\(T_1\)</span> y <span class="math notranslate nohighlight">\(T_2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_003_decoherencia_y_las_ecuaciones_de_bloch_myst.html">5.3. Decoherencia y las ecuaciones de Bloch.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_004_resumen_myst.html">5.4. Resumen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter_Bibliografia_myst.html">Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_003_02/Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/docs/Part_01/Chapter_003_02/Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>El <i>Split Transmon Qubit</i> (qubit ajustable mendiante flujo)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-transmon-qubit-simetrico">3.5.1. Split Transmon Qubit simétrico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-transmon-qubit-asimetrico">3.5.2. Split Transmon Qubit asimétrico</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <blockquote>
+<div><p>Jun 03, 2025 | 5 min read</p>
+</div></blockquote>
+<a href="https://www.talentq.es/es_es/cursos/">
+    <button class="rounded" style="float: right;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="var(--fill, white)"
+        d="M18.1 15.3c-.1.1-.3.2-.4.3l-2.4.4l1.7 3.6c.2.4 0 .8-.4
+            1l-2.8 1.3c-.1.1-.2.1-.3.1c-.3 0-.6-.2-.7-.4L11.2
+            18l-1.9 1.5c-.1.1-.3.2-.5.2c-.4 0-.8-.3-.8-.8V7.5c0-.5.3-.8.8-.8c.2 0
+            .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
+            1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
+    </svg>
+    Volver a TalentQ
+    </button>
+</a>
+<p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ket}[1]{|#1\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\branew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketnew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\braket}[2]{\langle #1|#2\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketbra}[2]{| #1\rangle \langle #2 |} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\i}{{\color{blue} i}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Hil}{{\cal H}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\cg}[1]{{\rm C}#1} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lp}{\left(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rp}{\right)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lc}{\left[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rc}{\right]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lch}{\left\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rch}{\right\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lp}{\Bigl(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rp}{\Bigr)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lc}{\Bigl[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rc}{\Bigr]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lch}{\Bigl\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rch}{\Bigr\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rqa}{\quad \Rightarrow \quad} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\bm}{\boldsymbol}\)</span></p>
+<section class="tex2jax_ignore mathjax_ignore" id="el-split-transmon-qubit-qubit-ajustable-mendiante-flujo">
+<span id="sec-scq-split-transmon"></span><h1><span class="section-number">3.5. </span>El <i>Split Transmon Qubit</i> (qubit ajustable mendiante flujo)<a class="headerlink" href="#el-split-transmon-qubit-qubit-ajustable-mendiante-flujo" title="Permalink to this heading">#</a></h1>
+<section id="split-transmon-qubit-simetrico">
+<h2><span class="section-number">3.5.1. </span>Split Transmon Qubit simétrico<a class="headerlink" href="#split-transmon-qubit-simetrico" title="Permalink to this heading">#</a></h2>
+<p>Para llevar a cabo operaciones rápidas de puerta con alta fidelidad, muchas (aunque no todas) de las arquitecturas de procesadores cuánticos implementadas hoy en día cuentan con <b>frecuencias de qubit ajustables</b>. Por ejemplo, en algunos casos, necesitamos que dos qubits entren en resonancia para intercambiar (swap) energía, mientras que también necesitamos la capacidad de separarlos durante los periodos de inactividad para minimizar sus interacciones. Para ello, necesitamos un parámetro externo que nos permita acceder a uno de los grados de libertad del sistema de forma controlable.</p>
+<p>Una técnica ampliamente utilizada consiste en sustituir la unión Josephson única por un bucle interrumpido por <b>dos uniones idénticas</b>, formando un dispositivo superconductor de interferencia cuántica de corriente continua (<b>DC-SQUID</b>). A este tipo de qubits se los denomina <b>“split transmon” simétrico</b>. Podemos ver el circuito de este qubit en la Fig.  <a class="reference internal" href="#fig-scq-split-transmon-main"><span class="std std-numref">3.10</span></a>(a) y en la Fig.  <a class="reference internal" href="#fig-scq-split-transmon"><span class="std std-numref">3.11</span></a>, mientras que en la Fig.  <a class="reference internal" href="#fig-scq-split-transmon-real"><span class="std std-numref">3.12</span></a> podemos ver una imagen realista de como sería este tipo de qubits.</p>
+<p>Debido a la interferencia entre los dos brazos del SQUID, la corriente crítica efectiva de las dos uniones paralelas puede disminuirse aplicando un flujo magnético que atraviese el bucle, véase la Fig.  <a class="reference internal" href="#fig-scq-split-transmon-main"><span class="std std-numref">3.10</span></a>(b).</p>
+<p>Debido a la condición de cuantización del flujo, la suma algebraica del flujo de rama de todos los elementos inductivos a lo largo del bucle más el flujo aplicado externamente es igual a un número entero de cuantos de flujo superconductor, es decir</p>
+<div class="amsmath math notranslate nohighlight" id="equation-85b85fe8-d6f4-47d2-af5d-daaf98a6da38">
+<span class="eqno">(3.101)<a class="headerlink" href="#equation-85b85fe8-d6f4-47d2-af5d-daaf98a6da38" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\varphi_1 - \varphi_2 + 2 \varphi_e = 2 \pi k
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\varphi_e = \pi \Phi_{ext}/\Phi_0\)</span> (es decir, los flujos los damos en unidades del cuanto de flujo <span class="math notranslate nohighlight">\(\Phi_0\)</span>). Utilizando esta condición, podemos eliminar un grado de libertad y tratar el bucle SQUID como una única unión, pero con la importante modificación de que <span class="math notranslate nohighlight">\(E_J\)</span> es ajustable (a través de la corriente crítica SQUID) mediante el flujo externo <span class="math notranslate nohighlight">\(\Phi_{ext}\)</span>. El Hamiltoniano efectivo del llamado <b>“split transmon” simétrico</b> (ignorando la constante) es</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-split-transmon-sym-h">
+<span class="eqno">(3.102)<a class="headerlink" href="#equation-ec-scq-split-transmon-sym-h" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+H_{SST} = 4 E_C n^2 - 2 E_J | \cos (\varphi_e) | \cos (\phi)
+\end{equation} \]</div>
+<p>Podemos ver que la Ec.  <a class="reference internal" href="#equation-ec-scq-split-transmon-sym-h">(3.102)</a> es análoga a la Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-sqc-lcjj-h">(3.89)</a>, con <span class="math notranslate nohighlight">\(E_J\)</span> reemplazada por</p>
+<div class="amsmath math notranslate nohighlight" id="equation-763be955-47b6-46b4-80b4-68b24fd50f90">
+<span class="eqno">(3.103)<a class="headerlink" href="#equation-763be955-47b6-46b4-80b4-68b24fd50f90" title="Permalink to this equation">#</a></span>\[\begin{equation}
+E^{'}_J (\varphi_e) = 2 E_J |\cos (\varphi_e)|
+\end{equation}\]</div>
+<p>La magnitud de la energía Josephson efectiva <span class="math notranslate nohighlight">\(E^{'}_J\)</span> tiene un período de <span class="math notranslate nohighlight">\(\Phi_0\)</span> en el flujo aplicado y toma valores entre 0 y <span class="math notranslate nohighlight">\(2E_J\)</span>. Por lo tanto, la frecuencia del qubit puede sintonizarse periódicamente con <span class="math notranslate nohighlight">\(\Phi_{ext}\)</span> (ver Fig.  <a class="reference internal" href="#fig-scq-split-transmon-main"><span class="std std-numref">3.10</span></a>(b)).</p>
+<figure class="align-center" id="fig-scq-split-transmon-main">
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_split_transmon_main.png"><img alt="../../../_images/Fig_scq_split_transmon_main.png" src="../../../_images/Fig_scq_split_transmon_main.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.10 </span><span class="caption-text">Representaciones de circuitos qubit modulares para modalidades qubit en derivación capacitiva [recuadro naranja de la Fig.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#fig-sqc-circuitos-lc"><span class="std std-numref">3.7</span></a>©] y las correspondientes frecuencias de transición qubit para los dos estados de energía más bajos en función del flujo magnético aplicado en unidades de <span class="math notranslate nohighlight">\(\Phi_0\)</span>. (a) y (b) <b>Qubit transmón simétrico</b>, con energía Josephson <span class="math notranslate nohighlight">\(E_J\)</span> derivada con un condensador que produce una energía de carga <span class="math notranslate nohighlight">\(E_C\)</span>. © y (d) <b>Qubit transmón asimétrico</b>, con asimetría de unión <span class="math notranslate nohighlight">\(\gamma = E_{J2}/E_{J1}=2.5\)</span> (e) y (f) <b>Qubit de flujo</b> derivado capacitivamente, en el que una pequeña unión principal (roja) está derivada con dos uniones mayores (naranja). Los parámetros son los mismos que Yan et al.62 (g) y (h) <b>Qubit fluxonium</b>, en el que la pequeña unión se deriva inductivamente con un gran conjunto de <span class="math notranslate nohighlight">\(N\)</span> uniones. Figura tomada de  <span id="id1">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id90" title="P. Krantz, M. Kjaergaard, F. Yan, T. P. Orlando, S. Gustavsson, and W. D. Oliver. A quantum engineer's guide to superconducting qubits. Applied Physics Reviews, 6(2):021318, 06 2019. URL: https://doi.org/10.1063/1.5089550, arXiv:https://pubs.aip.org/aip/apr/article-pdf/doi/10.1063/1.5089550/16667201/021318\_1\_online.pdf, doi:10.1063/1.5089550.">16</a>]</span></span><a class="headerlink" href="#fig-scq-split-transmon-main" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-scq-split-transmon">
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_split_transmon.png"><img alt="../../../_images/Fig_scq_split_transmon.png" src="../../../_images/Fig_scq_split_transmon.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.11 </span><span class="caption-text">Los esquemas de circuito para la evolución de un CPB a un transmón: el (a) CPB, (b) CPB dividido, y © “split transmon”. El simbolo “X” solo represneta una unión Josephson. En el simbolo “X” en una caja se ha absorvido la capacitancia <span class="math notranslate nohighlight">\(C_J\)</span>.  Figura tomada de <span class="xref myst">[93]</span></span><a class="headerlink" href="#fig-scq-split-transmon" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-scq-split-transmon-real">
+<a class="reference internal image-reference" href="../../../_images/Fig_scq_split_transmon_real.png"><img alt="../../../_images/Fig_scq_split_transmon_real.png" src="../../../_images/Fig_scq_split_transmon_real.png" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.12 </span><span class="caption-text">Imágenes de un qubit de (“split”) transmón ajustable en frecuencia: (a) el transmón completo formado por una gran capacitancia (la forma “+”) en paralelo con un SQUID a tierra, (b) un acercamiento del SQUID, y © una única unión Josephson. Figura tomada de <span class="xref myst">[93]</span></span><a class="headerlink" href="#fig-scq-split-transmon-real" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="split-transmon-qubit-asimetrico">
+<h2><span class="section-number">3.5.2. </span>Split Transmon Qubit asimétrico<a class="headerlink" href="#split-transmon-qubit-asimetrico" title="Permalink to this heading">#</a></h2>
+<p>Aunque el “split transmon” permite el ajuste de la frecuencia mediante el campo magnético aplicado externamente, también introduce sensibilidad a las fluctuaciones aleatorias del flujo, conocidas como <b>ruido de flujo</b>. En cualquier punto de trabajo, la pendiente del espectro del qubit, <span class="math notranslate nohighlight">\(\partial \omega_q/\partial \Phi_{ext}\)</span>, indica en primer orden la intensidad con la que este ruido de flujo afecta a la frecuencia del qubit. La sensibilidad suele ser distinta de cero, excepto en múltiplos del cuanto de flujo, <span class="math notranslate nohighlight">\(\Phi_{ext} = k \Phi_0\)</span>, siendo <span class="math notranslate nohighlight">\(k\)</span> un entero, donde <span class="math notranslate nohighlight">\(\partial \omega_q/\partial \Phi_{ext}\)</span> = 0.</p>
+<p>Para reducir la sensibilidad del qubit al ruido de flujo, manteniendo al mismo tiempo un ajuste suficiente para operar nuestras puertas cuánticas. La idea es hacer un <b>“split transmon” asimétrico</b>, donde una unión tiene un <span class="math notranslate nohighlight">\(E_J\)</span> mayor que el de la otra (véase la Fig.  <a class="reference internal" href="#fig-scq-split-transmon-main"><span class="std std-numref">3.10</span></a>©). Esto produce el siguiente Hamiltoniano</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9c173cab-a4e1-474b-8819-f22cf4e460ad">
+<span class="eqno">(3.104)<a class="headerlink" href="#equation-9c173cab-a4e1-474b-8819-f22cf4e460ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
+H = 4 E_C n^2 - \underbrace{E_{J \varSigma} \sqrt{\cos^2(\varphi_e) + d^2 \sin^2(\varphi_e)}}_{E'_J(\varphi_e)} \cos(\phi),
+\end{equation}\]</div>
+<p>donde</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-split-transmon-asym-h">
+<span class="eqno">(3.105)<a class="headerlink" href="#equation-ec-scq-split-transmon-asym-h" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+E_{J\varSigma} = E_{J1} + E_{J2}
+\qquad \text{y} \qquad d = (\gamma - 1)/(\gamma + 1)
+\qquad \text{con} \qquad \gamma=E_{J2}/E_{J1}
+\end{equation} \]</div>
+<p>donde <span class="math notranslate nohighlight">\(d\)</span> es  el parámetro de asimetría de la unión.</p>
+<p>De nuevo, podemos tratar las dos uniones como un transmón de unión única, con una energía Josephson efectiva <span class="math notranslate nohighlight">\(E'_J(\varphi_e)\)</span>. En particular, podemos reconocer los dos casos especiales; para <span class="math notranslate nohighlight">\(d=0\)</span>, el Hamiltoniano en la Ec.  <a class="reference internal" href="#equation-ec-scq-split-transmon-asym-h">(3.105)</a> se reduce al caso simétrico con <span class="math notranslate nohighlight">\(E'_J(\varphi_e) = E_{J\varSigma} |\cos (\phi_e)\)</span>| con <span class="math notranslate nohighlight">\(E_{J\varSigma} = 2E_J\)</span>, como en la Ec.  <a class="reference internal" href="#equation-ec-scq-split-transmon-sym-h">(3.102)</a>. En el otro límite, cuando <span class="math notranslate nohighlight">\(|d| \rightarrow 1\)</span>, <span class="math notranslate nohighlight">\(E'_J(\varphi_e) \rightarrow E_{J\Sigma}\)</span> y el ajuste mediante flujo de la energía Josephson desaparece, lo que equivale al caso de una sola unión, (ver Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-sqc-lcjj-h">(3.89)</a>).</p>
+<p>De la discusión anterior se desprende que pasar de transmones simétricos a asimétricos no cambia la topología del circuito. Sin embargo, esta modificación aparentemente trivial tiene profundas repercusiones en las aplicaciones prácticas. Como podemos ver en los espectros del qubit, Fig.  <a class="reference internal" href="#fig-scq-split-transmon-main"><span class="std std-numref">3.10</span></a>(d), la sensibilidad de flujo se suprime en todo el rango de frecuencias ajustables.</p>
+<p>Por lo tanto, mediante el uso de un transmón asimétrico, se introduce un pequeño rango de ajuste de frecuencia que es suficiente para compensar las variaciones de fabricación, sin introducir una gran susceptibilidad innecesaria al ruido de flujo y manteniendo así una alta coherencia. Por ejemplo, un esquema de “surface code” basado en la puerta de fase controlada adiabática (CPHASE) requiere una configuración de frecuencia específica entre los qubits para evitar problemas de aglomeración de frecuencias, y los transmones asimétricos se ajustan bien a su gama de frecuencias bien definida.</p>
+<p>\clearpage</p>
+<hr class="docutils" />
+<p>Autor:</p>
+<p>David Castaño (<a class="reference external" href="https://www.scbi.uma.es/site/">UMA-SCBI</a>)</p>
+<a class="reference internal image-reference" href="../../../_images/Logo_UMA3.jpeg"><img alt="../../../_images/Logo_UMA3.jpeg" src="../../../_images/Logo_UMA3.jpeg" style="width: 170px;" /></a>
+<hr class="docutils" />
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png"><img alt="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" src="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" style="width: 2000px;" /></a>
+</figure>
+<center>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img aling="left" alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</center>
+<p>License: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+<p>This work has been financially supported by the Ministry for Digital Transformation and of Civil Service of the Spanish Government through the QUANTUM ENIA project call - Quantum Spain project, and by the European Union through the Recovery, Transformation and Resilience Plan - NextGenerationEU within the framework of the Digital Spain 2026 Agenda.</p>
+<center>
+<img align="left" src="https://quantumspain-project.es/wp-content/uploads/2024/02/Banner-QS_GOB_v2.png" width="1000px" />
+</center></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/Part_01/Chapter_003_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.4. </span>El <i>Transmon Qubit</i>: Del oscilador armónico al Transmón</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Section_006_el_iflux_qubiti_y_el_ifluxoniumi_hacia_una_mayor_anarmonicidad__myst.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.6. </span>El <i>Flux Qubit</i> y el <i>Fluxonium</i>: Hacia una mayor anarmonicidad</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-transmon-qubit-simetrico">3.5.1. Split Transmon Qubit simétrico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-transmon-qubit-asimetrico">3.5.2. Split Transmon Qubit asimétrico</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://quantumspain-project.es">QuantumSpain</a> & <a href="https://www.talentq.es/es_es/">TalentQ</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

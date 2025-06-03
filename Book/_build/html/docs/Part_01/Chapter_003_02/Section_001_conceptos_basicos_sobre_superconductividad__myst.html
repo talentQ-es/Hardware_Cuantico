@@ -1,0 +1,823 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3.1. Conceptos básicos sobre Superconductividad. &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfile.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad__myst';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.2. Conceptos básicos sobre Mecánida Clásica" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html" />
+    <link rel="prev" title="3. Computación Cuántica con qubits Superconductores" href="../Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_001_modelos_de_computacion_cuantica_myst.html">1.1. Modelos de Computación Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_002_estructura_del_hardware_de_un_ordenador_cuantico_myst.html">1.2. Estructura del Hardware de un Ordenador Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.html">1.3. Tipos de Tecnologías de qubits.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_004_pulso_de_microondas_myst.html">1.4. Pulso de microondas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_005_conceptos_erroneos_sobre_el_hardware_de_computacion_cuantica_myst.html">1.5. Conceptos Erróneos sobre el Hardware de Computación Cuántica.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_006_algunos_roadmaps_publicos_myst.html">1.6. Algunos Roadmaps públicos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_002_01_computacion_cuantica_con_iones_atrapados_trapped_ions__myst.html">2. Computación Cuántica con Iones Atrapados (Trapped Ions)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_001_produccion_de_iones_myst.html">2.1. Producción de iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_002_trampas_de_iones_myst.html">2.2. Trampas de iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_003_enfriamiento_de_iones_por_laser__myst.html">2.3. Enfriamiento de iones por láser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_004_manipulando_iones_individuales_puertas_simples__myst.html">2.4. Manipulando iones individuales: puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_005_manipulacion_de_multiples_iones_myst.html">2.5. Manipulación de múltiples iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_006_lectura_del_estado_de_los_iones_myst.html">2.6. Lectura del estado de los iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_007_puertas_multiqubit_con_iones__myst.html">2.7. Puertas multiqubit con iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_008_conclusiones_pros_y_contras_myst.html">2.8. Conclusiones: pros y contras</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.html">3. Computación Cuántica con qubits Superconductores</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1. Conceptos básicos sobre Superconductividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html">3.2. Conceptos básicos sobre Mecánida Clásica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html">3.3. Conceptos básicos sobre cuantización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html">3.4. El <i>Transmon Qubit</i>: Del oscilador armónico al Transmón</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_005_el_isplit_transmon_qubiti_qubit_ajustable_mendiante_flujo__myst.html">3.5. El <i>Split Transmon Qubit</i> (qubit ajustable mendiante flujo)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_006_el_iflux_qubiti_y_el_ifluxoniumi_hacia_una_mayor_anarmonicidad__myst.html">3.6. El <i>Flux Qubit</i> y el <i>Fluxonium</i>: Hacia una mayor anarmonicidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.html">3.7. Acoplamientos: Hamiltonianos de interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_008_puertas_simples__myst.html">3.8. Puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_009_puertas_de_dos_qubits__myst.html">3.9. Puertas de dos qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_010_lectura_de_los_qubits_myst.html">3.10. Lectura de los qubits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_011_conectividad__myst.html">3.11. Conectividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_012_retos_con_qubits_superconductores_myst.html">3.12. Retos con qubits superconductores</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_004_01_tecnicas_de_control_y_computacion_en_rmn_myst.html">4. Técnicas de control y computación en RMN.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_001_introduccion_myst.html">4.1. Introducción.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_002_el_espin_nuclear__myst.html">4.2. El espín nuclear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_003_qubits_de_rmn_myst.html">4.3. qubits de RMN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales__myst.html">4.4. Técnicas de pulsos elementales.</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_005_01_decoherencia_y_desfase_myst.html">5. Decoherencia y desfase</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.html">5.1. La coherencia en Mecánica Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_002_la_coherencia_en_computacion_cuantica_t_1_y_t_2_myst.html">5.2. La coherencia en Computación Cuántica: <span class="math notranslate nohighlight">\(T_1\)</span> y <span class="math notranslate nohighlight">\(T_2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_003_decoherencia_y_las_ecuaciones_de_bloch_myst.html">5.3. Decoherencia y las ecuaciones de Bloch.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_005_02/Section_004_resumen_myst.html">5.4. Resumen</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter_Bibliografia_myst.html">Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad__myst.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad__myst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/docs/Part_01/Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad__myst.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Conceptos básicos sobre Superconductividad.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superconductividad">3.1.1. Superconductividad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-cuantica-macroscopica-de-la-superconductividad">3.1.2. Descripción cuántica macroscópica de la superconductividad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#union-de-josephson-josephson-junction">3.1.3. Unión de Josephson (<i>Josephson Junction</i>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-de-josephson">3.1.3.1. Ecuaciones de Josephson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductancia-de-la-union-josephson">3.1.3.2. Inductancia de la unión Josephson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energia-de-josephson">3.1.3.3. Energía de Josephson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algunos-efectos-josephson">3.1.3.4. Algunos efectos Josephson</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <blockquote>
+<div><p>Jun 03, 2025 | 9 min read</p>
+</div></blockquote>
+<a href="https://www.talentq.es/es_es/cursos/">
+    <button class="rounded" style="float: right;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="var(--fill, white)"
+        d="M18.1 15.3c-.1.1-.3.2-.4.3l-2.4.4l1.7 3.6c.2.4 0 .8-.4
+            1l-2.8 1.3c-.1.1-.2.1-.3.1c-.3 0-.6-.2-.7-.4L11.2
+            18l-1.9 1.5c-.1.1-.3.2-.5.2c-.4 0-.8-.3-.8-.8V7.5c0-.5.3-.8.8-.8c.2 0
+            .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
+            1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
+    </svg>
+    Volver a TalentQ
+    </button>
+</a>
+<p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ket}[1]{|#1\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\branew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketnew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\braket}[2]{\langle #1|#2\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketbra}[2]{| #1\rangle \langle #2 |} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\i}{{\color{blue} i}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Hil}{{\cal H}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\cg}[1]{{\rm C}#1} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lp}{\left(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rp}{\right)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lc}{\left[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rc}{\right]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lch}{\left\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rch}{\right\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lp}{\Bigl(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rp}{\Bigr)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lc}{\Bigl[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rc}{\Bigr]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lch}{\Bigl\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rch}{\Bigr\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rqa}{\quad \Rightarrow \quad} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\bm}{\boldsymbol}\)</span></p>
+<section class="tex2jax_ignore mathjax_ignore" id="conceptos-basicos-sobre-superconductividad">
+<span id="sec-scq-conceptos-superconductividad"></span><h1><span class="section-number">3.1. </span>Conceptos básicos sobre Superconductividad.<a class="headerlink" href="#conceptos-basicos-sobre-superconductividad" title="Permalink to this heading">#</a></h1>
+<section id="superconductividad">
+<h2><span class="section-number">3.1.1. </span>Superconductividad<a class="headerlink" href="#superconductividad" title="Permalink to this heading">#</a></h2>
+<p>A temperaturas que la mayoría de la gente considera “normales”, todos los materiales (conocidos) presentan cierta resistencia eléctrica. Esto significa muestran una resistencia al flujo de corriente eléctrica. Debido a esta resistencia, parte de la energía se pierde en forma de calor. En la mayoría de los materiales, esta resistencia se mantiene aunque el material se enfríe a temperaturas muy bajas. La excepción son los materiales <b>superconductores</b>.</p>
+<p>En 1911, mientras estudiaban las propiedades de la materia a muy baja temperatura, el físico holandés Heike Kamerlingh Onnes y su equipo descubrieron que la resistencia eléctrica del mercurio llega a cero por debajo de 4,2 K (<span class="math notranslate nohighlight">\(\approx\)</span> -269 °C).  Fue la primera observación del fenómeno de la superconductividad.</p>
+<p>Por debajo de cierta <b>temperatura crítica</b>, ciertos materiales pasan al <b>estado superconductor</b>, caracterizado por dos propiedades básicas: En primer lugar, <b>no ofrecen resistencia al paso de la corriente eléctrica</b>. Cuando la resistencia cae a cero, una corriente puede circular por el interior del material sin disipación de energía. En segundo lugar, siempre que sean suficientemente débiles, <b>los campos magnéticos externos no penetran en el superconductor</b>, sino que permanecen en su superficie. Este fenómeno de expulsión del campo se conoce como <b>efecto Meissner</b>, en honor al físico que lo observó por primera vez en 1933.</p>
+<p>La física convencional no explica adecuadamente el estado superconductor, como tampoco lo hace la teoría cuántica elemental del estado sólido. No fue hasta 1957 cuando tres investigadores estadounidenses (John Bardeen, Leon Cooper y John Schrieffer) establecieron la teoría microscópica de la superconductividad. Según su <b>teoría BCS</b>, los electrones se agrupan en pares mediante la interacción con las vibraciones de la red (los llamados fonones), formando así <b>pares de Cooper</b> que se desplazan por el interior del sólido <b>sin fricción</b>. El sólido puede verse como una red de iones positivos inmersos en una nube de electrones. La energía de la interacción de los electrones es bastante débil y los pares pueden romperse fácilmente por efecto de la energía térmica; por eso la superconductividad suele darse a muy baja temperatura.</p>
+<p>Cuando un electrón atraviesa esta red, los iones se mueven ligeramente atraídos por la carga negativa del electrón. Este movimiento genera una zona eléctricamente positiva que, a su vez, atrae a otro electrón (ver sección  <a class="reference internal" href="#sec-scq-descrip-macro-superconductividad"><span class="std std-numref">3.1.2</span></a>).</p>
+<p>Sin embargo, la teoría BCS no explica la existencia de superconductores de alta temperatura a partir de 80 K (-193 °C), para los que hay que recurrir a otros mecanismos de acoplamiento de electrones.</p>
+</section>
+<section id="descripcion-cuantica-macroscopica-de-la-superconductividad">
+<span id="sec-scq-descrip-macro-superconductividad"></span><h2><span class="section-number">3.1.2. </span>Descripción cuántica macroscópica de la superconductividad<a class="headerlink" href="#descripcion-cuantica-macroscopica-de-la-superconductividad" title="Permalink to this heading">#</a></h2>
+<p>La mayoría de las propiedades distintivas de la superconductividad se explican mediante la descripción cuántica macroscópica de la superconductividad. El punto de partida de esta descripción es que todos los electrones superconductores pueden representarse cuánticamente mediante una única función de onda <span class="math notranslate nohighlight">\(\Psi(\vec{r})\)</span>. Aunque la forma exacta de la función de onda procede de la teoría de BCS, la mayor parte de la física de la superconductividad se deduce de la existencia de una función de onda macroscópica, independientemente de la forma exacta de la mima.</p>
+<p>El mecanismo físico de la superconductividad reside en el emparejamiento de las partículas de Fermi para formar un gas de Bose de cuasipartículas emparejadas. El mecanismo de este emparejamiento en los superconductores convencionales es el acoplamiento <b>electrón-fonón</b>.</p>
+<p>A grandes rasgos, la base física de la atracción entre dos electrones a través de la interacción electrón-fonón se ve en siguiente imagen: Un electrón que se desplaza por un conductor atrae las cargas positivas cercanas de la red. Esta deformación de la red hace que otro electrón, con espín opuesto, se desplace a la región de mayor densidad de cargas positivas. Los dos electrones se correlacionan. Como hay muchos pares de electrones de este tipo en un superconductor, estos pares se solapan muy fuertemente y forman un <b>condensado</b> muy colectivo. En este estado “condensado”, la ruptura de un par cambiará la energía de todo el condensado, no sólo de un electrón o de un par. Por tanto, la energía necesaria para romper un par está relacionada con la energía necesaria para romper todos los pares.</p>
+<p>Dado que el emparejamiento aumenta esta barrera de energía, las vibraciones de los átomos oscilantes en el conductor (que son pequeñas a temperaturas suficientemente bajas) no son suficientes para afectar al condensado en su conjunto, o a cualquier “par miembro” individual dentro del condensado. De este modo, los electrones permanecen emparejados y resisten todas las sacudidas, y el flujo de electrones en su conjunto (la corriente a través del superconductor) no experimentará resistencia. Así pues, el comportamiento colectivo del condensado es un ingrediente crucial necesario para la superconductividad. Podemos ver este comportamiento en la Fig.  <a class="reference internal" href="#fig-superconductors-bcs"><span class="std std-numref">3.1</span></a></p>
+<figure class="align-center" id="fig-superconductors-bcs">
+<a class="reference internal image-reference" href="../../../_images/Fig_superconductors_BCS.jpg"><img alt="../../../_images/Fig_superconductors_BCS.jpg" src="../../../_images/Fig_superconductors_BCS.jpg" style="width: 1000px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Formación de pares de Cooper</span><a class="headerlink" href="#fig-superconductors-bcs" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>El mecanismo de acoplamiento electrón-fonón para la superconductividad explica por qué los superconductores de mayor temperatura crítica (<span class="math notranslate nohighlight">\(T_c\)</span>) suelen ser metales con la mayor resistencia en estado normal, ya que el mismo mecanismo que produce la superconductividad (la interacción electrón-fonón) también da lugar a la dispersión de portadores en metales en estado normal. La vinculación experimental del mecanismo de superconductividad con la interacción electrón-fonón se produjo a través de la observación del efecto isótopo, que demostró que para los distintos isótopos del mercurio <span class="math notranslate nohighlight">\(T_c \propto M^{-1/2}\)</span>, donde <span class="math notranslate nohighlight">\(M\)</span> es la masa iónica de cada isótopo.</p>
+<p>El par de Cooper se forma por la interacción electrón-fonón entre estados con vectores de onda <span class="math notranslate nohighlight">\(\vec{k}\)</span> y <span class="math notranslate nohighlight">\(-\vec{k}\)</span> y con espines opuestos para maximizar la probabilidad de que los electrones estén próximos.</p>
+<p>Ginzburg y Landau observaron que todos los pares de Cooper se encuentran en el mismo estado de dos electrones y, por tanto, una única función de onda compleja puede denotar el <b>parámetro de orden</b> del estado superconductor. Con esta interpretación de <span class="math notranslate nohighlight">\(\Psi(\vec{r})\)</span> como un parámetro de orden complejo para un par Cooper, entonces <span class="math notranslate nohighlight">\(\Psi(\vec{r})\)</span> puede escribirse en términos de una amplitud y una fase</p>
+<div class="amsmath math notranslate nohighlight" id="equation-90e133b9-5bba-44be-b462-9473310cab9c">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-90e133b9-5bba-44be-b462-9473310cab9c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\Psi(\vec{r}) = \| \Psi(\vec{r}) e^{i \theta (\vec{r})} \| = \sqrt{n_s^*} e^{i \theta (\vec{r})}
+\end{equation}\]</div>
+<p>donde no hemos considerado explícitamente la dependencia temporal de <span class="math notranslate nohighlight">\(\Psi(\vec{r})\)</span>. El termino <span class="math notranslate nohighlight">\(n_s^*\)</span> se refiere a la densidad de pared de Cooper, que es la mitad de la densidad de electrones superconductores <span class="math notranslate nohighlight">\(n_s\)</span>. Es decir, <span class="math notranslate nohighlight">\(2n_s^* = n_s\)</span>, ya que dos electrones con vectores de onda <span class="math notranslate nohighlight">\(\vec{k}\)</span> y <span class="math notranslate nohighlight">\(-\vec{k}\)</span> están unidos en un par de Cooper. Aquí suponemos que la variación espacial significativa de la función de onda es a través de la fase <span class="math notranslate nohighlight">\(\theta (\vec{r})\)</span>, de modo que la densidad de pares de Cooper es esencialmente independiente de la posición y el tiempo. <span class="math notranslate nohighlight">\(\theta (\vec{r})\)</span> es la <b>fáse del superconductor</b>.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (Parámetro de orden)</p>
+<p>Un parámetro de orden es una medida del grado de orden a través de los límites en un sistema de transición de fase; normalmente oscila entre cero en una fase (normalmente por encima del punto crítico) y distinto de cero en la otra. En el punto crítico, la susceptibilidad del parámetro de orden suele divergir.</p>
+<p>Un ejemplo de parámetro de orden es la magnetización neta en un sistema ferromagnético que experimenta una transición de fase. Para transiciones líquido/gas, el parámetro de orden es la diferencia de las densidades.</p>
+<p>Algunas transiciones de fase, como la superconductora y la ferromagnética, pueden tener parámetros de orden para más de un grado de libertad. En tales fases, el parámetro de orden puede adoptar la forma de un número complejo, un vector o incluso un tensor, cuya magnitud llega a cero en la transición de fase.</p>
+</div>
+</section>
+<section id="union-de-josephson-josephson-junction">
+<span id="sec-scq-josephson"></span><h2><span class="section-number">3.1.3. </span>Unión de Josephson (<i>Josephson Junction</i>)<a class="headerlink" href="#union-de-josephson-josephson-junction" title="Permalink to this heading">#</a></h2>
+<p>Cuando dos superconductores están bien separados, son bastante independientes y pueden ser tratados por separado. Cuando entre ellos hay un contacto superconductor sustancial, estos forman un único superconductor: se dice que están <i>fuertemente ligados</i> (<b>strongly linked</b>).</p>
+<p>Sin embargo, tenemos casos intermedios en los que los electrones (pares de Cooper) pueden fluir de un superconductor a otro, pero de forma tan débil que cada superconductor puede ser visto como esencialmente en equilibro estático. Esto sucede, por ejemplo, cuando los superconductores están separados por una fina capa de un óxido el cual puede ser atravesado por los electrones mediante efecto túnel. También puede ser una fina capa de un metal normal o semiconductor, o un pequeño puente de material superconductor. A este tipo de uniones entre superconductores se las denomina <b>uniones Josephson</b> (<b>JJ</b> de sus siglas en inglés), y fueros descubiertas en 1962 por Brian Josephson <span id="id1">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id77" title="B.D. Josephson. Possible new effects in superconductive tunnelling. Physics Letters, 1(7):251-253, 1962. URL: https://www.sciencedirect.com/science/article/pii/0031916362913690, doi:https://doi.org/10.1016/0031-9163(62)91369-0.">13</a>]</span>.</p>
+<section id="ecuaciones-de-josephson">
+<h3><span class="section-number">3.1.3.1. </span>Ecuaciones de Josephson<a class="headerlink" href="#ecuaciones-de-josephson" title="Permalink to this heading">#</a></h3>
+<p>Supongamos que conectamos los superconductores a los polos de una batería, de forma que aplicamos una diferencia de potencial <span class="math notranslate nohighlight">\(V\)</span> en la unión, supongamos que podemos jugar con la batería para hacer variar esta diferencia de potencial. Es decir, la diferencia de potencial es función del tiempo: <span class="math notranslate nohighlight">\(V(t)\)</span> . Es estas situaciones tenemos una corriente entre los dos superconductores que está descrita por las <b>ecuaciones de Josephson</b></p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-jj">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-ec-scq-jj" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{equation} 
+\begin{aligned}
+J &amp;= J_c \sin \delta \\
+\frac{d \delta}{dt} &amp;= \frac{2eV(t)}{\hbar} \, ,
+\end{aligned}
+\end{equation} \end{split}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(J\)</span> es la densidad de corriente, <span class="math notranslate nohighlight">\(J_c\)</span> es la densidad de corriente crítica, <span class="math notranslate nohighlight">\(e\)</span> es la carga del electrón y <span class="math notranslate nohighlight">\(\delta\)</span> es la diferencia de fase entre los dos superconductores <span class="math notranslate nohighlight">\(\delta = \theta_1 - \theta_2\)</span>.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota (modelo simple de Feynman)</p>
+<p>Las ecuaciones  <a class="reference internal" href="#equation-ec-scq-jj">(3.2)</a> pueden derivarse siguiendo un modelo simple del efecto Josephson descrito por Feynman en sus Lectures <span id="id2">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id75" title="Richard Phillips Feynman, Robert Benjamin Leighton, and Matthew Sands. The Feynman lectures on physics; New millennium ed. Basic Books, New York, NY, 2010. Originally published 1963-1965. URL: https://cds.cern.ch/record/1494701.">7</a>]</span>. En concreto, puede encontrase online <a class="reference external" href="https://www.feynmanlectures.caltech.edu/III_21.html#Ch21-S9">aquí</a> o verse en el capítulo “Superconductivity: Tunneling” del libro <span id="id3">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id76" title="G.F. Bassani, G. Liedl, and P. Wyder. Encyclopedia of Condensed Matter Physics. Elsevier Science, 2005. ISBN 9780122276101. URL: https://www.sciencedirect.com/referencework/9780123694010/encyclopedia-of-condensed-matter-physics.">2</a>]</span>.</p>
+</div>
+<p>Suponiendo una densidad de corriente uniforme a través del área <span class="math notranslate nohighlight">\(A\)</span> de la unión, la corriente total es <span class="math notranslate nohighlight">\(I = AJ\)</span>, con lo que</p>
+<div class="math notranslate nohighlight" id="equation-ec-scq-jj-i">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-ec-scq-jj-i" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\boxed{I = I_c \sin \delta} \, .
+\end{equation} \]</div>
+<p>donde <span class="math notranslate nohighlight">\(I_c\)</span> es la corriente crítica. Además, integrando la segunda ecuación de la Ec.  <a class="reference internal" href="#equation-ec-scq-jj">(3.2)</a> tenemos</p>
+<div class="amsmath math notranslate nohighlight" id="equation-874104c8-0ad6-4cb5-9ba8-e0b75f25b56b">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-874104c8-0ad6-4cb5-9ba8-e0b75f25b56b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\boxed{\delta(t) = \delta_0 + \frac{2e}{\hbar} \int V(t)dt} \,.
+\end{equation}\]</div>
+</section>
+<section id="inductancia-de-la-union-josephson">
+<h3><span class="section-number">3.1.3.2. </span>Inductancia de la unión Josephson<a class="headerlink" href="#inductancia-de-la-union-josephson" title="Permalink to this heading">#</a></h3>
+<p>En la sección  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#sec-sqc-inductor"><span class="std std-numref">3.4.2</span></a> veremos más en detalle que es un <b>inductor</b> y que es la <b>inductancia</b>. Por ahora nos quedamos simplemente con que la unión Josephson se comporta como un <b>inductor no lineal</b> y que la inductancia es un parámetro que describe los inductores. Podemos ver este parámetro en la Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-sqc-inductor-v-flux">(3.66)</a>. Vamos a jugar con las ecuaciones de Josephson para llegar a una expresión de esta forma y calcular así la inductancia.</p>
+<p>Reescribiendo la Ec.  <a class="reference internal" href="#equation-ec-scq-jj-i">(3.3)</a></p>
+<div class="amsmath math notranslate nohighlight" id="equation-8fc75d03-702f-4004-b888-9089943c6f14">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-8fc75d03-702f-4004-b888-9089943c6f14" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{\partial I }{\partial \delta} = I_c \cos \delta
+\end{equation}\]</div>
+<p>Aplicando la regla de la cena y teniendo en cuenta la Ec.  <a class="reference internal" href="#equation-ec-scq-jj">(3.2)</a></p>
+<div class="amsmath math notranslate nohighlight" id="equation-a7ef64cd-d0c1-4404-940b-94b683aa1d21">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-a7ef64cd-d0c1-4404-940b-94b683aa1d21" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{\partial I}{\partial t} = \frac{\partial I}{\partial \delta} \frac{\partial \delta}{\partial t} = I_c \cos \delta \cdot \frac{2e}{\hbar} V \,.
+\end{equation}\]</div>
+<p>Reescribiendo la ecuación anterior llegamos a:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-46467118-8fb0-435d-accd-243e75bde709">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-46467118-8fb0-435d-accd-243e75bde709" title="Permalink to this equation">#</a></span>\[\begin{equation}
+V = \frac{\hbar}{2 e I_c \cos \delta}  \frac{\partial I}{\partial t} = L(\delta) \frac{\partial I}{\partial t}
+\rqa
+\boxed{L(\delta) = \frac{\hbar}{2 e I_c \cos \delta}}
+\end{equation}\]</div>
+<p>donde se ha tenido en cuenta la Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-sqc-inductor-v-flux">(3.66)</a>.</p>
+</section>
+<section id="energia-de-josephson">
+<h3><span class="section-number">3.1.3.3. </span>Energía de Josephson<a class="headerlink" href="#energia-de-josephson" title="Permalink to this heading">#</a></h3>
+<p>Basándose en la similitud de la unión Josephson con un inductor no lineal, se puede calcular la energía almacenada en una unión Josephson cuando una supercorriente fluye a través de ella.</p>
+<p>Asumimos que a tiempo <span class="math notranslate nohighlight">\(t_1\)</span>, la fase de Josephson es <span class="math notranslate nohighlight">\(\delta_1\)</span>; A tiempo <span class="math notranslate nohighlight">\(t_2\)</span>, la fase de Josephson evoluciona a <span class="math notranslate nohighlight">\(\delta_2\)</span>. El aumento de energía en la unión es igual al trabajo realizado en la unión:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6a18caa3-fd2a-47eb-b884-f0e090df7554">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-6a18caa3-fd2a-47eb-b884-f0e090df7554" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\Delta E
+= \int_{t_1}^{t_2} IV \, dt
+= \int_{\delta_1}^{\delta_2} I \frac{\hbar}{2e} d \delta^{'}
+= \frac{\hbar}{2e} \int_{\delta_1}^{\delta_2} I_c \sin \delta \cdot d \delta^{'}
+= - \frac{\hbar}{2e} I_c \lc \cos \delta_2 - \cos \delta_1 \rc
+\end{equation}\]</div>
+<p>Esto demuestra que el cambio de energía en la unión Josephson depende sólo del estado inicial y final de la unión y no de la trayectoria. Por lo tanto, la energía almacenada en una unión Josephson es una función de estado, que se puede definir como:</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-jj-e">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-ec-sqc-jj-e" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+\boxed{E (\delta) = \frac{\hbar I_c}{2e} \cos \delta = - E_J \cos \delta }
+\end{equation} \]</div>
+<p>donde</p>
+<div class="math notranslate nohighlight" id="equation-ec-sqc-jj-ej">
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-ec-sqc-jj-ej" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+E_J = \left| E(0) \right| = \hbar I_c/(2e)
+\end{equation} \]</div>
+<p>es un parámetro característico de la unión Josephson, denominado <b>energía Josephson</b>.</p>
+</section>
+<section id="algunos-efectos-josephson">
+<h3><span class="section-number">3.1.3.4. </span>Algunos efectos Josephson<a class="headerlink" href="#algunos-efectos-josephson" title="Permalink to this heading">#</a></h3>
+<p>Aunque la unión Josephson produce varios efectos, vamos a centrarnos en los dos más simples (pueden verse más en <span id="id4">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id78" title="J R Waldram. The josephson effects in weakly coupled superconductors. Reports on Progress in Physics, 39(8):751, aug 1976. URL: https://dx.doi.org/10.1088/0034-4885/39/8/002, doi:10.1088/0034-4885/39/8/002.">22</a>]</span>):</p>
+<ul>
+<li><p><b>Efecto Josephson de Corriente Continua (DC Josephson effect)</b>: Si tenemos <span class="math notranslate nohighlight">\(V(t)=0\)</span>, entonces</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f1e5caee-a098-472d-8775-4f61526b55a1">
+<span class="eqno">(3.11)<a class="headerlink" href="#equation-f1e5caee-a098-472d-8775-4f61526b55a1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \delta = \delta_0 \rqa I = I_c \sin \delta_0
+    \end{equation}\]</div>
+<p>Es decir, cuando no hay diferencia de voltaje en la unión tenemos una <b>corriente continua</b> entre <span class="math notranslate nohighlight">\(-I_c\)</span> y <span class="math notranslate nohighlight">\(I_c\)</span>.</p>
+</li>
+<li><p><b>Efecto Josephson de Corriente Alterna (AC Josephson effect)</b>: Si tenemos <span class="math notranslate nohighlight">\(V(t) = V_0\)</span> constante, entonces</p>
+<div class="amsmath math notranslate nohighlight" id="equation-db00a611-1978-4ce4-beab-87564e2007b4">
+<span class="eqno">(3.12)<a class="headerlink" href="#equation-db00a611-1978-4ce4-beab-87564e2007b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \delta = \delta_0 + \frac{2eV_0}{\hbar} t \rqa I = I_c \sin \lp \delta_0 + \frac{2eV_0}{\hbar} t  \rp
+    \end{equation}\]</div>
+<p>Es decir, al aplicar una diferencia de pontecial constante en la unión, aparece una <b>corriente alterna</b> de frecuencia proporcional a la diferencia de potencial.</p>
+</li>
+</ul>
+<hr class="docutils" />
+<p>Autor:</p>
+<p>David Castaño (<a class="reference external" href="https://www.scbi.uma.es/site/">UMA-SCBI</a>)</p>
+<a class="reference internal image-reference" href="../../../_images/Logo_UMA3.jpeg"><img alt="../../../_images/Logo_UMA3.jpeg" src="../../../_images/Logo_UMA3.jpeg" style="width: 170px;" /></a>
+<hr class="docutils" />
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png"><img alt="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" src="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" style="width: 2000px;" /></a>
+</figure>
+<center>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img aling="left" alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+</center>
+<p>License: <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+<p>This work has been financially supported by the Ministry for Digital Transformation and of Civil Service of the Spanish Government through the QUANTUM ENIA project call - Quantum Spain project, and by the European Union through the Recovery, Transformation and Resilience Plan - NextGenerationEU within the framework of the Digital Spain 2026 Agenda.</p>
+<center>
+<img align="left" src="https://quantumspain-project.es/wp-content/uploads/2024/02/Banner-QS_GOB_v2.png" width="1000px" />
+</center></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/Part_01/Chapter_003_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Computación Cuántica con qubits Superconductores</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Conceptos básicos sobre Mecánida Clásica</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superconductividad">3.1.1. Superconductividad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-cuantica-macroscopica-de-la-superconductividad">3.1.2. Descripción cuántica macroscópica de la superconductividad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#union-de-josephson-josephson-junction">3.1.3. Unión de Josephson (<i>Josephson Junction</i>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-de-josephson">3.1.3.1. Ecuaciones de Josephson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inductancia-de-la-union-josephson">3.1.3.2. Inductancia de la unión Josephson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energia-de-josephson">3.1.3.3. Energía de Josephson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algunos-efectos-josephson">3.1.3.4. Algunos efectos Josephson</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://quantumspain-project.es">QuantumSpain</a> & <a href="https://www.talentq.es/es_es/">TalentQ</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
