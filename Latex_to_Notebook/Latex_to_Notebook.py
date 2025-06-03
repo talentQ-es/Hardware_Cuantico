@@ -174,7 +174,7 @@ if os.path.exists(Notebook_folder_path):
     os.rename(Notebook_folder_path,Notebook_old_folder_path)
 
 os.mkdir(Notebook_folder_path)
-shutil.copy(Path_index, Notebook_folder_path+"/")
+shutil.copy(Path_index, Notebook_folder_path+"/index.md")
 #shutil.copytree(Figures_folder,Notebook_folder_path +"/"+ Figures_folder)
 
 

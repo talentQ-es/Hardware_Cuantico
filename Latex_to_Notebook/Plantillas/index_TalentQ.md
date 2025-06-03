@@ -17,8 +17,7 @@
 <div style="clear: both;"></div>
 <br>
 
-Curso de Introducción a la Computación Cuántica del [Servicio de Supercomputación y Bioinformática](https://www.scbi.uma.es/web/es/inicio/) de la [Universidad de Málaga](https://www.uma.es/)
-
+Curso sobre Hardware usado en Computación Cuántica (Qubits Superconductores, Iones Atrapados, ...)
 
 ---
 ## Índice
@@ -32,6 +31,12 @@ Curso de Introducción a la Computación Cuántica del [Servicio de Supercomputa
 %:glob:
 %*
 %```
+
+
+---
+Autor:
+David Castaño ([UMA-SCBI](https://www.scbi.uma.es/web/es/inicio/))
+
 
 <br>
 <a href="https://www.talentq.es/es_es/cursos/">

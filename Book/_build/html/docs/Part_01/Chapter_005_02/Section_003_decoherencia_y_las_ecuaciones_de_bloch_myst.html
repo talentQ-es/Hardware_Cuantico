@@ -538,8 +538,8 @@ document.write(`
 \end{bmatrix}
 \end{equation} \end{split}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\omega_0 = \gamma B_0\)</span> y <span class="math notranslate nohighlight">\(\omega_1 = \gamma B_1\)</span>. La dinámica de espín bajo el Hamiltoniano  <a class="reference internal" href="#equation-ec-decoherencia-h-electron">(5.3)</a> está gobernada por la <b>Ecuación de von Neumann</b> para la matriz densidad</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0be85683-f2bf-49e7-98c7-7a232833c696">
-<span class="eqno">(5.4)<a class="headerlink" href="#equation-0be85683-f2bf-49e7-98c7-7a232833c696" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8a464e49-1d45-49fa-a0d3-35fbd13e6ad6">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-8a464e49-1d45-49fa-a0d3-35fbd13e6ad6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 i \hbar \frac{\partial \rho}{\partial t} = \lc \mathcal{H}, \rho \rc
 \end{equation}\]</div>
 <div class="note admonition">
@@ -548,19 +548,19 @@ i \hbar \frac{\partial \rho}{\partial t} = \lc \mathcal{H}, \rho \rc
 ecuación de von Neumann (también conocida como ecuación de Liouville-von Neumann) describe cómo
 evoluciona un operador de densidad en el tiempo. Las dos ecuaciones son equivalentes, en el
 sentido de que cualquiera puede derivarse de la otra. La ecuación de von Neumann estable</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e3e4005-f832-42e3-b7ac-b6c1d489d2bd">
-<span class="eqno">(5.5)<a class="headerlink" href="#equation-8e3e4005-f832-42e3-b7ac-b6c1d489d2bd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-218373c1-70b5-4650-b100-002b5ba94855">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-218373c1-70b5-4650-b100-002b5ba94855" title="Permalink to this equation">#</a></span>\[\begin{equation}
 i \hbar \frac{\partial \rho}{\partial t} = \lc \mathcal{H}, \rho \rc
 \end{equation}\]</div>
 <p>donde los corchetes denotan el <b>conmutador</b>, es decir,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-461f2998-3043-4327-a9f8-8f318ec25041">
-<span class="eqno">(5.6)<a class="headerlink" href="#equation-461f2998-3043-4327-a9f8-8f318ec25041" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-03e3e58a-736a-43f3-bdce-02eb5e2feefd">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-03e3e58a-736a-43f3-bdce-02eb5e2feefd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lc \mathcal{H}, \rho \rc = \mathcal{H} \rho - \rho \mathcal{H}
 \end{equation}\]</div>
 </div>
 <p>Como también vimos, podemos eliminar la dependencia temporal de <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> yendo a un sistema de referencia rotante a una frecuencia <span class="math notranslate nohighlight">\(\omega_{rf}\)</span>. En este sistema, el Hamiltoniano toma la forma de la Ec.  <a class="reference internal" href="../Chapter_004_02/Section_003_qubits_de_rmn_myst.html#equation-ec-hardware-nmr-h-rot-single">(4.34)</a>. En forma matricial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b949b550-d814-49aa-8631-ff49a58408dc">
-<span class="eqno">(5.7)<a class="headerlink" href="#equation-b949b550-d814-49aa-8631-ff49a58408dc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3ce0e56e-5224-4b66-9629-6c413d66e039">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-3ce0e56e-5224-4b66-9629-6c413d66e039" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathcal{H}^{rot} = - (\omega_0 - \omega_{rf}) S_z - \omega_1 \lc \cos (\phi) S_x + \sin (\phi) S_y \rc =
 - \frac{\hbar}{2} \begin{bmatrix}
 (\omega_0 - \omega_{rf})  &amp;  \omega_1 e^{-i \phi} \\
@@ -645,20 +645,20 @@ i \hbar \frac{\partial \rho_{\uparrow \downarrow}}{\partial t} &amp; =
 \end{equation} \end{split}\]</div>
 <p>para imitar el comportamiento observado fenomenológicamente de la decoherencia. Esto es simular a añadir un término de fricción proporcional a la velocidad en la ecuación de newton clásica. Las dos constantes pueden calcularse en determinadas condiciones si se dispone de suficiente información sobre el entorno. Este sencillo enfoque fenomenológico resulta ser bastante exitoso en la descripción de muchos experimentos, que van desde la RMN y la ESR hasta la óptica cuántica, aunque los cálculos explícitos reales de <span class="math notranslate nohighlight">\(T_1\)</span> y <span class="math notranslate nohighlight">\(T_2\)</span> suelen ser bastante difíciles. Quizás sea más fructífero considerar <span class="math notranslate nohighlight">\(T_1\)</span> y <span class="math notranslate nohighlight">\(T_2\)</span> como parámetros puramente fenomenológicos (que caracterizan las relajaciones longitudinal y transversal respectivamente en la dinámica TLS) que deben obtenerse a partir de medidas experimentales.</p>
 <p>Recordemos que el vector unitario de magnetización está relacionado con el espín mediante</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d5ed418e-d3f8-46bb-9223-73f8b814f751">
-<span class="eqno">(5.10)<a class="headerlink" href="#equation-d5ed418e-d3f8-46bb-9223-73f8b814f751" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-26039e24-e25e-4c9d-92e8-7a02aace5ab2">
+<span class="eqno">(5.10)<a class="headerlink" href="#equation-26039e24-e25e-4c9d-92e8-7a02aace5ab2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vec{M} = \text{Tr} \lp \rho \vec{\sigma} \rp
 \end{equation}\]</div>
 <p>con lo que</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc867ecb-fb7a-4ade-865b-c48ecf696589">
-<span class="eqno">(5.11)<a class="headerlink" href="#equation-fc867ecb-fb7a-4ade-865b-c48ecf696589" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1140db1e-fa38-4cc6-98dd-8fd123b064de">
+<span class="eqno">(5.11)<a class="headerlink" href="#equation-1140db1e-fa38-4cc6-98dd-8fd123b064de" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_x = 2 \text{Re} (\rho_{\uparrow \downarrow})\, , \hspace{2cm}
 M_y = -2 \text{Im}(\rho_{\uparrow \downarrow}) \, , \hspace{2cm}
 M_z = (\rho_{\uparrow \uparrow} - \rho_{\downarrow \downarrow}) \,.
 \end{equation}\]</div>
 <p>Podemos ahora reescribir las Eqs.  <a class="reference internal" href="#equation-ec-decoherencia-rho-up-up-up-down-ficcion">(5.9)</a> con respecto a las componentes del vector real <span class="math notranslate nohighlight">\(\vec{M}\)</span>, obteniendo las <b>ecuaciones de Bloch</b> en el sistema de referencia rotante:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a64fa4ed-22f6-4599-ba69-f1593069598b">
-<span class="eqno">(5.12)<a class="headerlink" href="#equation-a64fa4ed-22f6-4599-ba69-f1593069598b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-26f754cb-6667-45f2-9dd3-9140a358fc27">
+<span class="eqno">(5.12)<a class="headerlink" href="#equation-26f754cb-6667-45f2-9dd3-9140a358fc27" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 \frac{\partial M_x}{\partial t} &amp; = - \frac{1}{T_2} M_x - \Delta\omega M_y \, , \\
 \frac{\partial M_y}{\partial t} &amp; = \Delta\omega - \frac{1}{T_2} M_y - \omega_1 M_z\, , \\
