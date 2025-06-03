@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.5. Manipulación de múltiples iones. &#8212; My Jupyter Book</title>
+    <title>2.5. Manipulación de múltiples iones. &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
   
   
   
@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfile.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -55,6 +58,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,6 +103,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_002_02/Section_005_manipulacion_de_multiples_iones_myst';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="2.6. Lectura del estado de los iones" href="Section_006_lectura_del_estado_de_los_iones_myst.html" />
@@ -153,8 +191,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
   
-    <p class="title logo__title">My Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -170,14 +214,6 @@ const thebe_selector_output = ".output, .cell_output"
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../index.html">
-                    El camino de los Qubits
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -260,6 +296,70 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_002_02/Section_005_manipulacion_de_multiples_iones_myst.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_002_02/Section_005_manipulacion_de_multiples_iones_myst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -372,20 +472,6 @@ document.write(`
   <blockquote>
 <div><p>Jun 03, 2025 | 2 min read</p>
 </div></blockquote>
-<img src="Figuras/Fig_logo_UMA_scbi.png" align=center  width="2000px"/>
-<a href="https://www.scbi.uma.es/web/es/computacion-cuantica/">
-    <button class="rounded" style="float: right;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-        <path fill="var(--fill, white)"
-        d="M18.1 15.3c-.1.1-.3.2-.4.3l-2.4.4l1.7 3.6c.2.4 0 .8-.4
-            1l-2.8 1.3c-.1.1-.2.1-.3.1c-.3 0-.6-.2-.7-.4L11.2
-            18l-1.9 1.5c-.1.1-.3.2-.5.2c-.4 0-.8-.3-.8-.8V7.5c0-.5.3-.8.8-.8c.2 0
-            .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
-            1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
-    </svg>
-    Volver a SCBI - Computación Cuantica
-    </button>
-</a>
 <p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
 <span class="math notranslate nohighlight">\( \newcommand{\ket}[1]{|#1\rangle} \)</span>
 <span class="math notranslate nohighlight">\( \newcommand{\branew}[1]{\langle #1|} \)</span>
@@ -415,16 +501,20 @@ document.write(`
 <p>Una descripción completa de los modos normales y de los niveles de energía detallados que surgen del estudio de esta estructura queda fuera del alcance de este curso. Resumimos los resultados mencionando que, entre todos sus posibles comportamientos colectivos, el cristal de Coulomb exhibe el modo de centro de masa de menor energía, similar al movimiento de un único ion, pero que ahora implica a toda la cadena de partículas atrapadas moviéndose al unísono.</p>
 <p>En al sección  <a class="reference internal" href="Section_004_manipulando_iones_individuales_puertas_simples__myst.html#sec-ions-single-ion"><span class="std std-numref">2.4</span></a> hemos explotado la interacción entre los grados de libertad vibratorios y atómico de un único ion. Los iones de este cristal pueden seguir considerándose qubits atómicos individuales, pero desde el punto de vista del movimiento deben considerarse como una red. En consecuencia, <b>ya no pueden cambiar de estado vibratorios individualmente</b>, y las únicas transiciones energéticas permitidas serán necesariamente las asociadas a los <b>modos normales de la red</b> cuantizada correspondiente.</p>
 <p>Esto tiene las dos consecuencias siguientes.</p>
-<ul class="simple">
-<li><p>El estado de una cadena de <span class="math notranslate nohighlight">\(N\)</span> iones debe describirse como el producto tensorial de <span class="math notranslate nohighlight">\(N\)</span> qubits atómicos individuales y <b>un solo estado vibratorio global</b>:
-\begin{equation}
-\ket{x_{n-1},\nu_{n-1}}, \dots, \ket{x_0, \nu_0} , \rightarrow , \ket{x_{n-1} \dots x_0, \nu}  ,, \qquad \lp x_j \in \lch g,e \rch, , \nu \in \lch n=0,n=1 \rch \rp
-\end{equation}</p></li>
-<li><p>Las transiciones de <i>red</i> y <i>blue sideband</i> cambiarán ahora el estado vibratorio de <b>toda la cadena</b>, aunque siguen operando sobre estados atómicos <b>individuales</b> de los iones. Por ejemplo, la <i>red sideband</i> aplicada al segundo ion de una cadena de dos iones da como resultado
-\begin{equation}
-\mathcal{U}_I^{\text{(rsb)}}(t) \ket{g_2, g_1, \mathbf{1}} = \cos(\nu\beta/2) \ket{g_2, g_1, \mathbf{1}} - i e^{i (\phi+\pi/2)} \sin(\nu\beta/2) \ket{e_2, g_1, \mathbf{0}} , .
-\end{equation}
-Ahora la energía intercambiada en una transición vibratoria de la red es ahora <span class="math notranslate nohighlight">\(N\)</span> veces mayor que la implicada anteriormente en las transiciones de un solo ion, ya que <span class="math notranslate nohighlight">\(N\)</span> iones tienen que cambiar su movimiento a la vez.</p></li>
+<ul>
+<li><p>El estado de una cadena de <span class="math notranslate nohighlight">\(N\)</span> iones debe describirse como el producto tensorial de <span class="math notranslate nohighlight">\(N\)</span> qubits atómicos individuales y <b>un solo estado vibratorio global</b>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8aec12d3-8bf9-40ec-8cd7-7c49363f5048">
+<span class="eqno">(2.19)<a class="headerlink" href="#equation-8aec12d3-8bf9-40ec-8cd7-7c49363f5048" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \ket{x_{n-1},\nu_{n-1}}, \dots, \ket{x_0, \nu_0} \, \rightarrow \, \ket{x_{n-1} \dots x_0, \nu}  \,, \qquad \lp x_j \in \lch g,e \rch, \, \nu \in \lch n=0,n=1 \rch \rp
+    \end{equation}\]</div>
+</li>
+<li><p>Las transiciones de <i>red</i> y <i>blue sideband</i> cambiarán ahora el estado vibratorio de <b>toda la cadena</b>, aunque siguen operando sobre estados atómicos <b>individuales</b> de los iones. Por ejemplo, la <i>red sideband</i> aplicada al segundo ion de una cadena de dos iones da como resultado</p>
+<div class="amsmath math notranslate nohighlight" id="equation-95a4ea0a-bad4-4650-92fa-6b4ecf2bf87b">
+<span class="eqno">(2.20)<a class="headerlink" href="#equation-95a4ea0a-bad4-4650-92fa-6b4ecf2bf87b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \mathcal{U}_I^{\text{(rsb)}}(t) \ket{g_2, g_1, \mathbf{1}} = \cos(\nu\beta/2) \ket{g_2, g_1, \mathbf{1}} - i e^{i (\phi+\pi/2)} \sin(\nu\beta/2) \ket{e_2, g_1, \mathbf{0}} \, .
+    \end{equation}\]</div>
+<p>Ahora la energía intercambiada en una transición vibratoria de la red es ahora <span class="math notranslate nohighlight">\(N\)</span> veces mayor que la implicada anteriormente en las transiciones de un solo ion, ya que <span class="math notranslate nohighlight">\(N\)</span> iones tienen que cambiar su movimiento a la vez.</p>
+</li>
 </ul>
 <p>El hecho de que toda la red se vea ahora afectada por una transición vibratoria implica una especie de <b>interacción de largo alcance</b> entre los iones del cristal. Esto allana el camino para la implementación de las puertas multiqubit (la puerta CNOT) en la sección  <a class="reference internal" href="Section_007_puertas_multiqubit_con_iones__myst.html#sec-ions-multiqubit"><span class="std std-numref">2.7</span></a>.</p>
 <p>Las trampas lineales actuales pueden albergar aproximadamente <span class="math notranslate nohighlight">\(\sim 10^2\)</span> iones, pero actualmente se están desarrollando propuestas para escalar el sistema (para satisfacer el criterio 1b de la sección  <a class="reference internal" href="../Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.html#sec-criterio-divicenzo"><span class="std std-numref">1.3.1</span></a>) mediante la construcción de redes de trampas. En estos sistemas, los fotones se utilizan para transferir información entre trampas y, más recientemente, para transportar iones.</p>
@@ -501,7 +591,7 @@ Ahora la energía intercambiada en una transición vibratoria de la red es ahora
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By <a href="https://quantumspain-project.es">QuantumSpain</a> & <a href="https://www.talentq.es/es_es/">TalentQ</a>
 </p>
 
   </div>

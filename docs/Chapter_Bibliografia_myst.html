@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Bibliografía &#8212; My Jupyter Book</title>
+    <title>Bibliografía &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
   
   
   
@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -55,6 +58,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -64,6 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Chapter_Bibliografia_myst';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="4.4. Técnicas de pulsos elementales." href="Part_01/Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales__myst.html" />
@@ -150,8 +188,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
+    <script>document.write(`<img src="../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
   
-    <p class="title logo__title">My Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -167,14 +211,6 @@ const thebe_selector_output = ".output, .cell_output"
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="index.html">
-                    El camino de los Qubits
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="Part_01/Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -257,6 +293,70 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Chapter_Bibliografia_myst.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Chapter_Bibliografia_myst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -368,6 +468,70 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="bibliografia">
 <span id="sec-bibliografia-global"></span><h1>Bibliografía<a class="headerlink" href="#bibliografia" title="Permalink to this heading">#</a></h1>
+<div class="docutils container" id="id1">
+<dl class="citation">
+<dt class="label" id="id84"><span class="brackets">1</span></dt>
+<dd><p>Morteza Aghaee, Arun Akkala, Zulfi Alam, Rizwan Ali, Alejandro Alcaraz Ramirez, Mariusz Andrzejczuk, Andrey E. Antipov, Pavel Aseev, Mikhail Astafev, Bela Bauer, Jonathan Becker, Srini Boddapati, Frenk Boekhout, Jouri Bommer, Tom Bosma, Leo Bourdet, Samuel Boutin, Philippe Caroff, Lucas Casparis, Maja Cassidy, Sohail Chatoor, Anna Wulf Christensen, Noah Clay, William S. Cole, Fabiano Corsetti, Ajuan Cui, Paschalis Dalampiras, Anand Dokania, Gijs de Lange, Michiel de Moor, Juan Carlos Estrada Saldaña, Saeed Fallahi, Zahra Heidarnia Fathabad, John Gamble, Geoff Gardner, Deshan Govender, Flavio Griggio, Ruben Grigoryan, Sergei Gronin, Jan Gukelberger, Esben Bork Hansen, Sebastian Heedt, Jesús Herranz Zamorano, Samantha Ho, Ulrik Laurens Holgaard, Henrik Ingerslev, Linda Johansson, Jeffrey Jones, Ray Kallaher, Farhad Karimi, Torsten Karzig, Evelyn King, Maren Elisabeth Kloster, Christina Knapp, Dariusz Kocon, Jonne Koski, Pasi Kostamo, Peter Krogstrup, Mahesh Kumar, Tom Laeven, Thorvald Larsen, Kongyi Li, Tyler Lindemann, Julie Love, Roman Lutchyn, Morten Hannibal Madsen, Michael Manfra, Signe Markussen, Esteban Martinez, Robert McNeil, Elvedin Memisevic, Trevor Morgan, Andrew Mullally, Chetan Nayak, Jens Nielsen, William Hvidtfelt Padkær Nielsen, Bas Nijholt, Anne Nurmohamed, Eoin O'Farrell, Keita Otani, Sebastian Pauka, Karl Petersson, Luca Petit, Dmitry I. Pikulin, Frank Preiss, Marina Quintero-Perez, Mohana Rajpalke, Katrine Rasmussen, Davydas Razmadze, Outi Reentila, David Reilly, Richard Rouse, Ivan Sadovskyy, Lauri Sainiemi, Sydney Schreppler, Vadim Sidorkin, Amrita Singh, Shilpi Singh, Sarat Sinha, Patrick Sohr, Toma\ifmmode  \check s\else  š\fi  Stankevi\ifmmode  \check c\else  č\fi , Lieuwe Stek, Henri Suominen, Judith Suter, Vicky Svidenko, Sam Teicher, Mine Temuerhan, Nivetha Thiyagarajah, Raj Tholapi, Mason Thomas, Emily Toomey, Shivendra Upadhyay, Ivan Urban, Saulius Vaitiek\ifmmode  \dot e\else  ė\fi nas, Kevin Van Hoogdalem, David Van Woerkom, Dmitrii V. Viazmitinov, Dominik Vogel, Steven Waddy, John Watson, Joseph Weston, Georg W. Winkler, Chung Kai Yang, Sean Yau, Daniel Yi, Emrah Yucelen, Alex Webster, Roland Zeisel, and Ruichen Zhao. Inas-al hybrid devices passing the topological gap protocol. <em>Phys. Rev. B</em>, 107:245423, Jun 2023. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevB.107.245423">https://link.aps.org/doi/10.1103/PhysRevB.107.245423</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevB.107.245423">doi:10.1103/PhysRevB.107.245423</a>.</p>
+</dd>
+<dt class="label" id="id76"><span class="brackets">2</span></dt>
+<dd><p>G.F. Bassani, G. Liedl, and P. Wyder. <em>Encyclopedia of Condensed Matter Physics</em>. Elsevier Science, 2005. ISBN 9780122276101. URL: <a class="reference external" href="https://www.sciencedirect.com/referencework/9780123694010/encyclopedia-of-condensed-matter-physics">https://www.sciencedirect.com/referencework/9780123694010/encyclopedia-of-condensed-matter-physics</a>.</p>
+</dd>
+<dt class="label" id="id85"><span class="brackets">3</span></dt>
+<dd><p>Francesco Bernardini, Abhijit Chakraborty, and Carlos R Ordóñez. Quantum computing with trapped ions: a beginner’s guide. <em>European Journal of Physics</em>, 45(1):013001, nov 2023. URL: <a class="reference external" href="https://dx.doi.org/10.1088/1361-6404/ad06be">https://dx.doi.org/10.1088/1361-6404/ad06be</a>, <a class="reference external" href="https://doi.org/10.1088/1361-6404/ad06be">doi:10.1088/1361-6404/ad06be</a>.</p>
+</dd>
+<dt class="label" id="id82"><span class="brackets">4</span></dt>
+<dd><p>J. I. Cirac and P. Zoller. Quantum computations with cold trapped ions. <em>Phys. Rev. Lett.</em>, 74:4091–4094, May 1995. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevLett.74.4091">https://link.aps.org/doi/10.1103/PhysRevLett.74.4091</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.74.4091">doi:10.1103/PhysRevLett.74.4091</a>.</p>
+</dd>
+<dt class="label" id="id73"><span class="brackets">5</span></dt>
+<dd><p>David P. DiVincenzo. The physical implementation of quantum computation. <em>Fortschritte der Physik</em>, 48(9–11):771–783, September 2000. URL: <a class="reference external" href="http://dx.doi.org/10.1002/1521-3978(200009)48:9/11&lt;771::AID-PROP771&gt;3.0.CO;2-E">http://dx.doi.org/10.1002/1521-3978(200009)48:9/11&lt;771::AID-PROP771&gt;3.0.CO;2-E</a>, <a class="reference external" href="https://doi.org/10.1002/1521-3978(200009)48:9/11&lt;771::aid-prop771&gt;3.0.co;2-e">doi:10.1002/1521-3978(200009)48:9/11&lt;771::aid-prop771&gt;3.0.co;2-e</a>.</p>
+</dd>
+<dt class="label" id="id74"><span class="brackets">6</span></dt>
+<dd><p>Olivier Ezratty. Perspective on superconducting qubit quantum computing. <em>The European Physical Journal A</em>, 59(5):94, 2023. <a class="reference external" href="https://doi.org/https://doi.org/10.1140/epja/s10050-023-01006-7">doi:https://doi.org/10.1140/epja/s10050-023-01006-7</a>.</p>
+</dd>
+<dt class="label" id="id75"><span class="brackets">7</span></dt>
+<dd><p>Richard Phillips Feynman, Robert Benjamin Leighton, and Matthew Sands. <em>The Feynman lectures on physics; New millennium ed.</em> Basic Books, New York, NY, 2010. Originally published 1963-1965. URL: <a class="reference external" href="https://cds.cern.ch/record/1494701">https://cds.cern.ch/record/1494701</a>.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">8</span></dt>
+<dd><p>David J. Griffiths and Darrell F. Schroeter. <em>Introduction to Quantum Mechanics</em>. Cambridge University Press, 3 edition, 2018. <a class="reference external" href="https://doi.org/10.1017/9781316995433">doi:10.1017/9781316995433</a>.</p>
+</dd>
+<dt class="label" id="id86"><span class="brackets">9</span></dt>
+<dd><p>H. Haken. <em>Laser Theory</em>, pages 1–304. Springer Berlin Heidelberg, Berlin, Heidelberg, 1970. URL: <a class="reference external" href="https://doi.org/10.1007/978-3-662-22091-7_1">https://doi.org/10.1007/978-3-662-22091-7_1</a>, <a class="reference external" href="https://doi.org/10.1007/978-3-662-22091-7_1">doi:10.1007/978-3-662-22091-7_1</a>.</p>
+</dd>
+<dt class="label" id="id17"><span class="brackets">10</span></dt>
+<dd><p>J.A. Jones and E. Knill. Efficient refocusing of one-spin and two-spin interactions for nmr quantum computation. <em>Journal of Magnetic Resonance</em>, 141(2):322–325, 1999. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1090780799918906">https://www.sciencedirect.com/science/article/pii/S1090780799918906</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1006/jmre.1999.1890">doi:https://doi.org/10.1006/jmre.1999.1890</a>.</p>
+</dd>
+<dt class="label" id="id77"><span class="brackets">11</span></dt>
+<dd><p>B.D. Josephson. Possible new effects in superconductive tunnelling. <em>Physics Letters</em>, 1(7):251–253, 1962. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/0031916362913690">https://www.sciencedirect.com/science/article/pii/0031916362913690</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/0031-9163(62)91369-0">doi:https://doi.org/10.1016/0031-9163(62)91369-0</a>.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">12</span></dt>
+<dd><p>Kenneth S Krane. <em>Introductory nuclear physics</em>. Wiley, New York, NY, 1988. URL: <a class="reference external" href="https://cds.cern.ch/record/359790">https://cds.cern.ch/record/359790</a>.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets">13</span></dt>
+<dd><p>Debbie W. Leung, Isaac L. Chuang, Fumiko Yamaguchi, and Yoshihisa Yamamoto. Efficient implementation of coupled logic gates for quantum computation. <em>Phys. Rev. A</em>, 61:042310, Mar 2000. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevA.61.042310">https://link.aps.org/doi/10.1103/PhysRevA.61.042310</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevA.61.042310">doi:10.1103/PhysRevA.61.042310</a>.</p>
+</dd>
+<dt class="label" id="id81"><span class="brackets">14</span></dt>
+<dd><p>C. Monroe, D. M. Meekhof, B. E. King, W. M. Itano, and D. J. Wineland. Demonstration of a fundamental quantum logic gate. <em>Phys. Rev. Lett.</em>, 75:4714–4717, Dec 1995. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevLett.75.4714">https://link.aps.org/doi/10.1103/PhysRevLett.75.4714</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.75.4714">doi:10.1103/PhysRevLett.75.4714</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">15</span></dt>
+<dd><p>Michael A. Nielsen and Isaac L. Chuang. <em>Quantum Computation and Quantum Information: 10th Anniversary Edition</em>. Cambridge University Press, 2010. <a class="reference external" href="https://doi.org/10.1017/CBO9780511976667">doi:10.1017/CBO9780511976667</a>.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">16</span></dt>
+<dd><p>L. M. K. Vandersypen and I. L. Chuang. Nmr techniques for quantum control and computation. <em>Rev. Mod. Phys.</em>, 76:1037–1069, Jan 2005. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/RevModPhys.76.1037">https://link.aps.org/doi/10.1103/RevModPhys.76.1037</a>, <a class="reference external" href="https://doi.org/10.1103/RevModPhys.76.1037">doi:10.1103/RevModPhys.76.1037</a>.</p>
+</dd>
+<dt class="label" id="id78"><span class="brackets">17</span></dt>
+<dd><p>J R Waldram. The josephson effects in weakly coupled superconductors. <em>Reports on Progress in Physics</em>, 39(8):751, aug 1976. URL: <a class="reference external" href="https://dx.doi.org/10.1088/0034-4885/39/8/002">https://dx.doi.org/10.1088/0034-4885/39/8/002</a>, <a class="reference external" href="https://doi.org/10.1088/0034-4885/39/8/002">doi:10.1088/0034-4885/39/8/002</a>.</p>
+</dd>
+<dt class="label" id="id80"><span class="brackets">18</span></dt>
+<dd><p>National Academies of Sciences, Engineering and Medicine. <em>Quantum Computing: Progress and Prospects</em>. The National Academies Press, Washington, DC, 2019. ISBN 978-0-309-47969-1. URL: <a class="reference external" href="https://nap.nationalacademies.org/catalog/25196/quantum-computing-progress-and-prospects">https://nap.nationalacademies.org/catalog/25196/quantum-computing-progress-and-prospects</a>, <a class="reference external" href="https://doi.org/10.17226/25196">doi:10.17226/25196</a>.</p>
+</dd>
+<dt class="label" id="id83"><span class="brackets">19</span></dt>
+<dd><p>QuEra. Aquila, our 256-qubit quantum processor. May 2023. URL: <a class="reference external" href="https://www.quera.com/aquila">https://www.quera.com/aquila</a>.</p>
+</dd>
+<dt class="label" id="id87"><span class="brackets">20</span></dt>
+<dd><p>Wikipedia contributors. Quantum harmonic oscillator — Wikipedia, the free encyclopedia. 2024. [Online; accessed 12-September-2024]. URL: <a class="reference external" href="https://en.wikipedia.org/w/index.php?title=Quantum_harmonic_oscillator&amp;oldid=1242936583">https://en.wikipedia.org/w/index.php?title=Quantum_harmonic_oscillator&amp;oldid=1242936583</a>.</p>
+</dd>
+</dl>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -427,7 +591,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By <a href="https://quantumspain-project.es">QuantumSpain</a> & <a href="https://www.talentq.es/es_es/">TalentQ</a>
 </p>
 
   </div>

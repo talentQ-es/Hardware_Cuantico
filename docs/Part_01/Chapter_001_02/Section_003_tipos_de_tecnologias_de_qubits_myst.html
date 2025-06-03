@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.3. Tipos de Tecnologías de qubits. &#8212; My Jupyter Book</title>
+    <title>1.3. Tipos de Tecnologías de qubits. &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
   
   
   
@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfile.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -55,6 +58,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -66,6 +103,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="1.4. Pulso de microondas" href="Section_004_pulso_de_microondas_myst.html" />
@@ -153,8 +191,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
   
-    <p class="title logo__title">My Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -170,14 +214,6 @@ const thebe_selector_output = ".output, .cell_output"
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../index.html">
-                    El camino de los Qubits
-                </a>
-            </li>
-        </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -260,6 +296,70 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -386,22 +486,8 @@ document.write(`
                 <article class="bd-article">
                   
   <blockquote>
-<div><p>Jun 03, 2025 | 11 min read</p>
+<div><p>Jun 03, 2025 | 10 min read</p>
 </div></blockquote>
-<img src="Figuras/Fig_logo_UMA_scbi.png" align=center  width="2000px"/>
-<a href="https://www.scbi.uma.es/web/es/computacion-cuantica/">
-    <button class="rounded" style="float: right;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-        <path fill="var(--fill, white)"
-        d="M18.1 15.3c-.1.1-.3.2-.4.3l-2.4.4l1.7 3.6c.2.4 0 .8-.4
-            1l-2.8 1.3c-.1.1-.2.1-.3.1c-.3 0-.6-.2-.7-.4L11.2
-            18l-1.9 1.5c-.1.1-.3.2-.5.2c-.4 0-.8-.3-.8-.8V7.5c0-.5.3-.8.8-.8c.2 0
-            .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
-            1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
-    </svg>
-    Volver a SCBI - Computación Cuantica
-    </button>
-</a>
 <p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
 <span class="math notranslate nohighlight">\( \newcommand{\ket}[1]{|#1\rangle} \)</span>
 <span class="math notranslate nohighlight">\( \newcommand{\branew}[1]{\langle #1|} \)</span>
@@ -436,7 +522,7 @@ document.write(`
 </figure>
 <section id="criterio-de-divicenzo">
 <span id="sec-criterio-divicenzo"></span><h2><span class="section-number">1.3.1. </span>Criterio de Divicenzo<a class="headerlink" href="#criterio-de-divicenzo" title="Permalink to this heading">#</a></h2>
-<p>Para poder implementar de forma satisfactoria un ordenador cuántico, el montaje experimental (el ordenador cuántico) debe satisfacer las siete condiciones del criterio de DiVincenzo . Las cinco primeras son para ordenadores cuánticos:</p>
+<p>Para poder implementar de forma satisfactoria un ordenador cuántico, el montaje experimental (el ordenador cuántico) debe satisfacer las siete condiciones del criterio de DiVincenzo <span id="id1">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id73" title="David P. DiVincenzo. The physical implementation of quantum computation. Fortschritte der Physik, 48(9–11):771–783, September 2000. URL: http://dx.doi.org/10.1002/1521-3978(200009)48:9/11&lt;771::AID-PROP771&gt;3.0.CO;2-E, doi:10.1002/1521-3978(200009)48:9/11&lt;771::aid-prop771&gt;3.0.co;2-e.">5</a>]</span>. Las cinco primeras son para ordenadores cuánticos:</p>
 <ul class="simple">
 <li><p>(a) Los qubits deben estar bien caracterizados y ser fáciles de producir. (b) El sistema debe ser escalable, es decir, debe poder gestionar un número arbitrario de qubits.</p></li>
 <li><p>La capacidad de inicializar el estado de los qubits a un estado fiducial simple, como por ejemplo <span class="math notranslate nohighlight">\(\ket{00\dots}\)</span>.</p></li>
@@ -452,7 +538,7 @@ document.write(`
 </section>
 <section id="iones-atrapados-trapped-ion-qubits">
 <h2><span class="section-number">1.3.2. </span>Iones Atrapados (Trapped Ion Qubits)<a class="headerlink" href="#iones-atrapados-trapped-ion-qubits" title="Permalink to this heading">#</a></h2>
-<p>La primera puerta lógica cuántica se demostró en 1995 utilizando iones atómicos atrapados , tras una propuesta teórica de ese mismo año . Desde la demostración original, los avances técnicos en el control de qubits han permitido la demostración experimental de procesadores totalmente funcionales a pequeña escala y la implementación de una amplia gama de algoritmos cuánticos sencillos.</p>
+<p>La primera puerta lógica cuántica se demostró en 1995 utilizando iones atómicos atrapados <span id="id2">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id81" title="C. Monroe, D. M. Meekhof, B. E. King, W. M. Itano, and D. J. Wineland. Demonstration of a fundamental quantum logic gate. Phys. Rev. Lett., 75:4714–4717, Dec 1995. URL: https://link.aps.org/doi/10.1103/PhysRevLett.75.4714, doi:10.1103/PhysRevLett.75.4714.">14</a>]</span>, tras una propuesta teórica de ese mismo año <span id="id3">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id82" title="J. I. Cirac and P. Zoller. Quantum computations with cold trapped ions. Phys. Rev. Lett., 74:4091–4094, May 1995. URL: https://link.aps.org/doi/10.1103/PhysRevLett.74.4091, doi:10.1103/PhysRevLett.74.4091.">4</a>]</span>. Desde la demostración original, los avances técnicos en el control de qubits han permitido la demostración experimental de procesadores totalmente funcionales a pequeña escala y la implementación de una amplia gama de algoritmos cuánticos sencillos.</p>
 <p>A pesar del éxito de las demostraciones a pequeña escala, la tarea de construir ordenadores cuánticos escalables y considerados viables según los estándares actuales de la industria informática a partir de iones atrapados sigue siendo un reto importante.  La construcción de un ordenador cuántico basado en qubits de iones atrapados requiere la integración de tecnologías de una amplia gama de dominios, incluidos los sistemas de vacío, láser y ópticos, la tecnología de radiofrecuencia (RF) y microondas, y los controladores electrónicos coherentes. El camino hacia un ordenador cuántico viable debe abordar estos retos de integración.</p>
 <p>Un plano de datos cuánticos de iones atrapados comprende los iones que sirven de qubits y una “trampa” que los mantiene en lugares específicos. El plano de control y medición incluye una fuente láser (o de microondas) muy precisa que puede dirigirse a un ion específico para afectar a su estado cuántico, otro láser para “enfriar” y permitir la medición de los iones, y un conjunto de detectores de fotones para “medir” el estado de los iones mediante la detección de los fotones que dispersan.</p>
 <p>Para más información sobre esta tecnología, consultar el Capitulo  <a class="reference internal" href="../Chapter_002_01_computacion_cuantica_con_iones_atrapados_trapped_ions__myst.html#sec-chapter-hw-iones"><span class="std std-numref">2</span></a>.</p>
@@ -469,7 +555,7 @@ document.write(`
 <p>Un reto clave de los ordenadores cuánticos fotónicos es cómo crear puertas robustas de dos qubits. Los investigadores trabajan actualmente en dos enfoques para este problema.</p>
 <ul class="simple">
 <li><p>En la <b>computación cuántica de óptica lineal</b>, se crea una interacción fuerte efectiva mediante una combinación de operaciones y mediciones monofotónicas, que puede utilizarse para implementar una puerta probabilística de dos qubits, que anuncia cuándo ha tenido éxito.</p></li>
-<li><p>Un segundo enfoque utiliza pequeñas estructuras en cristales semiconductores para la interacción de fotones, y también puede considerarse un tipo de ordenador cuántico semiconductor. Estas estructuras pueden ser naturales, llamadas <b>”defectos ópticamente activos”</b>, o artificiales, que suelen ser una estructura llamada <b>”quantum dot”</b>.</p></li>
+<li><p>Un segundo enfoque utiliza pequeñas estructuras en cristales semiconductores para la interacción de fotones, y también puede considerarse un tipo de ordenador cuántico semiconductor. Estas estructuras pueden ser naturales, llamadas <b>“defectos ópticamente activos”</b>, o artificiales, que suelen ser una estructura llamada <b>“quantum dot”</b>.</p></li>
 </ul>
 <p>Los trabajos para construir ordenadores fotónicos lineales a pequeña escala han tenido éxito, y hay varios grupos que intentan aumentar el tamaño de estas máquinas. Uno de los principales problemas es el “tamaño” del qubit fotónico. Dado que los fotones utilizados en la computación cuántica fotónica suelen tener longitudes de onda de alrededor de una micra, y que los fotones se mueven a la velocidad de la luz y suelen dirigirse a lo largo de una dimensión del chip óptico, aumentar el número de fotones, y por tanto el número de qubits, hasta cifras extremadamente grandes en un dispositivo fotónico es aún más difícil que en sistemas con qubits que pueden localizarse en el espacio. Sin embargo, se espera que sea posible crear matrices con muchos miles de qubits.</p>
 </section>
@@ -486,7 +572,7 @@ Los qubits con activación eléctrica son potencialmente muy densos. Aunque la a
 <section id="qubits-con-atomos-neutros">
 <h2><span class="section-number">1.3.6. </span>Qubits con átomos neutros<a class="headerlink" href="#qubits-con-atomos-neutros" title="Permalink to this heading">#</a></h2>
 <p>Los átomos neutros son otro método para crear qubits muy similar al de los iones atrapados, pero en lugar de utilizar átomos ionizados y aprovechar su carga para mantener los qubits en su sitio, se emplean átomos neutros y pinzas láser. Al igual que los qubits de iones atrapados, se utilizan pulsos ópticos y de microondas para manipular los qubits, y también se emplean láseres para enfriar los átomos antes del cálculo.</p>
-<p>Gracias a los recientes avances en la tecnología de pinzas ópticas, los átomos neutros pueden utilizarse como qubits robustos y versátiles. En 2022, una colaboración entre QuEra y varias instituciones académicas produjo un dispositivo de átomos neutros con 256 qubits  (analógico, no de puertas). En el sector privado esta tecnología es usada por empresas emergentes como Pasqal, QuEra y Atom Computing.</p>
+<p>Gracias a los recientes avances en la tecnología de pinzas ópticas, los átomos neutros pueden utilizarse como qubits robustos y versátiles. En 2022, una colaboración entre QuEra y varias instituciones académicas produjo un dispositivo de átomos neutros con 256 qubits <span id="id4">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id83" title="QuEra. Aquila, our 256-qubit quantum processor. May 2023. URL: https://www.quera.com/aquila.">19</a>]</span> (analógico, no de puertas). En el sector privado esta tecnología es usada por empresas emergentes como Pasqal, QuEra y Atom Computing.</p>
 <p>En la computación cuántica con átomos neutros se usan <b>átomos de Rydberg</b>. Un átomo de Rydberg es un átomo excitado con uno o más electrones que tienen un número cuántico principal, <span class="math notranslate nohighlight">\(n\)</span>, muy alto. Cuanto mayor es el valor de <span class="math notranslate nohighlight">\(n\)</span>, más lejos está el electrón del núcleo, por término medio. Los átomos de Rydberg tienen una serie de propiedades peculiares, como una gran sensibilidad a los campos eléctricos y magnéticos, largos periodos de desintegración y funciones de onda de los electrones que se aproximan, en algunas condiciones, a las órbitas clásicas de los electrones alrededor de los núcleos. Los electrones del núcleo protegen al electrón exterior del campo eléctrico del núcleo, de forma que, desde la distancia, el potencial eléctrico parece idéntico al que experimenta el electrón en un átomo de hidrógeno.</p>
 </section>
 <section id="qubits-topologicos">
@@ -495,11 +581,11 @@ Los qubits con activación eléctrica son potencialmente muy densos. Aunque la a
 <p>La topología es la rama de las matemáticas que se ocupa de las propiedades de un objeto geométrico que se conservan bajo deformaciones continuas, como estirarse, retorcerse, arrugarse y doblarse; es decir, sin cerrarse agujeros, abrirse huecos, rasgarse, pegarse o atravesarse.</p>
 <p>Un ejemplo clásico es que una taza y una rosquilla (técnicamente, un toroide) son topológicamente equivalente, pues los dos presentan un agujero (en la taza, es el del asa). Es decir, desde un punto de vista geométrico, una taza y una rosquilla son objetos muy diferentes, mientras que desde un punto de vista topológico, son el mismo (ver Fig.  <a class="reference internal" href="#fig-hw-map-of-tqc"><span class="std std-numref">1.3</span></a>).</p>
 <p>Otro ejemplo son una cinta de papel y una banda de Möbius (ver Fig.  <a class="reference internal" href="#fig-hw-map-of-tqc"><span class="std std-numref">1.3</span></a>). A primera vista parecen similares (por ejemplo, solo tiene un agujero), pero topológicamente son diferentes, pues un cinta de papel tiene dos lados y la banda de Möbius solo tiene uno. Es decir, no podemos deformar de forma continua uno de ellos para convertirlo en el otro.</p>
-<p>Pensando por ejemplo en la banda de Möbius, podemos hacerla con una tira de papel y un celo. Podemos coger ahora con la manos esta banda y deformarla, en el sentido de estirar desde dos extremos, darle la vuelta,…. Estas deformaciones cambian la forma o la posición de la banda, pero mientras sean lo suficientemente débiles como para no romperla, <b>no cambian sus propiedades topolígicas</b>. Pasa lo mismo con, por ejemplo, una bandera. Cuando le da el viento la bandera ondula, se deforma, se enrolla sobre si misma, …, pero topológicamante sigue siendo un plano (a no ser que algo la desgarre). Es decir, las propiedades topológicas están protegidas ante deformaciones suaves.</p>
+<p>Pensando por ejemplo en la banda de Möbius, podemos hacerla con una tira de papel y un celo. Podemos coger ahora con la manos esta banda y deformarla, en el sentido de estirar desde dos extremos, darle la vuelta,… Estas deformaciones cambian la forma o la posición de la banda, pero mientras sean lo suficientemente débiles como para no romperla, <b>no cambian sus propiedades topolígicas</b>. Pasa lo mismo con, por ejemplo, una bandera. Cuando le da el viento la bandera ondula, se deforma, se enrolla sobre si misma, …, pero topológicamante sigue siendo un plano (a no ser que algo la desgarre). Es decir, las propiedades topológicas están protegidas ante deformaciones suaves.</p>
 <p>Los qubits topológicos usan estados topológicos. Estos qubits están protegidos de forma natural de la decoherencia por las propiedades topológicas. Además, las operaciones sobre los qubits físicos tienen fidelidades extremadamente altas porque están protegidas por la simetría topológica implementada a nivel microscópico: la corrección de errores la realiza el propio qubit. Esto reducirá y posiblemente eliminará la sobrecarga de realizar una corrección de errores cuántica explícita.</p>
 <p>En el planteamiento de los qubits topológicos se usan las denominadas <b>partículas de Majorana</b>. Las particulas de Majorana son teóricas, en el sentido de que nunca se han observado así que no se sabe si existen o no. Sin embargo, bajo ciertas condiciones un material puede presentar un comportamiento colectivo que se identifica con una <b>cuasiparticula</b> que presenta las propiedades de una partícula de Majorana. El término cuasipaticula hace referencia a que no es una partícula de verdad, sino un comportamiento colectivo que se comporta como un partícula (como los huecos de electrones en un material). Es decir, una cuasipartícula es una propiedad emergente. Lo que se intenta usar en computación cuántica son estas cuasipartículas de Majorana.</p>
 <p>Aunque sería un avance asombroso, los qubits topológicos son la plataforma tecnológica menos desarrollada, hasta el punto de ser prácticamente teóricos. Hay que dar muchos pasos no triviales para demostrar la existencia de un qubit topológico, incluida la observación experimental de la estructura básica que subyace a estos qubits (los modos cero de Majorana). Una vez que estas estructuras se construyan y controlen en el laboratorio, las propiedades de resistencia a errores de este enfoque podrían permitirle escalar más rápido que los otros enfoques.</p>
-<p>En el mundo de las grandes empresas, Microsoft está haciendo una gran apuesta por esta tecnología. En 2023, investigadores de Microsoft publicaron un artículo en Physical Review que describía un nuevo dispositivo que puede representar un qubit lógico con estabilidad de hardware, midiendo una fase de la materia consistente con la observación de la superconductividad topológica y los modos cero de Majorana .</p>
+<p>En el mundo de las grandes empresas, Microsoft está haciendo una gran apuesta por esta tecnología. En 2023, investigadores de Microsoft publicaron un artículo en Physical Review que describía un nuevo dispositivo que puede representar un qubit lógico con estabilidad de hardware, midiendo una fase de la materia consistente con la observación de la superconductividad topológica y los modos cero de Majorana <span id="id5">[<a class="reference internal" href="../../Chapter_Bibliografia_myst.html#id84" title="Morteza Aghaee, Arun Akkala, Zulfi Alam, Rizwan Ali, Alejandro Alcaraz Ramirez, Mariusz Andrzejczuk, Andrey E. Antipov, Pavel Aseev, Mikhail Astafev, Bela Bauer, Jonathan Becker, Srini Boddapati, Frenk Boekhout, Jouri Bommer, Tom Bosma, Leo Bourdet, Samuel Boutin, Philippe Caroff, Lucas Casparis, Maja Cassidy, Sohail Chatoor, Anna Wulf Christensen, Noah Clay, William S. Cole, Fabiano Corsetti, Ajuan Cui, Paschalis Dalampiras, Anand Dokania, Gijs de Lange, Michiel de Moor, Juan Carlos Estrada Saldaña, Saeed Fallahi, Zahra Heidarnia Fathabad, John Gamble, Geoff Gardner, Deshan Govender, Flavio Griggio, Ruben Grigoryan, Sergei Gronin, Jan Gukelberger, Esben Bork Hansen, Sebastian Heedt, Jesús Herranz Zamorano, Samantha Ho, Ulrik Laurens Holgaard, Henrik Ingerslev, Linda Johansson, Jeffrey Jones, Ray Kallaher, Farhad Karimi, Torsten Karzig, Evelyn King, Maren Elisabeth Kloster, Christina Knapp, Dariusz Kocon, Jonne Koski, Pasi Kostamo, Peter Krogstrup, Mahesh Kumar, Tom Laeven, Thorvald Larsen, Kongyi Li, Tyler Lindemann, Julie Love, Roman Lutchyn, Morten Hannibal Madsen, Michael Manfra, Signe Markussen, Esteban Martinez, Robert McNeil, Elvedin Memisevic, Trevor Morgan, Andrew Mullally, Chetan Nayak, Jens Nielsen, William Hvidtfelt Padkær Nielsen, Bas Nijholt, Anne Nurmohamed, Eoin O'Farrell, Keita Otani, Sebastian Pauka, Karl Petersson, Luca Petit, Dmitry I. Pikulin, Frank Preiss, Marina Quintero-Perez, Mohana Rajpalke, Katrine Rasmussen, Davydas Razmadze, Outi Reentila, David Reilly, Richard Rouse, Ivan Sadovskyy, Lauri Sainiemi, Sydney Schreppler, Vadim Sidorkin, Amrita Singh, Shilpi Singh, Sarat Sinha, Patrick Sohr, Toma\ifmmode  \check s\else  š\fi  Stankevi\ifmmode  \check c\else  č\fi , Lieuwe Stek, Henri Suominen, Judith Suter, Vicky Svidenko, Sam Teicher, Mine Temuerhan, Nivetha Thiyagarajah, Raj Tholapi, Mason Thomas, Emily Toomey, Shivendra Upadhyay, Ivan Urban, Saulius Vaitiek\ifmmode  \dot e\else  ė\fi nas, Kevin Van Hoogdalem, David Van Woerkom, Dmitrii V. Viazmitinov, Dominik Vogel, Steven Waddy, John Watson, Joseph Weston, Georg W. Winkler, Chung Kai Yang, Sean Yau, Daniel Yi, Emrah Yucelen, Alex Webster, Roland Zeisel, and Ruichen Zhao. Inas-al hybrid devices passing the topological gap protocol. Phys. Rev. B, 107:245423, Jun 2023. URL: https://link.aps.org/doi/10.1103/PhysRevB.107.245423, doi:10.1103/PhysRevB.107.245423.">1</a>]</span>.</p>
 <p>Para más información sobre qubits topológicos puede verse el video de YouTube <a class="reference external" href="https://www.youtube.com/watch?v=ihZXl33t8So">The Radical Map of Topological Quantum Computing</a>, del youtuber Domain of Science.</p>
 <figure class="align-center" id="fig-hw-map-of-tqc">
 <a class="reference internal image-reference" href="docs/Part_01/Chapter_001_02/Figuras/Fig_hw_map_of_tqc.png"><img alt="docs/Part_01/Chapter_001_02/Figuras/Fig_hw_map_of_tqc.png" src="docs/Part_01/Chapter_001_02/Figuras/Fig_hw_map_of_tqc.png" style="width: 1000px;" /></a>
@@ -608,7 +694,7 @@ Los qubits con activación eléctrica son potencialmente muy densos. Aunque la a
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By <a href="https://quantumspain-project.es">QuantumSpain</a> & <a href="https://www.talentq.es/es_es/">TalentQ</a>
 </p>
 
   </div>
