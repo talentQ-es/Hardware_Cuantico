@@ -554,30 +554,30 @@ document.write(`
 <section id="modelado-del-circuito-de-la-fig-s">
 <h3><span class="section-number">3.8.1.1. </span>Modelado del circuito de la Fig.  <a class="reference internal" href="#fig-scq-qubit-acoplado-a-fuente"><span class="std std-numref">3.15</span></a>.<a class="headerlink" href="#modelado-del-circuito-de-la-fig-s" title="Permalink to this heading">#</a></h3>
 <p>Comenzamos modelando el qubit como un oscilador armónico, para el que el Hamiltoniano del circuito (clásico) puede calcularse mediante técnicas de cuantización de circuitos, partiendo de las leyes de Kirchoffs (no lo veremos en detalle), y viene dado por</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3d2620dd-daac-4a2f-89e8-fa5f129b72e5">
-<span class="eqno">(3.114)<a class="headerlink" href="#equation-3d2620dd-daac-4a2f-89e8-fa5f129b72e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e63cfb98-5148-440d-8671-637c4a1fbdd8">
+<span class="eqno">(3.114)<a class="headerlink" href="#equation-e63cfb98-5148-440d-8671-637c4a1fbdd8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 H = \frac{\tilde{Q}(t)^2}{2 C_\varSigma} + \frac{\Phi^2}{2L} + \frac{C_d}{C_\varSigma} V_d(t) \tilde{Q}
 \end{equation}\]</div>
 <p>con</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e669ce4-9cca-4d01-8a43-e0eefaa468fa">
-<span class="eqno">(3.115)<a class="headerlink" href="#equation-4e669ce4-9cca-4d01-8a43-e0eefaa468fa" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-82ba0016-3738-494c-8b10-3cbd499d9f9b">
+<span class="eqno">(3.115)<a class="headerlink" href="#equation-82ba0016-3738-494c-8b10-3cbd499d9f9b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C_{\varSigma} = C + C_d
 \qquad , \qquad
 \tilde{Q} = C_\varSigma \dot{\Phi} - C_d V_d(t)
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(C_\varSigma\)</span>  capacitancia total a tierra y <span class="math notranslate nohighlight">\(\tilde{Q}\)</span> es una variable de carga renormalizada para el circuito. Ahora podemos promover las variables de flujo y carga a operadores cuánticos y suponer un acoplamiento débil a la linea de control (“drive line”), de modo que</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9343dad2-92d6-4530-ae07-e258839f06b8">
-<span class="eqno">(3.116)<a class="headerlink" href="#equation-9343dad2-92d6-4530-ae07-e258839f06b8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bf9b1b4b-b519-471c-b43c-771300084185">
+<span class="eqno">(3.116)<a class="headerlink" href="#equation-bf9b1b4b-b519-471c-b43c-771300084185" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \tilde{Q} \approx \hat{Q}\,,
 \end{equation}\]</div>
 <p>y llegamos a</p>
-<div class="amsmath math notranslate nohighlight" id="equation-14ab9c6c-3066-40b0-a8b4-27551910cf82">
-<span class="eqno">(3.117)<a class="headerlink" href="#equation-14ab9c6c-3066-40b0-a8b4-27551910cf82" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d53018d6-9dbf-44c3-8e53-b808e6282adb">
+<span class="eqno">(3.117)<a class="headerlink" href="#equation-d53018d6-9dbf-44c3-8e53-b808e6282adb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 H = H_{LC} + \frac{C_d}{C_\varSigma} V_d(t) \hat{Q}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(H_{LC}\)</span> es la forma de ls Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-sqc-lc-cuantico-h-1">(3.79)</a> y hemos mantenido sólo los términos que se acoplan a las variables dinámicas. Siguiendo un poco lo mismo que hicimos en la Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-scq-lc-cuantico-segunda-cuant-variables">(3.87)</a>, podemos reescribir el operador de carga de la forma:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-540ad2ea-720c-4203-a936-470fc9e940dd">
-<span class="eqno">(3.118)<a class="headerlink" href="#equation-540ad2ea-720c-4203-a936-470fc9e940dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-658e8635-b69e-43d6-a36b-a0b430b2b4d8">
+<span class="eqno">(3.118)<a class="headerlink" href="#equation-658e8635-b69e-43d6-a36b-a0b430b2b4d8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \hat{Q} = -i Q_{zpf} (a - a^\dagger)
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(Q_{zpf} = \sqrt{\hbar/2Z}\)</span> es la fluctuación de carga de punto cero y <span class="math notranslate nohighlight">\(Z=\sqrt{L/C}\)</span> es la impedancia del circuito a tierra. Así, el oscilador LC acoplado capacitivamente a una “drive line” puede escribirse como</p>
@@ -600,8 +600,8 @@ H = - \underbrace{\frac{\hbar \omega_q}{2} \sigma_z}_{H_{\mathrm{TLS}}} + \under
 U_{\mathrm{rf}} = e^{i H_0 t/\hbar} = U_{H_0}^\dagger \,.
 \end{equation} \]</div>
 <p>Vemos que este operador es el hemítico conjugado del operador de evolución temporal para el Hamiltoniano <span class="math notranslate nohighlight">\(H_0\)</span>. Los estados en este sistema de referencia toman la forma</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6baf9cc4-23c6-4d2f-be55-e5a2b184bd2b">
-<span class="eqno">(3.122)<a class="headerlink" href="#equation-6baf9cc4-23c6-4d2f-be55-e5a2b184bd2b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-59c16970-82d3-43b6-8545-eb8378c606b2">
+<span class="eqno">(3.122)<a class="headerlink" href="#equation-59c16970-82d3-43b6-8545-eb8378c606b2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ket{\psi_{\mathrm{rf}}(t)} = U_{\mathrm{rf}} \ket{\psi_0} \, .
 \end{equation}\]</div>
 <p>La evolución temporal en esta nueva imagen se obtiene de nuevo a partir de la ecuación de Schrödinger.</p>
@@ -633,16 +633,16 @@ i \frac{\partial }{\partial t} \ket{\psi_{\mathrm{rf}}(t)} = i  \frac{\partial }
 <section id="componentes-in-phase-y-out-of-phase">
 <h3><span class="section-number">3.8.1.3. </span>Componentes “in-phase” y “out-of-phase”.<a class="headerlink" href="#componentes-in-phase-y-out-of-phase" title="Permalink to this heading">#</a></h3>
 <p>En general, podemos suponer que la parte de la tensión que depende del tiempo <span class="math notranslate nohighlight">\((V_d(t) = V_0 v(t))\)</span> tiene una forma genérica</p>
-<div class="amsmath math notranslate nohighlight" id="equation-354b96ea-dee3-416b-8110-98d766572603">
-<span class="eqno">(3.126)<a class="headerlink" href="#equation-354b96ea-dee3-416b-8110-98d766572603" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b1b765e7-dca3-445f-9af8-2651c643c032">
+<span class="eqno">(3.126)<a class="headerlink" href="#equation-b1b765e7-dca3-445f-9af8-2651c643c032" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 v(t) &amp; = s(t) \sin (\omega_d t + \phi ) \\
 &amp; = s(t) (\cos (\phi) \sin (w_d t) + \sin (\phi) \cos (\omega_d t))\, ,
 \end{aligned}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(s(t)\)</span> es una función adimensional denominada <b>envolvente</b>, de modo que la amplitud del impulso está fijada por <span class="math notranslate nohighlight">\(V_0 s(t)\)</span>. (Puede verse más sobre modulación de señales en la Fig.  <a class="reference internal" href="#fig-scq-modulacion"><span class="std std-numref">3.16</span></a>). Adoptando las definiciones</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0d1e1f6a-a81e-4d9c-bdf7-8a335bba4622">
-<span class="eqno">(3.127)<a class="headerlink" href="#equation-0d1e1f6a-a81e-4d9c-bdf7-8a335bba4622" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-13095790-4c69-4f8c-85d8-0df491121302">
+<span class="eqno">(3.127)<a class="headerlink" href="#equation-13095790-4c69-4f8c-85d8-0df491121302" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 I = &amp; \cos (\phi) \qquad \text{(la componente &quot;in-phase&quot;)} \, ,  \\
 Q = &amp; \sin (\phi) \qquad \text{(la componente &quot;out-of-phase&quot; o cuadratura)} \, ,
@@ -677,8 +677,8 @@ Q = &amp; \sin (\phi) \qquad \text{(la componente &quot;out-of-phase&quot; o cua
 <div class="note admonition">
 <p class="admonition-title">Nota (relaciones trigonométricas del ángulo suma y resta)</p>
 <p>Tenemos las dos relaciones:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3b3456bb-7e48-43ef-b131-e539e49378ce">
-<span class="eqno">(3.130)<a class="headerlink" href="#equation-3b3456bb-7e48-43ef-b131-e539e49378ce" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4819042f-2230-4364-9e4f-86e683413f62">
+<span class="eqno">(3.130)<a class="headerlink" href="#equation-4819042f-2230-4364-9e4f-86e683413f62" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 \sin(x\pm y) &amp;= \sin(x)\cos(y) \pm \cos(x)\sin(y) \\
 \cos(x \pm y) &amp;= \cos(x) \cos(y) \mp \sin(x) \sin(y)
@@ -712,8 +712,8 @@ Q = &amp; \sin (\phi) \qquad \text{(la componente &quot;out-of-phase&quot; o cua
 \end{aligned}
 \end{equation} \end{split}\]</div>
 <p>Como ejemplo concreto, supongamos que aplicamos un pulso a la frecuencia del qubit, de forma que <span class="math notranslate nohighlight">\(\delta \omega = 0\)</span>, entonces</p>
-<div class="amsmath math notranslate nohighlight" id="equation-33a8c797-ec0d-4f07-8001-ece48ad29f0a">
-<span class="eqno">(3.134)<a class="headerlink" href="#equation-33a8c797-ec0d-4f07-8001-ece48ad29f0a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-78555069-e476-443c-9b45-44cf95f22ff1">
+<span class="eqno">(3.134)<a class="headerlink" href="#equation-78555069-e476-443c-9b45-44cf95f22ff1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \tilde{H}_d = - \frac{\Omega}{2} V_0 s(t) (I \sigma_x - Q \sigma_y)
 \end{equation}\]</div>
 <p>mostrando que un pulso “en fase” (<span class="math notranslate nohighlight">\( \phi = 0\)</span>, es decir, el componente <span class="math notranslate nohighlight">\(I\)</span>) corresponde a rotaciones alrededor del eje <span class="math notranslate nohighlight">\(x\)</span>, mientras que un pulso fuera de fase (<span class="math notranslate nohighlight">\(\phi = \pi/2\)</span>, es decir, el componente <span class="math notranslate nohighlight">\(Q\)</span>), corresponde a rotaciones alrededor del eje <span class="math notranslate nohighlight">\(y\)</span>.</p>
@@ -726,8 +726,8 @@ Q = &amp; \sin (\phi) \qquad \text{(la componente &quot;out-of-phase&quot; o cua
 U_{\mathrm{rf,d}}^{\phi = 0} = \exp \lp \lc  \frac{i}{2} \Omega V_0 \int_0^t s(t') dt' \rc \sigma_x \rp
 \end{equation} \]</div>
 <p>que depende únicamente de los parámetros macroscópicos de diseño del circuito, así como de la envolvente del pulso <span class="math notranslate nohighlight">\(s(t)\)</span> y de la amplitud <span class="math notranslate nohighlight">\(V_0\)</span>, que pueden controlarse utilizando <b>generadores de forma de onda arbitraria (AWG)</b>. La ecuación  se conoce como “Rabi driving”. Definimos</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a2b430fa-54d4-427d-ae57-fd778bb8956a">
-<span class="eqno">(3.136)<a class="headerlink" href="#equation-a2b430fa-54d4-427d-ae57-fd778bb8956a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b2333164-2809-45c9-ba96-fd51c0f97dfd">
+<span class="eqno">(3.136)<a class="headerlink" href="#equation-b2333164-2809-45c9-ba96-fd51c0f97dfd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \Theta(t) =  - \Omega V_0 \int_0^t s(t') dt'\,,
 \end{equation}\]</div>
 <p>que es el ángulo de rotación de un estado dados los acoplamientos capacitivos, la impedancia del circuito, la magnitud <span class="math notranslate nohighlight">\(V_0\)</span> y la forma de onda envolvente, <span class="math notranslate nohighlight">\(s(t)\)</span>. Esto significa que para implementar un pulso <span class="math notranslate nohighlight">\(\pi\)</span> en el eje <span class="math notranslate nohighlight">\(x\)</span>, habría que resolver la ecuación <span class="math notranslate nohighlight">\(\Theta (t) = \pi\)</span> y emitir la senal “in-phase” correspondiente. En este lenguaje, una secuencia de pulsos [ver Fig.  <a class="reference internal" href="#fig-scq-pulsos-1-2"><span class="std std-numref">3.17</span></a>(a)] <span class="math notranslate nohighlight">\(\Theta_k\)</span>, <span class="math notranslate nohighlight">\(\Theta_{k-1}\)</span>, <span class="math notranslate nohighlight">\(\dots \Theta_0\)</span>  se convierte en una secuencia de puertas operando sobre un qubit como</p>
@@ -753,8 +753,8 @@ U_k U_{k-1} \cdots U_0 = \mathcal{T} \prod_{n=0}^k e^{- \frac{i}{2} \Theta_n(t) 
 <section id="puerta-z-virtual">
 <h2><span class="section-number">3.8.2. </span>Puerta <span class="math notranslate nohighlight">\(Z\)</span> virtual<a class="headerlink" href="#puerta-z-virtual" title="Permalink to this heading">#</a></h2>
 <p>Como vimos en la Sección  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>, la distinción entre las rotaciones <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span> no es más que una elección de fase en las señales de microondas, y el ángulo a rotar viene dado por <span class="math notranslate nohighlight">\(\Theta (t)\)</span>, ambas generadas mediante un AWG. Dado que la elección de la fase <span class="math notranslate nohighlight">\(\phi\)</span> tiene un punto de partida arbitrario, podríamos considerar <span class="math notranslate nohighlight">\(\phi \rightarrow \phi + \pi/2\)</span>. Esto daría lugar a <span class="math notranslate nohighlight">\(I \rightarrow Q\)</span> y <span class="math notranslate nohighlight">\(Q \rightarrow -I\)</span>. Por lo tanto, al cambiar la fase, las rotaciones alrededor de <span class="math notranslate nohighlight">\(x\)</span> se convierten en rotaciones alrededor de <span class="math notranslate nohighlight">\(y\)</span> (y viceversa, con un cambio de signo). Esto recuerda al resultado de aplicar una rotación <span class="math notranslate nohighlight">\(Z_{\pi}\)</span>, donde</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1c39fde4-955d-404b-a199-492d85201318">
-<span class="eqno">(3.138)<a class="headerlink" href="#equation-1c39fde4-955d-404b-a199-492d85201318" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-765028f0-48eb-428e-bbc2-a6752a422f62">
+<span class="eqno">(3.138)<a class="headerlink" href="#equation-765028f0-48eb-428e-bbc2-a6752a422f62" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Z_{\pi} X_{\pi} = i Y_{\pi}
 \qquad , \qquad
 Z_{\pi} Y_{\pi} = -i X_{\pi}
@@ -789,21 +789,21 @@ X_\theta^{(\phi_0)} X_\theta &amp; = e^{-i \frac{\theta}{2} \lp \cos(\phi_0) \si
 <div class="tip admonition">
 <p class="admonition-title">Ejercicio</p>
 <p>Verifica la veracidad de la Ec.  <a class="reference internal" href="#equation-ec-scq-virtual-x-gate-ejemplo">(3.139)</a>. Es decir, comprueba que</p>
-<div class="amsmath math notranslate nohighlight" id="equation-859d0a25-907c-4f6c-882f-6bf9afbf0421">
-<span class="eqno">(3.140)<a class="headerlink" href="#equation-859d0a25-907c-4f6c-882f-6bf9afbf0421" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0c4068e5-96cb-4cfe-bac5-eab7a200ac34">
+<span class="eqno">(3.140)<a class="headerlink" href="#equation-0c4068e5-96cb-4cfe-bac5-eab7a200ac34" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Z_{-\phi_0} X_\theta Z_{\phi_0} = e^{-i \frac{\theta}{2} \lp \cos(\phi_0) \sigma_x - \sin(\phi_0) \sigma_y \rp}
 \end{equation}\]</div>
 <p>Para ello ten en cuenta que (ver Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code> y Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2fbc155f-0ff5-4c98-a06a-35ddde9b4568">
-<span class="eqno">(3.141)<a class="headerlink" href="#equation-2fbc155f-0ff5-4c98-a06a-35ddde9b4568" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d4e6358c-4ab6-45c5-a71b-94c2f1b91710">
+<span class="eqno">(3.141)<a class="headerlink" href="#equation-d4e6358c-4ab6-45c5-a71b-94c2f1b91710" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 X_\theta &amp; = e^{-i \frac{\theta}{2} \sigma_x} = \mathbb{I} \cos \lp \frac{\theta}{2} \rp -i \sigma_x \sin \lp \frac{\theta}{2} \rp \\
 Z_\theta &amp; = e^{-i \frac{\theta}{2} \sigma_z} = \mathbb{I} \cos \lp \frac{\theta}{2} \rp -i \sigma_z \sin \lp \frac{\theta}{2} \rp
 \end{aligned}
 \end{equation}\]</div>
 <p>No desarrolles las matrices!!! Trabaja con las matrices de Pauli y sus propiedades de multiplicación  (ver Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>).</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d41fae25-aab1-4757-a228-77b47fdebea9">
-<span class="eqno">(3.142)<a class="headerlink" href="#equation-d41fae25-aab1-4757-a228-77b47fdebea9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-63d2473b-a496-4e3b-8051-f162b6abd2e8">
+<span class="eqno">(3.142)<a class="headerlink" href="#equation-63d2473b-a496-4e3b-8051-f162b6abd2e8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sigma_i \sigma_j = \delta_{ij} I + i \sum_{k=1}^3 \varepsilon_{ijk} \sigma_k,
 \qquad \qquad
 \left\{ \begin{aligned}
@@ -838,8 +838,8 @@ s(t) &amp; \text{en} &amp; I \\
 \end{equation} \end{split}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\lambda\)</span> es un parámetro de escala adimensional, y <span class="math notranslate nohighlight">\(\lambda = 0\)</span> corresponde a no aplicar un pulso DRAG y <span class="math notranslate nohighlight">\(\dot{s}(t)\)</span> es la derivada temporal de <span class="math notranslate nohighlight">\(s(t)\)</span>. La elección teóricamente óptima para reducir el error de desfase es <span class="math notranslate nohighlight">\(\lambda = 0,5\)</span> y una elección óptima para reducir el error de fuga es <span class="math notranslate nohighlight">\(\lambda = 1\)</span>. Intercambiar <span class="math notranslate nohighlight">\(I\)</span> y <span class="math notranslate nohighlight">\(Q\)</span> en la Ec.  <a class="reference internal" href="#equation-ec-scq-drag-pulse">(3.144)</a> corresponde al pulso DRAG para la componente <span class="math notranslate nohighlight">\(Q\)</span>.</p>
 <p>En la práctica, puede haber una desviación de estos dos valores óptimos, a menudo debido a distorsiones del pulso en las líneas que conducen a los qubits. Normalmente, para determinar el valor óptimo de <span class="math notranslate nohighlight">\(\lambda\)</span> se utilizan experimentos benchmarking aleatorios combinados con mediciones de un solo shot del estado <span class="math notranslate nohighlight">\(\ket{2}\)</span>. Sin embargo, ampliando la implementación original del pulso DRAG, es posible reducir ambos errores simultáneamente. Introduciendo un parámetro de desfase de frecuencia <span class="math notranslate nohighlight">\(\delta f\)</span> en la forma de la onda (definida de forma que <span class="math notranslate nohighlight">\(\delta f = 0\)</span> corresponda a la frecuencia del qubit), es decir</p>
-<div class="amsmath math notranslate nohighlight" id="equation-21b313c1-98f1-47bb-a5e1-878058d4bda9">
-<span class="eqno">(3.145)<a class="headerlink" href="#equation-21b313c1-98f1-47bb-a5e1-878058d4bda9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4b2dd0b0-83f0-49df-8090-b5f9bfb03615">
+<span class="eqno">(3.145)<a class="headerlink" href="#equation-4b2dd0b0-83f0-49df-8090-b5f9bfb03615" title="Permalink to this equation">#</a></span>\[\begin{equation}
 s'_{\delta f} (t) = s'(t) e^{i 2 \pi \delta f t}
 \end{equation}\]</div>
 <p>y eligiendo <span class="math notranslate nohighlight">\(\lambda\)</span> para minimizar los errores de fuga, entonces los errores de fase pueden reducirse simultáneamente. De forma similar, mediante un uso sensato de la puerta virtual <span class="math notranslate nohighlight">\(Z\)</span>, también es posible reducir los errores de fase en combinación con el pulso DRAG para reducir las fugas. Las puertas modernas de un solo qubit que utilizan pulsos DRAG alcanzan ahora fidelidades rutinarias de <span class="math notranslate nohighlight">\(F_{1qb} \geq 0.99\)</span></p>
