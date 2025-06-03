@@ -544,30 +544,30 @@ document.write(`
 <section id="tres-tipos-de-resonancias">
 <h2><span class="section-number">2.4.1. </span>Tres tipos de resonancias<a class="headerlink" href="#tres-tipos-de-resonancias" title="Permalink to this heading">#</a></h2>
 <p>En la sección anterior vimos que, eligiendo la frecuencia del láser, podemos utilizar la interacción láser-ión para alterar el estado del ion. En particular, mostramos que <b>red sideband resonance</b> se utiliza para una transición que reduce el estado de vibración saltando a un estado atómico excitado:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d91a1517-a509-46b4-9c89-3bf7ca4ffce2">
-<span class="eqno">(2.11)<a class="headerlink" href="#equation-d91a1517-a509-46b4-9c89-3bf7ca4ffce2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-28b9b5ae-03d6-409e-a61a-71da6af4c533">
+<span class="eqno">(2.11)<a class="headerlink" href="#equation-28b9b5ae-03d6-409e-a61a-71da6af4c533" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \boxed{\ket{g,n+1} \leftrightarrow \ket{e,n}}
 \end{equation}\]</div>
 <p>(Véase que se ha hecho el cambio <span class="math notranslate nohighlight">\(n \rightarrow n+1\)</span> respecto a la notación de la sección anterior).
 En esta sección, introducimos dos interacciones resonantes más que se utilizan para manipular un ion durante el proceso de computación cuántica:</p>
 <ul>
 <li><p><b>Blue sideband resonance</b>: Si tomamos como frecuencia del láser <span class="math notranslate nohighlight">\(\omega = \omega_o + \omega_z\)</span>, se puede inducir la transición</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e0f1691a-962b-4a56-a1d5-895e43d8baa8">
-<span class="eqno">(2.12)<a class="headerlink" href="#equation-e0f1691a-962b-4a56-a1d5-895e43d8baa8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-20044946-0b38-4fbf-a5ff-2143e858a938">
+<span class="eqno">(2.12)<a class="headerlink" href="#equation-20044946-0b38-4fbf-a5ff-2143e858a938" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \boxed{\ket{g,n} \leftrightarrow \ket{e,n+1}}
     \end{equation}\]</div>
 </li>
 <li><p><b>Carrier resonance</b>: Si la frecuencia del láser es igual a la frecuencia de transición atómica, <span class="math notranslate nohighlight">\(\omega = \omega_0\)</span>, podemos inducir la transición:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a94fa8e4-7249-459d-bd27-f4b14309e608">
-<span class="eqno">(2.13)<a class="headerlink" href="#equation-a94fa8e4-7249-459d-bd27-f4b14309e608" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-320f1141-5bf6-4c95-8fa7-1838d526e880">
+<span class="eqno">(2.13)<a class="headerlink" href="#equation-320f1141-5bf6-4c95-8fa7-1838d526e880" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \boxed{\ket{g,n} \leftrightarrow \ket{e,n}}
     \end{equation}\]</div>
 <p>donde no se cambia el estado de vibración.</p>
 </li>
 </ul>
 <p>Una vez tenemos el estado fiducial <span class="math notranslate nohighlight">\(\ket{g,0}\)</span> al final del proceso de enfriamiento (<span class="math notranslate nohighlight">\(n=0\)</span>), estos tres procesos de resonancia nos permiten movernos entre los 4 estados</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a541f825-69ec-403a-8e4e-3095ac2aaf72">
-<span class="eqno">(2.14)<a class="headerlink" href="#equation-a541f825-69ec-403a-8e4e-3095ac2aaf72" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a5320882-d94e-44cb-8740-abeecd702e67">
+<span class="eqno">(2.14)<a class="headerlink" href="#equation-a5320882-d94e-44cb-8740-abeecd702e67" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lch \ket{g,0}, \ket{g,1}, \ket{e,0}, \ket{e,1} \rch.
 \end{equation}\]</div>
 <p>Es decir, podemos tomar estos 4 estados como una base en la que expresar el estado del ión bajo la aplicación de estos tres pulsos láser:</p>
@@ -633,18 +633,18 @@ a_{g0} \ket{g,0} + a_{g1} \ket{g,1} + a_{e0} \ket{e,0} + a_{e1} \ket{e,1}
 <section id="estados-del-qubit-y-puertas-simples-con-iones">
 <h2><span class="section-number">2.4.3. </span>Estados del Qubit y Puertas Simples con Iones<a class="headerlink" href="#estados-del-qubit-y-puertas-simples-con-iones" title="Permalink to this heading">#</a></h2>
 <p>Veamos que sucede si aplicamos el operador de evolución temporal de la <i>carrier resonance</i> de la Fig.  <a class="reference internal" href="#fig-ions-u-carrier"><span class="std std-numref">2.6</span></a> sobre el estado <span class="math notranslate nohighlight">\(\ket{g,0}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-23136f17-1918-4ab0-b298-5e21cef6004f">
-<span class="eqno">(2.16)<a class="headerlink" href="#equation-23136f17-1918-4ab0-b298-5e21cef6004f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fe4161de-131e-4db4-9fca-8495113c1f07">
+<span class="eqno">(2.16)<a class="headerlink" href="#equation-fe4161de-131e-4db4-9fca-8495113c1f07" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathcal{U}_I^{(\text{c})} \ket{g,0} = \cos(\beta/2) \ket{g,0} - i e^{i \phi} \sin (\beta/2) \ket{e,0}\, .
 \end{equation}\]</div>
 <p>Si hacemos el siguiente cambio de notación</p>
-<div class="amsmath math notranslate nohighlight" id="equation-74fcf36e-2db2-42e9-b684-759b7410f6db">
-<span class="eqno">(2.17)<a class="headerlink" href="#equation-74fcf36e-2db2-42e9-b684-759b7410f6db" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-af66ee1f-c108-4172-ac2d-c6100a986de5">
+<span class="eqno">(2.17)<a class="headerlink" href="#equation-af66ee1f-c108-4172-ac2d-c6100a986de5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \boxed{\ket{g,0} \equiv \ket{0}} \,, \quad \text{y} \quad \boxed{\ket{e,0} \equiv \ket{1}}
 \end{equation}\]</div>
 <p>y tomamos <span class="math notranslate nohighlight">\(t=\theta/\Omega\)</span> y <span class="math notranslate nohighlight">\(\phi = \varphi - \pi/2\)</span>, nos queda</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56fd7dd5-35b2-4297-bf93-4890a364586c">
-<span class="eqno">(2.18)<a class="headerlink" href="#equation-56fd7dd5-35b2-4297-bf93-4890a364586c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d136b473-9955-445f-92fa-20976e2098d2">
+<span class="eqno">(2.18)<a class="headerlink" href="#equation-d136b473-9955-445f-92fa-20976e2098d2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \boxed{\mathcal{U}_I^{(\text{c})} \ket{0} = \cos(\theta/2) \ket{0} + e^{i \varphi} \sin (\theta/2) \ket{1}}\, ,
 \end{equation}\]</div>
 <p>que si nos fijamos es la ecuación del <b>estado general de un qubit</b> (Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>). Es decir, el estado general de un qubit puede considerarse el resultado de la aplicación de una puerta de un qubit al qubit fiduciario <span class="math notranslate nohighlight">\(\ket{g,0} \equiv \ket{0}\)</span>, lo que implica que puede aplicarse cualquier puerta de un qubit al qubit fiduciario utilizando la interacción de <i>carrier resonance</i> y seleccionando un intervalo de tiempo y una fase adecuados para el pulso láser.</p>
