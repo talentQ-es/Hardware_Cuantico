@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.4. El Transmon Qubit: Del oscilador armónico al Transmón &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
+    <title>3.4. El Transmon Qubit: Del oscilador armónico al Transmón &#8212; Introducción al Hawdware en Computación Cuántica</title>
   
   
   
@@ -78,7 +78,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("repo", "https://github.com/talentQ-es/Hardware_Cuantico");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -196,8 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
-    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Introducción al Hawdware en Computación Cuántica - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Introducción al Hawdware en Computación Cuántica - Home"/>`);</script>
   
   
 </a></div>
@@ -323,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -340,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_003_02/Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.ipynb" target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico/edit/master/Book/docs/Part_01/Chapter_003_02/Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +357,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -610,15 +610,15 @@ V(t) = \frac{d \Phi_B}{dt} = L \frac{dI}{dt}
 \Phi_B = \int_{-\infty}^t V(t')  dt'
 \end{equation} \]</div>
 <p>El trabajo realizado por unidad de carga en las cargas que pasan a través del inductor es <span class="math notranslate nohighlight">\(-\mathcal{E}\)</span>. El signo negativo indica que el trabajo se hace en contra de la emf, y no se hace por la emf. La corriente <span class="math notranslate nohighlight">\(I\)</span> es la carga por unidad de tiempo que pasa a través del inductor. Por lo tanto, la tasa de trabajo <span class="math notranslate nohighlight">\(W\)</span> realizado por las cargas en contra de la emf, que es la tasa de cambio de energía de la corriente, está dada por</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2de5189d-19a9-4660-ae65-c119807cd38e">
-<span class="eqno">(3.67)<a class="headerlink" href="#equation-2de5189d-19a9-4660-ae65-c119807cd38e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bd8e6135-80a1-4c23-b67d-a92b3afaee56">
+<span class="eqno">(3.67)<a class="headerlink" href="#equation-bd8e6135-80a1-4c23-b67d-a92b3afaee56" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dW}{dt} = - \mathcal{E} I = \lp L \frac{dI}{dt} \rp I
 \rqa
 dW = LI \cdot dI
 \end{equation}\]</div>
 <p>Sin tener en cuenta las pérdidas, la energía <span class="math notranslate nohighlight">\(E_L\)</span> almacenada por un inductor con una corriente <span class="math notranslate nohighlight">\(I\)</span> que pasa a través de él es igual a la cantidad de trabajo necesario para establecer la corriente a través del inductor:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ddbb18db-d7b1-4211-8179-7756695d4227">
-<span class="eqno">(3.68)<a class="headerlink" href="#equation-ddbb18db-d7b1-4211-8179-7756695d4227" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3379adb0-987b-4f3d-8c22-ae0a19c3ec74">
+<span class="eqno">(3.68)<a class="headerlink" href="#equation-3379adb0-987b-4f3d-8c22-ae0a19c3ec74" title="Permalink to this equation">#</a></span>\[\begin{equation}
 E_L = W = \int_0^{I} L I^{'} dI^{'} = \frac{1}{2} L I^2
 \end{equation}\]</div>
 <p>donde se ha asumido una inductancia constante (<span class="math notranslate nohighlight">\(L \neq L(I^{'})\)</span>). Usando la Ec.  <a class="reference internal" href="#equation-ec-sqc-inductor-l">(3.63)</a> llegamos a</p>
@@ -678,8 +678,8 @@ V_{LC} = E_L =  \frac{1}{2L} \Phi_B^2
 <div class="note admonition">
 <p class="admonition-title">Nota (Flujo como coordenada generalizada)</p>
 <p>Vamos a comprobar que nuestras elecciones son coherentes. Comparemos la Ec.  <a class="reference internal" href="#equation-ec-scq-lcc-t">(3.71)</a> y la Ec.  <a class="reference internal" href="#equation-ec-scq-lcc-v">(3.72)</a> con la Ec.  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-oscilador-t-v">(3.26)</a>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-80b87295-e492-4f2a-9569-09553db47c50">
-<span class="eqno">(3.73)<a class="headerlink" href="#equation-80b87295-e492-4f2a-9569-09553db47c50" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d0aa1363-0b96-4bf8-b17b-11ab8f9f447e">
+<span class="eqno">(3.73)<a class="headerlink" href="#equation-d0aa1363-0b96-4bf8-b17b-11ab8f9f447e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \left.
 \begin{aligned}
 V_{LC} = \frac{1}{2L} \Phi_B^2 \\
@@ -687,8 +687,8 @@ V_{HO} = \frac{1}{2} k x^2
 \end{aligned}
 \right\} \Rightarrow \text{Asociamos: } x = \Phi_B, \, k = \frac{1}{L}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-34c39bc7-a5a3-4f0a-8302-dde92815abc3">
-<span class="eqno">(3.74)<a class="headerlink" href="#equation-34c39bc7-a5a3-4f0a-8302-dde92815abc3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c4d4eea0-0be1-4765-b76d-aad70eed0ffb">
+<span class="eqno">(3.74)<a class="headerlink" href="#equation-c4d4eea0-0be1-4765-b76d-aad70eed0ffb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \left.
 \begin{aligned}
 T_{LC} = \frac{1}{2} C \dot{\Phi}_B\\
@@ -715,13 +715,13 @@ T_{HO} = \frac{1}{2} m \dot{x}^2
 L_{LC} = \frac{1}{2} C \dot{\Phi}_B - \frac{1}{2L} \Phi_B^2
 \end{equation} \]</div>
 <p>Para calcular el Hamiltoniano, calculemos primero el momento  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-fhamiltoniano-p">(3.21)</a>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1277d6e2-f2f6-4d07-ae44-893f4fdeafc0">
-<span class="eqno">(3.76)<a class="headerlink" href="#equation-1277d6e2-f2f6-4d07-ae44-893f4fdeafc0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d830d3c0-d488-471a-836f-cd9e9edc5d61">
+<span class="eqno">(3.76)<a class="headerlink" href="#equation-d830d3c0-d488-471a-836f-cd9e9edc5d61" title="Permalink to this equation">#</a></span>\[\begin{equation}
 p = \frac{\partial L}{\partial \dot{\Phi}_B} = C  \dot{\Phi}_B
 \end{equation}\]</div>
 <p>Volviendo a la ecuación de la capacitancia (Ec.  <a class="reference internal" href="#equation-ec-sqc-capacitance">(3.60)</a>), vemos que</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e54d918-a1aa-4797-a0f0-1137e522b58f">
-<span class="eqno">(3.77)<a class="headerlink" href="#equation-8e54d918-a1aa-4797-a0f0-1137e522b58f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d4305ae5-990f-472d-a2ce-5ae18dd52e20">
+<span class="eqno">(3.77)<a class="headerlink" href="#equation-d4305ae5-990f-472d-a2ce-5ae18dd52e20" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Q = C V = C \frac{d \Psi_B}{dt} = C \dot{\Phi}_B
 \end{equation}\]</div>
 <p>donde se ha usado la Ec.  <a class="reference internal" href="#equation-ec-sqc-inductor-v-flux">(3.66)</a>. Vemos que en nuestra analogía con el oscilador armónico, la carga del condensador es equivalente al momento (ver Ec.  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-oscialdor-p">(3.28)</a>).</p>
@@ -741,13 +741,13 @@ H_{LC} = Q - L_{LC} = \frac{1}{2C} Q^2 + \frac{1}{2L} \Phi_B^2
 <span class="eqno">(3.79)<a class="headerlink" href="#equation-ec-sqc-lc-cuantico-h-1" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 \hat{H}_{LC} = \frac{1}{2C} \hat{Q}^2 + \frac{1}{2L} \hat{\Phi}_B^2
 \end{equation} \]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d90dc42c-f831-4eab-b110-58a4178e8ea6">
-<span class="eqno">(3.80)<a class="headerlink" href="#equation-d90dc42c-f831-4eab-b110-58a4178e8ea6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-51266287-2ce1-47fe-bbcf-65a52ce0ce45">
+<span class="eqno">(3.80)<a class="headerlink" href="#equation-51266287-2ce1-47fe-bbcf-65a52ce0ce45" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lc \hat{\Phi}_B, \hat{Q} \rc = \hat{\Phi}_B \hat{Q} - \hat{Q} \hat{\Phi}_B = i \hbar \, ,
 \end{equation}\]</div>
 <p>Definamos el <b>flujo reducido</b>, <span class="math notranslate nohighlight">\(\hat{\phi}\)</span>, y la <b>carga reducida</b>, <span class="math notranslate nohighlight">\(\hat{n}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-720af98e-a165-4650-b61c-d26d1608462a">
-<span class="eqno">(3.81)<a class="headerlink" href="#equation-720af98e-a165-4650-b61c-d26d1608462a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-44ba9887-60b1-4406-b77f-68b3ab414fd0">
+<span class="eqno">(3.81)<a class="headerlink" href="#equation-44ba9887-60b1-4406-b77f-68b3ab414fd0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \hat{\phi} \equiv 2 \pi \frac{\hat{\Phi}_B}{\Phi_0}, \qquad \text{donde} \qquad \Phi_0 = \frac{h}{2e}
 \end{equation}\]</div>
 <div class="math notranslate nohighlight" id="equation-ec-scq-carga-reducida">
@@ -761,24 +761,24 @@ H_{LC} = Q - L_{LC} = \frac{1}{2C} Q^2 + \frac{1}{2L} \Phi_B^2
 H_{LC} = 4 E_C \hat{n}^2 + \frac{1}{2} E_L \hat{\phi}^2 \, ,
 \end{equation} \]</div>
 <p>con</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5507d790-b44b-4e1c-9857-334f989e8dd9">
-<span class="eqno">(3.84)<a class="headerlink" href="#equation-5507d790-b44b-4e1c-9857-334f989e8dd9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6dd5d6d2-6df4-4f8a-a402-e609dea8e964">
+<span class="eqno">(3.84)<a class="headerlink" href="#equation-6dd5d6d2-6df4-4f8a-a402-e609dea8e964" title="Permalink to this equation">#</a></span>\[\begin{equation}
 E_C = \frac{e^2}{2C} \, ,
 \qquad
 E_L = \frac{(\Phi_0/(2 \pi))^2}{L}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(E_C\)</span> es la <b>energía de carga</b> y <span class="math notranslate nohighlight">\(E_L\)</span> es la <b>energía inductiva</b>.</p>
 <p>Además, el operador cuántico <span class="math notranslate nohighlight">\(\hat{n}\)</span> es el <b>número en exceso de pares de Cooper en la isla</b>, y <span class="math notranslate nohighlight">\(\hat{\phi}\)</span> es la <b>fase invariante de gauge</b> a través del inductor.  Estos dos operadores forman un par conjugado canónico que obedece a la relación de conmutación</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c81e4769-f17d-46f7-93a2-55724bbc2aab">
-<span class="eqno">(3.85)<a class="headerlink" href="#equation-c81e4769-f17d-46f7-93a2-55724bbc2aab" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-85435531-7329-46df-8f6d-5eacab4fffe7">
+<span class="eqno">(3.85)<a class="headerlink" href="#equation-85435531-7329-46df-8f6d-5eacab4fffe7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lc \hat{\phi}, \hat{n} \rc = i
 \end{equation}\]</div>
 <p>Observamos que el factor 4 delante de la energía de carga <span class="math notranslate nohighlight">\(E_C\)</span> en la Ec.  <a class="reference internal" href="#equation-ec-sqc-lc-cuantico-h">(3.83)</a> es únicamente un artefacto histórico, a razón de que esta escala de energía se definió primero para sistemas de un solo electrón y luego se adoptó para sistemas de pares de Cooper de dos electrones.</p>
 <p>Como podemos ver, el Hamiltoniano de la Ec.  <a class="reference internal" href="#equation-ec-sqc-lc-cuantico-h">(3.83)</a> es idéntico al de una partícula moviéndose en un potencial cuadrático unidimensional, es decir, al de un <b>oscilador armónico cuántico</b> (QHO de sus siglas en inglés), formalmente idéntico al clásico de la Ec.  <a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html#equation-ec-sqc-canonica-oscilador-h">(3.47)</a>. Podemos tratar <span class="math notranslate nohighlight">\(\hat{\phi}\)</span> como la coordenada de posición generalizada, de modo que el primer término es la energía cinética y el segundo término es la energía potencial.</p>
 <p>Como ya sabemos, la forma funcional del potencial influencia las soluciones (autovalores y autoestados). En este caso tenemos un potencial cuadrático (<span class="math notranslate nohighlight">\(V_{LC} \propto \hat{\phi}^2\)</span>), que podemos ver en la Fig.  <a class="reference internal" href="#fig-sqc-circuitos-lc"><span class="std std-numref">3.7</span></a>(b).</p>
 <p>Como ya vimos en la Ecs.  <a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html#equation-ec-sqc-canonica-qho-schrodinger">(3.49)</a> y  <a class="reference internal" href="Section_003_conceptos_basicos_sobre_cuantizacion__myst.html#equation-ec-sqc-canonica-qho-e">(3.50)</a>, la solución del QHO pasa por una serie de estados <span class="math notranslate nohighlight">\(\ket{k}\)</span> con energías equiespaciadas:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4d49446d-2f4f-4b0c-b3ac-8b74c79d6a92">
-<span class="eqno">(3.86)<a class="headerlink" href="#equation-4d49446d-2f4f-4b0c-b3ac-8b74c79d6a92" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-71783775-9374-46cd-8a75-97e4eb5279bf">
+<span class="eqno">(3.86)<a class="headerlink" href="#equation-71783775-9374-46cd-8a75-97e4eb5279bf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \hat{H}_{QHO} \ket{k} = E_k \ket{k}
 \qquad , \qquad
 E_k = \hbar \omega \lp k + \frac{1}{2} \rp
@@ -796,8 +796,8 @@ E_{k+1} - E_k = \hbar \omega
 \hat{\phi} = \phi_{zpf} (\hat{a} + \hat{a}^\dagger)
 \end{equation} \]</div>
 <p>donde</p>
-<div class="amsmath math notranslate nohighlight" id="equation-28cd56ee-81f5-409b-aecd-dbab2176da57">
-<span class="eqno">(3.88)<a class="headerlink" href="#equation-28cd56ee-81f5-409b-aecd-dbab2176da57" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-be285b9b-c92a-404a-8481-cd54e7bb80d1">
+<span class="eqno">(3.88)<a class="headerlink" href="#equation-be285b9b-c92a-404a-8481-cd54e7bb80d1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 n_{zpf} = \lc \frac{E_L}{32 E_C} \rc^{\frac{1}{4}}
 \qquad \text{y} \qquad
 \phi_{zpf} = \lc \frac{2E_C}{E_L} \rc^{\frac{1}{4}}
@@ -818,8 +818,8 @@ n_{zpf} = \lc \frac{E_L}{32 E_C} \rc^{\frac{1}{4}}
 H = 4 E_C n^2 - E_J \cos (\phi)
 \end{equation} \]</div>
 <p>con</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c1009a25-2a4b-4df9-9add-de31ca2a49c7">
-<span class="eqno">(3.90)<a class="headerlink" href="#equation-c1009a25-2a4b-4df9-9add-de31ca2a49c7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d381b9d7-6f64-4f54-aa4c-cd46022eb00c">
+<span class="eqno">(3.90)<a class="headerlink" href="#equation-d381b9d7-6f64-4f54-aa4c-cd46022eb00c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 E_C = \frac{e^2}{2 C_{\varSigma}}\,,
 \qquad
 C_{\varSigma} = C_s + C_J \, ,
@@ -866,8 +866,8 @@ E_J = \frac{I_c \Phi_0}{2 \pi}\, ,
 H = 4 E_C (n-n_g)^2 - E_J \cos (\phi)
 \end{equation} \]</div>
 <p>El término <span class="math notranslate nohighlight">\(n_g\)</span> se denomina <b>carga efectiva de desplazamiento</b> (effective offset charge) (en unidades de <span class="math notranslate nohighlight">\(2e\)</span>). Esta carga de offset depende tanto del ambiente como del acoplamiento del qubit con una fuente de microondas para su control. Desarrollaremos esto ultimo en la sección  <a class="reference internal" href="Section_008_puertas_simples__myst.html#sec-scq-puertas-1-qubits"><span class="std std-numref">3.8</span></a> (ver Fig.  <a class="reference internal" href="Section_008_puertas_simples__myst.html#fig-scq-qubit-acoplado-a-fuente"><span class="std std-numref">3.15</span></a>)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-398934f4-9965-4033-987e-cc5a182a5ddd">
-<span class="eqno">(3.92)<a class="headerlink" href="#equation-398934f4-9965-4033-987e-cc5a182a5ddd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-09839b5e-cccc-4cf6-9542-dcc8e8a77566">
+<span class="eqno">(3.92)<a class="headerlink" href="#equation-09839b5e-cccc-4cf6-9542-dcc8e8a77566" title="Permalink to this equation">#</a></span>\[\begin{equation}
 n_g = \frac{Q_r}{2e} + \frac{C_g V_g}{2e}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(V_d\)</span> y <span class="math notranslate nohighlight">\(C_d\)</span> son el voltaje y la capacitancia de la fuente de microondas (a veces llamados voltaje y capacitancia de puerta), y <span class="math notranslate nohighlight">\(Q_r\)</span> representa la carga de offset inducida por el ambiente.</p>
@@ -890,8 +890,8 @@ E_J \cos \phi = \frac{1}{2} E_J \phi^2 - \frac{1}{24} E_J \phi^2 + \mathcal{O} (
 \alpha = \omega_q^{1 \rightarrow 2} - \omega_q^{0 \rightarrow 1}
 \end{equation} \]</div>
 <p>es negativa y, por tanto, su límite en magnitud no puede hacerse arbitrariamente grande. Para el caso del transmón, <span class="math notranslate nohighlight">\(\alpha = - E_C\)</span> se suele diseñar para que sea de 100-300 MHz, según se requiera para mantener una frecuencia de qubit deseable</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2507b799-04d4-4ccc-b718-1c4b1d4e2d1b">
-<span class="eqno">(3.95)<a class="headerlink" href="#equation-2507b799-04d4-4ccc-b718-1c4b1d4e2d1b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d85f42c0-a21f-4529-8cd8-7d30d68d335a">
+<span class="eqno">(3.95)<a class="headerlink" href="#equation-d85f42c0-a21f-4529-8cd8-7d30d68d335a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \omega_q = (\sqrt{8 E_J E_C} - E_C)/\hbar
 \end{equation}\]</div>
 <p>de entorno a 3-6 GHz, mientras se mantiene una relación de energía suficientemente grande (<span class="math notranslate nohighlight">\(E_J/E_C \geq 50\)</span>) para suprimir la sensibilidad de carga.</p>
@@ -938,8 +938,8 @@ a^\dagger \rightarrow \sigma^{+} = \lp \begin{matrix} 0 &amp; 0 \\ 1 &amp; 0 \en
 <div class="note admonition">
 <p class="admonition-title">Nota (un ejemplo de sistema de dos niveles)</p>
 <p>El Hamiltoniano de la Ec.  <a class="reference internal" href="#equation-ec-sqc-transmon-tls-h">(3.97)</a> es el de un sistema típico de dos niveles con una diferencia de energía entre ellos de <span class="math notranslate nohighlight">\(\hbar \omega_q\)</span>. Por ejemplo, cuando tenemos una partícula de espín 1/2 (un electrón por ejemplo) y tenemos un campo magnético en la dirección <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(\vec{B} = B_0 \hat{z}\)</span> (donde <span class="math notranslate nohighlight">\(\hat{z}\)</span> no es un operador, sino un vector unitario en la dirección <span class="math notranslate nohighlight">\(z\)</span>), el Hamiltoniano es de la forma:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b9b65077-ecd5-40a3-b585-c8c82f72e4e0">
-<span class="eqno">(3.100)<a class="headerlink" href="#equation-b9b65077-ecd5-40a3-b585-c8c82f72e4e0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-163ecadf-ccbc-4198-80a8-3be116dcf643">
+<span class="eqno">(3.100)<a class="headerlink" href="#equation-163ecadf-ccbc-4198-80a8-3be116dcf643" title="Permalink to this equation">#</a></span>\[\begin{equation}
 H = - \vec{\mu} \cdot \vec{B} = - \gamma \vec{B} \cdot \vec{S} = - \gamma \hbar S_z B_0 \sigma_z
 = - \hbar \omega_0 \sigma_z
 \end{equation}\]</div>

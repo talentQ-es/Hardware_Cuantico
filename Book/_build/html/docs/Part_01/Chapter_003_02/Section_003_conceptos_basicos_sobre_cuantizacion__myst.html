@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.3. Conceptos básicos sobre cuantización &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
+    <title>3.3. Conceptos básicos sobre cuantización &#8212; Introducción al Hawdware en Computación Cuántica</title>
   
   
   
@@ -78,7 +78,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("repo", "https://github.com/talentQ-es/Hardware_Cuantico");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -196,8 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
-    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Introducción al Hawdware en Computación Cuántica - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Introducción al Hawdware en Computación Cuántica - Home"/>`);</script>
   
   
 </a></div>
@@ -323,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -340,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_003_02/Section_003_conceptos_basicos_sobre_cuantizacion__myst.ipynb" target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico/edit/master/Book/docs/Part_01/Chapter_003_02/Section_003_conceptos_basicos_sobre_cuantizacion__myst.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +357,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_003_conceptos_basicos_sobre_cuantizacion__myst.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_003_conceptos_basicos_sobre_cuantizacion__myst.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -575,18 +575,18 @@ document.write(`
 <p>La imagen de Schrödinger es la “típica”, pues suele ser la primera que se enseña. Es también la que hemos usado hasta ahora.</p>
 <p>La <b>imagen de Schrödinger</b> o <b>representación de Schrödinger</b> es una formulación de la mecánica cuántica en la que los vectores de estado evolucionan con el tiempo, pero los operadores (observables y otros) son en su mayoría constantes con respecto al tiempo.</p>
 <p>En la representación de Schrödinger, el estado de un sistema evoluciona con el tiempo, siguiendo la <b>ecuación de Schrödinger</b></p>
-<div class="amsmath math notranslate nohighlight" id="equation-2baaf009-41d3-49f8-8c04-b6e46eaac884">
-<span class="eqno">(3.36)<a class="headerlink" href="#equation-2baaf009-41d3-49f8-8c04-b6e46eaac884" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c4aac924-c99d-4945-bc8d-01f4cb210a12">
+<span class="eqno">(3.36)<a class="headerlink" href="#equation-c4aac924-c99d-4945-bc8d-01f4cb210a12" title="Permalink to this equation">#</a></span>\[\begin{equation}
 i \hbar \frac{\partial}{\partial t} \ket{\psi(t)} = \hat{H} \ket{\psi (t)}
 \end{equation}\]</div>
 <p>Al resolver esta ecuación se ve que la evolución para un sistema cuántico cerrado se produce mediante un operador unitario, el operador de <b>evolución temporal</b>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-51f4ced8-aaac-45cf-bbd5-da473ffd9e0f">
-<span class="eqno">(3.37)<a class="headerlink" href="#equation-51f4ced8-aaac-45cf-bbd5-da473ffd9e0f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f49518bd-e773-4c35-8362-94788032d065">
+<span class="eqno">(3.37)<a class="headerlink" href="#equation-f49518bd-e773-4c35-8362-94788032d065" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ket{\psi(t)} = \hat{U}(t, t_0) \ket{\psi (t_0}
 \end{equation}\]</div>
 <p>En el caso de que el Hamiltoniano <span class="math notranslate nohighlight">\(H\)</span> del sistema no varíe con el tiempo, el operador de evolución temporal tiene la forma</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b11269ff-950c-4d5f-88b6-ae236e806a6b">
-<span class="eqno">(3.38)<a class="headerlink" href="#equation-b11269ff-950c-4d5f-88b6-ae236e806a6b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9643b37a-a471-4da5-9341-f56935a29604">
+<span class="eqno">(3.38)<a class="headerlink" href="#equation-9643b37a-a471-4da5-9341-f56935a29604" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \hat{U} (t, t_0) = e^{-i \hat{H} \cdot (t-t_0)/\hbar}
 \end{equation}\]</div>
 </section>
@@ -594,16 +594,16 @@ i \hbar \frac{\partial}{\partial t} \ket{\psi(t)} = \hat{H} \ket{\psi (t)}
 <h3><span class="section-number">3.3.2.2. </span>Imagen de Heisenberg (Heisenberg picture)<a class="headerlink" href="#imagen-de-heisenberg-heisenberg-picture" title="Permalink to this heading">#</a></h3>
 <p>La <b>imagen de Heisenberg</b> o <b>representación de Heisenberg</b> es una formulación de la mecánica cuántica en la que los observables, <span class="math notranslate nohighlight">\(A\)</span>, incorporan una dependencia del tiempo, pero los estados, <span class="math notranslate nohighlight">\(\ket{\psi}\)</span>, son independientes del tiempo.</p>
 <p>En el caso en que el Hamiltoniano en la imagen de Schrödinger, <span class="math notranslate nohighlight">\(H_S\)</span>, no dependa del tiempo, la conexión entre los estados y operadores en la imagen de Schrödinger y de Heisenberg es la siguiente:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec272cba-e986-4dfa-bf33-0fc01349594c">
-<span class="eqno">(3.39)<a class="headerlink" href="#equation-ec272cba-e986-4dfa-bf33-0fc01349594c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f0b210d1-52b1-4733-8ee4-577d33048705">
+<span class="eqno">(3.39)<a class="headerlink" href="#equation-f0b210d1-52b1-4733-8ee4-577d33048705" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ket{\psi_H} = e^{it \hat{H}/\hbar} \ket{\psi_S(t)}
 \qquad; \qquad
 \hat{A}_H(t) = e^{it \hat{H}/\hbar} \hat{A}_S e^{-it \hat{H}/\hbar}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\hat{H}_S = \hat{H}_H = \hat{H}\)</span>, y donde recordemos que <span class="math notranslate nohighlight">\(e^{-it \hat{H}/\hbar} = \hat{U}(t,0)\)</span></p>
 <p>Podemos ver como es la evolución de un observable <span class="math notranslate nohighlight">\(\hat{A}_H(t)\)</span> derivando la expresión de <span class="math notranslate nohighlight">\(\hat{A}_H(t)\)</span> respecto a <span class="math notranslate nohighlight">\(t\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e3887bc3-3f56-47c4-affb-f58a0b1feb79">
-<span class="eqno">(3.40)<a class="headerlink" href="#equation-e3887bc3-3f56-47c4-affb-f58a0b1feb79" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6e90d287-a95d-48f4-85ce-65a63e8eb735">
+<span class="eqno">(3.40)<a class="headerlink" href="#equation-6e90d287-a95d-48f4-85ce-65a63e8eb735" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 \frac{d}{dt} \hat{A}_H(t) &amp; = \frac{d}{dt} \lp e^{it\hat{H}/\hbar} \hat{A}_S e^{-it\hat{H}/\hbar}  \rp =  \\
 &amp; = \frac{i}{\hbar} \lc \hat{H} e^{it \hat{H}/\hbar} \hat{A}_S e^{-it \hat{H}/\hbar} - e^{it \hat{H}/\hbar} \hat{A}_S \hat{H} e^{-it \hat{H}/\hbar} \rc  + e^{it \hat{H}/\hbar} \frac{d \hat{A}_S}{d t}  e^{- it \hat{H}/\hbar} = \\
@@ -625,8 +625,8 @@ i \hbar \frac{\partial}{\partial t} \ket{\psi(t)} = \hat{H} \ket{\psi (t)}
 <p>y se han invertido <span class="math notranslate nohighlight">\(\hat{A}_H(t)\)</span> y <span class="math notranslate nohighlight">\(\hat{H}\)</span> en el conmutador debido al signo <span class="math notranslate nohighlight">\(-\)</span> que aparece al bajar la <span class="math notranslate nohighlight">\(i\)</span> al denominador.
 La Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-heisenberg">(3.41)</a> se denomina <b>Ecuación de Heisenberg</b>.</p>
 <p>Si el operador <span class="math notranslate nohighlight">\(\hat{A}_S\)</span> no tiene dependencia explicita en el tiempo, la Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-heisenberg">(3.41)</a> se simplifica a</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aea094d9-cd9c-4229-b187-e19acf5fce86">
-<span class="eqno">(3.43)<a class="headerlink" href="#equation-aea094d9-cd9c-4229-b187-e19acf5fce86" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-96dbfc9d-bd6f-4701-8eb5-c035ed132474">
+<span class="eqno">(3.43)<a class="headerlink" href="#equation-96dbfc9d-bd6f-4701-8eb5-c035ed132474" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{d}{dt} \hat{A}_H(t) = \frac{i}{\hbar} \lc \hat{H}, \hat{A}_H(t) \rc
 \end{equation}\]</div>
 <p>Podemos escribir las relaciones de conmutación entre los operadores de las coordenadas generalizadas <span class="math notranslate nohighlight">\(\hat{q}_j\)</span> y los operadores de los momentos generalizados <span class="math notranslate nohighlight">\(\hat{p}_j = -i \hbar \partial/\partial \hat{q}_j \)</span>:</p>
@@ -641,8 +641,8 @@ La Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-heisenberg
 <div class="note admonition">
 <p class="admonition-title">Nota (Demostración)</p>
 <p>Las relaciones de la Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-conmutadores-coordenadas">(3.44)</a> pueden verse facilmente si aplicamos los conmutadores sobre una función de onda <span class="math notranslate nohighlight">\(\psi(\hat{\vec{q}})\)</span>. Por ejemplo:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d7382aad-36e3-4a2a-a1fd-482f5f18f7f8">
-<span class="eqno">(3.45)<a class="headerlink" href="#equation-d7382aad-36e3-4a2a-a1fd-482f5f18f7f8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2276a1d0-7fa5-4ebc-b26e-d01164f18744">
+<span class="eqno">(3.45)<a class="headerlink" href="#equation-2276a1d0-7fa5-4ebc-b26e-d01164f18744" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lc \hat{q}_k, \hat{p}_l \rc \psi (\hat{\vec{q}}) = \hat{q}_k (-i\hbar) \frac{\partial}{\partial \hat{q}_l} \psi(\hat{\vec{q}}) - (-i\hbar) \frac{\partial}{\partial \hat{q}_l} \lc \hat{q}_k \, \psi(\hat{\vec{q}}) \rc = i \hbar \delta_{kl} \psi (\hat{\vec{q}})
 \end{equation}\]</div>
 </div>
@@ -671,8 +671,8 @@ La Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-heisenberg
 \hat{H}_{QHO} = \frac{1}{2m} \hat{p}^2 + \frac{1}{2} k \hat{x}^2
 \end{equation} \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\hat{p}\)</span> y <span class="math notranslate nohighlight">\(\hat{x}\)</span> cumples las reglas de conmutación de la Ec.  <a class="reference internal" href="#equation-ec-sqc-canonica-conmutadores-coordenadas">(3.44)</a>, donde ya vimos que (Ec.  <a class="reference internal" href="Section_002_conceptos_basicos_sobre_mecanida_clasica__myst.html#equation-ec-sqc-oscilador-omega">(3.30)</a>)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a1f362e4-9f38-477c-8178-5dd95c864d0c">
-<span class="eqno">(3.48)<a class="headerlink" href="#equation-a1f362e4-9f38-477c-8178-5dd95c864d0c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2adec2dd-23e5-4801-ad6e-c599be3186ef">
+<span class="eqno">(3.48)<a class="headerlink" href="#equation-2adec2dd-23e5-4801-ad6e-c599be3186ef" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k = m \omega^2
 \end{equation}\]</div>
 <p>Resolviendo la ecuación de Schrödinger independiente del tiempo (ecuación de autovalores) para este Hamiltoniano</p>
@@ -700,8 +700,8 @@ E_n = \hbar \omega \lp n + \frac{1}{2} \rp
 <section id="particulas-identicas">
 <h3><span class="section-number">3.3.3.1. </span>Partículas idénticas<a class="headerlink" href="#particulas-identicas" title="Permalink to this heading">#</a></h3>
 <p>El punto de partida del segundo formalismo de cuantización es la noción de <b>indistinguibilidad</b> de las partículas en mecánica cuántica. En la mecánica clásica, cada partícula está etiquetada por un vector de posición distinto <span class="math notranslate nohighlight">\(\vec{r}_k\)</span> y diferentes configuraciones del conjunto de <span class="math notranslate nohighlight">\(\vec{r}_k\)</span> corresponden a diferentes estados de muchos cuerpos. Por otro lado,  en la mecánica cuántica, las partículas son <b>idénticas</b>, de tal manera que intercambiar dos partículas, es decir, <span class="math notranslate nohighlight">\(\vec{r}_k \leftrightarrow \vec{r}_l\)</span>, no conduce a un estado cuántico de muchos cuerpos diferente. Esto implica que la función de onda cuántica de muchos cuerpos debe ser invariante (salvo un factor de fase) bajo el intercambio de dos partículas</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cdf9aa09-690e-4d4e-8c54-593bb99a4a37">
-<span class="eqno">(3.51)<a class="headerlink" href="#equation-cdf9aa09-690e-4d4e-8c54-593bb99a4a37" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4957cc6d-bb86-40da-9f2e-bdff9d10c00e">
+<span class="eqno">(3.51)<a class="headerlink" href="#equation-4957cc6d-bb86-40da-9f2e-bdff9d10c00e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 \Psi_B (\cdots, \hat{\vec{r}}_k, \cdots, \hat{\vec{r}}_l, \cdots) &amp;= + \Psi_B (\cdots, \hat{\vec{r}}_l, \cdots, \hat{\vec{r}}_k, \cdots)  \text{ si las partículas son bosones} \\
 \Psi_F (\cdots, \hat{\vec{r}}_k, \cdots, \hat{\vec{r}}_l, \cdots) &amp;= - \Psi_F (\cdots, \hat{\vec{r}}_l, \cdots, \hat{\vec{r}}_k, \cdots)  \text{ si las partículas son ferminones}
@@ -713,14 +713,14 @@ E_n = \hbar \omega \lp n + \frac{1}{2} \rp
 <h3><span class="section-number">3.3.3.2. </span>Estados de Fock<a class="headerlink" href="#estados-de-fock" title="Permalink to this heading">#</a></h3>
 <p>En el segunda cuantización, en lugar de preguntar “¿en que estado está cada partícula?”, se pregunta “¿Cuántas partículas hay en cada estado?”. Dado que esta descripción no hace referencia al etiquetado de las partículas, no contiene información redundante y, por tanto, conduce a una descripción precisa y más sencilla del estado cuántico de muchos cuerpos.</p>
 <p>En este enfoque, el estado de muchos cuerpos se representa en la base del <b>números de ocupación</b>, y el estado se etiqueta mediante el conjunto de números de ocupación, denotado como</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e4a8163b-4c71-4b49-ae87-b1575040eb95">
-<span class="eqno">(3.52)<a class="headerlink" href="#equation-e4a8163b-4c71-4b49-ae87-b1575040eb95" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f3cce56e-3f05-4e7e-a991-f51866425a88">
+<span class="eqno">(3.52)<a class="headerlink" href="#equation-f3cce56e-3f05-4e7e-a991-f51866425a88" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ket{\lc n_\alpha \rc} = \ket{n_1, n_2, \cdots, n_\alpha, \cdots},
 \end{equation}\]</div>
 <p>lo que significa que hay <span class="math notranslate nohighlight">\(n_\alpha\)</span> partículas en el estado <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>. Los números de ocupación suman al número total de partículas <span class="math notranslate nohighlight">\(\sum_\alpha n_\alpha = N\)</span>.</p>
 <p>El estado de Fork con todos los números de ocupación igual a cero se llama el <b>vacío</b>, denotado como</p>
-<div class="amsmath math notranslate nohighlight" id="equation-40fb9552-8159-4ba9-ae01-63f75aab4db8">
-<span class="eqno">(3.53)<a class="headerlink" href="#equation-40fb9552-8159-4ba9-ae01-63f75aab4db8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f0caee74-2ef7-4e84-82fc-55cc01af1660">
+<span class="eqno">(3.53)<a class="headerlink" href="#equation-f0caee74-2ef7-4e84-82fc-55cc01af1660" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ket{0} \equiv \ket{\cdots, 0_\alpha, \cdots}.
 \end{equation}\]</div>
 </section>
@@ -736,13 +736,13 @@ E_n = \hbar \omega \lp n + \frac{1}{2} \rp
 \end{aligned}
 \end{equation} \end{split}\]</div>
 <p>Teniendo en cuenta las anteriores relaciones, vemos podemos construir un estado de <span class="math notranslate nohighlight">\(n_\alpha\)</span> partículas en el estado <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span> aplicando operadores de creación sobre el vacío:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65865936-dc3d-4551-ab51-aa003c96a8e1">
-<span class="eqno">(3.55)<a class="headerlink" href="#equation-65865936-dc3d-4551-ab51-aa003c96a8e1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-43fb984c-0f30-44da-a76f-440fcd4b882a">
+<span class="eqno">(3.55)<a class="headerlink" href="#equation-43fb984c-0f30-44da-a76f-440fcd4b882a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ket{n_\alpha} = \frac{1}{\sqrt{n_\alpha !}} (\hat{a}^\dagger_\alpha)^{n_\alpha} \ket{0_\alpha}
 \end{equation}\]</div>
 <p>También se puede definir un <b>operador número</b>, <span class="math notranslate nohighlight">\(N_\alpha\)</span>, que nos da el número de partículas en un estado</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9aad737-1d6e-4e60-ac97-3665df97f83f">
-<span class="eqno">(3.56)<a class="headerlink" href="#equation-d9aad737-1d6e-4e60-ac97-3665df97f83f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6f0617e3-ef35-48ef-92f3-2acdb463e608">
+<span class="eqno">(3.56)<a class="headerlink" href="#equation-6f0617e3-ef35-48ef-92f3-2acdb463e608" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \hat{N}_\alpha = \hat{a}_\alpha^\dagger \hat{a}_\alpha \rqa \hat{N}_\alpha \ket{n_\alpha} = n_\alpha \ket{n_\alpha}
 \end{equation}\]</div>
 </section>
@@ -754,8 +754,8 @@ E_n = \hbar \omega \lp n + \frac{1}{2} \rp
 <p>Véase que precisamente es por esto, por tener solo un oscilador, por lo que en esta sección no aparecen los subíndices <span class="math notranslate nohighlight">\(\alpha\)</span> de la anterior.</p>
 </div>
 <p>Vamos a tratar con un solo oscilador que va estar en un esto <span class="math notranslate nohighlight">\(\ket{n}\)</span> de oscilación. Definimos los operadores <span class="math notranslate nohighlight">\(\ket{a}\)</span> (bajada/aniquilación) y su hermítico conjugado <span class="math notranslate nohighlight">\(\ket{a}^{\dagger}\)</span> (subida/creación) como</p>
-<div class="amsmath math notranslate nohighlight" id="equation-48e1430c-8e86-4ae1-a33e-39ad5150a7bc">
-<span class="eqno">(3.57)<a class="headerlink" href="#equation-48e1430c-8e86-4ae1-a33e-39ad5150a7bc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-504671bd-4719-4421-8f4f-4d10401d09e5">
+<span class="eqno">(3.57)<a class="headerlink" href="#equation-504671bd-4719-4421-8f4f-4d10401d09e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \left\{
 \begin{aligned}
 \hat{a} &amp; = \sqrt{\frac{m \omega}{2 \hbar}} \lp \hat{x} + \frac{i}{m \omega} \hat{p} \rp \\
@@ -771,8 +771,8 @@ E_n = \hbar \omega \lp n + \frac{1}{2} \rp
 \right.
 \end{equation}\]</div>
 <p>donde, siguiendo la Ec.  <a class="reference internal" href="#equation-ec-sqc-a-y-a-dagger-sobre-n-generico">(3.54)</a> vemos que</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a10b3cac-152f-43f0-83ce-1743eb5596bf">
-<span class="eqno">(3.58)<a class="headerlink" href="#equation-a10b3cac-152f-43f0-83ce-1743eb5596bf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3eb47792-7b64-470a-bbe9-ca20822f2cf3">
+<span class="eqno">(3.58)<a class="headerlink" href="#equation-3eb47792-7b64-470a-bbe9-ca20822f2cf3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{aligned}
 \hat{a}^\dagger \ket{n} &amp;= \sqrt{n+1} \ket{n+1} \\
 \hat{a} \ket{n} &amp;= \sqrt{n} \ket{n-1}

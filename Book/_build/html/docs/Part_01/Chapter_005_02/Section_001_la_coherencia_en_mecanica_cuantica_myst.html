@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5.1. La coherencia en Mecánica Cuántica &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
+    <title>5.1. La coherencia en Mecánica Cuántica &#8212; Introducción al Hawdware en Computación Cuántica</title>
   
   
   
@@ -78,7 +78,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("repo", "https://github.com/talentQ-es/Hardware_Cuantico");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -196,8 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
-    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Introducción al Hawdware en Computación Cuántica - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Introducción al Hawdware en Computación Cuántica - Home"/>`);</script>
   
   
 </a></div>
@@ -323,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -340,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.ipynb" target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico/edit/master/Book/docs/Part_01/Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +357,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_005_02/Section_001_la_coherencia_en_mecanica_cuantica_myst.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -525,13 +525,13 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="la-coherencia-en-mecanica-cuantica">
 <h1><span class="section-number">5.1. </span>La coherencia en Mecánica Cuántica<a class="headerlink" href="#la-coherencia-en-mecanica-cuantica" title="Permalink to this heading">#</a></h1>
 <p>Un <b>autoestado</b> cuántico de un Hamiltoniano particular es, por definición, un estado estacionario, en el que la función de onda puede variar espacialmente, pero no decae en el tiempo:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0ba2d218-be00-4727-9c5e-975edf92f8d1">
-<span class="eqno">(5.1)<a class="headerlink" href="#equation-0ba2d218-be00-4727-9c5e-975edf92f8d1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-32e83e6d-1a54-45fe-b923-7e305f4f96dc">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-32e83e6d-1a54-45fe-b923-7e305f4f96dc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 H \ket{n} = E_n \ket{n} \rqa \ket{n(t)} = e^{- \frac{t-t_0}{\hbar}E_n} \ket{n(t_0)}
 \end{equation}\]</div>
 <p>Un sistema cuántico puede estar en una superposición de los autoestados del Hamiltoniano con relaciones definidas de fase y amplitud entre los estados. Por ejemplo, en un sistema de dos niveles</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2e86dab-c15b-48a7-914c-94c33e20a7b4">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-c2e86dab-c15b-48a7-914c-94c33e20a7b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bfd664e8-9dde-4ab8-a039-1e0fe3287837">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-bfd664e8-9dde-4ab8-a039-1e0fe3287837" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ket{\psi} = a \ket{0}  + e^{i \phi} b \ket{1}, \qquad \text{ donde } |a|^2 + |b|^2 = 1
 \end{equation}\]</div>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">

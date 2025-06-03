@@ -120,9 +120,9 @@ except:
 
 Notebook_folder_path = "../Notebooks"
 Notebook_old_folder_path = "../No_Notebooks_old"
-Plantilla_section_path = "Plantillas/Plantilla_seccion.ipynb"
+Plantilla_section_path = "Plantillas/Plantilla_seccion_TalentQ.ipynb"
 Plantilla_Bib          = "Plantillas/Plantilla_Bibliografia.ipynb"
-Path_index             = "Plantillas/index.md"
+Path_index             = "Plantillas/index_TalentQ.md"
 
 #######################################################################################################################
 ### Prints de las Rutas

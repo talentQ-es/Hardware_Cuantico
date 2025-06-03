@@ -1,0 +1,424 @@
+\documentclass[a4paper,11pt]{article} % Tamaño de papel, tamaño de letra y clase LaTeX usada...
+
+\usepackage[spanish]{babel} % Permite escribir en Castellano (tildes y ñ) e implementa...
+\usepackage[utf8]{inputenc} % Permite introducir acentos y Ñ directamente.
+%\usepackage[T1]{fontenc} %permite cambiar la fuente por defecto.
+\usepackage{bm} % Permite letras griegas en negrita {uso: \bm{\alpha}}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{subfigure}
+\usepackage{multicol} %para añadir texto en columnas
+\usepackage{float}
+\usepackage{fancyhdr} %encabezados y pies de pagina
+\usepackage{amsmath,amsfonts,latexsym,color,textcomp,anysize}
+
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{longtable}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{cancel} % tachar cosas \cancel{}
+%\usepackage{tensor} % Notación: \tensor{T}{^a_b^c_d}
+%\usepackage{mathrsfs}
+\usepackage{slashed}   %\slashed{p}
+\spanishdecimal{.}
+\usepackage{cite}
+%\usepackage[style=numeric-comp]{biblatex}
+\usepackage{yhmath}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan}
+
+\usepackage[braket, qm]{qcircuit}
+
+\setcounter{MaxMatrixCols}{12}
+\usepackage{changepage}
+\usepackage{framed}
+\usepackage{caption}
+%\usepackage{subcaption}
+
+% =========================================================================================
+% Cuadros
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{listingsutf8}
+\newtcolorbox{mybox_blue}[1]
+{enhanced jigsaw, breakable, pad at break*=1mm,  colback=cyan!5!white,colframe=cyan!75!black,fonttitle=\bfseries,title=#1}
+
+\newtcolorbox{mybox_green}[1]
+{enhanced jigsaw, breakable, pad at break*=1mm, colback=green!5!white,colframe=green!45!black,fonttitle=\bfseries,title=#1}
+
+\newtcolorbox{mybox_red}[1]
+{enhanced jigsaw, breakable, pad at break*=1mm, colback=red!5!white,colframe=red!45!black,fonttitle=\bfseries,title=#1}
+
+\newtcolorbox{mybox_orange}[1]
+{enhanced jigsaw, breakable, pad at break*=1mm, colback=orange!10!white,colframe=orange!80!black,fonttitle=\bfseries,title=#1}
+
+\newtcolorbox{mybox_gray}[1]
+{enhanced jigsaw, breakable, pad at break*=1mm, colframe=gray!45!black}
+
+\newtcolorbox{mybox_gray2}[1] % Sin bordes
+{enhanced, sharp corners, breakable, pad at break*=1mm, boxrule=0pt, toprule=1pt, bottomrule=1pt, colframe=black}
+
+
+
+
+% =========================================================================================
+% codigo Python
+\usepackage{listings} 	% \begin{lstlisting}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+%Includes "References" in the table of contents
+\usepackage[nottoc]{tocbibind}
+
+%===========================================================================================
+% Margenes, sangria, espacio entre parágrafos
+
+%\marginsize{2cm}{2cm}{2cm}{1.5cm} %MÁRGENES: Izq, Der, Sup, Inf.
+\parindent=0mm % Sangría por defecto
+\parskip=3mm % Espacio entre párrafos por defecto
+
+%===========================================================================================
+% Definiciones de utilidad
+
+% Parentesis
+\def\lp{\left(}
+\def\rp{\right)}
+
+\def\lc{\left[}
+\def\rc{\right]}
+
+\def\lch{\left\{}
+\def\rch{\right\}}
+
+\def\l|{\left|}
+\def\r|{\right|}
+
+\def\Lp{\Bigl(}
+\def\Rp{\Bigr)}
+
+\def\Lc{\Bigl[}
+\def\Rc{\Bigr]}
+
+\def\Lch{\Bigl\{}
+\def\Rch{\Bigr\}}
+
+\def\L.{\Bigl.}
+\def\R.{\Bigr.}
+
+% Cosas cuanticas
+\newcommand{\branew}[1]{\langle #1|} 
+\newcommand{\ketnew}[1]{|#1\rangle} 
+\newcommand{\braket}[2]{\langle #1|#2\rangle} 
+\newcommand{\ketbra}[2]{| #1\rangle \! \langle #2|} 
+%\newcommand{\ketbra}[2]{| #1\rangle \langle #2|} 
+\newcommand{\cg}[1]{{\rm C}#1} 
+
+% Cosas útiles
+\def\Nabla{\bm{\nabla}}
+\def\rqa{\quad \Rightarrow \quad}
+\def\senc{\, \text{senc}}
+%===========================================================================================
+% Para poner subsubsections en letra pequeña y crear subsubsubsection en letra pequeña
+
+% Subsub en cursiva y subrayado
+\def\subsubiContadorIt{\par\addtocounter{subsubsection}{1}\underline{\it\thesubsubsection.}\hskip0.5cm \setcounter{subsubsubsectionIt}{0}}
+	\newcommand{\SubsubiIt}[1]{
+		\subsubiContadorIt \textit{#1}
+	}
+
+% subsubsub con cursita y subrayado
+\newcounter{subsubsubsectionIt}[subsubsection]
+\def\subsubiiContadorIt{\par\addtocounter{subsubsubsectionIt}{1}\underline{\it \thesubsubsection.\thesubsubsubsectionIt.}\hskip0.5cm}
+	\newcommand{\SubsubiiIt}[1]{
+		\subsubiiContadorIt \textit{#1}
+	}
+
+% subsubsub negrita
+\newcounter{subsubsubsectionBf}[subsubsection]\def\subsubiiContadorBf{\par\addtocounter{subsubsubsection_bf}{1}\bf \thesubsubsection.\thesubsubsubsection.\hskip0.5cm}
+	\newcommand{\SubsubiiBf}[1]{
+		\subsubsubsectionBf \textbf{#1}
+	}
+%===========================================================================================
+
+%\title{\Huge{\textbf{Introducción a la Computación Cuántica.}}}
+%\author{David Castaño Bandín (UMA)}
+%\date{Año 2023}
+%\newpage
+
+
+
+% ================================= PORTADA =======================================
+%\pagestyle{empty}
+
+\begin{document}
+\renewcommand{\tablename}{Tabla}
+
+\SubsubiIt{Carrier resonance}
+
+
+% \makebox[\widthof{$\ket{g,n}$}]{$0$}
+% \makebox[\widthof{$\ket{g,n+1}$}]{$0$}  
+% \makebox[\widthof{$\ket{e,n}$}]{$0$}
+% \makebox[\widthof{$\ket{e,n+1}$}]{$0$}
+Para este caso tenemos 
+\begin{equation*} \label{ec_ions_U_carrier}
+ \begin{matrix}
+    & 
+    %
+    \begin{matrix}
+      \makebox[\widthof{$-i e^{i \phi} \sin \lp \beta/2 \rp$}]{$\ket{g,n}$}   & 
+      \ket{g,n+1} & 
+      \makebox[\widthof{$-i e^{-i \phi} \sin \lp \beta/2 \rp$}]{$\ket{e,n}$}   &
+      \ket{e,n+1}
+    \end{matrix} 	&  \\[.5\normalbaselineskip]
+  %
+    \mathcal{U}_I^{(\text{c})} = & 
+    \begin{bmatrix}
+        \cos \lp \beta/2 \rp  & 
+        \makebox[\widthof{$\ket{g,n+1}$}]{$0$}   & 
+        -i e^{-i \phi} \sin \lp \beta/2 \rp & 
+        \makebox[\widthof{$\ket{e,n+1}$}]{$0$} \\
+      %
+        0   & 
+        \makebox[\widthof{$\ket{g,n+1}$}]{$1$}   & 
+        0 & 
+        \makebox[\widthof{$\ket{e,n+1}$}]{$0$} \\
+      %
+        -i e^{i \phi} \sin \lp \beta/2 \rp & 
+        \makebox[\widthof{$\ket{g,n+1}$}]{$0$}   & 
+        \cos \lp \beta/2 \rp & 
+        \makebox[\widthof{$\ket{e,n+1}$}]{$0$} \\
+      %
+        0 & 
+        \makebox[\widthof{$\ket{g,n+1}$}]{$0$}   & 
+        0 & 
+        \makebox[\widthof{$\ket{e,n+1}$}]{$1$} 
+    \end{bmatrix} &
+    \begin{matrix} \ket{g,n} \\ \ket{g,n+1} \\ \ket{e,n} \\ \ket{e,n+1} \end{matrix} 
+\end{matrix} \,
+\end{equation*}
+
+donde $\phi$ es la \textbf{fase} del pulso láser y $\beta = \Omega t$, siendo $\Omega$ la intensidad de acoplamiento (un parámetro) y $t$ el \textbf{tiempo} de aplicación del pulso láser. Para nuestro caso, $n = 0$. 
+
+
+		\SubsubiIt{Blue sideband}
+		
+Para este caso tenemos 
+\begin{equation*} \label{ec_ions_U_bsb}
+ \begin{matrix}
+    & 
+    %
+    \begin{matrix}
+      \makebox[\widthof{$-i e^{i (\phi + \pi/2)} \sin \lp \eta\beta/2 \rp$}]{$\ket{g,n}$}   & 
+      \ket{g,n+1} & 
+      \ket{e,n}   &
+      \makebox[\widthof{$-i e^{-i (\phi+ \pi/2)} \sin \lp \eta\beta/2 \rp$}]{$\ket{e,n+1}$} 
+    \end{matrix} 	&  \\[.5\normalbaselineskip]
+  %
+    \mathcal{U}_I^{(\text{bsb})} = & 
+    \begin{bmatrix}
+        \cos \lp \eta\beta/2 \rp  & 
+        \makebox[\widthof{$\ket{g,n+1}$}]{$0$}   & 
+        \makebox[\widthof{$\ket{e,n}$}]{$0$}  & 
+        -i e^{-i (\phi+ \pi/2)} \sin \lp \eta\beta/2 \rp    \\
+      %
+        0   & 
+        \makebox[\widthof{$\ket{g,n+1}$}]{$1$}   & 
+        0 & 
+        0 \\
+      %
+        0 & 
+        \makebox[\widthof{$\ket{g,n+1}$}]{$0$}   & 
+        \makebox[\widthof{$\ket{e,n}$}]{$1$} & 
+        0 \\
+      %
+        -i e^{i (\phi+ \pi/2)} \sin \lp \eta\beta/2 \rp  & 
+        \makebox[\widthof{$\ket{g,n+1}$}]{$0$}   & 
+        \makebox[\widthof{$\ket{e,n}$}]{$0$} & 
+        \cos \lp \eta\beta/2 \rp  
+    \end{bmatrix} &
+    \begin{matrix} \ket{g,n} \\ \ket{g,n+1} \\ \ket{e,n} \\ \ket{e,n+1} \end{matrix} 
+\end{matrix}
+\end{equation*}
+donde $\phi$ es la \textbf{fase} del pulso láser, $\eta$ el parametro de Lamd-Dicke y $\beta = \Omega t$, siendo $\Omega$ la intensidad de acoplamiento (un parámetro) y $t$ el \textbf{tiempo} de aplicación del pulso láser. Para nuestro caso, $n = 0$.
+
+		\SubsubiIt{Red sideband}
+
+Para este caso tenemos 
+\begin{equation*} \label{ec_ions_U_rsb}
+ \begin{matrix}
+    & 
+    %
+    \begin{matrix}
+      \ket{g,n}  & 
+      \makebox[\widthof{$-i e^{i (\phi+ \pi/2)} \sin \lp \eta\beta/2 \rp$}]{$\ket{g,n+1}$}  & 
+      \makebox[\widthof{$-i e^{-i (\phi+ \pi/2)} \sin \lp \eta\beta/2 \rp$}]{$\ket{e,n}$}   &
+      \ket{e,n+1}
+    \end{matrix} 	&  \\[.5\normalbaselineskip]
+  %
+    \mathcal{U}_I^{(\text{rsb})} = & 
+    \begin{bmatrix}
+        \makebox[\widthof{$\ket{g,n}$}]{$1$}  & 
+        0 & 
+        0 & 
+        \makebox[\widthof{$\ket{e,n+1}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{g,n}$}]{$0$}   & 
+        \cos \lp \eta\beta/2 \rp    & 
+        -i e^{-i (\phi+ \pi/2)} \sin \lp \eta\beta/2 \rp & 
+        \makebox[\widthof{$\ket{e,n+1}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{g,n}$}]{$0$} & 
+        -i e^{i (\phi+ \pi/2)} \sin \lp \eta\beta/2 \rp   & 
+        \cos \lp \eta\beta/2 \rp & 
+        \makebox[\widthof{$\ket{e,n+1}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{g,n}$}]{$0$} & 
+        0 & 
+        0 & 
+        \makebox[\widthof{$\ket{e,n+1}$}]{$1$} 
+    \end{bmatrix} &
+    \begin{matrix} \ket{g,n} \\ \ket{g,n+1} \\ \ket{e,n} \\ \ket{e,n+1} \end{matrix} 
+\end{matrix}
+\end{equation*}
+donde $\phi$ es la \textbf{fase} del pulso láser, $\eta$ el parametro de Lamd-Dicke y $\beta = \Omega t$, siendo $\Omega$ la intensidad de acoplamiento (un parámetro) y $t$ el \textbf{tiempo} de aplicación del pulso láser. Para nuestro caso, $n = 0$. 
+
+
+\begin{equation*} \label{ec_ions_CZ}
+ \begin{matrix}
+    & 
+    %
+    \begin{matrix}
+      \ket{gg} & 
+      \ket{ge} & 
+      \ket{eg} &
+      \ket{ee}
+    \end{matrix} 	&  \\[.5\normalbaselineskip]
+  %
+    \text{CZ} = & 
+    \begin{bmatrix}
+        \makebox[\widthof{$\ket{gg}$}]{$1$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$0$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$0$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{gg}$}]{$0$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$1$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$0$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{gg}$}]{$0$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$0$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$1$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{gg}$}]{$0$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$0$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$0$} & 
+        \makebox[\widthof{$\ket{gg}$}]{$-1$} \\
+    \end{bmatrix} &
+    \begin{matrix} \ket{gg} \\ \ket{ge} \\ \ket{eg} \\ \ket{ee} \end{matrix} 
+\end{matrix} \,
+\end{equation*}
+
+
+
+
+
+\begin{equation*} \label{ec_ions_SWAPav}
+ \begin{matrix}
+    & 
+    %
+    \begin{matrix}
+      \ket{g,0} & 
+      \ket{g,1} & 
+      \ket{e,0} &
+      \ket{e,1}
+    \end{matrix} 	&  \\[.5\normalbaselineskip]
+  %
+    \text{SWAP}_{av} = & 
+    \begin{bmatrix}
+        \makebox[\widthof{$\ket{g,0}$}]{$1$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$1$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$-1$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$1$} \\
+    \end{bmatrix} &
+    \begin{matrix} \ket{g,0} \\ \ket{g,1} \\ \ket{e,1} \\ \ket{e,1} \end{matrix} 
+\end{matrix} \,,
+\end{equation*}
+
+
+\begin{equation*} \label{ec_ions_CZav}
+ \begin{matrix}
+    & 
+    %
+    \begin{matrix}
+      \ket{g,0} & 
+      \ket{g,1} & 
+      \ket{e,0} &
+      \ket{e,1}
+    \end{matrix} 	&  \\[.5\normalbaselineskip]
+  %
+    \text{CZ}_{av} = & 
+    \begin{bmatrix}
+        \makebox[\widthof{$\ket{g,0}$}]{$1$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$1$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$1$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} \\
+      %
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$0$} & 
+        \makebox[\widthof{$\ket{g,0}$}]{$-1$} \\
+    \end{bmatrix} &
+    \begin{matrix} \ket{g,0} \\ \ket{g,1} \\ \ket{e,1} \\ \ket{e,1}  \end{matrix} 
+\end{matrix} \,,
+\end{equation*}
+
+\end{document}
