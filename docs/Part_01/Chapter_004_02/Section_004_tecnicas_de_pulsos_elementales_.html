@@ -1,0 +1,700 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Técnicas de pulsos elementales. &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Part_01/Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales_';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    El camino de los Qubits
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hardware de Computación Cuántica</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_001_01_breve_introduccion_sobre_hardware_de_computacion_cuantica_myst.html">1. Breve introducción sobre Hardware de Computación Cuántica</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_001_modelos_de_computacion_cuantica_myst.html">1.1. Modelos de Computación Cuántica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_002_estructura_del_hardware_de_un_ordenador_cuantico_myst.html">1.2. Estructura del Hardware de un Ordenador Cuántico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_003_tipos_de_tecnologias_de_qubits_myst.html">1.3. Tipos de Tecnologías de qubits.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_004_pulso_de_microondas_myst.html">1.4. Pulso de microondas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_005_conceptos_erroneos_sobre_el_hardware_de_computacion_cuantica_myst.html">1.5. Conceptos Erróneos sobre el Hardware de Computación Cuántica.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_001_02/Section_006_algunos_roadmaps_publicos_myst.html">1.6. Algunos Roadmaps públicos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_002_01_computacion_cuantica_con_iones_atrapados_trapped_ions__myst.html">2. Computación Cuántica con Iones Atrapados (Trapped Ions)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_001_produccion_de_iones_myst.html">2.1. Producción de iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_002_trampas_de_iones_myst.html">2.2. Trampas de iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_003_enfriamiento_de_iones_por_laser__myst.html">2.3. Enfriamiento de iones por láser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_004_manipulando_iones_individuales_puertas_simples__myst.html">2.4. Manipulando iones individuales: puertas simples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_005_manipulacion_de_multiples_iones_myst.html">2.5. Manipulación de múltiples iones.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_006_lectura_del_estado_de_los_iones_myst.html">2.6. Lectura del estado de los iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_007_puertas_multiqubit_con_iones__myst.html">2.7. Puertas multiqubit con iones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_002_02/Section_008_conclusiones_pros_y_contras_myst.html">2.8. Conclusiones: pros y contras</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_003_01_computacion_cuantica_con_qubits_superconductores__myst.html">3. Computación Cuántica con qubits Superconductores</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_001_conceptos_basicos_sobre_superconductividad_myst.html">3.1. Conceptos básicos sobre Superconductividad.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_002_tipos_de_qubits_superconductores_myst.html">3.2. Tipos de qubits superconductores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_003_fisica_de_los_qubits_superconductores__myst.html">3.3. Física de los qubits superconductores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_004_operaciones_con_qubits_superconductores_myst.html">3.4. Operaciones con qubits superconductores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_003_02/Section_005_retos_con_qubits_superconductores_myst.html">3.5. Retos con qubits superconductores</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_004_01_tecnicas_de_control_y_computacion_en_rmn_myst.html">4. Técnicas de control y computación en RMN.</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Section_001_introduccion_myst.html">4.1. Introducción.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_002_el_espin_nuclear__myst.html">4.2. El espín nuclear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_003_qubits_de_rmn_myst.html">4.3. qubits de RMN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html">4.4. Técnicas de pulsos elementales.</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter_Bibliografia_myst.html">Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/docs/Part_01/Chapter_004_02/Section_004_tecnicas_de_pulsos_elementales_.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Técnicas de pulsos elementales.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-cuantico-circuitos-y-pulsos">Control cuántico, circuitos y pulsos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puertas-cuanticas-y-circuitos">Puertas cuánticas y circuitos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-puertas-de-un-qubit">Implementación de puertas de un qubit.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-puertas-a-dos-qubits">Implementación de puertas a dos qubits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reenfoque-refocusing-apagando-las-interacciones-s-z-i-s-z-j-indeseadas">Reenfoque (refocusing): apagando las interacciones <span class="math notranslate nohighlight">\(S_z^i S_z^j\)</span> indeseadas</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <img src="Figuras/Fig_logo_UMA_scbi.png" align=center  width="2000px"/>
+<a href="https://www.scbi.uma.es/web/es/computacion-cuantica/">
+    <button class="rounded" style="float: right;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="var(--fill, white)"
+        d="M18.1 15.3c-.1.1-.3.2-.4.3l-2.4.4l1.7 3.6c.2.4 0 .8-.4
+            1l-2.8 1.3c-.1.1-.2.1-.3.1c-.3 0-.6-.2-.7-.4L11.2
+            18l-1.9 1.5c-.1.1-.3.2-.5.2c-.4 0-.8-.3-.8-.8V7.5c0-.5.3-.8.8-.8c.2 0
+            .4.1.5.2l8.7 7.4c.3.2.4.7.1 1M6 12H4V4h16v8h-1.6l2.2 1.9c.8-.3 1.3-1
+            1.3-1.9V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2z" />
+    </svg>
+    Volver a SCBI - Computación Cuantica
+    </button>
+</a>
+<p><span class="math notranslate nohighlight">\( \newcommand{\bra}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ket}[1]{|#1\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\branew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketnew}[1]{\langle #1|} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\braket}[2]{\langle #1|#2\rangle} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\ketbra}[2]{| #1\rangle \langle #2 |} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\i}{{\color{blue} i}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Hil}{{\cal H}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\cg}[1]{{\rm C}#1} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lp}{\left(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rp}{\right)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lc}{\left[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rc}{\right]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\lch}{\left\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rch}{\right\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lp}{\Bigl(} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rp}{\Bigr)} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lc}{\Bigl[} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rc}{\Bigr]} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Lch}{\Bigl\{} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\Rch}{\Bigr\}} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\rqa}{\quad \Rightarrow \quad} \)</span>
+<span class="math notranslate nohighlight">\( \newcommand{\bm}{\boldsymbol}\)</span></p>
+<p><a id='sec_sub_Harware_NMR_pulsos'></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="tecnicas-de-pulsos-elementales">
+<h1>Técnicas de pulsos elementales.<a class="headerlink" href="#tecnicas-de-pulsos-elementales" title="Permalink to this heading">#</a></h1>
+<p>Esta sección inicia nuestra discusión del tema principal de este artículo, una revisión de las <b>técnicas de control</b> desarrolladas en la computación cuántica de RMN para sistemas cuánticos acoplados de dos niveles. Comenzamos con una rápida visión general del lenguaje de los circuitos cuánticos y sus importantes teoremas de universalidad, luego lo conectamos con el lenguaje de las secuencias de pulsos tal y como se utiliza en la RMN, e indicamos cómo se pueden simplificar las secuencias de pulsos. Las principales aproximaciones empleadas en esta sección son que los pulsos pueden ser <b>fuertes</b> comparados con el Hamiltoniano del sistema mientras se dirigen selectivamente a <b>un solo qubit</b> a la vez, y pueden ser perfectamente implementados.</p>
+<section id="control-cuantico-circuitos-y-pulsos">
+<h2>Control cuántico, circuitos y pulsos<a class="headerlink" href="#control-cuantico-circuitos-y-pulsos" title="Permalink to this heading">#</a></h2>
+<p>El objetivo del control cuántico, en el contexto de la computación cuántica, es la implementación de una <b>transformación unitaria</b> <span class="math notranslate nohighlight">\(U\)</span>, especificada en términos de una secuencia <span class="math notranslate nohighlight">\(U = U_k U_{k-1} \dots U_2 U_1\)</span> de puertas cuánticas estándar <span class="math notranslate nohighlight">\(U_i\)</span>, que actúan localmente (normalmente sobre uno o dos qubits) y son sencillas de implementar. Como es habitual en las operaciones unitarias, las <span class="math notranslate nohighlight">\(U_i\)</span> se ordenan en el tiempo de derecha a izquierda.</p>
+<section id="puertas-cuanticas-y-circuitos">
+<h3>Puertas cuánticas y circuitos<a class="headerlink" href="#puertas-cuanticas-y-circuitos" title="Permalink to this heading">#</a></h3>
+<p>La rotación básica de un qubit simple son las rotaciones de la forma  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>, es decir
+\begin{equation}
+R_{\hat{n}} (\theta) = \exp \lc - \frac{i \theta \hat{n} \cdot \vec{\sigma}}{2} \rc
+\end{equation}</p>
+<p>Como ya hemos comentado en la sección  <code class="xref std std-numref docutils literal notranslate"><span class="pre">%s</span></code>, usando la <b>parametrización de Euler</b>  podemos general cualquier rotación sobre la esfera de Bloch usando tres rotaciones sobre dos ejes (Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>). En esa sección elegimos las rotaciones en <span class="math notranslate nohighlight">\(\hat{z}\)</span> y <span class="math notranslate nohighlight">\(\hat{y}\)</span>, pero en esta vamos a usar las siguientes:
+\begin{equation}
+U = e^{i \alpha} R_x(\beta) R_y (\gamma) R_x (\delta)
+\end{equation}</p>
+<p>Como también comentamos, la puerta básica de dos qubits es la CNOT (Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>).</p>
+<p>Un teorema básico de la computación cuántica es que salvo una fase global irrelevante, cualquier <span class="math notranslate nohighlight">\(U\)</span> que actúe sobre <span class="math notranslate nohighlight">\(n\)</span> qubits puede componerse a partir de puertas <span class="math notranslate nohighlight">\(U_{CNOT}\)</span> y <span class="math notranslate nohighlight">\(R_{\hat{n}}(\theta)\)</span> <a class="reference internal" href="../../Bibliografia.html#bib_nielsen_chuang_2010"><span class="std std-ref">[8]</span></a> . Así, el problema del control cuántico puede reducirse a la implementación de <span class="math notranslate nohighlight">\(U_{CNOT}\)</span> y rotaciones de qubits simples, donde se requieren al menos dos rotaciones no triviales (veremos esto en detalle en la sección  <code class="xref std std-numref docutils literal notranslate"><span class="pre">%s</span></code>). Se conocen otros conjuntos de puertas universales de este tipo, pero éste es el que se ha empleado en la RMN.</p>
+</section>
+<section id="implementacion-de-puertas-de-un-qubit">
+<h3>Implementación de puertas de un qubit.<a class="headerlink" href="#implementacion-de-puertas-de-un-qubit" title="Permalink to this heading">#</a></h3>
+<p>Las rotaciones en qubits individuales pueden implementarse directamente en el sistema de referencia rotante utilizando pulsos de RF. Del Hamiltoniano de control, Ec.  <a class="reference internal" href="Section_003_qubits_de_rmn_myst.html#equation-ec-hardware-nmr-h-sys-control-final-multi-rot">(4.19)</a>, se deduce que cuando se aplica un campo de RF de amplitud <span class="math notranslate nohighlight">\(\omega_1\)</span> a un sistema de un único espín con <span class="math notranslate nohighlight">\(\omega_{rf} = \omega_0\)</span>, el espín evoluciona bajo la transformación
+\begin{equation} \label{ec_Hardware_NMR_U_arbitrario}
+U = e^{i \frac{\mathcal{H}<em>{control}}{\hbar}} = \exp \Lc i \omega_1 \lp  \cos \phi S_x + \sin \phi S_y \rp \frac{t</em>{p \omega}}{\hbar} \Rc
+\end{equation}
+donde <span class="math notranslate nohighlight">\(t_{p \omega}\)</span> es la <b>anchura del pulso</b> (o longitud), la duración temporal del pulso de RF. <span class="math notranslate nohighlight">\(U\)</span> describe una rotación en la esfera de Bloch de un ángulo <span class="math notranslate nohighlight">\(\theta\)</span> proporcional al producto de <span class="math notranslate nohighlight">\(t_{p\omega}\)</span> y <span class="math notranslate nohighlight">\(\omega_1 = \gamma B_1\)</span>, y al rededor de un eje en el plano <span class="math notranslate nohighlight">\(\hat{x}-\hat{y}\)</span> determinado por una fase <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
+<ul class="simple">
+<li><p>Así, un pulso con fase <span class="math notranslate nohighlight">\(\phi = \pi\)</span> y <span class="math notranslate nohighlight">\(\omega_1 t_{p\omega} = \pi/2\)</span> realizará <span class="math notranslate nohighlight">\(R_x(90)\)</span> (ver Ec.  <code class="xref eq docutils literal notranslate"><span class="pre">%s</span></code>), que es una rotación <span class="math notranslate nohighlight">\(90\)</span>º sobre <span class="math notranslate nohighlight">\(\hat{x}\)</span>, denotada para abreviar como <span class="math notranslate nohighlight">\(\sqrt{X}\)</span>.</p></li>
+<li><p>Un pulso similar pero dos veces más largo realiza una rotación <span class="math notranslate nohighlight">\(R_x(180) =  X\)</span>.</p></li>
+<li><p>Cambiando la fase del pulso RF a <span class="math notranslate nohighlight">\(\phi = -\pi/2\)</span>, pueden implementarse de forma similar <span class="math notranslate nohighlight">\(\sqrt{Y}\)</span> e <span class="math notranslate nohighlight">\(Y\)</span></p></li>
+<li><p>Para <span class="math notranslate nohighlight">\(\phi = 0\)</span> y <span class="math notranslate nohighlight">\(\omega_1 t_{p\omega} = \pi/2\)</span>, se obtiene una rotación negativa alrededor de <span class="math notranslate nohighlight">\(\hat{x}\)</span>: <span class="math notranslate nohighlight">\(R_x (-90) = \sqrt{X^\dagger}\)</span>.</p></li>
+<li><p>De forma similar <span class="math notranslate nohighlight">\(\phi = \pi/2\)</span> y <span class="math notranslate nohighlight">\(\omega_1 t_{p\omega} = \pi/2\)</span> da <span class="math notranslate nohighlight">\(\sqrt{Y^\dagger}\)</span>.</p></li>
+</ul>
+<p>Para sistemas multiqubit, se utilizan subíndices para indicar sobre qué qubit actúa la operación, por ejemplo, <span class="math notranslate nohighlight">\(Z^\dagger_3\)</span> es una rotación de <span class="math notranslate nohighlight">\(180\)</span>º del qubit 3 alrededor de <span class="math notranslate nohighlight">\(- \hat{z}\)</span>.</p>
+<p>Por tanto, no es necesario aplicar el campo de RF a lo largo de diferentes ejes espaciales en el marco del laboratorio para realizar rotaciones <span class="math notranslate nohighlight">\(\hat{x}\)</span> y <span class="math notranslate nohighlight">\(\hat{y}\)</span>. Más bien, la fase del campo de RF determina el eje de nutación en el marco de rotación. Además, nótese que sólo importa la fase relativa entre pulsos aplicados al mismo espín. La fase absoluta del primer impulso en un espín determinado no tiene importancia en sí misma. Sólo establece una referencia de fase con la que deben compararse las fases de todos los pulsos posteriores en ese mismo espín, así como la lectura de ese espín.</p>
+<p>Anteriormente señalamos que la capacidad de implementar rotaciones arbitrarias sobre <span class="math notranslate nohighlight">\(\ket{x}\)</span> y <span class="math notranslate nohighlight">\(\ket{y}\)</span> es suficiente para realizar rotaciones arbitrarias de un solo qubit (Ec.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#equation-ec-hardware-nmr-u-arbitrario">(4.20)</a>). Dado que las rotaciones <span class="math notranslate nohighlight">\(\hat{z}\)</span> son muy comunes, existen dos descomposiciones explícitas útiles de <span class="math notranslate nohighlight">\(R_z(\theta)\)</span> en términos de las rotaciones <span class="math notranslate nohighlight">\(\hat{x}\)</span> y <span class="math notranslate nohighlight">\(\hat{y}\)</span>:
+\begin{equation}
+R_z (\theta) = \sqrt{X} R_y (\theta) \sqrt{X^\dagger} = \sqrt{Y} R_x(-\theta) \sqrt{Y^\dagger}
+\end{equation}</p>
+</section>
+<section id="implementacion-de-puertas-a-dos-qubits">
+<h3>Implementación de puertas a dos qubits<a class="headerlink" href="#implementacion-de-puertas-a-dos-qubits" title="Permalink to this heading">#</a></h3>
+<p>La puerta de dos qubits más natural es la generada directamente por el Hamiltoniano de acoplamiento espín-espín. Para espines nucleares en una molécula en solución líquida, el Hamiltoniano de acoplamiento viene dado por la Ec.  <a class="reference internal" href="Section_003_qubits_de_rmn_myst.html#equation-ec-hardware-nmr-j-coupling">(4.12)</a>  (tanto en el sistema  laboratorio como en el sistema de rotación), a partir de la cual obtenemos el operador de evolución temporal <span class="math notranslate nohighlight">\(U_J(t) = \exp \lc - i 2\pi J S_z^1 S_z^2 t /\hbar^2 \rc\)</span>, o en forma matricial
+\begin{equation} \label{ec_Hardware_NMR_UJ}
+U_J (t) =
+\begin{bmatrix}
+e^{-i \pi Jt/2} &amp; 0 &amp; 0 &amp; 0 \
+0 &amp; e^{+i \pi Jt/2} &amp; 0 &amp; 0 \
+0 &amp; 0 &amp; e^{+i \pi Jt/2} &amp; 0 \
+0 &amp; 0 &amp; 0 &amp; e^{-i \pi Jt/2}
+\end{bmatrix}
+\end{equation}
+Si se permite que esta evolución ocurra durante un tiempo <span class="math notranslate nohighlight">\(t = 1/2J\)</span> se obtiene una transformación conocida como <b>puerta de fase controlada</b>, salvo un desplazamiento de fase de 90º en cada qubit y una fase global (y por tanto irrelevante):
+\begin{equation}
+U_{CPHASE} = \sqrt{-i} \sqrt{Z^\dagger_1} \sqrt{Z^\dagger_2} U_J (1/2J) =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0  &amp; 0 \
+0 &amp; 1 &amp; 0  &amp; 0 \
+0 &amp; 0 &amp; 1 &amp; 0 \
+0 &amp; 0 &amp; 0  &amp; -1
+\end{bmatrix}
+\end{equation}
+Esta puerta es equivalente a la conocida puerta CNOT salvo un cambio de base del qubit objetivo y un desplazamiento de fase en el qubit de control:
+\begin{equation} \label{ec_Hardware_NMR_implementacion_CNOT}
+\begin{aligned}
+U_{CNOT} = &amp; , i Z_1 \sqrt{Y^\dagger_2} U_{CPHASE} \sqrt{Y_2} \nonumber \
+= &amp; , i Z_1 \sqrt{Y^\dagger_2} \Lc \sqrt{-i} \sqrt{Z^\dagger_1} \sqrt{Z^\dagger_2} U_J (1/2J)  \Rc \sqrt{Y_2} \nonumber \
+= &amp; , \sqrt{i} \sqrt{Z_1} \sqrt{Z_2^\dagger} \sqrt{X_2} U_j (1/2J) \sqrt{Y_2}  \nonumber \
+= &amp; ,
+\begin{bmatrix}
+1 &amp; 0 &amp; 0  &amp; 0 \
+0 &amp; 1 &amp; 0  &amp; 0 \
+0 &amp; 0 &amp; 0 &amp; 1 \
+0 &amp; 0 &amp; 1  &amp; 0
+\end{bmatrix}
+\end{aligned}
+\end{equation}</p>
+<p>El núcleo de esta secuencia, <span class="math notranslate nohighlight">\(\sqrt{X_2} U_j (1/2J) \sqrt{Y_2}\)</span>, puede entenderse gráficamente mediante la Fig.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#fig-harware-nmr-implementacion-cnot"><span class="std std-numref">4.9</span></a>, suponiendo que los espines comienzan a lo largo de <span class="math notranslate nohighlight">\(\pm \hat{z}\)</span>. Primero, un pulso en el espín 2 que lo rota de <span class="math notranslate nohighlight">\(\hat{z}\)</span> a <span class="math notranslate nohighlight">\(\hat{y}\)</span>. A continuación, se deja que el sistema de espín evolucione libremente durante <span class="math notranslate nohighlight">\(1/2J_{12}\)</span> segundos. Como <b>la frecuencia de precesión del espín 2 se desplaza <span class="math notranslate nohighlight">\(\pm J_{12}/2\)</span> dependiendo de si el espín 1 está en <span class="math notranslate nohighlight">\(\ket{1}\)</span> o <span class="math notranslate nohighlight">\(\ket{0}\)</span></b> (ver Fig.  <a class="reference internal" href="Section_003_qubits_de_rmn_myst.html#fig-harware-nmr-diagrama"><span class="std std-numref">4.5</span></a>), el espín 2 llegará en <span class="math notranslate nohighlight">\(1/2J_{12}\)</span> segundos a <span class="math notranslate nohighlight">\(+\hat{y}\)</span> o <span class="math notranslate nohighlight">\(- \hat{y}\)</span>, dependiendo del estado del espín 1. Finalmente, un pulso de 90º sobre el espín 2 alrededor del eje <span class="math notranslate nohighlight">\(\hat{x}\)</span> hace girar el espín 2 de nuevo a <span class="math notranslate nohighlight">\(+\hat{z}\)</span> si el espín 1 está en <span class="math notranslate nohighlight">\(\ket {0}\)</span>, o a <span class="math notranslate nohighlight">\(-\hat{z}\)</span> si el espín 1 está en <span class="math notranslate nohighlight">\(\ket{1}\)</span>.</p>
+<figure><center>
+<img src="Figuras/Fig_Harware_NMR_implementacion_CNOT.png" alt="" align=center width='700px'/>
+<a id='Fig_Harware_NMR_implementacion_CNOT'></a>
+<center>Representación en esfera de Bloch del funcionamiento de la puerta CNOT$_{12}$ entre dos qubits 1 y 2 acoplados por $2 \pi J S_z^1S_z^2/\hbar$ . Aquí se reprensenta el estado del qubit 2 (el qubit objetivo de la CNOT), que comienza en $\ket{0}$ (a lo largo de $\hat{z}$) y se representa en un marco de referencia que gira alrededor de $\hat{z}$ a $\omega_0^2/2 \pi$. Las flechas continuas y discontinuas corresponden al caso en que el qúibit 1 (de controlo) está en $\ket{0}$ y $\ket{1}$ respectivamente. Figura tomada de [[6]](../../Bibliografia.ipynb#bib_NMR_hardware).</center>
+</center></figure>
+<div class="alert alert-block alert-success">
+<p style="color: DarkGreen;">
+<b>Ejercicio</b>:
+Vamos a verificar el paso de la esfera 2 a la 3 de la Fig.  {numref}`%s <Fig_Harware_NMR_implementacion_CNOT>`. Multiplica la matriz de la Ec.  {eq}`%s <ec_Hardware_NMR_UJ>` por los dos estados de la segunda esfera de la Fig.  {numref}`%s <Fig_Harware_NMR_implementacion_CNOT>`. Toma $t=1/2J$ y escribe los estados resultantes de la forma  {eq}`%s <ec_qubit_caso_general>` (recuerda que las fases globales no son importantes)
+</p></div>
+<p>El resultado neto es que el espín 2 se invierte si y sólo si el espín 1 está en <span class="math notranslate nohighlight">\(\ket{1}\)</span>, lo que corresponde exactamente a la tabla de verdad clásica para la CNOT. Las rotaciones <span class="math notranslate nohighlight">\(\hat{z}\)</span> adicionales de la Ec.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#equation-ec-hardware-nmr-implementacion-cnot">(4.22)</a> son necesarias para dar a todos los elementos de <span class="math notranslate nohighlight">\(U_{CNOT}\)</span> la misma fase, por lo que la secuencia también funciona para estados de entrada en superposición.</p>
+<p>Si el Hamiltoniano de interacción espín-espín no es de la forma <span class="math notranslate nohighlight">\(S_z^i S_z^j\)</span> sino que contiene también componentes transversales (como en las Ec.  <a class="reference internal" href="Section_003_qubits_de_rmn_myst.html#equation-ec-hardware-nmr-h-dipolo-dipolo">(4.11)</a>), se necesitan otras secuencias de pulsos más complicadas para realizar las puertas CPHASE y CNOT.</p>
+<p>Si dos espines no están directamente acoplados entre sí, todavía es posible realizar una puerta CNOT entre ellos, siempre y cuando exista una red de acoplamientos que conecte los dos qubits. Por ejemplo, supongamos que queremos realizar una puerta CNOT con el qubit 1 como control y el qubit 3 como objetivo, CNOT<span class="math notranslate nohighlight">\(_{13}\)</span>, pero 1 y 3 no están acoplados entre sí. Si ambos están acoplados al qubit 2, como en la red de acoplamiento de la Fig.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#fig-harware-nmr-posible-couplings"><span class="std std-numref">4.10</span></a>b, podemos primero intercambiar el estado de los qubits 1 y 2 (mediante la secuencia CNOT<span class="math notranslate nohighlight">\(_{12}\)</span> CNOT<span class="math notranslate nohighlight">\(_{21}\)</span> CNOT<span class="math notranslate nohighlight">\(_{12}\)</span>, es decir, una puerta SWAP como la de la Fig.  <code class="xref std std-numref docutils literal notranslate"><span class="pre">%s</span></code>), luego realizar un CNOT<span class="math notranslate nohighlight">\(_{23}\)</span>, y finalmente intercambiar de nuevo los qubits 1 y 2. El efecto neto es CNOT<span class="math notranslate nohighlight">\(_{13}\)</span>. Por extensión, se requieren como máximo <span class="math notranslate nohighlight">\(O(n)\)</span> operaciones de intercambio para realizar una CNOT entre cualquier par de qubits en una cadena de <span class="math notranslate nohighlight">\(n\)</span> espines con sólo acoplamientos de vecino más cercano (Fig.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#fig-harware-nmr-posible-couplings"><span class="std std-numref">4.10</span></a>b). Las operaciones SWAP también se pueden utilizar para realizar puertas de dos qubits entre dos qubits cualesquiera que estén acoplados a un qubit “bus” común (Fig.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#fig-harware-nmr-posible-couplings"><span class="std std-numref">4.10</span></a>c).</p>
+<p>Por el contrario, si un qubit está acoplado a muchos otros qubits (Fig.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#fig-harware-nmr-posible-couplings"><span class="std std-numref">4.10</span></a>a) y queremos realizar una CNOT entre sólo dos de ellos, debemos <b>eliminar el efecto de los acoplamientos restantes</b>. Esto se puede lograr utilizando la técnica de <b>reenfoque</b>, que ha sido ampliamente adoptada en una variedad de experimentos de RMN.</p>
+<figure><center>
+<img src="Figuras/Fig_Harware_NMR_posible_couplings.png" alt="" align=center width='650px'/>
+<a id='Fig_Harware_NMR_posible_couplings'></a>
+<center>Tres posibles redes de acoplamiento entre cinco qubits. a) Una red de acoplamiento completa. En la práctica, estas redes siempre tendrán un tamaño limitado, ya que las interacciones físicas tienden a disminuir con la distancia. b) Una red de acoplamiento de vecino más próximo. Este tipo de cadenas lineales con acoplamientos de vecino más próximo, o variantes bidimensionales, se utilizan en muchas propuestas de estado sólido. c) Acoplamiento a través de un "bus". Es el caso, por ejemplo, de los esquemas de trampas de iones. Al igual que en el caso a), el grado de libertad del bus sólo se acoplará bien a un número finito de qubits. Figura tomada de [[6]](../../Bibliografia.ipynb#bib_NMR_hardware)</center>
+</center></figure>
+</section>
+<section id="reenfoque-refocusing-apagando-las-interacciones-s-z-i-s-z-j-indeseadas">
+<h3>Reenfoque (refocusing): apagando las interacciones <span class="math notranslate nohighlight">\(S_z^i S_z^j\)</span> indeseadas<a class="headerlink" href="#reenfoque-refocusing-apagando-las-interacciones-s-z-i-s-z-j-indeseadas" title="Permalink to this heading">#</a></h3>
+<p>Ya hemos visto que al estar los espines acoplados, estos evolucionan con el tiempo siguiendo la Ec.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#equation-ec-hardware-nmr-uj">(4.21)</a>. Si queremos que esta evolución la sientan solo unos ciertos qubits, tenemos que eliminar el efecto de los términos de acoplamiento no deseados. Este es el caso, por ejemplo, de la CNOT. Como ya vimos, el paso intermedio de la CNOT es una evolución libre que solo deben de experimentar los dos qubits implicados en la CNOT.</p>
+<p>El efecto de los términos de acoplamiento durante un intervalo de tiempo de evolución libre puede eliminarse mediante las denominadas técnicas de <b>reenfoque</b>.  Para hamiltonianos de acoplamiento de la forma <span class="math notranslate nohighlight">\(S_z^i S_z^j\)</span>, como suele ocurrir en los experimentos de RMN de líquidos, el mecanismo de reenfoque puede entenderse a un nivel muy intuitivo.</p>
+<p>Veamos primero dos formas de deshacer <span class="math notranslate nohighlight">\(S_z^i S_z^j\)</span> en un sistema de dos qubits. En la Fig.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#fig-harware-nmr-refocusing"><span class="std std-numref">4.11</span></a>a, la evolución del qubit 1 en el primer intervalo de tiempo <span class="math notranslate nohighlight">\(\tau\)</span> se invierte en el segundo intervalo de tiempo, debido al pulso de 180º en el qubit 2. En la Fig.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#fig-harware-nmr-refocusing"><span class="std std-numref">4.11</span></a>b, el qubit 1 continúa evolucionando en la misma dirección todo el tiempo, pero el primer pulso de 180º hace que los dos componentes del qubit 1 se reenfoquen al final del segundo intervalo de tiempo. El segundo pulso de 180º garantiza que ambos qubits vuelvan siempre a su estado inicial.</p>
+<p>Matemáticamente, podemos ver cómo funciona el reenfoque de los acoplamientos <span class="math notranslate nohighlight">\(J\)</span> utilizando
+\begin{equation}
+X_1 , U_J(\tau) , X_1 = U_J (- \tau) = X_2 , U_J , X_2 , ,
+\end{equation}
+que nos lleva a
+\begin{equation}
+X_1 , U_J(\tau) , X_1 , U_J(\tau) = I =  X_2 , U_J(\tau) , X_2 , U_J(\tau)
+\end{equation}</p>
+<div class="alert alert-block alert-success">
+<p style="color: DarkGreen;">
+<b>Ejercicio</b>:
+Partiendo de los estados de las primeras esferas de Bloch de las figuras   {numref}`%s <Fig_Harware_NMR_refocusing>`a y  {numref}`%s <Fig_Harware_NMR_refocusing>`b, (sería el estado $\ket{y-}$ de la Ec.     {eq}`%s <ec_qubit_y+>`), aplica una a una las puertas de las figuras, comprobando que estas son correctas. (Nota: no hace falta darle un valor a $\tau$, simplemente dejarlo como parámetro libre)
+</p></div>
+<figure><center>
+<img src="Figuras/Fig_Harware_NMR_refocusing.png" alt="" align=center width='700px'/>
+<a id='Fig_Harware_NMR_refocusing'></a>
+<center>Representación en esfera de Bloch del funcionamiento de dos esquemas sencillos para reenfocar el acoplamiento entre dos qubits acoplados. El diagrama muestra la evolución del <b>qubit 1</b> (en el sistema rotante) inicialmente a lo largo de $- \hat{y}$, cuando el qubit 2 está en $\ket{0}$ (sólido) o en $\ket{1}$ (discontinuo). Los pulsos de reenfoque puede aplicarse tanto al  qubit 2 (a) como al qubit 1 (b).</center>
+</center></figure>
+<p>Reemplazando todas las <span class="math notranslate nohighlight">\(X_i\)</span> por <span class="math notranslate nohighlight">\(Y_i\)</span>, las secuencias funcionan igual. Sin embargo, si utilizamos unas veces <span class="math notranslate nohighlight">\(X_i\)</span> y otras <span class="math notranslate nohighlight">\(Y_i\)</span>, obtendremos la matriz identidad salvo algunos desplazamientos de fase. Además, si aplicáramos pulsos en ambos qubits simultáneamente, por ejemplo <span class="math notranslate nohighlight">\(X_1X_2 U_J(\tau)X_1 X_2 U_J(\tau)\)</span>, el acoplamiento no se eliminaría.</p>
+<p>La Fig.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#fig-harware-nmr-refocuse-1"><span class="std std-numref">4.12</span></a> da una idea de las técnicas de reenfoque en un sistema multi-qubit. Específicamente, este esquema preserva el efecto de <span class="math notranslate nohighlight">\(J_{12}\)</span>, mientras que inactiva efectivamente todos los demás acoplamientos. La idea subyacente es que un acoplamiento entre los espines <span class="math notranslate nohighlight">\(i\)</span> y <span class="math notranslate nohighlight">\(j\)</span> actúa “hacia delante” durante los intervalos en los que ambos espines tienen el mismo signo en el diagrama, y actúa “a la inversa” siempre que los espines tienen signos opuestos. Cuando un acoplamiento actúa hacia delante y hacia atrás durante el mismo tiempo, no tiene ningún efecto neto.</p>
+<figure><center>
+<img src="Figuras/Fig_Harware_NMR_refocuse_1.png" alt="" align=center width='500px'/>
+<a id='Fig_Harware_NMR_refocuse_1'></a>
+<center>Esquema de reenfoque para un sistema de 4 espines, diseñado para preservar el efecto de la interacción $J_{12}$ todo el tiempo pero neutralizando el efecto del resto de las $J_{ij}$. El intervalo está dividido en segmentos de igual duración, y los signos "$+$" y "$-$" indican si un espín está en suposición original o del revés. Los rectángulos negros representan pulsos de 180º, que dan la vuelta al correspondiente espín.</center>
+</center></figure>
+<p>Se han desarrollado métodos sistemáticos para diseñar esquemas de reenfoque para sistemas multi-qubit específicamente con el propósito de la computación cuántica. El esquema más compacto se basa en matrices de Hadamard <a class="reference internal" href="../../Bibliografia.html#bib_Hardware_NMR_reenfoque_Hadammard_1"><span class="std std-ref">[15]</span></a>-<a class="reference internal" href="../../Bibliografia.html#bib_Hardware_NMR_reenfoque_Hadammard_2"><span class="std std-ref">[16]</span></a>. Una matriz de Hadamard de orden <span class="math notranslate nohighlight">\(n\)</span>, denotada por <span class="math notranslate nohighlight">\(H(n)\)</span>, es una matriz <span class="math notranslate nohighlight">\(n \times n\)</span> con entradas <span class="math notranslate nohighlight">\(\pm 1\)</span>, tal que
+\begin{equation}
+H(n) , H(n)^T = n I
+\end{equation}
+Las filas son, por tanto, ortogonales por pares, y dos filas cualesquiera coinciden exactamente en la mitad de las entradas. Identificando <span class="math notranslate nohighlight">\(+1\)</span> y <span class="math notranslate nohighlight">\(-1\)</span> con <span class="math notranslate nohighlight">\(+\)</span> y <span class="math notranslate nohighlight">\(-\)</span> como en el diagrama de la Fig.  <a class="reference internal" href="Section_004_tecnicas_de_pulsos_elementales__myst.html#fig-harware-nmr-refocuse-1"><span class="std std-numref">4.12</span></a>, vemos que <span class="math notranslate nohighlight">\(H(n)\)</span> da un esquema de desacoplamiento válido para <span class="math notranslate nohighlight">\(n\)</span> espines utilizando sólo <span class="math notranslate nohighlight">\(n\)</span> intervalos de tiempo. Un ejemplo de <span class="math notranslate nohighlight">\(H(12)\)</span> es
+\begin{equation}
+\begin{bmatrix}</p>
+<ul class="simple">
+<li><p>&amp; + &amp; + &amp; + &amp; + &amp; + &amp;  + &amp; + &amp; + &amp; + &amp; + &amp; + \
++&amp;+&amp;+&amp;-&amp;-&amp;+&amp;-&amp;-&amp;+&amp;-&amp;-&amp;+\
++&amp;+&amp;+&amp;+&amp;-&amp;-&amp;-&amp;+&amp;-&amp;+&amp;-&amp;-\
++&amp;-&amp;+&amp;+&amp;+&amp;-&amp;-&amp;-&amp;+&amp;-&amp;+&amp;-\
++&amp;-&amp;-&amp;+&amp;+&amp;+&amp;-&amp;-&amp;-&amp;+&amp;-&amp;+\
++&amp;+&amp;-&amp;-&amp;+&amp;+&amp;-&amp;+&amp;-&amp;-&amp;+&amp;-\
++&amp;-&amp;-&amp;-&amp;-&amp;-&amp;-&amp;+&amp;+&amp;+&amp;+&amp;+\
++&amp;-&amp;+&amp;-&amp;-&amp;+&amp;+&amp;-&amp;-&amp;+&amp;+&amp;-\
++&amp;+&amp;-&amp;+&amp;-&amp;-&amp;+&amp;-&amp;-&amp;-&amp;+&amp;+\
++&amp;-&amp;+&amp;-&amp;+&amp;-&amp;+&amp;+&amp;-&amp;-&amp;-&amp;+\
++&amp;-&amp;-&amp;+&amp;-&amp;+&amp;+&amp;+&amp;+&amp;-&amp;-&amp;-\
++&amp;+&amp;-&amp;-&amp;+&amp;-&amp;+&amp;-&amp;+&amp;+&amp;-&amp;-\
+\end{bmatrix}
+\end{equation}</p></li>
+</ul>
+<p>Si queremos que el acoplamiento entre un par de qubits permanezca activo mientras se elimina el efecto de todos los demás acoplamientos, podemos simplemente utilizar la misma fila de <span class="math notranslate nohighlight">\(H(n)\)</span> para esos dos qubits.</p>
+<p><span class="math notranslate nohighlight">\(H(n)\)</span> no existe para todos los <span class="math notranslate nohighlight">\(n\)</span>, pero siempre podemos encontrar una secuencia de desacoplamiento para <span class="math notranslate nohighlight">\(n\)</span> qubits tomando las primeras <span class="math notranslate nohighlight">\(n\)</span> filas de <span class="math notranslate nohighlight">\(H(\bar{n})\)</span>, siendo <span class="math notranslate nohighlight">\(\bar{n}\)</span> el menor número entero que satisfaga <span class="math notranslate nohighlight">\(\bar{n} \geq n \)</span> con <span class="math notranslate nohighlight">\(H(\bar{n})\)</span> conocida. A partir de las propiedades de las matrices de Hadamard, podemos demostrar que <span class="math notranslate nohighlight">\(\bar{n}/n\)</span> es siempre próximo a 1 (ver <a class="reference internal" href="../../Bibliografia.html#bib_Hardware_NMR_reenfoque_Hadammard_1"><span class="std std-ref">[15]</span></a>). Así que los esquemas de desacoplamiento para <span class="math notranslate nohighlight">\(n\)</span> espines requieren <span class="math notranslate nohighlight">\(\bar{n}\)</span> intervalos de tiempo y no más de <span class="math notranslate nohighlight">\(\bar{n}n\)</span> pulsos de 180º.</p>
+<p>Terminamos esta subsección con tres observaciones adicionales.
+En primer lugar, cada qubit estará generalmente acoplado a no más de un número fijo de otros qubits, ya que las intensidades de acoplamiento tienden a disminuir con la distancia. En este caso, todos los esquemas de reenfoque pueden simplificarse enormemente.</p>
+<p>En segundo lugar, si las evoluciones hacia delante y hacia atrás bajo
+<span class="math notranslate nohighlight">\(J_{ij}\)</span> no son iguales en duración, se produce una evolución neta acoplada correspondiente al exceso de evolución hacia delante o hacia atrás. En principio, por tanto, podemos organizar cualquier esquema de reenfoque de forma que incorpore cualquier cantidad deseada de evolución acoplada para cada par de qubits.</p>
+<p>En tercer lugar, las secuencias de reenfoque también pueden utilizarse para eliminar el efecto de los términos <span class="math notranslate nohighlight">\(S_{z}^i\)</span> en el Hamiltoniano. Por supuesto, estos términos desaparecen en principio si trabajamos en el marco de rotación múltiple (véase la Ec.  <a class="reference internal" href="Section_003_qubits_de_rmn_myst.html#equation-ec-hardware-nmr-h-sys-control-final-multi-rot">(4.19)</a>). Sin embargo, puede haber cierta dispersión en las frecuencias de Larmor, por ejemplo debido a inhomogeneidades del campo magnético. Este efecto puede invertirse utilizando pulsos de reenfoque.</p>
+<figure><center>
+<img   src="https://quantumspain-project.es/wp-content/uploads/2022/11/Logo_QS_EspanaDigital.png" align=center  width="2000px"/>
+</center></figure>
+<center>
+<img align="left" src="https://quantumspain-project.es/wp-content/uploads/2024/02/Banner-QS_GOB_v2.png" width="1000px" />
+</center></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/Part_01/Chapter_004_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-cuantico-circuitos-y-pulsos">Control cuántico, circuitos y pulsos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#puertas-cuanticas-y-circuitos">Puertas cuánticas y circuitos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-puertas-de-un-qubit">Implementación de puertas de un qubit.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-puertas-a-dos-qubits">Implementación de puertas a dos qubits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reenfoque-refocusing-apagando-las-interacciones-s-z-i-s-z-j-indeseadas">Reenfoque (refocusing): apagando las interacciones <span class="math notranslate nohighlight">\(S_z^i S_z^j\)</span> indeseadas</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
