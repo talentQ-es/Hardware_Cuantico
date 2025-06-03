@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.7. Acoplamientos: Hamiltonianos de interacción &#8212; Algoritmos &#34;Fault-Tolerant&#34;</title>
+    <title>3.7. Acoplamientos: Hamiltonianos de interacción &#8212; Introducción al Hawdware en Computación Cuántica</title>
   
   
   
@@ -78,7 +78,7 @@ var addUtterances = () => {
     script.src = "https://utteranc.es/client.js";
     script.async = "async";
 
-    script.setAttribute("repo", "talentQ-es/Fault-Tolerant-Algorithms");
+    script.setAttribute("repo", "https://github.com/talentQ-es/Hardware_Cuantico");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "github-light");
     script.setAttribute("label", "💬 comment");
@@ -196,8 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Algoritmos "Fault-Tolerant" - Home"/>
-    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Algoritmos "Fault-Tolerant" - Home"/>`);</script>
+    <img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-light" alt="Introducción al Hawdware en Computación Cuántica - Home"/>
+    <script>document.write(`<img src="../../../_static/TalentQ_LogoNegNegro.png" class="logo__image only-dark" alt="Introducción al Hawdware en Computación Cuántica - Home"/>`);</script>
   
   
 </a></div>
@@ -323,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms" target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -340,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/edit/master/Book/docs/Part_01/Chapter_003_02/Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.ipynb" target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico/edit/master/Book/docs/Part_01/Chapter_003_02/Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +357,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/talentQ-es/Fault-Tolerant-Algorithms/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/talentQ-es/Hardware_Cuantico/issues/new?title=Issue%20on%20page%20%2Fdocs/Part_01/Chapter_003_02/Section_007_acoplamientos_hamiltonianos_de_interaccion__myst.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -537,8 +537,8 @@ document.write(`
 <span id="sec-scq-acoplamiento"></span><h1><span class="section-number">3.7. </span>Acoplamientos: Hamiltonianos de interacción<a class="headerlink" href="#acoplamientos-hamiltonianos-de-interaccion" title="Permalink to this heading">#</a></h1>
 <p>Para generar entrelazamiento entre sistemas cuánticos individuales, es necesario diseñar un Hamiltoniano de interacción que conecte los grados de libertad de esos sistemas individuales. En esta sección se analiza el mecanismo físico de acoplamiento y su representación en la base propia de los qubits. El uso del acoplamiento para formar puertas de 2 qubits se discute en la Sección  <a class="reference internal" href="Section_009_puertas_de_dos_qubits__myst.html#sec-scq-puertas-2-qubits"><span class="std std-numref">3.9</span></a>.</p>
 <p>El Hamiltoniano de dos sistemas acoplados toma una forma genérica</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1d0e058b-9384-432d-82ef-19b9ea3097ab">
-<span class="eqno">(3.108)<a class="headerlink" href="#equation-1d0e058b-9384-432d-82ef-19b9ea3097ab" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c5796f53-3ccd-471e-bfae-deb78b655235">
+<span class="eqno">(3.108)<a class="headerlink" href="#equation-c5796f53-3ccd-471e-bfae-deb78b655235" title="Permalink to this equation">#</a></span>\[\begin{equation}
 H = H_1 + H_2 + H_{int}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(H_1\)</span> y <span class="math notranslate nohighlight">\(H_2\)</span> denotan los Hamiltonianos de los sistemas cuánticos individuales. El último término, <span class="math notranslate nohighlight">\(H_{int}\)</span>, es el Hamiltoniano de interacción, que acopla las variables de ambos sistemas. En los circuitos superconductores, la forma física de la energía de acoplamiento es un campo eléctrico o magnético (o una combinación de ambos).</p>
@@ -551,13 +551,13 @@ H = H_1 + H_2 + H_{int}
 <section id="acoplamiento-capacitivo">
 <h2><span class="section-number">3.7.1. </span>Acoplamiento Capacitivo<a class="headerlink" href="#acoplamiento-capacitivo" title="Permalink to this heading">#</a></h2>
 <p>Para lograr el <b>acoplamiento capacitivo</b>, se coloca un condensador entre los nodos de tensión de los dos circuitos participantes, lo que produce un Hamiltoniano de interacción <span class="math notranslate nohighlight">\(H_{int}\)</span> de la forma</p>
-<div class="amsmath math notranslate nohighlight" id="equation-93b4335d-8fcd-4e67-870c-ea1d5ade9556">
-<span class="eqno">(3.109)<a class="headerlink" href="#equation-93b4335d-8fcd-4e67-870c-ea1d5ade9556" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-14864110-61a2-479c-8c27-b7b46edcf534">
+<span class="eqno">(3.109)<a class="headerlink" href="#equation-14864110-61a2-479c-8c27-b7b46edcf534" title="Permalink to this equation">#</a></span>\[\begin{equation}
 H_{int} = C_g V_1 V_2
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(C_g\)</span> es la <b>capacitancia del acoplamiento</b>, mientras que <span class="math notranslate nohighlight">\(V_1\)</span> y <span class="math notranslate nohighlight">\(V_2\)</span> son los operadores de tensión de los correspondientes nodos que están conectados mediante el condensador. La Fig.  <a class="reference internal" href="#fig-scq-coupling"><span class="std std-numref">3.14</span></a>(a) ilustra un ejemplo realista de acoplamiento capacitivo directo entre los nodos superiores de dos qubits transmón. La cuantización del circuito en el límite de <span class="math notranslate nohighlight">\(C_g \ll C_1, C_2\)</span> da como resultado</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2b4c7b3b-ed96-485e-9f7f-828522d04800">
-<span class="eqno">(3.110)<a class="headerlink" href="#equation-2b4c7b3b-ed96-485e-9f7f-828522d04800" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-67f1aeac-bcd1-4b4a-b121-4c91676fbaba">
+<span class="eqno">(3.110)<a class="headerlink" href="#equation-67f1aeac-bcd1-4b4a-b121-4c91676fbaba" title="Permalink to this equation">#</a></span>\[\begin{equation}
 H = \sum_{i=1,2} \lc 4 E_{C,i} n_i^2 - E{J,i} \cos (\phi_i) \rc + C_g V_1 V_2 \,
 \end{equation}\]</div>
 <p>donde las expresiones entre paréntesis son los dos Hamiltonianos de los qubits individuales, [véase la Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-sqc-lcjj-h">(3.89)</a>]. Si ahora tenemos en cuenta la Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-sqc-capacitance">(3.60)</a> y la Ec.  <a class="reference internal" href="Section_004_el_itransmon_qubiti_del_oscilador_armonico_al_transmon__myst.html#equation-ec-scq-carga-reducida">(3.82)</a>, vemos que podemos escribir <span class="math notranslate nohighlight">\(V_i = (2e/C_i)/n_i\)</span>, con lo que tenemos:</p>
@@ -570,13 +570,13 @@ H = \sum_{i=1,2} \lc 4 E_{C,i} n_i^2 - E{J,i} \cos (\phi_i) \rc + 4 e^2 \frac{C_
 <section id="acoplamiento-inductivo">
 <h2><span class="section-number">3.7.2. </span>Acoplamiento Inductivo<a class="headerlink" href="#acoplamiento-inductivo" title="Permalink to this heading">#</a></h2>
 <p>En el caso del <b>acoplamiento inductivo</b>, el mecanismo de acoplamiento es una inductancia mutua compartida, dando lugar a un Hamiltoniano de interacción de la forma</p>
-<div class="amsmath math notranslate nohighlight" id="equation-19c4b316-fbe9-46cf-b258-7a7e0c5fb07f">
-<span class="eqno">(3.112)<a class="headerlink" href="#equation-19c4b316-fbe9-46cf-b258-7a7e0c5fb07f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bf8c6bcc-3b10-40ea-9323-d7cbbeb29761">
+<span class="eqno">(3.112)<a class="headerlink" href="#equation-bf8c6bcc-3b10-40ea-9323-d7cbbeb29761" title="Permalink to this equation">#</a></span>\[\begin{equation}
 H_{int} = M_{12} I_1 I_2
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(M_{12}\)</span> denota la <b>inductancia mutua</b>, mientras que <span class="math notranslate nohighlight">\(I_1\)</span> e <span class="math notranslate nohighlight">\(I_2\)</span> son los operadores de corriente en los dos bucles. Un ejemplo típico son dos qubits de flujo (tipo rf-SQUID) situados muy cerca, como se ilustra en la Fig.  <a class="reference internal" href="#fig-scq-coupling"><span class="std std-numref">3.14</span></a>©. El Hamiltoniano del sistema puede expresarse como</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26580930-fa46-482b-937e-4aeb5b002846">
-<span class="eqno">(3.113)<a class="headerlink" href="#equation-26580930-fa46-482b-937e-4aeb5b002846" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a25cc905-41c6-4756-b462-d99c911dc572">
+<span class="eqno">(3.113)<a class="headerlink" href="#equation-a25cc905-41c6-4756-b462-d99c911dc572" title="Permalink to this equation">#</a></span>\[\begin{equation}
 H = \sum_{i=1,2} \lc 4 E_{C,i} n_i^2 + \frac{1}{2} E_{L,i} \phi_i^2 - E_{J,i} \cos (\phi_i)  \rc
 + M_{12} I_{c1} \sin(\phi_1) I_{c2} \sin(\phi_2)
 \end{equation}\]</div>
