@@ -541,37 +541,37 @@ document.write(`
 <section id="formalismo-lagrangiano">
 <h2><span class="section-number">3.2.1. </span>Formalismo Lagrangiano<a class="headerlink" href="#formalismo-lagrangiano" title="Permalink to this heading">#</a></h2>
 <p>Como es bien conocido, la mecánica clásica se fundamenta en las leyes de Newton y en el concepto de <b>fuerzas</b>. Esto se ve en la famosa ecuación de Newton</p>
-<div class="amsmath math notranslate nohighlight" id="equation-17c4f761-3a34-4ffb-a78e-f35497061568">
-<span class="eqno">(3.13)<a class="headerlink" href="#equation-17c4f761-3a34-4ffb-a78e-f35497061568" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-353f190a-5464-443a-ad64-fa5daa9a82a0">
+<span class="eqno">(3.13)<a class="headerlink" href="#equation-353f190a-5464-443a-ad64-fa5daa9a82a0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum \vec{F} = m \vec{a} \,.
 \end{equation}\]</div>
 <p>Si conocemos todas las fuerzas que actúan sobre un sistema, podemos integrar esta ecuación y llegar a las ecuaciones del movimiento. Es decir, una vez conocidas las fuerzas, la ecuación de Newton contiene toda la dinámica del sistema.</p>
 <p>El problema de este formalismo newtoniano es que, pese a que funciona bien en una gran variedad de problemas, en muchos otros se vuelve una pesadilla. No siempre podemos conocer con precisión las fuerzas que actuan sobre el sistema y no siempre es fácil integrar la ecuación.</p>
 <p>El formalismo Lagrangiano nace en la segunda mitad del siglo XVIII como una reformulación de la mecánica newtoniana. Es decir, como una forma diferente abordar los problemas para llegar al mismo punto: obtener las ecuaciones del movimiento.</p>
 <p>En lugar de fuerzas, la mecánica lagrangiana utiliza las <b>energías</b> del sistema. La magnitud central de la mecánica lagrangiana es el <b>Lagrangiano</b>, una función escalar que engloba toda la dinámica del sistema. El Lagrangiano es una función que depende de unas <b>coordenadas generalizadas</b> <span class="math notranslate nohighlight">\(\vec{q}(t)\)</span> y unas <b>velocidades generalizadas</b> <span class="math notranslate nohighlight">\(\dot{\vec{q}}(t)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2285beb-d0fd-4e0a-947c-3ebaf921c2d0">
-<span class="eqno">(3.14)<a class="headerlink" href="#equation-c2285beb-d0fd-4e0a-947c-3ebaf921c2d0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a3be720a-3288-4a23-9734-7f787a67764d">
+<span class="eqno">(3.14)<a class="headerlink" href="#equation-a3be720a-3288-4a23-9734-7f787a67764d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vec{q}(t) = (q_1(t), q_2(t), \dots, q_n(t))
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-3a259e40-313e-41c6-98f8-6653471369ee">
-<span class="eqno">(3.15)<a class="headerlink" href="#equation-3a259e40-313e-41c6-98f8-6653471369ee" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bdf0222a-9eae-418a-a2de-0b004c4f3c61">
+<span class="eqno">(3.15)<a class="headerlink" href="#equation-bdf0222a-9eae-418a-a2de-0b004c4f3c61" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dot{\vec{q}}(t) = (\dot{q_1}(t), \dot{q_2}(t), \dots, \dot{q_n}(t)), \qquad \text{ donde } \dot{q_i}(t) = \frac{d q_i}{dt}
 \end{equation}\]</div>
 <p>Es decir,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-01c8260d-d037-4820-b33b-95f0d412ad5b">
-<span class="eqno">(3.16)<a class="headerlink" href="#equation-01c8260d-d037-4820-b33b-95f0d412ad5b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9afa3cfa-a755-44e4-8fff-3e1a02b27dca">
+<span class="eqno">(3.16)<a class="headerlink" href="#equation-9afa3cfa-a755-44e4-8fff-3e1a02b27dca" title="Permalink to this equation">#</a></span>\[\begin{equation}
 L= L(\vec{q},\,  \dot{\vec{q}}, t)
 \end{equation}\]</div>
 <p>donde a su vez, <span class="math notranslate nohighlight">\(\vec{q}\)</span> y <span class="math notranslate nohighlight">\(\dot{\vec{q}}\)</span> dependen también de <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <div class="note admonition">
 <p class="admonition-title">Nota (Coordenadas generalizadas)</p>
 <p>El ejemplo más típico de coordenadas generalizadas son las posiciones y velocidades. En tres dimensiones serían:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4d4f2897-1fef-4aab-a8a4-f6ef121041f2">
-<span class="eqno">(3.17)<a class="headerlink" href="#equation-4d4f2897-1fef-4aab-a8a4-f6ef121041f2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f7d6ff25-8bcc-454d-99ea-f73d708d9cde">
+<span class="eqno">(3.17)<a class="headerlink" href="#equation-f7d6ff25-8bcc-454d-99ea-f73d708d9cde" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vec{q}(t)  \quad \rightarrow \quad \vec{r}(t) = (x(t), y(t), z(t))
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-07e37ba0-a5ca-4832-be67-7cbb6131e0b3">
-<span class="eqno">(3.18)<a class="headerlink" href="#equation-07e37ba0-a5ca-4832-be67-7cbb6131e0b3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2c9a8880-8199-42c4-af02-2ee37d397d57">
+<span class="eqno">(3.18)<a class="headerlink" href="#equation-2c9a8880-8199-42c4-af02-2ee37d397d57" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dot{\vec{q}}(t) \quad \rightarrow \quad \vec{v}(t) = (v_x(t), v_y(t), v_z(t))  \qquad \text{ donde } v_i(t) = \frac{d x_i}{dt}
 \end{equation}\]</div>
 <p>Por supuesto, si las llamamos “generalizadas” es porque no siempre vas a ser posiciones y velocidades al uso, sino que pueden ser otras variables, pero deben cumplir que las “velocidades” sean derivadas de las “posiciones”.</p>
@@ -618,8 +618,8 @@ H = T + V\, ,
 <section id="el-oscilador-armonico">
 <h2><span class="section-number">3.2.3. </span>El Oscilador Armónico<a class="headerlink" href="#el-oscilador-armonico" title="Permalink to this heading">#</a></h2>
 <p>En mecánica clásica, un oscilador harmónico es un sistema que, cuando se desplaza de su posición de equilibrio, experimenta una fuerza restauradora <span class="math notranslate nohighlight">\(\vec{F}\)</span> proporcional al desplazamiento <span class="math notranslate nohighlight">\(\vec{x}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-748dd013-5b72-4dc8-afe4-9152a36bf363">
-<span class="eqno">(3.25)<a class="headerlink" href="#equation-748dd013-5b72-4dc8-afe4-9152a36bf363" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bc8d6e59-2690-44dd-a8f3-213b8de9d731">
+<span class="eqno">(3.25)<a class="headerlink" href="#equation-bc8d6e59-2690-44dd-a8f3-213b8de9d731" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vec{F} = -k \vec{x}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(k\)</span> es una constante positiva.</p>
@@ -663,8 +663,8 @@ H_{HO} = p - L = \frac{1}{2m} p^2 + \frac{1}{2} k x^2
 <section id="formulacion-de-las-ecuaciones-de-hamilton-con-corchetes-de-poisson">
 <h2><span class="section-number">3.2.4. </span>Formulación de las ecuaciones de Hamilton con Corchetes de Poisson<a class="headerlink" href="#formulacion-de-las-ecuaciones-de-hamilton-con-corchetes-de-poisson" title="Permalink to this heading">#</a></h2>
 <p>En las coordenadas canónicas <span class="math notranslate nohighlight">\((q_i,p_i)\)</span> en espacio de fase, dadas dos funciones <span class="math notranslate nohighlight">\(f(\vec{p}, \vec{q}, t)\)</span> y <span class="math notranslate nohighlight">\(g(\vec{p}, \vec{q},t)\)</span>, el <b>corchete de Poisson</b> toma la forma</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2adeae73-b573-406b-8d82-c01e23305f42">
-<span class="eqno">(3.31)<a class="headerlink" href="#equation-2adeae73-b573-406b-8d82-c01e23305f42" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e873bf8b-a873-4fcf-9522-14156a778115">
+<span class="eqno">(3.31)<a class="headerlink" href="#equation-e873bf8b-a873-4fcf-9522-14156a778115" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lch f, g \rch = \sum_{i=1}^{N} \lp \frac{\partial f}{\partial q_i} \frac{\partial g}{\partial p_i} - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial g_i}   \rp \, .
 \end{equation}\]</div>
 <p>Puede verse que los corchetes de Poisson de las coordenadas generalizadas consigo mismas son:</p>
@@ -684,8 +684,8 @@ H_{HO} = p - L = \frac{1}{2m} p^2 + \frac{1}{2} k x^2
 \frac{d p_i}{dt} = - \frac{\partial H}{\partial q_i} = \lch p_i, H \rch
 \end{equation} \]</div>
 <p>El desarrollo temporal de una variable dinámica arbitraria también puede escribirse simplemente en términos de corchetes de Poisson.  A partir de la regla de la cadena multivariable,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-18e58f6d-20e6-4efc-a84c-ef0b3a4f1b83">
-<span class="eqno">(3.34)<a class="headerlink" href="#equation-18e58f6d-20e6-4efc-a84c-ef0b3a4f1b83" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8a267e47-f885-4bf4-83a5-5de26bb32d0a">
+<span class="eqno">(3.34)<a class="headerlink" href="#equation-8a267e47-f885-4bf4-83a5-5de26bb32d0a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{d}{dt} f(\vec{p}, \vec{q},t) =
 \frac{\partial f}{\partial q} \frac{d q}{d t} +
 \frac{\partial f}{\partial p} \frac{d p}{d t} +
